@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { useState, type ChangeEvent, type ReactNode } from "react";
 import {
   ArrowRight,
   BarChart3,
@@ -10,11 +10,14 @@ import {
   Headphones,
   Menu,
   PackageCheck,
+  Play,
   Route,
   Send,
   Store,
   Truck,
+  Upload,
   UsersRound,
+  Video,
   X,
   type LucideIcon,
 } from "lucide-react";
@@ -232,6 +235,77 @@ function DemoModal({ onClose }: { onClose: () => void }) {
   );
 }
 
+function VideoUploadPanel() {
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [videoName, setVideoName] = useState("");
+
+  function handleVideoChange(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    if (!file || !file.type.startsWith("video/")) {
+      return;
+    }
+
+    if (videoUrl) {
+      URL.revokeObjectURL(videoUrl);
+    }
+
+    setVideoUrl(URL.createObjectURL(file));
+    setVideoName(file.name);
+  }
+
+  return (
+    <div className="overflow-hidden rounded-[22px] border border-[#9bc4ec] bg-white shadow-[0_24px_70px_rgba(7,62,137,.14)]">
+      <div className="relative aspect-video overflow-hidden bg-[#0a2f69]">
+        {videoUrl ? (
+          <video
+            className="h-full w-full object-cover"
+            controls
+            preload="metadata"
+            src={videoUrl}
+          />
+        ) : (
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_18%,rgba(117,215,255,.75),transparent_30%),linear-gradient(135deg,#082652,#0b62ce)] p-5 text-white sm:p-8">
+            <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.14em] text-[#d7edff]">
+              <span>Video di prodotto</span>
+              <span className="rounded-full border border-[#8ecbff] px-2.5 py-1">Anteprima</span>
+            </div>
+            <div className="grid h-full place-items-center pb-4">
+              <div className="text-center">
+                <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-white text-[#0b55c6] shadow-[0_12px_30px_rgba(0,0,0,.2)]">
+                  <Play className="ml-0.5 h-5 w-5 fill-current" />
+                </span>
+                <p className="mt-5 text-lg font-bold tracking-[-0.03em]">Mostra Totalone in azione</p>
+                <p className="mt-1 text-sm text-[#d7edff]">Carica un video per vedere qui l’anteprima.</p>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+      <div className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+        <div className="min-w-0">
+          <div className="flex items-center gap-2 text-sm font-bold text-[#102744]">
+            <Video className="h-4 w-4 text-[#1769d5]" />
+            {videoName || "Video demo Totalone"}
+          </div>
+          <p className="mt-1 truncate text-xs text-[#557090]">
+            {videoUrl ? "Anteprima locale pronta" : "MP4, WebM o MOV · puoi sostituirlo in qualsiasi momento"}
+          </p>
+        </div>
+        <label className="inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-[9px] bg-[#f36b4d] px-4 py-3 text-sm font-bold text-white transition-transform hover:-translate-y-0.5 hover:bg-[#ff8668] focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#f36b4d]">
+          <Upload className="h-4 w-4" />
+          {videoUrl ? "Sostituisci video" : "Carica un video"}
+          <input
+            type="file"
+            accept="video/mp4,video/webm,video/quicktime"
+            className="sr-only"
+            onChange={handleVideoChange}
+          />
+        </label>
+      </div>
+    </div>
+  );
+}
+
 export function TotaloneHomepage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [demoOpen, setDemoOpen] = useState(false);
@@ -300,6 +374,22 @@ export function TotaloneHomepage() {
           </div>
         </div>
       </section>
+
+        <section className="bg-[#fffaf7] py-24 sm:py-32" id="video">
+          <div className="mx-auto grid max-w-[1240px] gap-12 px-5 sm:px-8 lg:grid-cols-[.72fr_1.28fr] lg:items-center lg:gap-20 lg:px-10">
+            <div>
+              <span className="inline-flex rounded-full bg-[#ffdcd2] px-3 py-1.5 text-xs font-bold text-[#c34d35]">IL PRODOTTO, IN AZIONE</span>
+              <h2 className="mt-6 max-w-xl text-5xl font-bold leading-[.94] tracking-[-0.065em] text-[#102744] sm:text-6xl">Fai vedere come Totalone accompagna il lavoro.</h2>
+              <p className="mt-7 max-w-lg text-base leading-7 text-[#557090]">Un video rende concreto il modo in cui il team passa dalla prima richiesta alla commessa, senza perdere il filo.</p>
+              <div className="mt-8 space-y-3 text-sm font-semibold text-[#254b72]">
+                {["Una storia reale del tuo showroom", "Un passaggio chiaro tra le fasi", "Un contenuto facile da sostituire"].map((item) => (
+                  <div key={item} className="flex items-center gap-2.5"><Check className="h-4 w-4 text-[#f36b4d]" />{item}</div>
+                ))}
+              </div>
+            </div>
+            <VideoUploadPanel />
+          </div>
+        </section>
 
        <section className="bg-[linear-gradient(120deg,#082652,#0b4fae)] py-24 text-white sm:py-32" id="per-chi">
          <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-10"><div className="grid gap-10 lg:grid-cols-[1fr_.7fr] lg:items-end"><div><span className="inline-flex rounded-full bg-[#2b75cb] px-3 py-1.5 text-xs font-bold text-[#e8f5ff]">CRESCERE CON ORDINE</span><h2 className="mt-6 max-w-4xl text-5xl font-bold leading-[.94] tracking-[-0.065em] sm:text-7xl">Funziona oggi.<br /><span className="text-[#9fe0ff]">Continua a funzionare quando cresci.</span></h2></div><p className="max-w-sm text-base leading-7 text-[#d5ebff]">Da uno showroom a una rete retail: più persone, più punti vendita, lo stesso modo di lavorare.</p></div><div className="mt-14 grid gap-4 md:grid-cols-3">{[["01", "Uno showroom", "Il team ha un linguaggio comune e il titolare torna a vedere il quadro intero."], ["02", "Più responsabilità", "Puoi delegare il quotidiano senza lasciare il controllo delle decisioni importanti."], ["03", "Una rete", "Ogni punto vendita lavora nel proprio contesto, dentro un modo di fare condiviso."]].map(([num, title, body]) => <div key={num} className="rounded-[16px] border border-[#4c89d0] bg-[#144b90] p-7"><span className="text-xs font-bold text-[#9fe0ff]">{num}</span><h3 className="mt-12 text-2xl font-bold tracking-[-0.04em]">{title}</h3><p className="mt-4 text-sm leading-6 text-[#d5ebff]">{body}</p></div>)}</div></div>
