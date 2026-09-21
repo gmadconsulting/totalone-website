@@ -1,0 +1,145 @@
+Mantieni l’attuale identità visiva, tipografia, palette colori e direzione generale del design. La base grafica mi piace.
+
+NON ridisegnare il sito da zero.
+
+Voglio invece migliorare lo storytelling della homepage, eliminando le ripetizioni e rendendo ogni sezione più utile alla vendita.
+
+Organizza la narrazione secondo questa logica:
+
+PROBLEMA → COMMESSA → PRODOTTO → SPECIALIZZAZIONE NELL’ARREDAMENTO → CONTROLLO DEL BUSINESS → CRESCITA → CTA FINALE
+
+MODIFICHE:
+
+1. Mantieni l’Hero attuale:
+“Il tuo business dell’arredamento. Tutto in un unico posto.”
+
+Mantieni anche l’impostazione grafica e lo spazio dedicato allo screenshot reale di Totalone.
+
+2. Mantieni la sezione:
+“La tua azienda non può dipendere dalla memoria di una persona.”
+
+È un problema importante per il target.
+
+3. Modifica la sezione:
+“Una sola commessa. Tutta la sua storia.”
+
+Elimina le tre card generiche:
+- Informazioni condivise
+- Responsabilità chiare
+- Decisioni più veloci
+
+Al loro posto crea un flusso visivo elegante:
+
+Lead → Cliente → Preventivo → Commessa → Ordini → Consegne → Montaggio → Post-vendita
+
+Messaggio:
+
+“Dalla prima richiesta all’ultimo intervento, tutto rimane collegato alla stessa commessa.”
+
+L’obiettivo è far capire immediatamente che Totalone segue l’intero ciclo di lavoro di un’azienda di arredamento.
+
+4. Rendi la sezione prodotto “Un modo condiviso di lavorare” una delle sezioni principali della homepage.
+
+Mantieni la navigazione laterale con:
+
+CRM
+Preventivi
+Commesse
+Ordini
+Logistica
+Montaggi
+Post-vendita
+Performance
+
+Quando viene selezionata un’area, a destra devono cambiare:
+- titolo
+- breve spiegazione
+- grande placeholder per lo screenshot reale
+
+Non creare screenshot o interfacce finte. Inserirò io gli screenshot reali successivamente.
+
+5. Rimuovi per ora la sezione video:
+“Fai vedere come Totalone accompagna il lavoro.”
+
+6. Riduci le ripetizioni concettuali tra:
+“Una sola commessa”
+“Un modo condiviso di lavorare”
+“Ogni persona vede il prossimo passo”
+
+Ogni sezione deve introdurre un nuovo motivo per scegliere Totalone.
+
+7. Mantieni il concetto di delega, ma rendilo più sintetico.
+
+Il messaggio centrale deve essere:
+
+“Le informazioni non devono dipendere dalle singole persone. Devono appartenere all’azienda.”
+
+8. Aggiungi una sezione dedicata al CONTROLLO DEL BUSINESS.
+
+Deve comunicare che Totalone non serve solo a organizzare il lavoro, ma anche a capire cosa sta succedendo nell’azienda.
+
+Parla di:
+- vendite
+- commesse
+- pagamenti
+- costi
+- marginalità
+- performance
+
+Non inventare funzionalità non esistenti.
+
+Prevedi un grande placeholder per uno screenshot reale della dashboard.
+
+9. Mantieni:
+
+“Non adattato all’arredamento.
+Nato per l’arredamento.”
+
+È uno dei messaggi principali del sito.
+
+Sostituisci il testo sotto con:
+
+“Perché vendere arredamento non significa semplicemente gestire ordini. Significa gestire commesse.”
+
+Deve emergere chiaramente che Totalone è stato pensato specificamente per il settore arredamento.
+
+10. Mantieni:
+
+“Funziona oggi.
+Continua a funzionare quando cresci.”
+
+Ma modifica la progressione in:
+
+1 showroom → Team in crescita → Più showroom → Gruppo
+
+L’obiettivo è mostrare che Totalone può accompagnare aziende con livelli diversi di complessità.
+
+11. Mantieni come CTA finale:
+
+“Partiamo da una tua commessa.”
+
+Sottotitolo:
+
+“Non una demo generica. Vediamo insieme come Totalone può inserirsi nel modo in cui lavori oggi.”
+
+CTA:
+“Prenota una demo”
+
+IMPORTANTE:
+
+Non generare immagini.
+Non generare screenshot.
+Non creare interfacce Totalone finte.
+Mantieni placeholder per tutti gli asset che inserirò successivamente.
+
+Non cambiare radicalmente il design attuale.
+
+Concentrati soprattutto su:
+- storytelling
+- gerarchia delle sezioni
+- chiarezza
+- riduzione delle ripetizioni
+- percezione premium
+- conversione
+
+Ogni scroll deve dare all’utente un motivo NUOVO per interessarsi a Totalone, non ripetere con parole diverse il concetto della sezione precedente.
