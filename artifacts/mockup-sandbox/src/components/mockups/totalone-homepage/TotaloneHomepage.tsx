@@ -48,6 +48,16 @@ const areas: Area[] = [
     screenAlt: "Dashboard reale di Totalone con pipeline trattative e clienti",
   },
   {
+    id: "controllo-trattative",
+    label: "Controllo trattative",
+    title: "Ogni trattativa sotto controllo, senza rincorrere aggiornamenti.",
+    body: "Stato, responsabile, valore e prossima azione restano leggibili in un’unica vista. Il team sa cosa seguire e tu sai dove intervenire.",
+    icon: Route,
+    screen: "[TRATTATIVE SCREENSHOT]",
+    screenSrc: "/__mockup/images/totalone-homepage-pipeline.png",
+    screenAlt: "Elenco reale delle trattative Totalone raggruppate per mese e stato",
+  },
+  {
     id: "preventivi",
     label: "Preventivi",
     title: "Una proposta chiara accelera la decisione.",
@@ -62,8 +72,6 @@ const areas: Area[] = [
     body: "Persone, scadenze, forniture e decisioni in un unico luogo condiviso, anche quando il lavoro passa da showroom a showroom.",
     icon: ClipboardList,
     screen: "[PROJECT SCREENSHOT]",
-    screenSrc: "/__mockup/images/totalone-homepage-pipeline.png",
-    screenAlt: "Vista reale di Totalone con l'elenco delle trattative e lo stato delle commesse",
   },
   {
     id: "logistica",
