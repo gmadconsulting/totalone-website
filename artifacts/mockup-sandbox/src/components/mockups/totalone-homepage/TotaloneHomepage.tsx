@@ -391,6 +391,39 @@ export function TotaloneHomepage() {
           </div>
         </section>
 
+        <section className="border-y border-[#cfe1f4] bg-[#fbfdff] py-24 sm:py-32">
+          <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-10">
+            <div className="grid gap-12 lg:grid-cols-[.78fr_1.22fr] lg:gap-24">
+              <div>
+                <span className="inline-flex rounded-full bg-[#dcecff] px-3 py-1.5 text-xs font-bold text-[#0b55c6]">DELEGARE, SENZA PERDERE IL FILO</span>
+                <h2 className="mt-6 max-w-xl text-5xl font-bold leading-[.94] tracking-[-0.065em] text-[#102744] sm:text-6xl">Ogni persona vede il prossimo passo.</h2>
+                <p className="mt-7 max-w-lg text-base leading-7 text-[#557090]">Le informazioni non restano nella testa di chi le ha raccolte. Passano alla persona giusta, nel momento giusto, con tutta la storia davanti.</p>
+                <button onClick={() => setDemoOpen(true)} className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-[#0b55c6] transition-transform hover:translate-x-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1769d5]">Parliamo del tuo modo di lavorare <ArrowRight className="h-4 w-4" /></button>
+              </div>
+              <div className="divide-y divide-[#cfe1f4] border-y border-[#cfe1f4]">
+                {[
+                  [Store, "Titolare / showroom", "Vedi il quadro completo del punto vendita e intervieni dove serve, senza essere il passaggio obbligato di ogni aggiornamento."],
+                  [UsersRound, "Vendite e progettazione", "Riparti dal contesto giusto: cliente, preventivo, decisioni e prossima azione restano nella stessa storia."],
+                  [ClipboardList, "Commesse e operazioni", "Ogni responsabilità è leggibile. Il team sa cosa manca, cosa è pronto e quale consegna viene dopo."],
+                  [Truck, "Logistica e montaggio", "Le informazioni arrivano a chi deve muoversi, con meno rincorse tra chat, telefonate e fogli separati."],
+                ].map(([Icon, title, body], index) => {
+                  const RoleIcon = Icon as LucideIcon;
+                  return (
+                    <div key={title as string} className="group grid gap-4 py-6 sm:grid-cols-[48px_180px_1fr] sm:items-start sm:gap-6">
+                      <div className="grid h-11 w-11 place-items-center rounded-[12px] bg-[#eaf4ff] text-[#1769d5] transition-colors group-hover:bg-[#ffdcd2] group-hover:text-[#c34d35]"><RoleIcon className="h-5 w-5" /></div>
+                      <div className="flex items-baseline gap-3 sm:block">
+                        <span className="text-[11px] font-bold tracking-[0.1em] text-[#8aa3bd]">0{index + 1}</span>
+                        <h3 className="mt-1 text-lg font-bold tracking-[-0.03em] text-[#102744]">{title as string}</h3>
+                      </div>
+                      <p className="max-w-xl text-sm leading-6 text-[#557090]">{body as string}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
        <section className="bg-[linear-gradient(120deg,#082652,#0b4fae)] py-24 text-white sm:py-32" id="per-chi">
          <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-10"><div className="grid gap-10 lg:grid-cols-[1fr_.7fr] lg:items-end"><div><span className="inline-flex rounded-full bg-[#2b75cb] px-3 py-1.5 text-xs font-bold text-[#e8f5ff]">CRESCERE CON ORDINE</span><h2 className="mt-6 max-w-4xl text-5xl font-bold leading-[.94] tracking-[-0.065em] sm:text-7xl">Funziona oggi.<br /><span className="text-[#9fe0ff]">Continua a funzionare quando cresci.</span></h2></div><p className="max-w-sm text-base leading-7 text-[#d5ebff]">Da uno showroom a una rete retail: più persone, più punti vendita, lo stesso modo di lavorare.</p></div><div className="mt-14 grid gap-4 md:grid-cols-3">{[["01", "Uno showroom", "Il team ha un linguaggio comune e il titolare torna a vedere il quadro intero."], ["02", "Più responsabilità", "Puoi delegare il quotidiano senza lasciare il controllo delle decisioni importanti."], ["03", "Una rete", "Ogni punto vendita lavora nel proprio contesto, dentro un modo di fare condiviso."]].map(([num, title, body]) => <div key={num} className="rounded-[16px] border border-[#4c89d0] bg-[#144b90] p-7"><span className="text-xs font-bold text-[#9fe0ff]">{num}</span><h3 className="mt-12 text-2xl font-bold tracking-[-0.04em]">{title}</h3><p className="mt-4 text-sm leading-6 text-[#d5ebff]">{body}</p></div>)}</div></div>
       </section>
