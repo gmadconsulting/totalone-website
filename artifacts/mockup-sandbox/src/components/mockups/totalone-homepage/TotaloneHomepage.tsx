@@ -16,6 +16,7 @@ import {
   Truck,
   UsersRound,
   X,
+  type LucideIcon,
 } from "lucide-react";
 
 const navItems = [
@@ -24,7 +25,18 @@ const navItems = [
   { label: "Per chi", href: "#per-chi" },
 ];
 
-const areas = [
+type Area = {
+  id: string;
+  label: string;
+  title: string;
+  body: string;
+  icon: LucideIcon;
+  screen: string;
+  screenSrc?: string;
+  screenAlt?: string;
+};
+
+const areas: Area[] = [
   {
     id: "crm",
     label: "CRM",
@@ -32,6 +44,8 @@ const areas = [
     body: "Il team entra nella relazione con il contesto giusto. Senza chiedere, cercare o ricominciare da capo.",
     icon: UsersRound,
     screen: "[CRM SCREENSHOT]",
+    screenSrc: "/__mockup/images/totalone-homepage-dashboard.png",
+    screenAlt: "Dashboard reale di Totalone con pipeline trattative e clienti",
   },
   {
     id: "preventivi",
@@ -48,6 +62,8 @@ const areas = [
     body: "Persone, scadenze, forniture e decisioni in un unico luogo condiviso, anche quando il lavoro passa da showroom a showroom.",
     icon: ClipboardList,
     screen: "[PROJECT SCREENSHOT]",
+    screenSrc: "/__mockup/images/totalone-homepage-pipeline.png",
+    screenAlt: "Vista reale di Totalone con l'elenco delle trattative e lo stato delle commesse",
   },
   {
     id: "logistica",
@@ -118,7 +134,33 @@ function Button({
   );
 }
 
-function ProductPlaceholder({ label, hero = false }: { label: string; hero?: boolean }) {
+function ProductPlaceholder({
+  label,
+  hero = false,
+  src,
+  alt,
+}: {
+  label: string;
+  hero?: boolean;
+  src?: string;
+  alt?: string;
+}) {
+  if (src) {
+    return (
+      <div className={`relative overflow-hidden rounded-[18px] border border-[#9bc4ec] bg-white shadow-[0_24px_64px_rgba(7,62,137,.18)] ${hero ? "aspect-[16/10]" : "aspect-[16/10]"}`}>
+        <img
+          src={src}
+          alt={alt ?? label}
+          className="h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-[#071f49]/85 via-[#071f49]/60 to-transparent px-4 pb-4 pt-10 text-[10px] font-bold uppercase tracking-[0.12em] text-white sm:px-6">
+          <span>Screenshot reale</span>
+          <span className="rounded-full bg-white/90 px-2.5 py-1 text-[#0b55c6]">Totalone</span>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={`relative overflow-hidden rounded-[18px] border border-[#c8dcf3] bg-white shadow-[0_24px_64px_rgba(7,62,137,.16)] ${hero ? "min-h-[410px]" : "min-h-[280px]"}`}>
       <div className="absolute inset-0 bg-[linear-gradient(145deg,#e6f2ff,#ffffff_58%)]" />
@@ -216,7 +258,7 @@ export function TotaloneHomepage() {
               <div className="mt-9 flex flex-wrap items-center gap-4"><Button onClick={() => setDemoOpen(true)} light>Prenota una demo</Button><a href="#come-funziona" className="inline-flex items-center gap-2 px-2 text-sm font-bold text-white hover:text-[#d0d0d0] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Scopri come funziona <ChevronDown className="h-4 w-4" /></a></div>
                <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-xs font-semibold text-[#d3ebff]"><span className="inline-flex items-center gap-2"><Check className="h-4 w-4 text-[#9fe0ff]" />Un unico modo di lavorare</span><span className="inline-flex items-center gap-2"><Check className="h-4 w-4 text-[#9fe0ff]" />Informazioni condivise</span><span className="inline-flex items-center gap-2"><Check className="h-4 w-4 text-[#9fe0ff]" />Più controllo mentre cresci</span></div>
             </div>
-            <div className="lg:pl-3"><ProductPlaceholder label="[HERO SCREENSHOT]" hero /></div>
+             <div className="lg:pl-3"><ProductPlaceholder label="[HERO SCREENSHOT]" hero src="/__mockup/images/totalone-homepage-dashboard.png" alt="Dashboard reale di Totalone con pipeline trattative e clienti" /></div>
           </div>
         </div>
       </section>
@@ -246,7 +288,7 @@ export function TotaloneHomepage() {
            <div className="flex flex-col gap-7 border-b border-[#cfe1f4] pb-10 lg:flex-row lg:items-end lg:justify-between"><div><span className="inline-flex rounded-full bg-[#dcecff] px-3 py-1.5 text-xs font-bold text-[#0b55c6]">TUTTO IL FLUSSO</span><h2 className="mt-6 max-w-3xl text-5xl font-bold leading-[.95] tracking-[-0.065em] text-[#102744] sm:text-7xl">Un modo condiviso di lavorare.</h2></div><p className="max-w-sm text-sm leading-6 text-[#557090]">Non moduli da compilare. Passaggi che si parlano e fanno avanzare il lavoro.</p></div>
           <div className="mt-12 grid gap-10 lg:grid-cols-[.38fr_.62fr] lg:gap-16">
               <div className="lg:sticky lg:top-8 lg:self-start"><div className="mb-6 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.1em] text-[#557090]"><Route className="h-4 w-4 text-[#1769d5]" /> Seleziona una fase</div><div className="divide-y divide-[#cfe1f4] rounded-[12px] border-y border-[#cfe1f4]">{areas.map((area) => <button key={area.id} onClick={() => setActiveArea(area.id)} className={`flex w-full items-center justify-between py-4 text-left text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1769d5] ${activeArea === area.id ? "font-bold text-[#0b55c6]" : "font-semibold text-[#557090] hover:text-[#0b55c6]"}`}><span>{area.label}</span><ChevronRight className={`h-4 w-4 transition-transform ${activeArea === area.id ? "translate-x-1" : ""}`} /></button>)}</div></div>
-              <div>{areas.map((area) => { const Icon = area.icon; return activeArea === area.id ? <div key={area.id} className="animate-[fadeIn_.3s_ease-out]"><div className="mb-6 grid h-12 w-12 place-items-center rounded-[12px] bg-[#ffdcd2] text-[#c34d35]"><Icon className="h-5 w-5" /></div><p className="text-xs font-bold uppercase tracking-[0.1em] text-[#0b55c6]">{area.label}</p><h3 className="mt-4 max-w-2xl text-4xl font-bold leading-[1] tracking-[-0.06em] text-[#102744] sm:text-5xl">{area.title}</h3><p className="mt-5 max-w-xl text-base leading-7 text-[#557090]">{area.body}</p><div className="mt-9"><ProductPlaceholder label={area.screen} /></div></div> : null; })}</div>
+               <div>{areas.map((area) => { const Icon = area.icon; return activeArea === area.id ? <div key={area.id} className="animate-[fadeIn_.3s_ease-out]"><div className="mb-6 grid h-12 w-12 place-items-center rounded-[12px] bg-[#ffdcd2] text-[#c34d35]"><Icon className="h-5 w-5" /></div><p className="text-xs font-bold uppercase tracking-[0.1em] text-[#0b55c6]">{area.label}</p><h3 className="mt-4 max-w-2xl text-4xl font-bold leading-[1] tracking-[-0.06em] text-[#102744] sm:text-5xl">{area.title}</h3><p className="mt-5 max-w-xl text-base leading-7 text-[#557090]">{area.body}</p><div className="mt-9"><ProductPlaceholder label={area.screen} src={area.screenSrc} alt={area.screenAlt} /></div></div> : null; })}</div>
           </div>
         </div>
       </section>
