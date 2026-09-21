@@ -1,0 +1,220 @@
+Redesign the Totalone website as a premium, modern vertical SaaS website for the furniture retail industry.
+
+POSITIONING
+
+Totalone is a management platform built specifically for furniture retailers, interior design showrooms and multi-store furniture businesses.
+
+It connects the complete operational workflow:
+
+Lead → Customer → Quote → Project → Orders → Payments → Logistics → Installation → After-sales → Performance
+
+Do NOT position Totalone as a generic CRM or ERP.
+
+The core promise is:
+
+One shared way of working for the entire company.
+
+Totalone helps furniture businesses move from fragmented information across Excel, WhatsApp, email, paper and individual knowledge to a shared operational system.
+
+The website should make visitors think:
+
+“These people understand exactly how a furniture business works.”
+
+TARGET CUSTOMERS
+
+The website must work for businesses at different stages:
+
+* Small showroom: 3–4 people, owner keeps much of the information personally. Needs simplicity and fewer forgotten details.
+* Established showroom: 5–10 people. Owner is constantly interrupted because information is fragmented.
+* Growing company: 8–15 people. Needs shared processes and easier delegation.
+* Multi-store business: needs visibility across people, projects and locations without the owner coordinating everything.
+* Structured company: already has software but still manages many activities through Excel, email and parallel processes.
+* Large retail group: needs standardized workflows, comparable information and operational visibility across locations.
+
+Do not explicitly segment the homepage by revenue. Speak about increasing organizational complexity.
+
+HOMEPAGE STORY
+
+Build the homepage around this narrative:
+
+1. HERO
+
+Suggested direction:
+
+Il tuo business dell’arredamento. Tutto in un unico posto.
+
+“Clienti, preventivi, commesse, ordini, consegne, montaggi, assistenza e performance. Totalone riunisce il lavoro del tuo showroom in un unico sistema.”
+
+CTA: Prenota una demo
+
+Secondary CTA: Scopri come funziona
+
+2. PROBLEM
+
+Headline:
+
+Ti riconosci?
+
+Show real operational problems:
+
+* informazioni tra Excel, email e WhatsApp
+* bisogna chiedere alla persona giusta per sapere a che punto è una commessa
+* modifiche che non arrivano a tutto il team
+* il titolare diventa il punto di passaggio di tutto
+* ordini, consegne e montaggi gestiti su strumenti diversi
+
+Make this sophisticated, not a generic card grid.
+
+3. TRANSFORMATION
+
+Da informazioni sparse a un unico modo di lavorare.
+
+Show the transition from:
+
+Excel + WhatsApp + email + agenda + cartelle + memoria
+
+to:
+
+Totalone → informazioni condivise, responsabilità chiare, attività, documenti, consegne, montaggi e performance.
+
+4. WORKFLOW
+
+Headline:
+
+Una sola commessa. Tutta la sua storia.
+
+Create an elegant flow:
+
+Lead → Cliente → Preventivo → Commessa → Ordini → Logistica → Montaggio → Post-vendita → Performance
+
+5. PRODUCT
+
+Present the main areas with large sections, not dozens of small feature cards:
+
+CRM
+Preventivi
+Commesse
+Logistica
+Montaggi
+Post-vendita
+Performance
+
+Always explain the business benefit before the feature.
+
+Example:
+
+Not “Gestione task”
+
+but:
+
+“Ogni persona sa cosa deve fare senza dover ricostruire la commessa da email e messaggi.”
+
+6. INDUSTRY DIFFERENTIATION
+
+Headline:
+
+Non adattato all’arredamento. Nato per l’arredamento.
+
+Explain that Totalone understands the complexity of a furniture project: customer, salesperson, designer, products, suppliers, orders, payments, deliveries, warehouse, installers, after-sales and margins.
+
+7. SCALE
+
+Headline:
+
+Funziona oggi. Continua a funzionare quando cresci.
+
+Show progression:
+
+1 showroom → growing team → multiple showrooms → structured organization → retail network.
+
+8. DELEGATION
+
+Headline:
+
+Delegare senza perdere il controllo.
+
+Communicate that information should belong to the organization, not remain in individual people’s heads.
+
+9. ONBOARDING
+
+Address the main objection: changing software feels difficult.
+
+Explain a gradual implementation approach without making unsupported promises.
+
+10. FINAL CTA
+
+Partiamo da una tua commessa.
+
+“Non una demo generica. Vediamo insieme come Totalone può inserirsi nel modo in cui lavori oggi.”
+
+CTA: Prenota una demo
+
+DESIGN
+
+Create a premium international SaaS aesthetic.
+
+Take inspiration from the design quality of Linear, Attio, Stripe and modern vertical SaaS products, without copying them.
+
+Use:
+
+* large typography
+* generous whitespace
+* strong grid
+* subtle borders
+* sophisticated micro-interactions
+* excellent hierarchy
+* restrained animations
+* premium typography
+* clean responsive design
+
+Avoid traditional ERP aesthetics, generic corporate blue SaaS design, excessive gradients, glassmorphism, huge icon grids and startup clichés.
+
+The product should feel simple but powerful, not technical or intimidating.
+
+IMAGES — IMPORTANT
+
+Do NOT generate any images, illustrations, screenshots or fake Totalone interfaces.
+
+I will insert all images and real Totalone screenshots later.
+
+Where visuals are needed, create elegant placeholders such as:
+
+[HERO SCREENSHOT]
+[CRM SCREENSHOT]
+[QUOTATION SCREENSHOT]
+[PROJECT SCREENSHOT]
+[LOGISTICS SCREENSHOT]
+[INSTALLATION SCREENSHOT]
+[PERFORMANCE SCREENSHOT]
+
+Design the layout around these placeholders so I can replace them later without changing the page structure.
+
+COPY
+
+Write the website in Italian.
+
+Tone: premium, clear, confident, concrete and human.
+
+Avoid generic phrases like:
+
+“Rivoluziona il tuo business”
+“Soluzione innovativa”
+“Porta il business al livello successivo”
+
+Prefer concrete language like:
+
+“Sai sempre a che punto è una commessa.”
+
+“Il team trova le informazioni senza doverle chiedere.”
+
+“Cresci senza moltiplicare Excel, chat e procedure.”
+
+“Dalla prima richiesta al montaggio.”
+
+Primary conversion throughout the website:
+
+Prenota una demo
+
+Do not invent Totalone functionality that has not been provided.
+
+Focus first on creating an excellent homepage structure, UX/UI and responsive design. Do not modify the Totalone application itself
