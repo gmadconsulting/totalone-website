@@ -29,7 +29,7 @@ const navItems = [
 const productGroups = [
   { label: "VENDITE", links: [["CRM", "/__mockup/preview/totalone-crm/CrmProductPage"], ["Gestione trattative", "/__mockup/preview/totalone-trattative/GestioneTrattative"], ["Preventivi", "/__mockup/preview/totalone-preventivi/PreventiviProductPage"]] },
   { label: "OPERATIVITÀ", links: [["Gestione progetti", "/gestione-progetti-arredamento/"], ["Gestione commesse", "/__mockup/preview/totalone-commesse/CommesseProductPage"], ["Magazzino e logistica", "/gestione-magazzino-arredamento/"], ["Montaggi", "/gestione-montaggi-arredamento/"], ["Assistenza e post-vendita", "/post-vendita-arredamento/"]] },
-   { label: "CONTROLLO", links: [["Controllo dei margini e performance", "/controllo-gestione-arredamento/"]] },
+  { label: "CONTROLLO", links: [["Controllo e performance", "/controllo-gestione-arredamento/"]] },
 ];
 
 type Area = {
@@ -99,9 +99,9 @@ const areas: Area[] = [
   },
   {
     id: "performance",
-     label: "Controllo dei margini",
-     title: "Vedi dove il business cresce e dove il margine si perde.",
-     body: "Leggi vendite, costi e marginalità in un unico quadro condiviso: sai cosa seguire, dove intervenire e quale showroom sta crescendo.",
+    label: "Performance",
+    title: "Vedi dove il business sta andando.",
+    body: "Una lettura condivisa del lavoro aiuta a decidere con lucidità: cosa seguire, dove intervenire e quale showroom sta crescendo.",
     icon: BarChart3,
   },
 ];
@@ -349,7 +349,7 @@ export function TotaloneHomepage() {
       <section className="bg-[#eff7ff] py-24 sm:py-32">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-10">
           <div className="grid gap-12 lg:grid-cols-[.72fr_1.28fr] lg:items-center lg:gap-20">
-             <div><span className="inline-flex rounded-full bg-[#dcecff] px-3 py-1.5 text-xs font-bold text-[#0b55c6]">CONTROLLO DEL BUSINESS E DEI MARGINI</span><h2 className="mt-6 max-w-xl text-5xl font-bold leading-[.94] tracking-[-0.065em] text-[#102744] sm:text-6xl">Capire cosa sta succedendo, prima di decidere.</h2><p className="mt-7 max-w-lg text-base leading-7 text-[#557090]">Totalone aiuta a leggere il lavoro dell’azienda attraverso vendite, commesse, pagamenti, costi, margini e performance. Un quadro più chiaro per capire dove il margine si costruisce, dove si assottiglia e dove intervenire.</p><div className="mt-8 flex flex-wrap gap-2">{["Vendite", "Commesse", "Pagamenti", "Costi", "Margini", "Performance"].map((item) => <span key={item} className="rounded-full border border-[#bcd7f1] bg-white px-3.5 py-2 text-xs font-semibold text-[#245b96]">{item}</span>)}</div></div>
+             <div><span className="inline-flex rounded-full bg-[#dcecff] px-3 py-1.5 text-xs font-bold text-[#0b55c6]">CONTROLLO DEL BUSINESS</span><h2 className="mt-6 max-w-xl text-5xl font-bold leading-[.94] tracking-[-0.065em] text-[#102744] sm:text-6xl">Capire cosa sta succedendo, prima di decidere.</h2><p className="mt-7 max-w-lg text-base leading-7 text-[#557090]">Totalone aiuta a leggere il lavoro dell’azienda attraverso vendite, commesse, pagamenti, costi, marginalità e performance. Un quadro più chiaro per intervenire dove serve.</p><div className="mt-8 flex flex-wrap gap-2">{["Vendite", "Commesse", "Pagamenti", "Costi", "Marginalità", "Performance"].map((item) => <span key={item} className="rounded-full border border-[#bcd7f1] bg-white px-3.5 py-2 text-xs font-semibold text-[#245b96]">{item}</span>)}</div></div>
             <ProductPlaceholder label="[DASHBOARD SCREENSHOT]" />
           </div>
         </div>
