@@ -9,6 +9,7 @@ import {
   FileText,
   Handshake,
   Headphones,
+  ListChecks,
   Menu,
   PackageCheck,
   Route,
@@ -68,6 +69,13 @@ const areas: Area[] = [
     title: "La commessa diventa il punto di riferimento di tutti.",
     body: "Persone, scadenze, forniture e decisioni in un unico luogo condiviso, anche quando il lavoro passa da showroom a showroom.",
     icon: ClipboardList,
+  },
+  {
+    id: "progetti",
+    label: "Gestione progetti",
+    title: "Il lavoro da fare diventa chiaro per tutto il team.",
+    body: "Progetti, persone, task, priorità e scadenze rimangono nello stesso spazio, così ogni attività ha un contesto e un prossimo passo.",
+    icon: ListChecks,
   },
   {
     id: "ordini",
