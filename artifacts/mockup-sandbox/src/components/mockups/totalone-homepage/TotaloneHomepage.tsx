@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { useState, type MouseEvent, type ReactNode } from "react";
 import {
   ArrowRight,
   BarChart3,
@@ -23,7 +23,7 @@ const navItems = [
   { label: "Soluzioni", href: "/soluzioni/negozi-showroom-arredamento/" },
   { label: "Perché Totalone", href: "#per-chi" },
   { label: "Risorse", href: "/risorse/" },
-  { label: "Prezzi", href: "/prezzi/" },
+  { label: "Prezzi", href: "#costi-chiari" },
 ];
 const productGroups = [
   { label: "VENDITE", links: [["CRM", "/__mockup/preview/totalone-crm/CrmProductPage"], ["Gestione trattative", "/gestione-trattative-arredamento/"], ["Preventivi", "/__mockup/preview/totalone-preventivi/PreventiviProductPage"]] },
@@ -219,6 +219,12 @@ export function TotaloneHomepage() {
   const [activeArea, setActiveArea] = useState("crm");
   const selectedArea = areas.find((area) => area.id === activeArea) ?? areas[0];
   const ActiveIcon = selectedArea.icon;
+  const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith("#")) return;
+    event.preventDefault();
+    document.getElementById(href.slice(1))?.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", href);
+  };
 
   return (
     <main id="top" className="min-h-[100dvh] overflow-hidden bg-[#fbfdff] text-[#102744]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
@@ -228,7 +234,7 @@ export function TotaloneHomepage() {
           <Logo />
           <nav className="hidden items-center gap-7 md:flex">
             <button onClick={() => setProductMenuOpen((open) => !open)} aria-expanded={productMenuOpen} className="inline-flex items-center gap-1 text-[13px] font-semibold text-[#d9eaff] transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Prodotto <ChevronDown className="h-3.5 w-3.5" /></button>
-            {navItems.map((item) => <a key={item.href} href={item.href} className="text-[13px] font-semibold text-[#d9eaff] transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">{item.label}</a>)}
+            {navItems.map((item) => <a key={item.href} href={item.href} onClick={(event) => handleNavClick(event, item.href)} className="text-[13px] font-semibold text-[#d9eaff] transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">{item.label}</a>)}
             <a href="/login/" className="text-[13px] font-semibold text-[#d9eaff] transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Login</a>
           </nav>
           <div className="flex items-center gap-3">
@@ -246,7 +252,7 @@ export function TotaloneHomepage() {
           <div className="border-t border-[#2a67ba] bg-[#0b3473] px-5 py-4 md:hidden">
              <button onClick={() => setProductMenuOpen((open) => !open)} className="flex w-full items-center justify-between border-b border-[#3d78c4] py-3 text-left text-sm font-semibold text-[#e7f2ff] hover:text-white">Prodotto <ChevronDown className="h-4 w-4" /></button>
              {productMenuOpen && <div className="border-b border-[#3d78c4] pb-2">{productGroups.map((group) => <div key={group.label} className="pt-3"><div className="text-[10px] font-bold tracking-[.12em] text-[#9fe0ff]">{group.label}</div>{group.links.map(([label, href]) => <a onClick={() => { setMenuOpen(false); setProductMenuOpen(false); }} key={href} href={href} className="block py-2 pl-2 text-xs font-semibold text-[#e7f2ff]">{label}</a>)}</div>)}</div>}
-             {navItems.map((item) => <a onClick={() => setMenuOpen(false)} key={item.href} href={item.href} className="block border-b border-[#3d78c4] py-3 text-sm font-semibold text-[#e7f2ff] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">{item.label}</a>)}
+              {navItems.map((item) => <a onClick={(event) => { handleNavClick(event, item.href); setMenuOpen(false); }} key={item.href} href={item.href} className="block border-b border-[#3d78c4] py-3 text-sm font-semibold text-[#e7f2ff] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">{item.label}</a>)}
              <a onClick={() => setMenuOpen(false)} href="/login/" className="block border-b border-[#3d78c4] py-3 text-sm font-semibold text-[#e7f2ff] hover:text-white">Login</a>
             <button onClick={() => { setDemoOpen(true); setMenuOpen(false); }} className="mt-4 w-full rounded-[8px] bg-[#f36b4d] px-4 py-3 text-left text-sm font-bold text-white hover:bg-[#ff8668] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Prenota una demo <ArrowRight className="ml-2 inline h-4 w-4" /></button>
           </div>
