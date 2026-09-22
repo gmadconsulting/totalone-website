@@ -1,0 +1,196 @@
+==================================================
+8. AUTONOMIA DI GESTIONE
+==================================================
+
+This is an important differentiating section.
+
+The key concept is NOT that additional users or showrooms are necessarily free.
+
+The key concept is:
+
+Totalone is designed to let customers independently manage the normal evolution of their organization without requiring Totalone staff to manually make those changes for them.
+
+Do NOT confuse:
+- subscription pricing
+with
+- intervention / modification fees.
+
+The subscription price may vary depending on the customer's configuration or commercial agreement.
+
+However, Totalone does NOT charge a technical intervention fee simply because the customer needs to perform a normal administrative change that can be managed directly inside the platform.
+
+
+Eyebrow:
+AUTONOMIA
+
+H2:
+La tua azienda cambia. Non devi chiamarci ogni volta che succede.
+
+Body:
+Entra una nuova persona nel team? Apri un nuovo showroom? Devi aggiornare un nome o modificare la struttura della tua organizzazione?
+
+Le normali attività amministrative possono essere gestite direttamente da Totalone.
+
+Non devi inviarci una richiesta e aspettare che qualcuno faccia la modifica per te.
+
+
+Create three concrete examples:
+
+
+NUOVO DIPENDENTE
+
+Aggiungi e gestisci autonomamente le persone del tuo team.
+
+
+NUOVO SHOWROOM
+
+Gestisci direttamente le sedi e la struttura della tua organizzazione.
+
+
+MODIFICHE QUOTIDIANE
+
+Aggiorna nomi, informazioni e configurazioni direttamente dalla piattaforma.
+
+
+Strong statement:
+
+“Il tuo gestionale. La tua azienda. La gestisci tu.”
+
+
+Supporting copy:
+
+Totalone è progettato per darti autonomia nelle normali attività di amministrazione della piattaforma.
+
+Niente ticket per aggiungere una persona.
+Niente richieste per aggiornare un nome.
+Niente interventi tecnici per le normali modifiche organizzative.
+
+
+IMPORTANT:
+
+Do NOT say:
+- “utenti illimitati gratis”
+- “showroom illimitati gratis”
+- “aggiungere utenti non cambia mai il canone”
+- “aggiungere showroom non cambia mai il canone”
+
+The commercial price of Totalone may vary depending on the agreed configuration.
+
+The benefit communicated here is that normal administrative changes do not require Totalone staff to manually perform them and are not charged as technical modification/intervention fees.
+
+
+==================================================
+9. COSTI CHIARI
+==================================================
+
+Eyebrow:
+SENZA FEE INUTILI
+
+H2:
+Non paghi un intervento ogni volta che devi cambiare qualcosa.
+
+Body:
+Totalone nasce come piattaforma moderna e self-service.
+
+Le normali modifiche amministrative vengono gestite direttamente dalla tua azienda, senza dipendere dal fornitore per ogni cambiamento.
+
+
+Create a clean checklist:
+
+✓ Nessun costo di installazione
+
+✓ Nessun costo di avviamento
+
+✓ Nessuna fee tecnica per le normali modifiche amministrative
+
+✓ Utenti gestibili direttamente dalla piattaforma
+
+✓ Showroom e struttura aziendale gestibili in autonomia
+
+✓ Informazioni e anagrafiche aggiornabili direttamente dal tuo team
+
+✓ Aggiornamenti software inclusi
+
+
+Add subtle microcopy:
+
+“Il canone può variare in base alla configurazione commerciale scelta. Le normali modifiche gestibili autonomamente dalla piattaforma non comportano costi di intervento.”
+
+
+==================================================
+UPDATE FAQ
+==================================================
+
+QUESTION:
+Se assumo una nuova persona devo contattarvi?
+
+ANSWER:
+No. Puoi aggiungere e gestire direttamente gli utenti dalla piattaforma, senza richiedere un intervento da parte nostra.
+
+
+QUESTION:
+Se apro un nuovo showroom dovete configurarlo voi?
+
+ANSWER:
+Le normali modifiche alla struttura della tua organizzazione possono essere gestite direttamente dalla piattaforma, senza dover richiedere ogni volta un intervento tecnico.
+
+
+QUESTION:
+Devo pagare per modificare utenti, nomi o informazioni?
+
+ANSWER:
+No. Le normali modifiche amministrative che puoi effettuare direttamente dalla piattaforma non prevedono costi di intervento.
+
+
+QUESTION:
+Questo significa che il canone non può mai cambiare?
+
+ANSWER:
+Il canone dipende dalla configurazione commerciale scelta. È distinto dai costi di intervento: le normali modifiche che puoi gestire autonomamente in Totalone non vengono fatturate come interventi tecnici.
+
+
+==================================================
+UPDATE HERO TRUST SIGNALS
+==================================================
+
+Replace the previous trust signals with:
+
+NESSUN COSTO DI INSTALLAZIONE
+Nessuna infrastruttura da installare.
+
+NESSUN COSTO DI AVVIAMENTO
+Parti senza una fee iniziale.
+
+GESTIONE AUTONOMA
+Gestisci direttamente utenti, showroom e normali modifiche organizzative.
+
+NESSUNA FEE DI MODIFICA
+Non paghi un intervento tecnico per ogni normale cambiamento.
+
+
+==================================================
+CORE MESSAGE
+==================================================
+
+Throughout the page, communicate the distinction clearly:
+
+TOTALONE IS SELF-SERVICE.
+
+The customer owns and manages their organizational structure inside the software.
+
+They should not need to contact Totalone support for routine administrative changes.
+
+This is separate from the commercial subscription model.
+
+Avoid framing this only as a cost advantage.
+
+It is also:
+- faster
+- more autonomous
+- less bureaucratic
+- more scalable
+- less dependent on the software provider
+
+The strongest message should be:
+
+“La tua azienda cambia. Totalone non ti obbliga a chiamarci ogni volta che succede.”
