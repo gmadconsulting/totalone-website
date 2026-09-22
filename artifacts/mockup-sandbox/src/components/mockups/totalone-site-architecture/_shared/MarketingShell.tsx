@@ -30,7 +30,7 @@ const productGroups = [
 const navLinks = [
   ["Soluzioni", "/soluzioni/negozi-showroom-arredamento/"],
   ["Perché Totalone", "/#per-chi"],
-  ["Risorse", "/risorse/"],
+  ["Risorse", "/__mockup/preview/totalone-risorse/RisorseArchitecturePage"],
 ];
 
 function DemoModal({ onClose }: { onClose: () => void }) {

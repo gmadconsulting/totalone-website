@@ -12,6 +12,7 @@ export const modules: ModuleMap = {
   "./components/mockups/totalone-preventivi/PreventiviProductPage.tsx": () => import("../components/mockups/totalone-preventivi/PreventiviProductPage.tsx"),
   "./components/mockups/totalone-prezzi/TotalonePrezzi.tsx": () => import("../components/mockups/totalone-prezzi/TotalonePrezzi.tsx"),
   "./components/mockups/totalone-progetti/ProgettiProductPage.tsx": () => import("../components/mockups/totalone-progetti/ProgettiProductPage.tsx"),
+  "./components/mockups/totalone-risorse/RisorseArchitecturePage.tsx": () => import("../components/mockups/totalone-risorse/RisorseArchitecturePage.tsx"),
   "./components/mockups/totalone-site-architecture/ProductTemplate.tsx": () => import("../components/mockups/totalone-site-architecture/ProductTemplate.tsx"),
   "./components/mockups/totalone-site-architecture/ResourcesHub.tsx": () => import("../components/mockups/totalone-site-architecture/ResourcesHub.tsx"),
   "./components/mockups/totalone-site-architecture/Sitemap.tsx": () => import("../components/mockups/totalone-site-architecture/Sitemap.tsx"),

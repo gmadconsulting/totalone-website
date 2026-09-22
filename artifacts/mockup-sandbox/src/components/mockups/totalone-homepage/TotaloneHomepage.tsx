@@ -24,7 +24,7 @@ import {
 const navItems = [
   { label: "Soluzioni", href: "/soluzioni/negozi-showroom-arredamento/" },
   { label: "Perché Totalone", href: "/__mockup/preview/totalone-perche/PercheTotalonePage" },
-  { label: "Risorse", href: "/risorse/" },
+  { label: "Risorse", href: "/__mockup/preview/totalone-risorse/RisorseArchitecturePage" },
   { label: "Prezzi", href: "/__mockup/preview/totalone-prezzi/TotalonePrezzi" },
 ];
 const productGroups = [
