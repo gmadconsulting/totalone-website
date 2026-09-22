@@ -27,7 +27,7 @@ const navItems = [
 ];
 const productGroups = [
   { label: "VENDITE", links: [["CRM", "/__mockup/preview/totalone-crm/CrmProductPage"], ["Gestione trattative", "/gestione-trattative-arredamento/"], ["Preventivi", "/software-preventivi-arredamento/"]] },
-  { label: "OPERATIVITÀ", links: [["Gestione progetti", "/gestione-progetti-arredamento/"], ["Gestione commesse", "/gestione-commesse-arredamento/"], ["Magazzino e logistica", "/gestione-magazzino-arredamento/"], ["Montaggi", "/gestione-montaggi-arredamento/"], ["Assistenza e post-vendita", "/post-vendita-arredamento/"]] },
+  { label: "OPERATIVITÀ", links: [["Gestione progetti", "/gestione-progetti-arredamento/"], ["Gestione commesse", "/__mockup/preview/totalone-commesse/CommesseProductPage"], ["Magazzino e logistica", "/gestione-magazzino-arredamento/"], ["Montaggi", "/gestione-montaggi-arredamento/"], ["Assistenza e post-vendita", "/post-vendita-arredamento/"]] },
   { label: "CONTROLLO", links: [["Controllo e performance", "/controllo-gestione-arredamento/"]] },
 ];
 

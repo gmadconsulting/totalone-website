@@ -1,0 +1,504 @@
+Create the complete “Gestione commesse per arredatori” product page for the Totalone marketing website.
+
+IMPORTANT:
+- Work ONLY on the public Totalone marketing website.
+- Do NOT modify the Totalone application/dashboard.
+- Keep the existing Totalone website design system, navbar, typography, colors, spacing, buttons, border radius and overall visual language.
+- The page must feel like a premium modern B2B SaaS product page.
+- Preserve the current Totalone brand identity.
+- All copy must be in Italian.
+- Mobile and tablet responsive.
+- Use the REAL Totalone product screenshots provided for this page.
+- Do NOT recreate fake versions of the interface.
+- Do NOT invent product functionality that is not visible or described below.
+- In particular, do not introduce supplier orders, warehouse functionality or other features that belong to other Totalone modules.
+- Avoid excessive cards and repetitive layouts.
+- The real product interface should be one of the main visual assets of the page.
+- Use subtle animations only where they improve comprehension.
+
+PAGE URL:
+/gestione-commesse-arredamento
+
+SEO TITLE:
+Gestione Commesse per Arredatori e Showroom | Totalone
+
+META DESCRIPTION:
+Gestisci commesse, preventivi, vendite, acconti e saldi con Totalone. Il software per il controllo delle commesse di negozi e showroom di arredamento.
+
+
+==================================================
+1. HERO
+==================================================
+
+Eyebrow:
+GESTIONE COMMESSE
+
+H1:
+Gestione commesse per arredatori, tutto sotto controllo.
+
+Subtitle:
+Segui ogni commessa dal primo preventivo alla chiusura. Totalone riunisce stato della trattativa, valori economici, acconti, saldo e responsabili in un’unica vista.
+
+Primary CTA:
+Prenota una demo →
+
+Secondary CTA:
+Scopri come funziona ↓
+
+Microcopy:
+Pensato per showroom, negozi di arredamento e realtà multi-store.
+
+VISUAL:
+Use the provided Totalone screenshot showing the complete showroom/commesse dashboard.
+
+Prefer the screenshot where the following are simultaneously visible:
+- Totale preventivi
+- Finalizzato
+- Venduto
+- Da finalizzare
+- Non confermato
+- Acconti ricevuti
+- Acconti da ricevere
+- Totale clienti
+- list of individual commesse
+
+Make this screenshot large and visually dominant.
+
+Do not place it inside a small generic card.
+The interface must remain readable.
+
+
+==================================================
+2. VALUE PROPOSITION
+==================================================
+
+Eyebrow:
+UNA VISIONE COMPLETA
+
+H2:
+Non perdere il controllo dopo il preventivo.
+
+Body:
+Una commessa di arredamento può durare settimane o mesi e attraversare diverse fasi economiche e commerciali.
+
+Totalone raccoglie le informazioni principali in un’unica vista, così puoi capire immediatamente cosa è ancora in trattativa, cosa è stato finalizzato, quanto hai venduto e quanto devi ancora incassare.
+
+Create three concise benefit blocks:
+
+1.
+
+Title:
+Sai a che punto è ogni commessa
+
+Text:
+Stato, cliente, commerciale e valori economici sono sempre visibili e aggiornati.
+
+2.
+
+Title:
+Controlli i numeri mentre lavori
+
+Text:
+Preventivato, finalizzato, venduto, acconti e saldo non vivono in file separati.
+
+3.
+
+Title:
+Tutto il team vede le stesse informazioni
+
+Text:
+Ogni commessa mantiene il proprio contesto e rimane accessibile alle persone coinvolte.
+
+
+==================================================
+3. TUTTE LE COMMESSE
+==================================================
+
+Eyebrow:
+PANORAMICA COMMESSE
+
+H2:
+Tutte le tue commesse. Una sola vista.
+
+Body:
+Visualizza le commesse dello showroom in un’unica schermata e individua immediatamente le informazioni che contano.
+
+Per ogni cliente puoi vedere responsabile, stato della trattativa, valore preventivato, venduto, acconti ricevuti e saldo.
+
+Feature labels:
+Cliente
+Responsabile
+Stato
+Preventivato
+Venduto
+Acconti
+Saldo
+
+VISUAL:
+Use the provided screenshot showing the long list of Totalone commesse.
+
+The screenshot should clearly show several rows and the economic columns.
+
+Keep the UI large enough to read actual labels and values.
+
+Caption:
+Dalla panoramica generale al dettaglio della singola commessa, senza cambiare strumento.
+
+
+==================================================
+4. CONTROLLO ECONOMICO
+==================================================
+
+Make this one of the strongest sections of the page.
+
+Eyebrow:
+CONTROLLO ECONOMICO
+
+H2:
+Dal preventivato al venduto, sai sempre dove sei.
+
+Body:
+Un grande volume di preventivi non significa necessariamente vendite.
+
+Totalone distingue le diverse fasi economiche delle tue commesse e ti permette di leggere immediatamente quanto hai preventivato, quanto è stato finalizzato, quanto è stato venduto e quale valore deve ancora essere confermato.
+
+Create a visual flow:
+
+PREVENTIVATO
+→
+FINALIZZATO
+→
+VENDUTO
+
+Also show:
+DA FINALIZZARE
+NON CONFERMATO
+
+Supporting text:
+Una lettura più chiara della pipeline economica permette di capire non solo quanto stai quotando, ma quanto valore si sta realmente trasformando in fatturato.
+
+VISUAL:
+Use the upper KPI area of the provided dashboard screenshot.
+
+Highlight the real Totalone KPI cards:
+- Totale preventivi
+- Finalizzato
+- Venduto
+- Da finalizzare
+- Non confermato
+
+Do not recreate these numbers as fake website cards if the actual product screenshot can communicate them better.
+
+
+==================================================
+5. INCASSI E CLIENTI
+==================================================
+
+Eyebrow:
+ACCONTI E SALDI
+
+H2:
+Non basta sapere quanto hai venduto. Devi sapere quanto hai incassato.
+
+Body:
+Totalone mantiene visibile la situazione economica delle commesse anche dopo la vendita.
+
+Controlla gli acconti già ricevuti, quelli ancora da ricevere e il saldo della singola commessa senza dover ricostruire i dati tra fogli Excel, email e documenti separati.
+
+Highlight three concepts:
+
+Acconti ricevuti
+Quanto è già stato incassato.
+
+Acconti da ricevere
+Quanto deve ancora essere riscosso.
+
+Saldo commessa
+La situazione economica del singolo cliente.
+
+VISUAL:
+Use the real screenshot containing the “Incassi & Clienti” KPI area.
+
+Where appropriate, combine it with a crop of the commesse list showing the “Acconti” and “Saldo” columns.
+
+
+==================================================
+6. DETTAGLIO COMMESSA
+==================================================
+
+Eyebrow:
+OGNI COMMESSA HA IL SUO CONTESTO
+
+H2:
+Apri una commessa e trovi quello che ti serve.
+
+Body:
+Passa dalla panoramica generale al dettaglio della singola commessa.
+
+Note, stato, preventivato, venduto, acconti, saldo e informazioni operative rimangono collegati allo stesso cliente, così il team non deve ogni volta ricostruire la storia della trattativa.
+
+Feature labels:
+Note
+Stato
+Preventivato
+Venduto
+Acconti
+Saldo
+Data montaggio
+
+VISUAL:
+Use the provided screenshot where the first commessa is expanded.
+
+Make sure the following elements remain visible:
+- note
+- stato “In Trattativa”
+- preventivato
+- venduto
+- acconti
+- saldo
+- data montaggio
+- “Crea preventivo”
+- “Apri dettaglio completo”
+
+Use this screenshot as the primary proof of how much information is available without leaving the page.
+
+
+==================================================
+7. DALLE COMMESSE AI PREVENTIVI
+==================================================
+
+Eyebrow:
+TUTTO COLLEGATO
+
+H2:
+Il preventivo fa parte della commessa, non di un processo separato.
+
+Body:
+Quando una trattativa richiede un’offerta, puoi passare direttamente dalla commessa alla creazione del preventivo.
+
+Le informazioni commerciali rimangono collegate, evitando passaggi inutili e rendendo più semplice seguire l’evoluzione della vendita.
+
+Highlight:
+Commessa → Preventivo → Vendita
+
+VISUAL:
+Use a detail/crop from the expanded commessa screenshot focusing on the “Crea preventivo” action.
+
+Add a contextual link:
+
+Scopri i Preventivi Totalone →
+
+
+==================================================
+8. FILTRI E ORGANIZZAZIONE
+==================================================
+
+Eyebrow:
+DALL’AZIENDA AL SINGOLO VENDITORE
+
+H2:
+Guarda il business dalla prospettiva che ti serve.
+
+Body:
+Passa dalla visione complessiva dell’azienda alla singola sede, al venditore o al gruppo di clienti che vuoi analizzare.
+
+Totalone ti permette di filtrare le commesse e concentrarti sui dati rilevanti per il momento.
+
+Show relevant concepts:
+Showroom
+Venditore
+Cliente
+Provenienza
+Data
+Stato
+
+VISUAL:
+Use the dashboard screenshot and focus on the upper navigation and filter area.
+
+Show the actual hierarchy visible in the product, such as:
+Retail → Showroom → Venditori → Tutti i Clienti
+
+Do not invent filter controls that are not present in the real UI.
+
+
+==================================================
+9. COMMERCIAL PIPELINE
+==================================================
+
+Eyebrow:
+DALLE TRATTATIVE AI NUMERI
+
+H2:
+Capisci cosa è già venduto e cosa può ancora diventarlo.
+
+Body:
+Totalone mette in relazione lo stato delle commesse con il loro valore economico.
+
+In questo modo puoi distinguere le opportunità ancora in trattativa dalle commesse finalizzate e avere una lettura immediata del valore commerciale ancora aperto.
+
+Create a clean visual storytelling element:
+
+IN TRATTATIVA
+→
+FINALIZZATO
+→
+VENDUTO
+
+Supporting line:
+Non solo quante commesse hai. Quanto valgono e a che punto sono.
+
+Do not create fake statistics.
+
+
+==================================================
+10. THE TOTALONE FLOW
+==================================================
+
+Create a visually distinctive workflow section.
+
+Eyebrow:
+UN UNICO FLUSSO
+
+H2:
+Dalla trattativa alla chiusura della commessa.
+
+Create an elegant horizontal flow:
+
+Trattativa
+→
+Preventivo
+→
+Finalizzazione
+→
+Vendita
+→
+Acconto
+→
+Saldo
+→
+Montaggio
+
+Body:
+Le informazioni accompagnano la commessa durante tutto il suo percorso. Il team mantiene continuità tra fase commerciale ed economica senza moltiplicare file, strumenti e passaggi manuali.
+
+Do NOT use a product screenshot in this section.
+
+Create a bespoke minimal diagram consistent with the Totalone website design system.
+
+On mobile, transform the horizontal workflow into a vertical flow.
+
+
+==================================================
+11. MULTI-SHOWROOM
+==================================================
+
+Eyebrow:
+PER CHI GESTISCE PIÙ SEDI
+
+H2:
+Una visione unica, anche quando gli showroom diventano più di uno.
+
+Body:
+Totalone permette di passare dalla visione complessiva alle singole sedi e ai singoli venditori.
+
+Così la direzione mantiene una lettura condivisa del business mentre ogni showroom continua a gestire le proprie commesse.
+
+Keep this section concise.
+
+Use a subtle crop or UI detail from the real dashboard showing showroom/vendor navigation.
+
+
+==================================================
+12. WHY TOTALONE
+==================================================
+
+Eyebrow:
+PERCHÉ TOTALONE
+
+H2:
+La commessa non è un numero. È il centro del lavoro.
+
+Body:
+Nel settore dell’arredamento, vendita, incassi e operatività fanno parte dello stesso processo.
+
+Totalone è progettato per mantenere queste informazioni collegate e dare al team una visione chiara di ciò che sta succedendo, dal preventivo fino al saldo.
+
+Create three pillars:
+
+VISIBILE
+Sai immediatamente a che punto è ogni commessa.
+
+ECONOMICO
+Preventivato, venduto, acconti e saldo restano sotto controllo.
+
+COLLEGATO
+CRM, trattative, preventivi e commesse continuano nello stesso sistema.
+
+
+==================================================
+13. FINAL CTA
+==================================================
+
+Create a strong premium CTA section using the existing Totalone blue visual identity.
+
+H2:
+Porta tutte le tue commesse sotto controllo.
+
+Body:
+Scopri come Totalone può aiutarti a seguire trattative, preventivi, vendite e incassi in un unico sistema costruito per il settore dell’arredamento.
+
+Primary CTA:
+Prenota una demo →
+
+Secondary CTA:
+Scopri tutte le funzionalità
+
+Microcopy:
+Una demo costruita sul modo in cui lavora il tuo showroom.
+
+
+==================================================
+DESIGN DIRECTION
+==================================================
+
+Maintain the same visual language already established for the Totalone homepage and CRM product page.
+
+This page must feel part of the SAME website.
+
+Do not create a new design system.
+
+Use:
+- generous whitespace
+- strong typographic hierarchy
+- large real product screenshots
+- alternating text / screenshot layouts
+- occasional full-width product UI
+- restrained use of cards
+- subtle blue Totalone accents
+- premium B2B SaaS presentation
+
+Avoid:
+- generic SaaS illustrations
+- stock photography
+- excessive gradients
+- excessive rounded cards
+- repeating the same two-column section mechanically
+- fake dashboards
+- invented metrics
+- invented functionality
+- unnecessary decorative graphics
+
+Use subtle scroll animations:
+- screenshot reveal
+- KPI section reveal
+- workflow progression
+- slight product UI movement where appropriate
+
+The screenshots are the proof of the product.
+Do not redraw them or alter their data.
+
+The final page should communicate three ideas immediately:
+
+1. I know exactly what is happening with every commessa.
+2. I can see the difference between preventivato, finalizzato, venduto and incassato.
+3. Totalone connects the commercial and economic lifecycle of a furniture project in one system.

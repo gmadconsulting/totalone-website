@@ -6,7 +6,7 @@ const productGroups = [
   {
     label: "VENDITE",
     links: [
-      ["CRM", "/crm-arredamento/"],
+      ["CRM", "/__mockup/preview/totalone-crm/CrmProductPage"],
       ["Gestione trattative", "/gestione-trattative-arredamento/"],
       ["Preventivi", "/software-preventivi-arredamento/"],
     ],
@@ -15,7 +15,7 @@ const productGroups = [
     label: "OPERATIVITÀ",
     links: [
       ["Gestione progetti", "/gestione-progetti-arredamento/"],
-      ["Gestione commesse", "/gestione-commesse-arredamento/"],
+      ["Gestione commesse", "/__mockup/preview/totalone-commesse/CommesseProductPage"],
       ["Magazzino e logistica", "/gestione-magazzino-arredamento/"],
       ["Montaggi", "/gestione-montaggi-arredamento/"],
       ["Assistenza e post-vendita", "/post-vendita-arredamento/"],
