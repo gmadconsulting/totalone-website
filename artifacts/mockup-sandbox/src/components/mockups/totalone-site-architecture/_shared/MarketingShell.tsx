@@ -14,7 +14,7 @@ const productGroups = [
   {
     label: "OPERATIVITÀ",
     links: [
-      ["Gestione progetti", "/gestione-progetti-arredamento/"],
+      ["Gestione progetti", "/__mockup/preview/totalone-progetti/ProgettiProductPage"],
       ["Gestione commesse", "/__mockup/preview/totalone-commesse/CommesseProductPage"],
       ["Magazzino e logistica", "/gestione-magazzino-arredamento/"],
       ["Montaggi", "/gestione-montaggi-arredamento/"],
