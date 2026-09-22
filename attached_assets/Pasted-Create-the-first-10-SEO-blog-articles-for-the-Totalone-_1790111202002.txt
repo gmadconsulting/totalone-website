@@ -1,0 +1,1135 @@
+Create the first 10 SEO blog articles for the Totalone marketing website.
+
+IMPORTANT:
+- Work ONLY on the public Totalone marketing website.
+- Do NOT modify the Totalone application/dashboard.
+- Keep the existing Totalone website design system, navbar, typography, colors, spacing, buttons, border radius and visual language.
+- All content must be in Italian.
+- Do NOT generate images.
+- Do NOT generate fake Totalone screenshots.
+- I will add screenshots and visual assets manually later.
+- The articles must be genuinely useful editorial content, NOT disguised product landing pages.
+- Optimize for SEO naturally. Do not keyword-stuff.
+- Keep Totalone positioned as software specifically built for furniture retailers, showrooms and arredatori.
+- Do not invent Totalone functionality.
+- Where Totalone functionality is mentioned, only use features already present on the website.
+- Make every article responsive.
+- Create reusable BlogArticle components so all future articles can use the same editorial design system.
+
+==================================================
+BLOG ARTICLE DESIGN SYSTEM
+==================================================
+
+Create a consistent editorial template for all articles.
+
+Desktop structure:
+
+Breadcrumb
+↓
+Category
+↓
+H1
+↓
+Short introduction
+↓
+Article metadata / reading time
+↓
+Main content
+↓
+Contextual CTA
+↓
+Related articles
+↓
+Final Totalone CTA
+
+Use a maximum readable content width around 760–850px for long-form text.
+
+Use generous whitespace and strong typography.
+
+H1 should be large but smaller than product-page hero headlines.
+
+H2 sections must have generous vertical separation.
+
+Allow:
+- bullet lists
+- numbered lists
+- simple comparison tables
+- highlighted definitions
+- quotes/callouts
+- simple diagrams made with HTML/CSS
+- contextual Totalone CTA blocks
+
+Do NOT fill articles with cards.
+
+Add a desktop sticky table of contents where appropriate.
+
+On mobile, collapse the table of contents.
+
+Every article must contain internal links to:
+1. its related pillar guide;
+2. its related Totalone product page;
+3. relevant related articles.
+
+Add Article structured data / JSON-LD where technically appropriate.
+
+==================================================
+ARTICLE 01
+==================================================
+
+CATEGORY:
+Gestione showroom
+
+URL:
+/blog/gestione-showroom/software-gestionale-negozio-arredamento
+
+PRIMARY KEYWORD:
+software gestionale negozio arredamento
+
+SEO TITLE:
+Software gestionale per negozio di arredamento: guida | Totalone
+
+H1:
+Software gestionale per negozi di arredamento: cosa deve fare davvero
+
+INTRO:
+
+Gestire un negozio di arredamento significa coordinare molto più di clienti e vendite.
+
+Un cliente può entrare in showroom, richiedere un progetto, ricevere più versioni di un preventivo, confermare una parte della proposta e arrivare alla consegna e al montaggio settimane o mesi dopo il primo incontro.
+
+Quando queste informazioni vengono distribuite tra Excel, email, calendari, cartelle e strumenti diversi, seguire il lavoro diventa progressivamente più difficile.
+
+Un software gestionale per negozi di arredamento dovrebbe servire prima di tutto a questo: collegare le diverse fasi del lavoro in un unico processo.
+
+SECTIONS:
+
+H2:
+Perché un negozio di arredamento ha esigenze diverse da un normale punto vendita
+
+Explain that furniture sales are often long, consultative and project-based.
+
+Discuss:
+- long sales cycles
+- multiple interactions with the client
+- quotations and revisions
+- products and specifications
+- deliveries
+- installation
+- post-sale
+
+H2:
+1. Gestire clienti e ingressi showroom
+
+Explain why the process begins before the quotation.
+
+Talk about:
+- contacts
+- showroom visits
+- salesperson
+- appointments
+- source
+- notes
+- history
+
+Contextual link:
+Scopri il CRM per arredatori →
+
+H2:
+2. Seguire le trattative commerciali
+
+Explain why knowing which opportunities are open, progressing or stalled matters.
+
+Discuss pipeline visibility and follow-up.
+
+Contextual link:
+Scopri Gestione trattative →
+
+H2:
+3. Creare preventivi adatti all'arredamento
+
+Explain why furniture quotations can contain kitchens, furniture, systems, appliances, finishes, dimensions, images, quantities, discounts, VAT, extras and services.
+
+Contextual link:
+Scopri Preventivi Totalone →
+
+H2:
+4. Trasformare la vendita in una commessa
+
+Explain the transition from commercial opportunity to operational/economic management.
+
+Discuss:
+- customer
+- salesperson
+- quotation value
+- sold value
+- deposits
+- balance
+- status
+
+Contextual link:
+Scopri Gestione commesse →
+
+H2:
+5. Coordinare progetti e attività
+
+Explain that a project can involve many activities and people.
+
+Mention tasks, responsibilities, deadlines and shared visibility.
+
+Contextual link:
+Scopri Gestione progetti →
+
+H2:
+6. Sapere cosa sta arrivando
+
+Explain the importance of keeping product status and expected arrivals visible.
+
+Contextual link:
+Scopri Magazzino e logistica →
+
+H2:
+7. Pianificare il montaggio
+
+Explain calendar-based installation planning and coordination.
+
+Contextual link:
+Scopri Montaggi →
+
+H2:
+8. Continuare a seguire il cliente dopo la consegna
+
+Explain assistance/post-sale continuity.
+
+Contextual link:
+Scopri Assistenza e post-vendita →
+
+H2:
+Un unico sistema o tanti strumenti separati?
+
+Explain the difference between simply digitizing individual activities and connecting the whole workflow.
+
+Create simple flow:
+
+CLIENTE
+→ TRATTATIVA
+→ PREVENTIVO
+→ COMMESSA
+→ ARRIVI
+→ MONTAGGIO
+→ POST-VENDITA
+
+H2:
+Come scegliere un gestionale per il proprio showroom
+
+Provide a practical checklist.
+
+Include:
+- verticality for furniture
+- ease of use
+- shared information
+- multi-user
+- multi-showroom where needed
+- visibility across processes
+- scalability
+
+FINAL CTA:
+
+Eyebrow:
+TOTALONE
+
+H2:
+Un unico modo di lavorare, costruito per l'arredamento.
+
+Text:
+Totalone riunisce clienti, trattative, preventivi, commesse e operatività in un sistema progettato intorno al lavoro reale di showroom e negozi di arredamento.
+
+CTA:
+Scopri Totalone →
+
+Secondary:
+Prenota una demo →
+
+
+==================================================
+ARTICLE 02
+==================================================
+
+CATEGORY:
+Gestione showroom
+
+URL:
+/blog/gestione-showroom/gestionale-per-arredatori
+
+PRIMARY KEYWORD:
+gestionale per arredatori
+
+SEO TITLE:
+Gestionale per arredatori: come scegliere quello giusto | Totalone
+
+H1:
+Gestionale per arredatori: come scegliere quello giusto per il tuo showroom
+
+INTRO:
+
+Non tutti i software gestionali rispondono agli stessi problemi.
+
+Per un negozio di arredamento, il punto non è semplicemente digitalizzare documenti o anagrafiche. Il vero obiettivo è mantenere collegato un processo che può iniziare con un ingresso in showroom e terminare mesi dopo con montaggio e assistenza.
+
+Prima di scegliere un gestionale è quindi utile capire quali processi deve realmente supportare.
+
+SECTIONS:
+
+H2:
+Prima domanda: quali processi vuoi gestire?
+
+H2:
+Gestionale generico o software verticale per arredamento?
+
+Explain differences without attacking generic software.
+
+H2:
+CRM e gestione clienti
+
+H2:
+Trattative e follow-up
+
+H2:
+Preventivi
+
+H2:
+Commesse
+
+H2:
+Progetti e attività
+
+H2:
+Magazzino e arrivi
+
+H2:
+Montaggi e post-vendita
+
+H2:
+E se hai più showroom?
+
+Discuss visibility across stores, salespeople and teams.
+
+H2:
+La facilità di utilizzo conta quanto le funzionalità
+
+Discuss adoption.
+
+H2:
+Checklist: 10 domande da fare prima di scegliere
+
+Create a useful numbered checklist.
+
+Include questions such as:
+- È pensato per il settore arredamento?
+- Collega CRM e preventivi?
+- Posso seguire la commessa?
+- Posso vedere cosa deve arrivare?
+- Posso coordinare i montaggi?
+- Posso gestire più showroom?
+- Il team lavora sulle stesse informazioni?
+- È semplice da utilizzare?
+- Riduce i passaggi tra strumenti?
+- Può crescere con l'azienda?
+
+FINAL CTA:
+
+H2:
+Scopri un gestionale costruito intorno al lavoro di uno showroom.
+
+CTA:
+Perché Totalone →
+
+Secondary:
+Prenota una demo →
+
+
+==================================================
+ARTICLE 03
+==================================================
+
+CATEGORY:
+Preventivi
+
+URL:
+/blog/preventivi/software-preventivi-arredamento
+
+PRIMARY KEYWORD:
+software preventivi arredamento
+
+SEO TITLE:
+Software preventivi arredamento: cosa deve gestire | Totalone
+
+H1:
+Software per preventivi di arredamento: cosa serve davvero a uno showroom
+
+INTRO:
+
+Un preventivo di arredamento raramente è una semplice lista di prodotti e prezzi.
+
+Una proposta può includere cucine, sistemi, mobili, elettrodomestici, finiture, misure, immagini, alternative e servizi.
+
+Per questo un preventivatore destinato al settore arredamento deve essere in grado di organizzare informazioni molto diverse mantenendo l'offerta comprensibile sia per il venditore sia per il cliente.
+
+SECTIONS:
+
+H2:
+Perché un preventivo di arredamento è complesso
+
+H2:
+Organizzare prodotti e ambienti
+
+H2:
+Gestire cucine e composizioni
+
+Mention:
+composizioni, aree, marmo, appliances, extras/options.
+
+H2:
+Descrivere correttamente ogni prodotto
+
+Mention:
+brand, model, area, dimensions, finishes, notes, images, quantity.
+
+H2:
+Prezzi, quantità, sconti e IVA
+
+IMPORTANT:
+Do NOT mention markup, hidden costs, internal margin or profitability.
+
+H2:
+Immagini e presentazione della proposta
+
+H2:
+Gestire più versioni dello stesso preventivo
+
+H2:
+Dal preventivo al PDF
+
+Explain why presentation and document consistency matter.
+
+H2:
+Collegare preventivo, trattativa e commessa
+
+Create flow:
+
+TRATTATIVA
+→ PREVENTIVO
+→ REVISIONE
+→ CONFERMA
+→ COMMESSA
+
+H2:
+Cosa valutare in un software per preventivi di arredamento
+
+FINAL CTA:
+
+H2:
+Crea preventivi pensati per il modo in cui vendi arredamento.
+
+CTA:
+Scopri i Preventivi Totalone →
+
+Secondary:
+Prenota una demo →
+
+
+==================================================
+ARTICLE 04
+==================================================
+
+CATEGORY:
+Commesse e progetti
+
+URL:
+/blog/commesse-progetti/gestione-commesse-arredamento
+
+PRIMARY KEYWORD:
+gestione commesse arredamento
+
+SEO TITLE:
+Gestione commesse arredamento: guida completa | Totalone
+
+H1:
+Come gestire una commessa di arredamento dal preventivo al montaggio
+
+INTRO:
+
+Una commessa di arredamento non termina quando il cliente accetta il preventivo.
+
+Da quel momento iniziano una serie di attività commerciali, economiche e operative che devono rimanere coordinate fino alla conclusione del progetto.
+
+SECTIONS:
+
+H2:
+Quando nasce una commessa
+
+H2:
+Dal preventivo alla vendita
+
+H2:
+Tenere sotto controllo lo stato della commessa
+
+H2:
+Preventivato, finalizzato e venduto: perché distinguerli
+
+H2:
+Acconti e saldo
+
+H2:
+Prodotti e documentazione
+
+H2:
+Coordinare attività e responsabilità
+
+H2:
+Arrivi e logistica
+
+H2:
+Pianificare il montaggio
+
+H2:
+Chiudere la commessa senza perdere il post-vendita
+
+H2:
+La gestione della commessa come processo condiviso
+
+Create flow:
+
+TRATTATIVA
+→ PREVENTIVO
+→ VENDITA
+→ COMMESSA
+→ ARRIVI
+→ MONTAGGIO
+→ POST-VENDITA
+
+FINAL CTA:
+
+H2:
+Segui ogni commessa in un unico sistema.
+
+CTA:
+Scopri Gestione commesse →
+
+Secondary:
+Prenota una demo →
+
+
+==================================================
+ARTICLE 05
+==================================================
+
+CATEGORY:
+Vendite e CRM
+
+URL:
+/blog/vendite-crm/crm-negozio-arredamento
+
+PRIMARY KEYWORD:
+CRM negozio arredamento
+
+SEO TITLE:
+CRM per negozi di arredamento: guida per showroom | Totalone
+
+H1:
+CRM per negozi di arredamento: come gestire clienti, ingressi e trattative
+
+INTRO:
+
+In uno showroom, la relazione commerciale spesso inizia molto prima del preventivo.
+
+Un cliente entra, osserva, parla con un venditore, lascia un contatto, torna per un appuntamento e solo successivamente può trasformarsi in una vera trattativa.
+
+Un CRM pensato per l'arredamento deve riuscire a mantenere continuità lungo questo percorso.
+
+SECTIONS:
+
+H2:
+Cos'è un CRM per arredamento
+
+H2:
+Dal visitatore al contatto
+
+H2:
+Registrare gli ingressi showroom
+
+H2:
+Costruire uno storico del cliente
+
+H2:
+Assegnare clienti e opportunità ai venditori
+
+H2:
+Gestire appuntamenti e calendario
+
+H2:
+Seguire le trattative
+
+H2:
+Dal CRM al preventivo
+
+H2:
+Segmentare i contatti
+
+Mention Smart Lists where appropriate.
+
+H2:
+CRM generico o CRM verticale?
+
+FINAL CTA:
+
+H2:
+Un CRM costruito intorno allo showroom.
+
+CTA:
+Scopri il CRM Totalone →
+
+Secondary:
+Prenota una demo →
+
+
+==================================================
+ARTICLE 06
+==================================================
+
+CATEGORY:
+Vendite e CRM
+
+URL:
+/blog/vendite-crm/gestire-ingressi-showroom
+
+PRIMARY KEYWORD:
+gestire ingressi showroom
+
+SEO TITLE:
+Come gestire gli ingressi in showroom | Totalone
+
+H1:
+Come registrare e gestire gli ingressi in uno showroom di arredamento
+
+INTRO:
+
+Quante persone entrano realmente nel tuo showroom?
+
+Chi le segue? Da dove arrivano? Quante diventano contatti, trattative o clienti?
+
+Registrare gli ingressi permette di trasformare una parte spesso invisibile dell'attività commerciale in informazioni utili per capire meglio il proprio showroom.
+
+SECTIONS:
+
+H2:
+Perché registrare gli ingressi
+
+H2:
+Quali informazioni raccogliere
+
+Include:
+data/time
+salesperson
+showroom
+country/nationality where relevant
+notes
+contact association
+
+H2:
+Collegare una visita al contatto CRM
+
+H2:
+Attribuire correttamente il venditore
+
+H2:
+Analizzare gli ingressi per showroom
+
+H2:
+Confrontare sedi e periodi
+
+H2:
+Dal numero di ingressi alla qualità commerciale
+
+H2:
+Ingresso → contatto → trattativa → cliente
+
+Create a minimal visual flow.
+
+H2:
+Gli errori da evitare
+
+FINAL CTA:
+
+H2:
+Trasforma gli ingressi in informazioni utili.
+
+CTA:
+Scopri Ingressi Showroom →
+
+Secondary:
+Scopri il CRM Totalone →
+
+
+==================================================
+ARTICLE 07
+==================================================
+
+CATEGORY:
+Logistica e magazzino
+
+URL:
+/blog/logistica-magazzino/gestione-magazzino-arredamento
+
+PRIMARY KEYWORD:
+gestione magazzino arredamento
+
+SEO TITLE:
+Gestione magazzino arredamento: guida per showroom | Totalone
+
+H1:
+Come gestire il magazzino di un negozio di arredamento
+
+INTRO:
+
+Nel settore dell'arredamento il magazzino non riguarda soltanto quantità disponibili.
+
+Ogni prodotto può essere collegato a un cliente, avere uno stato diverso, essere ancora da ordinare, confermato, in arrivo o già disponibile per le fasi successive.
+
+Avere una visione chiara della merce significa riuscire a coordinare meglio tutto ciò che viene dopo la vendita.
+
+SECTIONS:
+
+H2:
+Perché il magazzino di un negozio di arredamento è particolare
+
+H2:
+Collegare prodotti e clienti
+
+H2:
+Conoscere lo stato di ogni prodotto
+
+Only mention states actually supported/visible:
+Da ordinare
+Confermato
+Ordinato
+Arrivato
+In magazzino
+Programmato
+In corso
+Assistenza
+where contextually appropriate.
+
+H2:
+Gestire i colli
+
+H2:
+Sapere dove si trova la merce
+
+H2:
+Arrivi previsti
+
+Explain calendar visibility.
+
+H2:
+Dagli arrivi al montaggio
+
+H2:
+Perché logistica e commessa devono comunicare
+
+FINAL CTA:
+
+H2:
+Più visibilità sulla merce, meno informazioni da ricostruire.
+
+CTA:
+Scopri Magazzino e logistica →
+
+Secondary:
+Prenota una demo →
+
+
+==================================================
+ARTICLE 08
+==================================================
+
+CATEGORY:
+Montaggi e post-vendita
+
+URL:
+/blog/montaggi-post-vendita/gestione-montaggi-arredamento
+
+PRIMARY KEYWORD:
+gestione montaggi arredamento
+
+SEO TITLE:
+Gestione montaggi arredamento: come organizzarli | Totalone
+
+H1:
+Come organizzare i montaggi in un negozio di arredamento
+
+INTRO:
+
+Il montaggio è uno dei momenti più delicati di una commessa.
+
+La vendita può essere perfetta, ma se date, prodotti, informazioni e attività non sono coordinate correttamente, l'esperienza finale del cliente può risentirne.
+
+Per questo il montaggio dovrebbe essere parte dello stesso flusso che ha accompagnato la commessa fino a quel momento.
+
+SECTIONS:
+
+H2:
+Quando iniziare a pianificare un montaggio
+
+H2:
+Verificare che la merce sia pronta
+
+H2:
+Organizzare il calendario dei montaggi
+
+H2:
+Collegare cliente e montaggio
+
+H2:
+Coordinare le attività
+
+H2:
+Il rapportino di montaggio
+
+Explain:
+completion notes
+author
+date
+photos where applicable
+documentation
+
+H2:
+Dal montaggio all'assistenza
+
+H2:
+Perché il montaggio non dovrebbe vivere in un calendario separato
+
+FINAL CTA:
+
+H2:
+Porta i montaggi nello stesso flusso della commessa.
+
+CTA:
+Scopri Gestione montaggi →
+
+Secondary:
+Prenota una demo →
+
+
+==================================================
+ARTICLE 09
+==================================================
+
+CATEGORY:
+Montaggi e post-vendita
+
+URL:
+/blog/montaggi-post-vendita/gestione-post-vendita-arredamento
+
+PRIMARY KEYWORD:
+gestione post vendita arredamento
+
+SEO TITLE:
+Gestione post-vendita arredamento: guida | Totalone
+
+H1:
+Come gestire assistenza e post-vendita nel settore arredamento
+
+INTRO:
+
+La relazione con il cliente non termina quando il montaggio è concluso.
+
+Un prodotto può richiedere una verifica, un intervento o una sostituzione e, quando accade, è fondamentale sapere immediatamente a quale cliente e commessa appartiene.
+
+SECTIONS:
+
+H2:
+Perché il post-vendita fa parte della commessa
+
+H2:
+Registrare una nuova assistenza
+
+H2:
+Collegare cliente e prodotti
+
+H2:
+Conoscere lo stato delle assistenze
+
+H2:
+Gestire documenti e informazioni
+
+H2:
+Controllare gli arrivi previsti
+
+H2:
+Dalla richiesta alla risoluzione
+
+Create simple flow:
+
+CLIENTE
+→ ASSISTENZA
+→ PRODOTTO
+→ INTERVENTO
+→ CHIUSURA
+
+H2:
+Conservare lo storico
+
+H2:
+Montaggio e assistenza: un unico percorso
+
+FINAL CTA:
+
+H2:
+Continua a seguire il cliente anche dopo il montaggio.
+
+CTA:
+Scopri Assistenza e post-vendita →
+
+Secondary:
+Prenota una demo →
+
+
+==================================================
+ARTICLE 10
+==================================================
+
+CATEGORY:
+Gestione showroom
+
+URL:
+/blog/gestione-showroom/excel-vs-gestionale-arredamento
+
+PRIMARY KEYWORD:
+Excel gestionale arredamento
+
+SEO TITLE:
+Excel o gestionale per un negozio di arredamento? | Totalone
+
+H1:
+Excel o gestionale? Quando un negozio di arredamento deve cambiare metodo
+
+INTRO:
+
+Excel può essere uno strumento estremamente utile.
+
+Per un piccolo team, un foglio ben costruito può funzionare per molto tempo.
+
+Il problema nasce quando il numero di clienti, preventivi, commesse, prodotti e attività aumenta e le informazioni iniziano a dipendere le une dalle altre.
+
+A quel punto il limite non è necessariamente Excel: è il numero di processi che stiamo cercando di coordinare manualmente.
+
+SECTIONS:
+
+H2:
+Quando Excel funziona ancora bene
+
+Be balanced and credible.
+
+Explain scenarios where Excel may genuinely be sufficient.
+
+H2:
+Quando iniziano i problemi
+
+H2:
+Segnale 1: gli stessi dati vengono inseriti più volte
+
+H2:
+Segnale 2: nessuno sa qual è l'ultima versione
+
+H2:
+Segnale 3: per capire una commessa devi chiedere a qualcuno
+
+H2:
+Segnale 4: clienti e follow-up dipendono dalla memoria
+
+H2:
+Segnale 5: magazzino e vendite non condividono le stesse informazioni
+
+H2:
+Segnale 6: coordinare più showroom diventa difficile
+
+H2:
+Da fogli separati a un flusso condiviso
+
+Create comparison table:
+
+EXCEL / STRUMENTI SEPARATI
+vs
+SISTEMA CONDIVISO
+
+Compare:
+Cliente
+Trattativa
+Preventivo
+Commessa
+Arrivi
+Montaggio
+Post-vendita
+
+Do NOT claim that Totalone automatically eliminates errors or guarantees savings.
+
+H2:
+Quando è il momento di valutare un gestionale
+
+Provide practical criteria rather than a sales pitch.
+
+FINAL CTA:
+
+H2:
+Quando il lavoro cresce, anche il metodo può evolvere.
+
+Text:
+Totalone nasce per collegare il lavoro di showroom e negozi di arredamento in un unico sistema.
+
+CTA:
+Scopri perché Totalone →
+
+Secondary:
+Prenota una demo →
+
+
+==================================================
+INTERNAL LINKING
+==================================================
+
+Create contextual internal links between the articles.
+
+Article 1 should act as a central commercial SEO hub.
+
+Link:
+
+Article 1
+→ CRM article
+→ Preventivi article
+→ Commesse article
+→ Magazzino article
+→ Montaggi article
+→ Post-vendita article
+
+Article 4:
+Gestione commesse
+→ Preventivi
+→ Magazzino
+→ Montaggi
+→ Post-vendita
+
+Article 5:
+CRM
+→ Ingressi showroom
+→ Gestione trattative
+→ Preventivi
+
+Article 7:
+Magazzino
+→ Commesse
+→ Montaggi
+
+Article 8:
+Montaggi
+→ Magazzino
+→ Post-vendita
+
+Article 10:
+Excel vs gestionale
+→ Article 1
+→ Perché Totalone
+
+Also link each article upward to its relevant pillar guide.
+
+Do not create circular links mechanically.
+Only insert them where semantically relevant.
+
+
+==================================================
+RELATED ARTICLES
+==================================================
+
+At the bottom of every article create a section:
+
+"Continua a leggere"
+
+Show maximum 3 related articles.
+
+Use title, category and short one-line description.
+
+Do NOT use generated images.
+Keep these article previews typography-led.
+
+
+==================================================
+BLOG INDEX UPDATE
+==================================================
+
+Update the existing Blog index so these 10 articles appear in their correct categories.
+
+Categories:
+
+Gestione showroom
+Vendite e CRM
+Preventivi
+Commesse e progetti
+Logistica e magazzino
+Montaggi e post-vendita
+
+Add filtering by category if the current blog architecture supports it.
+
+Do not create unnecessary categories.
+
+
+==================================================
+SEO TECHNICAL REQUIREMENTS
+==================================================
+
+For every article:
+
+- unique <title>
+- unique meta description
+- canonical URL
+- one H1 only
+- logical H2/H3 hierarchy
+- Article schema
+- breadcrumb schema where appropriate
+- semantic HTML
+- descriptive internal anchor text
+- clean URL
+- responsive typography
+- accessible links/buttons
+- strong Core Web Vitals
+- no unnecessary JS
+- no fake publication dates
+- no fake authors
+- no fake statistics
+- no fake customer data
+- no invented Totalone capabilities
+
+Write a unique meta description for every article based on its actual content.
+
+Do NOT repeat identical CTA copy excessively throughout an article.
+
+Product CTAs should appear contextually, not after every section.
+
+
+==================================================
+IMPORTANT CONTENT RULE
+==================================================
+
+The blog must feel like a useful knowledge base written by people who understand how furniture showrooms actually work.
+
+Do not turn every paragraph into a Totalone advertisement.
+
+Use this principle:
+
+80% useful sector knowledge
+20% contextual connection to Totalone.
+
+A reader should get useful information even if they are not ready to buy software.
+
+At the same time, a reader who recognizes their problem should always have a natural path toward the relevant Totalone feature.
+
+Do NOT create any images.
+Leave visual areas empty or use typography / CSS diagrams only where useful.
