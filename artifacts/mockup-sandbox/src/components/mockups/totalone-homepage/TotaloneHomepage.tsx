@@ -7,6 +7,7 @@ import {
   ChevronRight,
   ClipboardList,
   FileText,
+  Handshake,
   Headphones,
   Menu,
   PackageCheck,
@@ -26,7 +27,7 @@ const navItems = [
   { label: "Prezzi", href: "/__mockup/preview/totalone-prezzi/TotalonePrezzi" },
 ];
 const productGroups = [
-  { label: "VENDITE", links: [["CRM", "/__mockup/preview/totalone-crm/CrmProductPage"], ["Gestione trattative", "/gestione-trattative-arredamento/"], ["Preventivi", "/__mockup/preview/totalone-preventivi/PreventiviProductPage"]] },
+  { label: "VENDITE", links: [["CRM", "/__mockup/preview/totalone-crm/CrmProductPage"], ["Gestione trattative", "#aree"], ["Preventivi", "/__mockup/preview/totalone-preventivi/PreventiviProductPage"]] },
   { label: "OPERATIVITÀ", links: [["Gestione progetti", "/gestione-progetti-arredamento/"], ["Gestione commesse", "/__mockup/preview/totalone-commesse/CommesseProductPage"], ["Magazzino e logistica", "/gestione-magazzino-arredamento/"], ["Montaggi", "/gestione-montaggi-arredamento/"], ["Assistenza e post-vendita", "/post-vendita-arredamento/"]] },
   { label: "CONTROLLO", links: [["Controllo e performance", "/controllo-gestione-arredamento/"]] },
 ];
@@ -46,6 +47,13 @@ const areas: Area[] = [
     title: "Tutto quello che sai sul cliente, finalmente condiviso.",
     body: "Il team entra nella relazione con il contesto giusto. Senza chiedere, cercare o ricominciare da capo.",
     icon: UsersRound,
+  },
+  {
+    id: "trattative",
+    label: "Gestione trattative",
+    title: "Ogni trattativa ha un prossimo passo chiaro.",
+    body: "Segui opportunità, attività e decisioni senza perdere il filo: il team sa cosa è successo, cosa manca e chi deve muoversi.",
+    icon: Handshake,
   },
   {
     id: "preventivi",
@@ -252,13 +260,13 @@ export function TotaloneHomepage() {
           </div>
           {productMenuOpen && <div className="absolute left-5 right-5 top-[72px] hidden rounded-[16px] border border-[#2a67ba] bg-[#fafdff] p-6 text-[#102744] shadow-[0_22px_60px_rgba(4,35,82,.24)] md:grid md:grid-cols-[.9fr_1.8fr] md:gap-7 lg:left-10 lg:right-10">
             <div className="border-r border-[#cfe1f4] pr-6"><span className="rounded-full bg-[#dcecff] px-3 py-1.5 text-[10px] font-bold tracking-[.1em] text-[#0b55c6]">IL PRODOTTO</span><h2 className="mt-4 text-3xl font-bold leading-[.98] tracking-[-.06em]">Un modo condiviso di lavorare.</h2><p className="mt-3 text-xs leading-5 text-[#557090]">Dal primo contatto al controllo del business, ogni passaggio resta collegato.</p></div>
-            <div className="grid grid-cols-3 gap-4">{productGroups.map((group) => <div key={group.label} className="border-l border-[#cfe1f4] pl-4"><h3 className="text-[10px] font-bold tracking-[.12em] text-[#0b55c6]">{group.label}</h3>{group.links.map(([label, href]) => <a key={href} href={href} onClick={() => setProductMenuOpen(false)} className="flex items-center justify-between gap-1 py-2 text-[11px] font-bold text-[#245b96] hover:text-[#f36b4d]">{label}<ChevronRight className="h-3 w-3" /></a>)}</div>)}</div>
+             <div className="grid grid-cols-3 gap-4">{productGroups.map((group) => <div key={group.label} className="border-l border-[#cfe1f4] pl-4"><h3 className="text-[10px] font-bold tracking-[.12em] text-[#0b55c6]">{group.label}</h3>{group.links.map(([label, href]) => <a key={href} href={href} onClick={(event) => { setProductMenuOpen(false); if (label === "Gestione trattative") { handleNavClick(event, href); setActiveArea("trattative"); } }} className="flex items-center justify-between gap-1 py-2 text-[11px] font-bold text-[#245b96] hover:text-[#f36b4d]">{label}<ChevronRight className="h-3 w-3" /></a>)}</div>)}</div>
           </div>}
         </div>
         {menuOpen && (
           <div className="border-t border-[#2a67ba] bg-[#0b3473] px-5 py-4 md:hidden">
              <button onClick={() => setProductMenuOpen((open) => !open)} className="flex w-full items-center justify-between border-b border-[#3d78c4] py-3 text-left text-sm font-semibold text-[#e7f2ff] hover:text-white">Prodotto <ChevronDown className="h-4 w-4" /></button>
-             {productMenuOpen && <div className="border-b border-[#3d78c4] pb-2">{productGroups.map((group) => <div key={group.label} className="pt-3"><div className="text-[10px] font-bold tracking-[.12em] text-[#9fe0ff]">{group.label}</div>{group.links.map(([label, href]) => <a onClick={() => { setMenuOpen(false); setProductMenuOpen(false); }} key={href} href={href} className="block py-2 pl-2 text-xs font-semibold text-[#e7f2ff]">{label}</a>)}</div>)}</div>}
+              {productMenuOpen && <div className="border-b border-[#3d78c4] pb-2">{productGroups.map((group) => <div key={group.label} className="pt-3"><div className="text-[10px] font-bold tracking-[.12em] text-[#9fe0ff]">{group.label}</div>{group.links.map(([label, href]) => <a onClick={(event) => { setMenuOpen(false); setProductMenuOpen(false); if (label === "Gestione trattative") { handleNavClick(event, href); setActiveArea("trattative"); } }} key={href} href={href} className="block py-2 pl-2 text-xs font-semibold text-[#e7f2ff]">{label}</a>)}</div>)}</div>}
               {navItems.map((item) => <a onClick={(event) => { handleNavClick(event, item.href); setMenuOpen(false); }} key={item.href} href={item.href} className="block border-b border-[#3d78c4] py-3 text-sm font-semibold text-[#e7f2ff] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">{item.label}</a>)}
              <a onClick={() => setMenuOpen(false)} href="/login/" className="block border-b border-[#3d78c4] py-3 text-sm font-semibold text-[#e7f2ff] hover:text-white">Login</a>
             <button onClick={() => { setDemoOpen(true); setMenuOpen(false); }} className="mt-4 w-full rounded-[8px] bg-[#f36b4d] px-4 py-3 text-left text-sm font-bold text-white hover:bg-[#ff8668] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Prenota una demo <ArrowRight className="ml-2 inline h-4 w-4" /></button>
