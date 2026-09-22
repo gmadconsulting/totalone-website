@@ -1,0 +1,448 @@
+Create the complete “CRM per arredatori” product page for the Totalone marketing website.
+
+IMPORTANT:
+- Work ONLY on the marketing website.
+- Do NOT modify the Totalone application/dashboard.
+- Keep the existing Totalone website design system, navbar, typography, colors, spacing, buttons, border radius and overall visual language.
+- The page must feel like a premium modern B2B SaaS website.
+- Take visual inspiration from high-end SaaS product pages such as Linear, Stripe and Attio, while preserving Totalone’s existing brand identity.
+- Do not redesign the global navigation.
+- Mobile and tablet responsive.
+- All copy must be in Italian.
+- Do not invent product functionality that is not described below.
+- Use real Totalone product screenshots in the relevant sections. Create clearly labelled screenshot placeholders where the final screenshots need to be inserted.
+- Avoid excessive cards. Alternate layouts, large product screenshots, text sections and visual storytelling.
+- Use subtle scroll animations and product UI reveals where appropriate.
+- SEO target: “CRM per arredatori”.
+
+PAGE URL:
+ /crm-per-arredatori
+
+SEO TITLE:
+CRM per Arredatori e Negozi di Arredamento | Totalone
+
+META DESCRIPTION:
+Gestisci clienti, ingressi showroom, lead, appuntamenti e trattative con Totalone, il CRM pensato per negozi e showroom di arredamento.
+
+
+==================================================
+1. HERO
+==================================================
+
+Eyebrow:
+CRM PER ARREDATORI
+
+H1:
+Il CRM costruito per chi vende arredamento.
+
+Subtitle:
+Dal primo ingresso in showroom alla trattativa commerciale, Totalone raccoglie clienti, visite, conversazioni e attività in un unico posto. Così il tuo team sa sempre chi seguire, cosa è successo e qual è il prossimo passo.
+
+Primary CTA:
+Prenota una demo →
+
+Secondary CTA:
+Scopri le funzionalità ↓
+
+Microcopy:
+Pensato per showroom, negozi di arredamento e realtà multi-store.
+
+VISUAL:
+Use a large premium product screenshot of the “Contatti Clienti” interface.
+The screenshot should be one of the main visual elements of the hero.
+Do not place it inside a tiny generic card.
+Use subtle depth/shadow and preserve screenshot readability.
+
+
+==================================================
+2. VALUE PROPOSITION
+==================================================
+
+H2:
+Non un CRM generico adattato all’arredamento.
+
+Body:
+Vendere arredamento significa gestire molto più di un nome e un numero di telefono. Ci sono ingressi in showroom, richieste, appuntamenti, preventivi, follow-up e relazioni che possono durare mesi.
+
+Totalone nasce dall’esperienza quotidiana nel settore dell’arredamento e collega queste informazioni in un unico flusso di lavoro.
+
+Create three concise benefit blocks:
+
+1.
+Title:
+Ogni contatto ha una storia
+
+Text:
+Raccogli dati, provenienza, attività e informazioni commerciali senza disperderli tra Excel, email e appunti.
+
+2.
+Title:
+Ogni opportunità ha un prossimo passo
+
+Text:
+Sai quali clienti ricontattare, quali trattative stanno avanzando e quali richiedono attenzione.
+
+3.
+Title:
+Tutto il team lavora sulle stesse informazioni
+
+Text:
+Commerciali e showroom condividono una visione aggiornata del cliente.
+
+
+==================================================
+3. CONTATTI CLIENTI
+==================================================
+
+Eyebrow:
+CONTATTI E LEAD
+
+H2:
+Tutti i tuoi clienti. Una sola vista.
+
+Body:
+Centralizza clienti e lead in un database condiviso e facilmente consultabile. Cerca rapidamente per nome, email, telefono o città e organizza i contatti in Smart List per avere sempre sotto controllo il pubblico che ti interessa.
+
+Dal nuovo lead al cliente storico, le informazioni restano accessibili al team e pronte per essere utilizzate nelle attività commerciali.
+
+Feature labels:
+Ricerca avanzata
+Smart List
+Tag
+Provenienza lead
+Informazioni di contatto
+Segmentazione
+
+VISUAL:
+Large screenshot of the Totalone “Contatti Clienti” page.
+Make Smart Lists, search and the customer table clearly visible.
+
+Caption:
+Organizza centinaia di contatti senza perdere di vista quelli che contano.
+
+
+==================================================
+4. INGRESSI SHOWROOM
+==================================================
+
+Make this one of the most visually important sections of the entire page.
+
+Eyebrow:
+INGRESSI SHOWROOM
+
+H2:
+Sai davvero chi entra nel tuo showroom?
+
+Body:
+Non tutte le visite diventano subito un contatto. Ma ogni ingresso racconta qualcosa.
+
+Con Totalone puoi registrare le visite nei tuoi showroom indicando cosa cercava il cliente, chi lo ha seguito, quando è entrato e da dove proviene. Anche quando il visitatore non vuole lasciare i propri dati.
+
+In questo modo quello che succede fisicamente in negozio non rimane più invisibile.
+
+Feature labels:
+Showroom
+Data e ora
+Venditore
+Provenienza
+Motivo della visita
+Collegamento al cliente
+
+CTA:
+Scopri la gestione ingressi showroom →
+
+Link destination:
+ /crm-per-arredatori/ingressi-showroom
+
+VISUAL:
+Use the Totalone “Ingressi Showroom” list screenshot.
+The UI must be clearly readable.
+
+
+==================================================
+5. SHOWROOM ANALYTICS
+==================================================
+
+Eyebrow:
+SHOWROOM ANALYTICS
+
+H2:
+Trasforma gli ingressi in informazioni utili.
+
+Body:
+Registrare le visite è solo l’inizio. Totalone trasforma i dati raccolti in una panoramica chiara dell’attività dei tuoi showroom.
+
+Confronta sedi, periodi e venditori. Analizza l’affluenza nel tempo e scopri quali showroom generano più traffico.
+
+Show four KPI concepts:
+Totale ingressi
+Trend
+Showroom
+Venditori
+
+VISUAL:
+Create a large visual composition using the real “Dashboard Ingressi” screenshots.
+
+Show:
+- KPI cards
+- distribuzione ingressi per showroom
+- classifica venditori
+- affluenza settimanale
+
+This section should feel data-rich but clean.
+Let the actual Totalone interface be the hero of the section.
+
+
+==================================================
+6. PIPELINE COMMERCIALE
+==================================================
+
+Eyebrow:
+PIPELINE COMMERCIALE
+
+H2:
+Dal primo contatto alla vendita.
+
+Body:
+Visualizza tutte le opportunità commerciali e segui ogni cliente lungo il processo di vendita.
+
+Organizza le trattative per fase, assegna un valore alle opportunità e individua immediatamente quelle che richiedono un’azione.
+
+Da contatto iniziale a qualifica, appuntamento e preventivo: il team sa sempre dove si trova ogni trattativa.
+
+Show this flow:
+Contatto iniziale → Qualifica → Appuntamento → Preventivo → Chiusura
+
+CTA:
+Approfondisci la gestione trattative →
+
+VISUAL:
+Use the large Totalone Pipeline Vendite Kanban screenshot.
+Make it nearly full-width.
+Do not crop away the pipeline columns.
+
+
+==================================================
+7. CONVERSAZIONI
+==================================================
+
+Eyebrow:
+CONVERSAZIONI
+
+H2:
+Le conversazioni non restano separate dai clienti.
+
+Body:
+Centralizza le comunicazioni e collega le conversazioni al CRM.
+
+Quando arriva un nuovo contatto, puoi trasformarlo direttamente in un lead e iniziare a costruire il suo storico commerciale senza copiare manualmente informazioni da uno strumento all’altro.
+
+Highlight:
+Una conversazione può diventare un’opportunità. In un click.
+
+VISUAL:
+Use the Totalone Conversations screenshot.
+Focus visually on the conversation list and “Aggiungi al CRM” action.
+
+
+==================================================
+8. CALENDARIO
+==================================================
+
+Eyebrow:
+AGENDA E APPUNTAMENTI
+
+H2:
+Clienti, appuntamenti e follow-up nello stesso flusso.
+
+Body:
+Organizza appuntamenti, incontri e attività commerciali in un calendario condiviso.
+
+Il team può vedere gli impegni, pianificare le prossime azioni e mantenere continuità nella relazione con il cliente senza affidarsi alla memoria personale del singolo venditore.
+
+VISUAL:
+Use the real Totalone monthly Calendar screenshot.
+Keep this section visually simple and let the calendar UI dominate.
+
+
+==================================================
+9. CONTATTI AZIENDALI
+==================================================
+
+Eyebrow:
+NON SOLO CLIENTI
+
+H2:
+Anche la tua rete professionale, organizzata.
+
+Body:
+Un progetto di arredamento coinvolge clienti, fornitori, partner, trasportatori e molti altri interlocutori.
+
+Totalone permette di creare anagrafiche aziendali e associare i relativi contatti, così anche la rete professionale dello showroom rimane ordinata e accessibile.
+
+Feature labels:
+Fornitori
+Partner
+Trasportatori
+Aziende
+Referenti
+
+VISUAL:
+Use the Totalone “Contatti Aziendali” screenshot.
+Use a 50/50 text + product UI layout.
+
+
+==================================================
+10. SMART LIST + EMAIL MARKETING
+==================================================
+
+Eyebrow:
+SEGMENTAZIONE E AUTOMATION
+
+H2:
+Il tuo database non deve essere solo un archivio.
+
+Body:
+Trasforma i dati raccolti dal CRM in azioni commerciali.
+
+Crea Smart List per segmentare i contatti e utilizza le liste per comunicazioni e campagne mirate. Puoi organizzare, ad esempio, clienti di uno specifico showroom, lead provenienti da una determinata fonte o gruppi di contatti con caratteristiche comuni.
+
+Large visual statement:
+Segmenta → Crea una lista → Comunica
+
+Secondary text:
+Più informazioni raccogli durante il lavoro quotidiano, più il tuo CRM diventa uno strumento utile per mantenere viva la relazione con clienti e prospect.
+
+VISUAL:
+Use the real Email Marketing screenshot combined with a small crop/detail of the Smart Lists interface.
+
+
+==================================================
+11. THE TOTALONE FLOW
+==================================================
+
+Create a visually distinctive workflow section.
+
+Eyebrow:
+UN UNICO FLUSSO
+
+H2:
+Dal primo ingresso alla vendita, senza perdere informazioni.
+
+Create an elegant horizontal flow:
+
+Ingresso showroom
+→
+Contatto CRM
+→
+Conversazione
+→
+Appuntamento
+→
+Trattativa
+→
+Preventivo
+→
+Progetto
+
+Body:
+Totalone collega le diverse fasi del lavoro. Un’informazione inserita all’inizio del percorso continua ad accompagnare il cliente nelle fasi successive, riducendo passaggi manuali e informazioni disperse.
+
+Do NOT use a screenshot here.
+
+Create a bespoke visual diagram consistent with the Totalone design system.
+On mobile transform the horizontal flow into a vertical flow.
+
+
+==================================================
+12. WHY TOTALONE
+==================================================
+
+Eyebrow:
+PERCHÉ TOTALONE
+
+H2:
+Un CRM nato dentro uno showroom, non dentro una software house.
+
+Body:
+Totalone nasce dall’esperienza diretta nella gestione di showroom e progetti di arredamento.
+
+Per questo il CRM non si limita a gestire contatti e opportunità: tiene conto di ciò che accade realmente nel settore, dagli ingressi fisici in negozio agli appuntamenti, fino alla trattativa e al preventivo.
+
+Three pillars:
+
+VERTICALE
+Pensato intorno ai processi reali di chi vende arredamento.
+
+CONDIVISO
+Le informazioni non appartengono al singolo venditore, ma diventano patrimonio dell’azienda.
+
+COLLEGATO
+Il CRM è solo l’inizio: preventivi, progetti, commesse, logistica e controllo continuano nello stesso sistema.
+
+
+==================================================
+13. FINAL CTA
+==================================================
+
+Create a strong premium CTA section using the existing Totalone blue visual identity.
+
+H2:
+Scopri cosa succede quando tutto il tuo showroom lavora nello stesso posto.
+
+Body:
+Clienti, ingressi, conversazioni, appuntamenti e opportunità commerciali. Scopri come Totalone può organizzare il processo di vendita della tua azienda.
+
+Primary CTA:
+Prenota una demo →
+
+Secondary CTA:
+Scopri tutte le funzionalità
+
+Microcopy:
+Una demo costruita sul modo in cui lavora il tuo showroom.
+
+
+==================================================
+DESIGN DIRECTION
+==================================================
+
+The page should NOT look like a generic SaaS template.
+
+Use the real product UI as a central visual asset throughout the page.
+
+Alternate:
+- text left / screenshot right
+- screenshot left / text right
+- full-width screenshots
+- data visualization sections
+- short benefit blocks
+- workflow storytelling
+
+Avoid:
+- excessive cards
+- repetitive 3-column layouts
+- fake illustrations
+- stock photography
+- gradients everywhere
+- excessive decorative elements
+- walls of text
+
+Maintain generous whitespace and strong hierarchy.
+
+Use subtle motion:
+- screenshot reveal on scroll
+- slight UI parallax
+- animated workflow connections
+- KPI count-up only where tasteful
+
+The experience should communicate:
+specialized,
+professional,
+clear,
+premium,
+built specifically for furniture retailers.
+
+Most importantly:
+DO NOT change any functionality or data inside the Totalone software.
+This task concerns ONLY the public marketing page.
