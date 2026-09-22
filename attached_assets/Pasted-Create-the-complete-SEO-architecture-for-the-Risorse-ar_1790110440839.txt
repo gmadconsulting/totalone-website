@@ -1,0 +1,1194 @@
+Create the complete SEO architecture for the “Risorse” area of the Totalone public marketing website.
+
+IMPORTANT:
+- Work ONLY on the public Totalone marketing website.
+- Do NOT modify the Totalone application/dashboard.
+- Preserve the existing Totalone website design system exactly:
+  navbar, typography, colors, spacing, buttons, border radius and overall visual language.
+- All content and UI must be in Italian.
+- Mobile and tablet responsive.
+- Do NOT generate images.
+- Do NOT generate fake Totalone screenshots.
+- Do NOT create fake testimonials, statistics, customers or case studies.
+- Do NOT invent Totalone functionality.
+- Do NOT redesign the existing product pages.
+- Existing product pages remain the primary commercial/transactional SEO pages.
+- Blog and Guide content must support those pages, NOT compete with them.
+- Avoid keyword stuffing.
+- Build the architecture so new articles can easily be added later.
+
+The goal is to create a topic-cluster SEO architecture around:
+
+“gestionale per arredatori”
+“gestionale per negozi di arredamento”
+“software gestionale arredamento”
+“software per showroom”
+“gestione showroom”
+“CRM per arredatori”
+“preventivi per arredatori”
+“gestione commesse arredamento”
+“gestione magazzino arredamento”
+“gestione montaggi arredamento”
+“post-vendita arredamento”
+
+The fundamental SEO journey should be:
+
+BLOG ARTICLE
+↓
+GUIDA PILLAR
+↓
+PAGINA PRODOTTO
+↓
+PRENOTA DEMO
+
+
+==================================================
+1. RISORSE HUB
+==================================================
+
+Create:
+
+/risorse
+
+SEO TITLE:
+Risorse per Showroom e Negozi di Arredamento | Totalone
+
+META DESCRIPTION:
+Guide, approfondimenti e risorse per organizzare vendite, preventivi, commesse, logistica e operatività di negozi e showroom di arredamento.
+
+H1:
+Risorse per gestire meglio il tuo showroom.
+
+Intro:
+Guide, approfondimenti e strumenti dedicati a chi gestisce negozi e showroom di arredamento.
+
+Create three main areas:
+
+BLOG
+
+Title:
+Approfondimenti dal mondo dell’arredamento
+
+Description:
+Strategie, processi e consigli pratici per organizzare meglio il lavoro quotidiano dello showroom.
+
+CTA:
+Esplora il blog →
+
+
+GUIDE
+
+Title:
+Guide pratiche
+
+Description:
+Contenuti approfonditi dedicati ai processi più importanti di un’azienda di arredamento.
+
+CTA:
+Scopri le guide →
+
+
+STRUMENTI
+
+Title:
+Strumenti per il tuo showroom
+
+Description:
+Risorse pratiche per analizzare organizzazione, tempo e processi della tua azienda.
+
+Include:
+ROI Calculator
+
+CTA:
+Calcola il valore del tuo tempo →
+
+
+Below these sections add:
+
+“Esplora per argomento”
+
+with the seven SEO clusters:
+
+Gestione showroom
+Vendite & CRM
+Preventivi
+Commesse & Progetti
+Logistica & Magazzino
+Montaggi & Post-vendita
+Controllo & Performance
+
+
+==================================================
+2. BLOG HUB
+==================================================
+
+Create:
+
+/blog
+
+SEO TITLE:
+Blog per Showroom e Negozi di Arredamento | Totalone
+
+META DESCRIPTION:
+Guide e approfondimenti sulla gestione di showroom e negozi di arredamento: CRM, preventivi, commesse, magazzino, montaggi e performance.
+
+H1:
+Risorse per gestire meglio il tuo showroom di arredamento.
+
+Intro:
+Strategie, processi e strumenti per organizzare vendite, preventivi, commesse, logistica e operatività di negozi e showroom di arredamento.
+
+Create a clean editorial blog interface.
+
+Do NOT make it look like a generic news website.
+
+Include:
+- featured article
+- latest articles
+- category navigation
+- guide highlights
+- related Totalone functionality
+- newsletter area ONLY if newsletter infrastructure already exists; otherwise omit it
+
+Do not create fake article dates, authors or reading counts unless the CMS already provides them.
+
+
+==================================================
+3. BLOG CATEGORIES
+==================================================
+
+Create the following category architecture.
+
+
+CATEGORY 1
+
+URL:
+/blog/gestione-showroom
+
+H1:
+Gestione di negozi e showroom di arredamento
+
+Topics:
+- organizzazione showroom
+- digitalizzazione
+- software gestionale
+- processi
+- multi-showroom
+- organizzazione aziendale
+
+Primary internal destination:
+/perche-totalone
+
+
+CATEGORY 2
+
+URL:
+/blog/vendite-crm
+
+H1:
+Vendite e CRM per showroom di arredamento
+
+Topics:
+- clienti
+- lead
+- ingressi showroom
+- trattative
+- pipeline
+- follow-up
+- conversione
+
+Primary product destinations:
+/crm-per-arredatori
+and the existing Gestione trattative page
+
+
+CATEGORY 3
+
+URL:
+/blog/preventivi
+
+H1:
+Preventivi per negozi e showroom di arredamento
+
+Topics:
+- creazione preventivi
+- preventivi cucine
+- revisioni
+- presentazione offerte
+- organizzazione preventivi
+- conversione preventivo → vendita
+
+Primary product destination:
+/preventivi-arredatori
+
+
+CATEGORY 4
+
+URL:
+/blog/commesse-progetti
+
+H1:
+Gestione di commesse e progetti nell’arredamento
+
+Topics:
+- gestione commesse
+- organizzazione progetti
+- attività
+- controllo commessa
+- coordinamento team
+- avanzamento
+
+Primary product destinations:
+existing Gestione commesse page
+existing Gestione progetti page
+
+
+CATEGORY 5
+
+URL:
+/blog/logistica-magazzino
+
+H1:
+Logistica e magazzino per negozi di arredamento
+
+Topics:
+- arrivi
+- magazzino
+- prodotti
+- colli
+- consegne
+- logistica
+
+Primary product destination:
+existing Magazzino e logistica page
+
+
+CATEGORY 6
+
+URL:
+/blog/montaggi-post-vendita
+
+H1:
+Montaggi e post-vendita nell’arredamento
+
+Topics:
+- pianificazione montaggi
+- calendario montaggi
+- rapportini
+- assistenza
+- prodotti in assistenza
+- post-vendita
+
+Primary product destinations:
+existing Montaggi page
+existing Assistenza e post-vendita page
+
+
+CATEGORY 7
+
+URL:
+/blog/controllo-performance
+
+H1:
+Controllo e performance per showroom di arredamento
+
+Topics:
+- KPI
+- vendite
+- conversioni
+- performance venditori
+- performance showroom
+- controllo aziendale
+
+Primary product destination:
+existing Controllo e performance page
+
+
+==================================================
+4. INITIAL ARTICLE ARCHITECTURE
+==================================================
+
+Do NOT generate all article copy now.
+
+Create the content architecture/routes/placeholders so articles can be progressively published.
+
+GESTIONE SHOWROOM:
+
+/blog/gestione-showroom/come-gestire-negozio-arredamento
+
+/blog/gestione-showroom/software-gestionale-negozio-arredamento
+
+/blog/gestione-showroom/come-digitalizzare-showroom-arredamento
+
+/blog/gestione-showroom/organizzare-processi-showroom
+
+/blog/gestione-showroom/gestire-piu-showroom
+
+/blog/gestione-showroom/excel-vs-gestionale-arredamento
+
+/blog/gestione-showroom/come-scegliere-gestionale-arredamento
+
+
+VENDITE & CRM:
+
+/blog/vendite-crm/crm-per-negozio-arredamento
+
+/blog/vendite-crm/gestire-clienti-showroom
+
+/blog/vendite-crm/gestire-lead-arredamento
+
+/blog/vendite-crm/gestire-ingressi-showroom
+
+/blog/vendite-crm/pipeline-vendite-arredamento
+
+/blog/vendite-crm/follow-up-clienti-arredamento
+
+/blog/vendite-crm/aumentare-conversione-showroom
+
+
+PREVENTIVI:
+
+/blog/preventivi/come-fare-preventivo-arredamento
+
+/blog/preventivi/software-preventivi-arredamento
+
+/blog/preventivi/preventivo-cucina
+
+/blog/preventivi/gestire-revisioni-preventivo
+
+/blog/preventivi/come-presentare-preventivo-arredamento
+
+/blog/preventivi/organizzare-preventivi-clienti
+
+/blog/preventivi/da-preventivo-a-commessa
+
+
+COMMESSE & PROGETTI:
+
+/blog/commesse-progetti/gestione-commesse-arredamento
+
+/blog/commesse-progetti/come-organizzare-commessa-arredamento
+
+/blog/commesse-progetti/controllo-commessa-arredamento
+
+/blog/commesse-progetti/monitorare-stato-commessa
+
+/blog/commesse-progetti/gestire-progetti-arredamento
+
+/blog/commesse-progetti/task-progetto-arredamento
+
+/blog/commesse-progetti/coordinare-team-progetto
+
+
+LOGISTICA & MAGAZZINO:
+
+/blog/logistica-magazzino/gestione-magazzino-arredamento
+
+/blog/logistica-magazzino/software-magazzino-mobili
+
+/blog/logistica-magazzino/gestire-arrivi-merce
+
+/blog/logistica-magazzino/organizzare-consegne-arredamento
+
+/blog/logistica-magazzino/tracciare-prodotti-commessa
+
+/blog/logistica-magazzino/gestione-colli-arredamento
+
+
+MONTAGGI & POST-VENDITA:
+
+/blog/montaggi-post-vendita/gestione-montaggi-arredamento
+
+/blog/montaggi-post-vendita/pianificare-montaggi-clienti
+
+/blog/montaggi-post-vendita/rapportino-montaggio
+
+/blog/montaggi-post-vendita/gestione-post-vendita-arredamento
+
+/blog/montaggi-post-vendita/gestire-assistenza-clienti-arredamento
+
+/blog/montaggi-post-vendita/gestire-prodotto-in-assistenza
+
+
+CONTROLLO & PERFORMANCE:
+
+/blog/controllo-performance/kpi-showroom-arredamento
+
+/blog/controllo-performance/kpi-venditori-arredamento
+
+/blog/controllo-performance/tasso-conversione-preventivi
+
+/blog/controllo-performance/monitorare-performance-showroom
+
+/blog/controllo-performance/confrontare-performance-showroom
+
+/blog/controllo-performance/dashboard-negozio-arredamento
+
+
+==================================================
+5. GUIDE HUB
+==================================================
+
+Create:
+
+/guide
+
+SEO TITLE:
+Guide per la Gestione di Showroom di Arredamento | Totalone
+
+META DESCRIPTION:
+Guide complete per organizzare clienti, preventivi, commesse, magazzino e processi di negozi e showroom di arredamento.
+
+H1:
+Guide per gestire e far crescere il tuo showroom.
+
+Intro:
+Approfondimenti pratici sui processi che collegano vendite, operatività e controllo nel settore dell’arredamento.
+
+The Guide section must feel more authoritative and substantial than the Blog.
+
+Do NOT visually present Guides exactly like blog posts.
+
+Use:
+- larger editorial layouts
+- chapter previews
+- table of contents
+- estimated content structure
+- related resources
+- contextual Totalone product links
+
+
+==================================================
+6. PILLAR GUIDES
+==================================================
+
+Create the architecture for these six guides.
+
+
+GUIDE 1
+
+URL:
+/guide/gestione-showroom-arredamento
+
+H1:
+Guida completa alla gestione di uno showroom di arredamento
+
+H2:
+Come funziona uno showroom moderno
+
+H2:
+Gestione dei clienti
+
+H2:
+Organizzazione delle trattative
+
+H2:
+Creazione dei preventivi
+
+H2:
+Gestione delle commesse
+
+H2:
+Organizzazione dei progetti
+
+H2:
+Magazzino e arrivi
+
+H2:
+Pianificazione dei montaggi
+
+H2:
+Post-vendita
+
+H2:
+Controllo delle performance
+
+H2:
+Digitalizzare lo showroom
+
+H2:
+Come scegliere un gestionale
+
+Internal links:
+CRM
+Gestione trattative
+Preventivi
+Gestione commesse
+Gestione progetti
+Magazzino
+Montaggi
+Assistenza
+Controllo e performance
+Perché Totalone
+
+
+GUIDE 2
+
+URL:
+/guide/crm-per-arredatori
+
+H1:
+CRM per arredatori: guida alla gestione di clienti e trattative
+
+H2:
+Cos’è un CRM per arredatori
+
+H2:
+Perché il settore arredamento ha esigenze specifiche
+
+H2:
+Come organizzare i contatti
+
+H2:
+Come registrare gli ingressi showroom
+
+H2:
+Come gestire lead e opportunità
+
+H2:
+Come organizzare la pipeline
+
+H2:
+Follow-up e appuntamenti
+
+H2:
+CRM e preventivi
+
+H2:
+CRM e commesse
+
+H2:
+Come scegliere un CRM per uno showroom
+
+Primary CTA:
+Scopri il CRM Totalone →
+
+Link:
+/crm-per-arredatori
+
+
+GUIDE 3
+
+URL:
+/guide/preventivi-arredamento
+
+H1:
+Preventivi per arredamento: guida completa
+
+H2:
+Come strutturare un preventivo di arredamento
+
+H2:
+Prodotti e composizioni
+
+H2:
+Specifiche e finiture
+
+H2:
+Immagini e documentazione
+
+H2:
+Prezzi, quantità, sconti e IVA
+
+H2:
+Extra e opzioni
+
+H2:
+Gestire più versioni
+
+H2:
+Presentare il preventivo al cliente
+
+H2:
+Dal preventivo alla commessa
+
+H2:
+Come scegliere un software per preventivi
+
+Primary CTA:
+Scopri i Preventivi Totalone →
+
+Link:
+/preventivi-arredatori
+
+
+GUIDE 4
+
+URL:
+/guide/gestione-commesse-arredamento
+
+H1:
+Gestione commesse nell’arredamento: guida completa
+
+H2:
+Cos’è una commessa di arredamento
+
+H2:
+Dal preventivo alla commessa
+
+H2:
+Organizzare le informazioni
+
+H2:
+Controllare lo stato della commessa
+
+H2:
+Preventivato, finalizzato e venduto
+
+H2:
+Acconti e saldi
+
+H2:
+Coordinare le attività
+
+H2:
+Dalla commessa al montaggio
+
+H2:
+Post-vendita
+
+H2:
+Come digitalizzare la gestione delle commesse
+
+Primary CTA:
+Scopri Gestione commesse Totalone →
+
+Link to the existing Gestione commesse page.
+
+
+GUIDE 5
+
+URL:
+/guide/gestione-magazzino-arredamento
+
+H1:
+Gestione del magazzino nell’arredamento: guida pratica
+
+H2:
+Le particolarità del magazzino nell’arredamento
+
+H2:
+Prodotti, clienti e commesse
+
+H2:
+Gestire gli arrivi previsti
+
+H2:
+Tracciare lo stato dei prodotti
+
+H2:
+Gestire i colli
+
+H2:
+Organizzare le consegne
+
+H2:
+Dal magazzino al montaggio
+
+H2:
+Digitalizzare la logistica
+
+Primary CTA:
+Scopri Magazzino e logistica Totalone →
+
+Link to the existing Magazzino page.
+
+
+GUIDE 6
+
+URL:
+/guide/digitalizzazione-negozio-arredamento
+
+H1:
+Come digitalizzare un negozio di arredamento
+
+H2:
+Perché digitalizzare i processi
+
+H2:
+Da Excel a un sistema condiviso
+
+H2:
+Centralizzare clienti e contatti
+
+H2:
+Digitalizzare i preventivi
+
+H2:
+Gestire le commesse
+
+H2:
+Organizzare attività e progetti
+
+H2:
+Digitalizzare magazzino e logistica
+
+H2:
+Coordinare i montaggi
+
+H2:
+Organizzare il post-vendita
+
+H2:
+Misurare le performance
+
+H2:
+Come scegliere il software gestionale
+
+H2:
+Come introdurre un nuovo gestionale nel team
+
+Primary CTA:
+Scopri perché Totalone →
+
+Link:
+/perche-totalone
+
+
+==================================================
+7. ARTICLE TEMPLATE
+==================================================
+
+Create one reusable SEO article template.
+
+The exact headings will change according to the topic, but the semantic architecture should generally follow:
+
+Breadcrumb
+
+Category
+
+H1:
+Article title
+
+Intro:
+Answer the search intent quickly and clearly.
+
+Table of contents
+
+H2:
+Definition / context
+
+H2:
+How the process works
+
+H2:
+How it applies to a furniture showroom
+
+H2:
+Common problems or mistakes
+
+H2:
+How to organize the process
+
+H2:
+How software can support the process
+
+H2:
+Frequently asked questions
+
+Contextual Totalone CTA
+
+Related guide
+
+Related articles
+
+Related Totalone functionality
+
+
+IMPORTANT:
+
+Do NOT force all articles to have identical headings.
+
+The template defines the hierarchy, not the exact wording.
+
+
+==================================================
+8. GUIDE TEMPLATE
+==================================================
+
+Create a reusable Guide template.
+
+Desktop structure:
+
+LEFT / MAIN:
+Guide content
+
+RIGHT / STICKY:
+Table of contents
+
+Include:
+- breadcrumb
+- H1
+- short introduction
+- table of contents
+- clearly separated chapters
+- contextual internal links
+- occasional Totalone product CTA
+- related articles
+- related Totalone modules
+- final CTA
+
+On mobile:
+move the table of contents into a collapsible element below the introduction.
+
+
+==================================================
+9. INTERNAL LINKING ENGINE
+==================================================
+
+This is extremely important.
+
+Build the architecture so internal links follow this hierarchy:
+
+ARTICLE
+→ CATEGORY
+→ GUIDE
+→ PRODUCT PAGE
+→ DEMO
+
+But allow contextual lateral links between related articles.
+
+Example:
+
+Google search:
+“come gestire gli ingressi in showroom”
+
+↓
+
+/blog/vendite-crm/gestire-ingressi-showroom
+
+↓
+
+/guide/crm-per-arredatori
+
+↓
+
+/crm-per-arredatori/ingressi-showroom
+
+↓
+
+/crm-per-arredatori
+
+↓
+
+Prenota una demo
+
+
+Another example:
+
+Google search:
+“come gestire una commessa di arredamento”
+
+↓
+
+/blog/commesse-progetti/come-organizzare-commessa-arredamento
+
+↓
+
+/guide/gestione-commesse-arredamento
+
+↓
+
+existing Gestione commesse product page
+
+↓
+
+Prenota una demo
+
+
+Every article should have:
+
+1 primary Guide link
+1 primary Product link
+2–4 related article links where contextually appropriate
+1 category link
+1 contextual CTA
+
+Do NOT automatically insert irrelevant links just to increase link count.
+
+
+==================================================
+10. PREVENT SEO CANNIBALIZATION
+==================================================
+
+Respect different search intent across content types.
+
+PRODUCT PAGE:
+Commercial / transactional intent.
+
+Example:
+“CRM per arredatori”
+
+GUIDE:
+Educational / consideration intent.
+
+Example:
+“Come scegliere e utilizzare un CRM per uno showroom di arredamento”
+
+BLOG ARTICLE:
+Specific informational intent.
+
+Example:
+“Come registrare e analizzare gli ingressi in showroom”
+
+Do NOT create Blog articles whose title, H1 and search intent simply duplicate existing Totalone product pages.
+
+Product pages must remain the strongest commercial destination.
+
+
+==================================================
+11. BREADCRUMBS
+==================================================
+
+Implement semantic breadcrumbs.
+
+Example:
+
+Home
+→ Risorse
+→ Blog
+→ Vendite & CRM
+→ Gestire gli ingressi showroom
+
+Guide example:
+
+Home
+→ Risorse
+→ Guide
+→ CRM per arredatori
+
+
+==================================================
+12. STRUCTURED DATA
+==================================================
+
+Where technically appropriate implement valid structured data for:
+
+Article
+BreadcrumbList
+FAQPage only where actual visible FAQ content exists
+
+Do not generate fake review schema.
+Do not generate fake ratings.
+Do not generate fake author credentials.
+
+
+==================================================
+13. SEO TECHNICAL REQUIREMENTS
+==================================================
+
+Every indexable page must support:
+
+- unique SEO title
+- unique meta description
+- canonical URL
+- one H1 only
+- semantic H2/H3 hierarchy
+- Open Graph title
+- Open Graph description
+- crawlable internal links
+- breadcrumb navigation
+- descriptive URL slug
+- indexable server-rendered content where supported by the existing stack
+
+Update the XML sitemap to include published:
+- categories
+- guides
+- articles
+
+Do NOT include draft/unpublished article placeholders in the production sitemap.
+
+Create appropriate canonical tags.
+
+Do not create duplicate routes.
+
+
+==================================================
+14. NAVIGATION
+==================================================
+
+Update the existing “Risorse” navigation/mega-menu.
+
+Structure:
+
+RISORSE
+
+IMPARA
+
+Blog →
+Guide →
+
+
+STRUMENTI
+
+ROI Calculator →
+FAQ →
+Centro assistenza →
+
+
+IN EVIDENZA
+
+Guida alla gestione di uno showroom →
+
+Do NOT add Glossario to the visible navigation for now.
+
+The architecture should allow a Glossario section to be introduced later without restructuring the site.
+
+
+==================================================
+15. CONTENT MANAGEMENT
+==================================================
+
+Build the Blog and Guide architecture so content can be added without manually creating a completely new page layout every time.
+
+Each article should support fields such as:
+
+slug
+title
+seoTitle
+metaDescription
+excerpt
+category
+publishDate
+updatedDate
+author if actually used
+featured
+content
+relatedArticles
+relatedGuide
+relatedProduct
+canonical
+
+Each Guide should support:
+
+slug
+title
+seoTitle
+metaDescription
+excerpt
+chapters
+relatedArticles
+relatedProducts
+updatedDate
+canonical
+
+Use the content architecture most appropriate for the current Totalone website stack.
+
+Do NOT introduce an external CMS unless one already exists or is required by the current architecture.
+
+
+==================================================
+16. DESIGN
+==================================================
+
+Keep everything consistent with the current Totalone website.
+
+The Blog should feel:
+clean
+editorial
+modern
+professional
+
+The Guides should feel:
+deeper
+authoritative
+structured
+premium
+
+Avoid:
+- generic WordPress-blog appearance
+- huge grids of identical cards
+- stock images
+- AI-generated illustrations
+- fake screenshots
+- unnecessary decorative elements
+
+Use typography and whitespace as the main design elements.
+
+Category labels can use subtle Totalone blue accents.
+
+
+==================================================
+17. DO NOT PUBLISH EMPTY SEO PAGES
+==================================================
+
+IMPORTANT:
+
+Do not publish dozens of thin or empty article pages simply because routes have been defined.
+
+Create the architecture and templates first.
+
+Only pages containing meaningful finished content should be indexable.
+
+Draft placeholders should:
+- not appear in production navigation
+- not appear in sitemap.xml
+- not be indexable
+
+Quality is more important than article quantity.
+
+
+==================================================
+18. FINAL SEO ARCHITECTURE
+==================================================
+
+The final information architecture should communicate this hierarchy to users and search engines:
+
+TOTALONE
+│
+├── PRODUCT
+│   ├── CRM
+│   ├── Gestione trattative
+│   ├── Preventivi
+│   ├── Gestione progetti
+│   ├── Gestione commesse
+│   ├── Magazzino e logistica
+│   ├── Montaggi
+│   ├── Assistenza e post-vendita
+│   └── Controllo e performance
+│
+└── RISORSE
+    │
+    ├── BLOG
+    │   ├── Gestione showroom
+    │   ├── Vendite & CRM
+    │   ├── Preventivi
+    │   ├── Commesse & Progetti
+    │   ├── Logistica & Magazzino
+    │   ├── Montaggi & Post-vendita
+    │   └── Controllo & Performance
+    │
+    └── GUIDE
+        ├── Gestione showroom
+        ├── CRM per arredatori
+        ├── Preventivi arredamento
+        ├── Gestione commesse
+        ├── Gestione magazzino
+        └── Digitalizzazione negozio arredamento
+
+
+==================================================
+CORE SEO PRINCIPLE
+==================================================
+
+Do not optimize Totalone for generic furniture or interior-design traffic.
+
+The objective is to build topical authority specifically around:
+
+HOW TO RUN, ORGANIZE AND DIGITALIZE A FURNITURE SHOWROOM OR FURNITURE RETAIL BUSINESS.
+
+Every piece of content should therefore have a logical relationship with the problems Totalone actually solves.
+
+The desired journey is:
+
+SEARCH
+→
+LEARN
+→
+UNDERSTAND THE PROCESS
+→
+DISCOVER THE RELEVANT TOTALONE MODULE
+→
+BOOK A DEMO
+
+Do not change existing product functionality or existing product-page copy while implementing this architecture.
