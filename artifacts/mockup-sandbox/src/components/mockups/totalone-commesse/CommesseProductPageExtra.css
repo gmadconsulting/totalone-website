@@ -1,0 +1,95 @@
+.commesse-hero-copy h1 span{color:#9fe0ff}
+.commesse-concept{margin-top:56px;padding:30px 28px;border:1px solid #efc4b8;border-radius:18px;background:#fff;text-align:center}
+.commesse-concept-items{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.commesse-concept-items span,.commesse-tag-list span{display:inline-flex;align-items:center;border:1px solid #bcd7f1;border-radius:999px;padding:9px 12px;background:#f7fbff;color:#245b96;font-size:11px;font-weight:800;letter-spacing:.04em}
+.commesse-concept-arrow{margin:18px 0 10px;color:#c34d35;font-size:24px;font-weight:700}
+.commesse-concept strong{color:#102744;font-size:18px;letter-spacing:-.04em}
+.commesse-supporting-line,.commesse-highlight{max-width:780px;margin:30px auto 0;color:#c34d35;font-size:21px;font-weight:800;line-height:1.2;letter-spacing:-.04em}
+.commesse-tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.commesse-tag-list span{background:#fff}
+.commesse-small-label{margin:27px 0 0;color:#8aa3bd;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.commesse-tag-list.muted-tags span{border-color:#d2e1ef;color:#557090}
+.commesse-tag-list.state-tags span{border-color:#efc4b8;background:#fffaf7;color:#c34d35}
+.commesse-tag-list.warm-tags span{border-color:#efc4b8;background:#fffaf7;color:#c34d35}
+.commesse-tag-list.product-tags{margin:30px 0 0}
+.commesse-tag-list.product-tags span{background:#fff}
+.commesse-tag-list.service-tags span{border-color:#f1c2b6;background:#fffaf7;color:#c34d35}
+.commesse-tag-list.document-tags span{border-color:#bcd7f1;background:#fff;color:#245b96}
+.commesse-product-shot{margin-top:42px}
+.commesse-product-shot .commesse-shot-frame{min-height:570px}
+.commesse-wide-shot .commesse-shot-frame{min-height:480px}
+.commesse-state-notes{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:26px}
+.commesse-state-notes span{padding:9px 12px;border-radius:8px;background:#dcecff;color:#0b55c6;font-size:11px;font-weight:800}
+.commesse-state-notes span:nth-child(2){background:#ffdcd2;color:#c34d35}
+.commesse-state-notes p{flex-basis:100%;max-width:720px;margin:4px 0 0;color:#557090;font-size:14px;line-height:1.6}
+.commesse-state-shot{margin-top:38px}
+.commesse-state-shot .commesse-shot-frame{min-height:340px}
+.commesse-note-history{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin-top:48px;border-top:1px solid #efc4b8}
+.commesse-note-history article{padding:26px 28px 5px 0;border-right:1px solid #efc4b8}
+.commesse-note-history article+article{padding-left:28px}
+.commesse-note-history article:last-child{border-right:0}
+.commesse-note-history span{color:#c34d35;font-size:11px;font-weight:800;letter-spacing:.1em}
+.commesse-note-history strong{display:block;margin-top:18px;color:#102744;font-size:21px;letter-spacing:-.04em}
+.commesse-note-history p{max-width:280px;margin:9px 0 0;color:#557090;font-size:14px;line-height:1.6}
+.commesse-assistance-note{align-self:center;padding:34px;border-left:3px solid #f36b4d;background:#fff;color:#102744}
+.commesse-assistance-note span{color:#c34d35;font-size:11px;font-weight:800;letter-spacing:.1em}
+.commesse-assistance-note p{max-width:340px;margin:14px 0 0;color:#557090;font-size:16px;line-height:1.6}
+.commesse-centered-heading{max-width:860px;margin:0 auto;text-align:center}
+.commesse-centered-heading .commesse-lead{margin-right:auto;margin-left:auto}
+.commesse-workflow{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:0;margin-top:52px;padding:20px;border:1px solid #bcd7f1;border-radius:18px;background:#fff;box-shadow:0 18px 50px rgba(7,62,137,.08)}
+.commesse-workflow-node{position:relative;display:flex;min-width:0;flex-direction:column;align-items:center;justify-content:center;min-height:136px;padding:15px 10px;border:1px solid #a8c9ec;border-radius:12px;background:#f7fbff;color:#0b55c6;text-align:center}
+.commesse-workflow-node span{color:#8aa3bd;font-size:10px;font-weight:800}
+.commesse-workflow-node strong{margin-top:9px;font-size:11px;line-height:1.15}
+.commesse-workflow-node small{margin-top:8px;color:#557090;font-size:10px;line-height:1.35}
+.commesse-workflow-node i{position:absolute;right:-13px;z-index:1;color:#82a9cf;font-size:17px;font-style:normal}
+.commesse-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:48px}
+.commesse-comparison>div{padding:28px;border:1px solid #f1c2b6;border-radius:18px;background:#fff}
+.commesse-comparison>div+div{border-color:#bcd7f1;background:#eaf4ff}
+.commesse-comparison span{color:#c34d35;font-size:11px;font-weight:800;letter-spacing:.1em}
+.commesse-comparison>div+div span{color:#0b55c6}
+.commesse-comparison ul{display:grid;gap:14px;margin:23px 0 0;padding:0;list-style:none;color:#557090;font-size:14px;font-weight:700}
+.commesse-comparison li{display:flex;align-items:center;gap:10px}
+.commesse-comparison>div+div li{color:#245b96}
+.commesse-comparison li svg{color:#1769d5;flex:none}
+.commesse-ecosystem{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin-top:48px;border-top:1px solid #bcd7f1}
+.commesse-ecosystem-item{position:relative;display:grid;grid-template-columns:36px 1fr auto;grid-template-rows:auto auto;column-gap:14px;align-items:center;padding:21px 8px 21px 0;border-bottom:1px solid #bcd7f1;color:#102744}
+.commesse-ecosystem-item:nth-child(odd){margin-right:18px}
+.commesse-ecosystem-item:nth-child(even){padding-left:18px;border-left:1px solid #bcd7f1}
+.commesse-ecosystem-item span{grid-row:1 / span 2;color:#0b55c6;font-size:11px;font-weight:800}
+.commesse-ecosystem-item strong{font-size:12px;letter-spacing:.05em}
+.commesse-ecosystem-item small{margin-top:7px;color:#557090;font-size:12px;line-height:1.35}
+.commesse-ecosystem-item svg{grid-row:1 / span 2;color:#0b55c6}
+.commesse-ecosystem-item:hover strong,.commesse-ecosystem-item:hover svg{color:#f36b4d}
+.commesse-ecosystem-item.active{background:#eaf4ff}
+.commesse-seo-section{background:#eaf4ff}
+.commesse-seo-section h2{max-width:900px;margin:19px 0 0;font-size:clamp(40px,5.3vw,70px);line-height:.94;letter-spacing:-.078em}
+.commesse-seo-copy{max-width:720px;margin-top:25px;color:#557090;font-size:16px;line-height:1.72}
+.commesse-seo-copy p{margin:0 0 14px}
+.commesse-seo-copy p:last-child{margin-bottom:0}
+.commesse-final .commesse-eyebrow{border-color:#8ecbff;background:rgba(90,186,255,.22);color:#eff8ff}
+.commesse-final .commesse-button.outline{border-color:#79b6ef}
+@media (max-width:1100px){
+  .commesse-workflow{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+  .commesse-workflow-node i{right:-18px}
+  .commesse-workflow-node:nth-child(4) i{display:none}
+}
+@media (max-width:900px){
+  .commesse-workflow{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .commesse-workflow-node i{display:none}
+}
+@media (max-width:680px){
+  .commesse-concept{margin-top:38px;padding:24px 18px}
+  .commesse-supporting-line,.commesse-highlight{font-size:19px}
+  .commesse-note-history,.commesse-comparison,.commesse-ecosystem{grid-template-columns:1fr}
+  .commesse-note-history article,.commesse-note-history article+article{padding:22px 0;border-right:0;border-bottom:1px solid #efc4b8}
+  .commesse-note-history article:last-child{border-bottom:0}
+  .commesse-comparison{gap:14px;margin-top:32px}
+  .commesse-comparison>div{padding:23px}
+  .commesse-ecosystem-item:nth-child(even){margin-right:0;padding-left:0;border-left:0}
+  .commesse-ecosystem-item:nth-child(odd){margin-right:0}
+  .commesse-workflow{grid-template-columns:1fr;margin-top:36px;padding:14px}
+  .commesse-workflow-node{min-height:0;align-items:flex-start;padding:18px 16px;text-align:left}
+  .commesse-workflow-node strong{margin-top:6px}
+  .commesse-workflow-node small{max-width:240px}
+  .commesse-seo-section h2{font-size:clamp(39px,12vw,55px)}
+}

@@ -2,6 +2,7 @@ import { useEffect, type ReactNode } from "react";
 import { ArrowDown, ArrowRight, Check, ChevronRight } from "lucide-react";
 import { MarketingShell } from "../totalone-site-architecture/_shared/MarketingShell";
 import "./CommesseProductPage.css";
+import "./CommesseProductPageExtra.css";
 
 const orderStatus = ["DA ORDINARE", "CONFERMATO", "ORDINATO", "ARRIVATO", "IN MAGAZZINO", "PROGRAMMATO"];
 const overviewFields = ["Cliente", "Venditore", "Showroom", "Contratto", "Stato", "Schedine"];
