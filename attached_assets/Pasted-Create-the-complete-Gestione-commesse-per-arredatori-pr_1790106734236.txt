@@ -1,0 +1,901 @@
+Create the complete “Gestione commesse per arredatori” product page for the Totalone marketing website.
+
+IMPORTANT:
+- Work ONLY on the public Totalone marketing website.
+- Do NOT modify the Totalone application/dashboard.
+- Keep the existing Totalone website design system, navbar, typography, colors, spacing, buttons, border radius and overall visual language.
+- The page must feel like a premium modern B2B SaaS product page.
+- Preserve the current Totalone brand identity.
+- All copy must be in Italian.
+- Mobile and tablet responsive.
+- DO NOT generate images.
+- DO NOT generate screenshots.
+- DO NOT recreate the Totalone interface.
+- DO NOT create fake dashboards or fake UI.
+- I will manually insert the real Totalone screenshots later.
+- Wherever a screenshot is required, create ONLY a clean responsive placeholder.
+- Do NOT invent functionality beyond what is described below.
+- Avoid excessive cards and repetitive layouts.
+- Use subtle animations only where they improve comprehension.
+
+IMPORTANT PRODUCT DEFINITION:
+
+In Totalone, the operational core of Gestione Commesse is the “Schedina Cliente”.
+
+A Schedina Cliente is the operational project/customer record that connects the sale with what happens afterwards.
+
+It can contain and connect:
+- customer
+- salesperson
+- showroom
+- contract/value
+- products
+- product quantities
+- prices
+- discounts
+- product status
+- order status
+- warehouse status
+- packages/colli
+- deposits and payments
+- remaining balance
+- service costs
+- documents
+- internal notes
+- assistance
+- planned installation information
+
+The page must explain this concept clearly.
+
+Do NOT position this as generic project management software.
+
+This is a vertical furniture-order / commessa management system.
+
+
+PAGE URL:
+/gestione-commesse-arredamento
+
+SEO TITLE:
+Gestione Commesse per Arredatori e Showroom | Totalone
+
+META DESCRIPTION:
+Gestisci commesse, prodotti, ordini, documenti, pagamenti e avanzamento con Totalone. Il software per la gestione delle commesse di negozi e showroom di arredamento.
+
+PRIMARY KEYWORD:
+gestione commesse arredamento
+
+SECONDARY KEYWORDS:
+software gestione commesse arredamento
+gestionale commesse arredatori
+gestione ordini arredamento
+software commesse showroom
+gestionale negozio arredamento
+
+
+==================================================
+1. HERO
+==================================================
+
+Eyebrow:
+GESTIONE COMMESSE
+
+H1:
+Tutta la commessa. In un unico posto.
+
+Subtitle:
+Dalla vendita alla consegna, Totalone raccoglie prodotti, ordini, documenti, pagamenti, servizi e avanzamento della commessa in un’unica Schedina Cliente.
+
+Primary CTA:
+Prenota una demo →
+
+Secondary CTA:
+Scopri come funziona ↓
+
+Microcopy:
+Pensato per showroom, negozi di arredamento e realtà multi-store.
+
+VISUAL:
+
+DO NOT generate an image.
+
+Create a large placeholder:
+
+[SCREENSHOT — DETTAGLIO SCHEDINA CLIENTE]
+
+This screenshot will be added manually later.
+
+Make the placeholder large and visually dominant.
+
+Do not put it inside a laptop or browser mockup.
+
+
+==================================================
+2. THE CORE CONCEPT
+==================================================
+
+Eyebrow:
+LA SCHEDINA CLIENTE
+
+H2:
+Una commessa non è solo un ordine.
+
+Body:
+Una commessa di arredamento può contenere decine di prodotti, brand diversi, ordini effettuati in momenti differenti, documenti, pagamenti, consegne e attività operative.
+
+Totalone riunisce tutto nella Schedina Cliente: il punto di riferimento operativo della commessa.
+
+Create a simple conceptual visual:
+
+CLIENTE
++
+PRODOTTI
++
+ORDINI
++
+DOCUMENTI
++
+PAGAMENTI
++
+SERVIZI
+
+↓
+
+UNA SOLA COMMESSA
+
+Supporting statement:
+
+“Una sola scheda per sapere cosa hai venduto, cosa deve essere ordinato, cosa è arrivato e cosa deve ancora succedere.”
+
+
+==================================================
+3. TUTTE LE COMMESSE
+==================================================
+
+Eyebrow:
+PANORAMICA
+
+H2:
+Tutte le commesse. Una sola vista.
+
+Body:
+Consulta tutte le Schedine Cliente dello showroom e trova rapidamente la commessa che stai cercando.
+
+Per ogni commessa puoi avere immediatamente il contesto principale senza aprire file, email o strumenti diversi.
+
+Show the information visible in the real interface:
+
+Cliente
+Venditore
+Showroom
+Contratto
+Stato
+Schedine
+
+Mention the available organization/filtering dimensions:
+
+Anno
+Showroom
+Venditore
+Stato
+
+Possible visible states include:
+
+Ordinato
+Da ordinare
+Arrivato
+
+VISUAL:
+
+Create ONLY:
+
+[SCREENSHOT — ELENCO SCHEDINE CLIENTI]
+
+This will later contain the real screenshot.
+
+Do not generate example rows or fake data.
+
+Caption:
+
+“Dal quadro generale al dettaglio della singola commessa in pochi secondi.”
+
+
+==================================================
+4. DENTRO LA SINGOLA COMMESSA
+==================================================
+
+Eyebrow:
+DETTAGLIO COMMESSA
+
+H2:
+Apri una commessa e ritrovi tutto il suo contesto.
+
+Body:
+La Schedina Cliente raccoglie le informazioni commerciali e operative legate alla commessa e le mantiene accessibili nello stesso ambiente.
+
+Cliente, venditore, stato, prodotti e informazioni economiche rimangono collegati mentre il progetto avanza.
+
+The real interface can show information such as:
+
+- cliente
+- anno
+- località
+- venditore
+- stato della commessa
+- valore acquistato
+- valore venduto
+- numero prodotti
+- numero colli
+
+VISUAL:
+
+Create ONLY:
+
+[SCREENSHOT — DETTAGLIO SCHEDINA CLIENTE]
+
+
+==================================================
+5. PRODUCT-BY-PRODUCT CONTROL
+==================================================
+
+This is one of the MOST IMPORTANT sections of the page.
+
+Eyebrow:
+PRODOTTO PER PRODOTTO
+
+H2:
+Sai a che punto è ogni elemento della commessa.
+
+Body:
+Una singola commessa può contenere decine di prodotti di brand diversi, ciascuno con tempi e stati differenti.
+
+Totalone permette di seguirli individualmente senza perdere la visione complessiva della commessa.
+
+A product can contain information such as:
+
+Brand
+Prodotto
+Quantità
+Listino
+Sconto
+Prezzo finale
+Stato fattura
+Stato ordine
+Magazzino
+Colli
+Allegati
+
+VISUAL:
+
+Create the largest screenshot placeholder on the page:
+
+[SCREENSHOT — PRODOTTI DELLA SCHEDINA]
+
+I will insert the real product-table screenshot later.
+
+Do not recreate the table.
+
+Highlight statement:
+
+“Decine di prodotti diversi. Una sola commessa da seguire.”
+
+
+==================================================
+6. STATI E AVANZAMENTO
+==================================================
+
+Eyebrow:
+AVANZAMENTO
+
+H2:
+Ogni prodotto può essere in una fase diversa.
+
+Body:
+All’interno della stessa commessa alcuni prodotti possono essere ancora da ordinare, altri già confermati, altri arrivati o già disponibili in magazzino.
+
+Totalone rende questa differenza immediatamente visibile.
+
+Use normal WEBSITE elements — not fake Totalone UI — to communicate examples of real states:
+
+DA ORDINARE
+→
+CONFERMATO
+→
+ORDINATO
+→
+ARRIVATO
+→
+IN MAGAZZINO
+→
+PROGRAMMATO
+
+Also communicate that individual products may enter:
+
+IN CORSO
+ASSISTENZA
+
+Do not imply that every product necessarily follows exactly the same linear sequence.
+
+Key statement:
+
+“Non devi chiedere a qualcuno a che punto è un prodotto. Lo vedi.”
+
+VISUAL:
+
+Optionally create:
+
+[SCREENSHOT — STATI PRODOTTI]
+
+Do not generate the screenshot.
+
+
+==================================================
+7. COMMERCIAL + OPERATIONAL INFORMATION
+==================================================
+
+Eyebrow:
+TUTTO COLLEGATO
+
+H2:
+Dal valore della vendita all’avanzamento operativo.
+
+Body:
+La commessa non vive soltanto nella logistica.
+
+Totalone mantiene nello stesso contesto le informazioni economiche della vendita e ciò che sta succedendo ai singoli prodotti.
+
+This section should communicate the connection between:
+
+VENDUTO
++
+PRODOTTI
++
+ORDINI
++
+MAGAZZINO
++
+COLLI
+
+Do NOT over-focus the marketing copy on margins or internal profitability.
+
+The goal is to communicate continuity between commercial and operational information.
+
+
+==================================================
+8. PAGAMENTI
+==================================================
+
+Eyebrow:
+ACCONTI E SALDO
+
+H2:
+Anche i pagamenti rimangono collegati alla commessa.
+
+Body:
+Registra gli acconti ricevuti dal cliente e mantieni visibile la situazione economica della commessa.
+
+Totalone collega i pagamenti alla relativa Schedina Cliente e calcola il saldo residuo sulla base del totale e degli acconti registrati.
+
+Communicate:
+
+Acconti ricevuti
+→
+Pagamenti registrati
+→
+Saldo residuo
+
+Do not create fake amounts.
+
+VISUAL:
+
+Create ONLY if useful:
+
+[SCREENSHOT — ACCONTI E PAGAMENTI COMMESSA]
+
+
+==================================================
+9. COSTI DI SERVIZIO
+==================================================
+
+Eyebrow:
+OLTRE AI PRODOTTI
+
+H2:
+Anche i servizi fanno parte della commessa.
+
+Body:
+Una vendita di arredamento non è composta soltanto dai prodotti.
+
+Trasporto, smontaggio, imballaggi speciali e altri servizi possono essere associati direttamente alla Schedina Cliente, mantenendo anche queste attività all’interno del contesto della commessa.
+
+Use examples:
+
+Trasporto
+Smontaggio
+Imballaggi speciali
+Altri servizi
+
+Do NOT invent services beyond these examples unless they exist in the product.
+
+VISUAL:
+
+Create:
+
+[SCREENSHOT — COSTI DI SERVIZIO]
+
+
+==================================================
+10. DOCUMENTI
+==================================================
+
+Eyebrow:
+DOCUMENTI
+
+H2:
+I documenti restano dove servono.
+
+Body:
+Contratti, planimetrie, comunicazioni e altri documenti possono essere associati alla commessa e organizzati nello stesso contesto operativo.
+
+Il team non deve ricostruire ogni volta la documentazione tra cartelle, email e strumenti diversi.
+
+Possible examples:
+
+Contratti
+Planimetrie
+Comunicazioni
+
+VISUAL:
+
+Create ONLY:
+
+[SCREENSHOT — DOCUMENTI COMMESSA]
+
+
+==================================================
+11. NOTE AND HISTORY
+==================================================
+
+Eyebrow:
+CONTESTO CONDIVISO
+
+H2:
+Le informazioni non rimangono nella testa di una persona.
+
+Body:
+Note interne e storico delle attività aiutano il team a mantenere il contesto della commessa accessibile nel tempo.
+
+Chi apre la Schedina Cliente può ritrovare le informazioni operative senza dover ricostruire ogni passaggio attraverso conversazioni separate.
+
+Communicate:
+
+NOTE
+Informazioni operative collegate alla commessa.
+
+STORICO
+Continuità delle attività nel tempo.
+
+Do not invent collaboration or notification functionality that is not confirmed.
+
+
+==================================================
+12. MONTAGGIO
+==================================================
+
+Eyebrow:
+FINO AL MONTAGGIO
+
+H2:
+La commessa continua fino a quando il lavoro non è concluso.
+
+Body:
+La Schedina Cliente mantiene anche le informazioni necessarie per collegare la commessa alla fase di montaggio.
+
+Data prevista e informazioni operative rimangono associate al progetto, mantenendo continuità tra ciò che è stato venduto e ciò che deve essere installato.
+
+Communicate:
+
+COMMESSA
+→
+PRODOTTI
+→
+ARRIVO
+→
+MONTAGGIO
+
+Add contextual internal link:
+
+Scopri la gestione Montaggi →
+
+
+==================================================
+13. ASSISTENZA
+==================================================
+
+Eyebrow:
+ANCHE DOPO LA CONSEGNA
+
+H2:
+La storia della commessa non scompare dopo il montaggio.
+
+Body:
+Se un prodotto richiede assistenza, la segnalazione rimane collegata al cliente, alla Schedina Cliente e al prodotto interessato.
+
+In questo modo il post-vendita continua a partire dallo stesso contesto della commessa.
+
+Create a minimal flow:
+
+CLIENTE
+→
+COMMESSA
+→
+PRODOTTO
+→
+ASSISTENZA
+
+Add internal link:
+
+Scopri Assistenza e post-vendita →
+
+Do not describe advanced assistance functionality here.
+Keep the deep dive for the dedicated Assistance product page.
+
+
+==================================================
+14. ONE CONNECTED WORKFLOW
+==================================================
+
+Eyebrow:
+UN UNICO FLUSSO
+
+H2:
+Dalla vendita al post-vendita.
+
+Create an elegant website diagram:
+
+TRATTATIVA
+→
+PREVENTIVO
+→
+VENDITA
+→
+COMMESSA
+→
+ORDINI
+→
+MAGAZZINO
+→
+MONTAGGIO
+→
+ASSISTENZA
+
+Body:
+La Schedina Cliente è il punto in cui ciò che è stato venduto diventa operativo.
+
+Prodotti, ordini, documenti e attività continuano nello stesso ecosistema senza perdere il collegamento con il cliente.
+
+On mobile transform the horizontal flow into a vertical flow.
+
+Do NOT create fake product UI for this diagram.
+
+
+==================================================
+15. LESS SEARCHING
+==================================================
+
+Eyebrow:
+MENO INFORMAZIONI SPARSE
+
+H2:
+Meno tempo a cercare. Più controllo sulla commessa.
+
+Create a clean comparison.
+
+SENZA UN SISTEMA CONDIVISO
+
+Excel
+Email
+Cartelle
+Messaggi
+Telefonate
+Informazioni distribuite tra persone diverse
+
+WITH TOTALONE
+
+Una Schedina Cliente
+Prodotti collegati
+Stati visibili
+Documenti associati
+Pagamenti collegati
+Informazioni condivise
+
+Supporting statement:
+
+“L’informazione resta dove serve: dentro la commessa.”
+
+Do not make unsupported quantitative time-saving claims.
+
+
+==================================================
+16. MULTI-SHOWROOM
+==================================================
+
+Eyebrow:
+PER CHI GESTISCE PIÙ SEDI
+
+H2:
+Le commesse restano organizzate anche quando l’azienda cresce.
+
+Body:
+Filtra e consulta le Schedine Cliente per showroom, venditore, anno e stato.
+
+Dalla singola sede alla visione complessiva dell’azienda, Totalone mantiene le commesse nello stesso sistema.
+
+VISUAL:
+
+Create ONLY:
+
+[SCREENSHOT — FILTRI SCHEDINE / SHOWROOM / VENDITORE]
+
+
+==================================================
+17. TOTALONE ECOSYSTEM
+==================================================
+
+Eyebrow:
+TOTALONE
+
+H2:
+La commessa è collegata a tutto il resto.
+
+Body:
+Gestione Commesse fa parte dello stesso flusso Totalone che accompagna il cliente dalla prima opportunità fino al post-vendita.
+
+Create contextual internal links:
+
+CRM
+Il cliente entra nel sistema.
+
+GESTIONE TRATTATIVE
+Segui l’opportunità commerciale.
+
+PREVENTIVI
+Costruisci la proposta.
+
+GESTIONE COMMESSE
+Gestisci ciò che hai venduto.
+
+MAGAZZINO E LOGISTICA
+Segui ciò che arriva.
+
+MONTAGGI
+Organizza l’installazione.
+
+ASSISTENZA E POST-VENDITA
+Continua a seguire il cliente.
+
+Do NOT create new top-level navigation items.
+
+
+==================================================
+18. WHY TOTALONE
+==================================================
+
+Eyebrow:
+PERCHÉ TOTALONE
+
+H2:
+Costruito intorno a come funziona davvero una commessa di arredamento.
+
+Body:
+Nel settore dell’arredamento, una vendita può trasformarsi in mesi di ordini, consegne, documenti, pagamenti e attività operative.
+
+Totalone mantiene tutto collegato alla stessa commessa, dando alle persone coinvolte un unico punto da cui partire.
+
+Create three pillars:
+
+VISIBILE
+
+Sai cosa sta succedendo nella commessa.
+
+
+COLLEGATO
+
+Prodotti, ordini, documenti, pagamenti e attività rimangono nello stesso contesto.
+
+
+CONDIVISO
+
+Le informazioni non dipendono dalla memoria della singola persona.
+
+
+==================================================
+19. SEO CONTENT
+==================================================
+
+H2:
+Software per la gestione delle commesse di arredamento.
+
+Body:
+Totalone è un gestionale per arredatori e showroom che permette di organizzare e seguire le commesse dalla vendita alle fasi operative.
+
+Ogni Schedina Cliente mantiene collegati prodotti, ordini, documenti, pagamenti, servizi e informazioni sul montaggio, offrendo al team una visione condivisa dell’avanzamento della commessa.
+
+Naturally include:
+
+gestione commesse arredamento
+software gestione commesse arredamento
+gestionale per arredatori
+gestione ordini arredamento
+software showroom arredamento
+
+Avoid keyword stuffing.
+
+
+==================================================
+20. FINAL CTA
+==================================================
+
+Use the existing Totalone premium blue visual identity.
+
+Eyebrow:
+GESTIONE COMMESSE TOTALONE
+
+H2:
+Tutto quello che succede dopo la vendita, finalmente nello stesso posto.
+
+Body:
+Scopri come Totalone può aiutare il tuo showroom a seguire prodotti, ordini, documenti, pagamenti e attività di ogni commessa.
+
+Primary CTA:
+Prenota una demo →
+
+Secondary CTA:
+Scopri tutte le funzionalità
+
+Microcopy:
+Una demo costruita sul modo in cui lavora il tuo showroom.
+
+
+==================================================
+IMAGES — CRITICAL
+==================================================
+
+DO NOT GENERATE ANY IMAGES.
+
+DO NOT:
+- generate AI images
+- search for images
+- use stock photography
+- generate Totalone screenshots
+- recreate Totalone UI
+- create fake dashboards
+- create fake tables
+- invent product data
+- invent customers
+- invent financial values
+
+I will add ALL real Totalone screenshots manually.
+
+Wherever a screenshot is needed, create ONLY a clean placeholder.
+
+Use labels such as:
+
+[SCREENSHOT — ELENCO SCHEDINE CLIENTI]
+
+[SCREENSHOT — DETTAGLIO SCHEDINA CLIENTE]
+
+[SCREENSHOT — PRODOTTI DELLA SCHEDINA]
+
+[SCREENSHOT — STATI PRODOTTI]
+
+[SCREENSHOT — ACCONTI E PAGAMENTI]
+
+[SCREENSHOT — COSTI DI SERVIZIO]
+
+[SCREENSHOT — DOCUMENTI]
+
+[SCREENSHOT — MONTAGGIO]
+
+These placeholders must be easy to replace later.
+
+Do not simulate any UI inside them.
+
+
+==================================================
+DESIGN DIRECTION
+==================================================
+
+Maintain exactly the visual language already established for:
+- Totalone homepage
+- CRM product page
+- Gestione Trattative page
+- Preventivi page
+
+Do not create a new design system.
+
+Use:
+- generous whitespace
+- strong typography
+- Totalone blue accents
+- large screenshot placeholders
+- occasional full-width screenshot sections
+- minimal diagrams
+- alternating layouts
+- restrained use of cards
+- subtle animations
+- premium B2B SaaS presentation
+
+Avoid:
+- generic project management imagery
+- generic SaaS illustrations
+- excessive cards
+- excessive gradients
+- fake product interfaces
+- invented functionality
+- repetitive section layouts
+
+
+==================================================
+PAGE STORYTELLING
+==================================================
+
+The page should tell this story:
+
+THE SALE IS CLOSED
+↓
+A COMMESSA IS CREATED
+↓
+THE SCHEDINA CLIENTE BECOMES ITS OPERATIONAL HUB
+↓
+PRODUCTS ARE ADDED
+↓
+EACH PRODUCT CAN HAVE A DIFFERENT STATUS
+↓
+ORDERS AND ARRIVALS ARE FOLLOWED
+↓
+PAYMENTS AND SERVICES REMAIN CONNECTED
+↓
+DOCUMENTS AND NOTES REMAIN WITH THE PROJECT
+↓
+PRODUCTS REACH THE WAREHOUSE
+↓
+THE INSTALLATION IS ORGANIZED
+↓
+ASSISTANCE REMAINS CONNECTED AFTER DELIVERY
+
+
+==================================================
+CORE POSITIONING
+==================================================
+
+Do NOT position Gestione Commesse as generic project management.
+
+Do NOT confuse it with Gestione Trattative.
+
+GESTIONE TRATTATIVE:
+“What could we sell?”
+
+GESTIONE COMMESSE:
+“What is happening with what we sold?”
+
+The Schedina Cliente is the operational center of the commessa.
+
+The core message is:
+
+“Totalone raccoglie tutto ciò che succede dopo la vendita in un’unica commessa.”
+
+The visitor should immediately understand that by opening a Schedina Cliente they can answer questions such as:
+
+- Cosa abbiamo venduto?
+- Quali prodotti compongono la commessa?
+- Cosa deve ancora essere ordinato?
+- Cosa è già stato ordinato?
+- Cosa è arrivato?
+- Cosa è in magazzino?
+- Quali documenti appartengono alla commessa?
+- Quali pagamenti sono collegati?
+- Quali servizi fanno parte del progetto?
+- Quando è previsto il montaggio?
+- C’è un’assistenza collegata?
+
+This is the main value proposition of the page.
