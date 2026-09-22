@@ -1,0 +1,747 @@
+Create the complete “Gestione trattative per arredatori” product page for the Totalone marketing website.
+
+IMPORTANT:
+- Work ONLY on the public Totalone marketing website.
+- Do NOT modify the Totalone application/dashboard.
+- Keep the existing Totalone website design system, navbar, typography, colors, spacing, buttons, border radius and overall visual language.
+- The page must feel like a premium modern B2B SaaS product page.
+- Preserve the current Totalone brand identity.
+- All copy must be in Italian.
+- Mobile and tablet responsive.
+- DO NOT generate images.
+- DO NOT generate product screenshots.
+- DO NOT recreate fake versions of the Totalone interface.
+- DO NOT create fake dashboards.
+- I will manually add the real Totalone screenshots later.
+- Wherever a screenshot is needed, create ONLY a clean placeholder with a small temporary label describing which screenshot should be inserted.
+- Do NOT invent product functionality that is not described below.
+- This page is specifically about the commercial management of opportunities and trattative.
+- Do not turn this page into CRM, Preventivi or Gestione Commesse.
+- CRM, Preventivi and Gestione Commesse can be referenced as connected Totalone modules, but they must remain separate product areas.
+- Avoid excessive cards and repetitive layouts.
+- Use subtle animations only where they improve comprehension.
+
+PAGE URL:
+/gestione-trattative-arredamento
+
+SEO TITLE:
+Gestione Trattative per Arredatori e Showroom | Totalone
+
+META DESCRIPTION:
+Gestisci trattative, opportunità commerciali e pipeline di vendita con Totalone. Segui ogni cliente dal primo interesse alla vendita in un unico sistema.
+
+PRIMARY KEYWORD:
+gestione trattative arredamento
+
+SECONDARY KEYWORDS:
+software gestione trattative arredamento
+gestione trattative commerciali
+pipeline vendite arredamento
+CRM trattative arredatori
+software vendite showroom arredamento
+gestionale commerciale arredamento
+
+
+==================================================
+1. HERO
+==================================================
+
+Eyebrow:
+GESTIONE TRATTATIVE
+
+H1:
+Ogni trattativa, sotto controllo.
+
+Subtitle:
+Segui le opportunità commerciali del tuo showroom, controlla a che punto sono e mantieni collegati cliente, venditore, valore e attività fino alla vendita.
+
+Primary CTA:
+Prenota una demo →
+
+Secondary CTA:
+Scopri come funziona ↓
+
+Microcopy:
+Pensato per showroom, negozi di arredamento e realtà multi-store.
+
+VISUAL:
+DO NOT create or generate an image.
+
+Create a large responsive placeholder:
+
+[SCREENSHOT — PANORAMICA GESTIONE TRATTATIVE]
+
+The placeholder must be visually integrated into the page but must NOT contain any simulated interface.
+
+I will insert the real Totalone screenshot manually later.
+
+
+==================================================
+2. VALUE PROPOSITION
+==================================================
+
+Eyebrow:
+UNA VISIONE COMMERCIALE COMPLETA
+
+H2:
+Non perdere di vista nessuna opportunità.
+
+Body:
+Nel settore dell’arredamento una trattativa può durare settimane o mesi.
+
+Il cliente entra in showroom, valuta diverse soluzioni, riceve un preventivo, torna, modifica il progetto e prende una decisione.
+
+Totalone ti permette di mantenere ogni opportunità commerciale organizzata e di capire rapidamente quali trattative sono aperte, chi le sta seguendo e a che punto si trovano.
+
+Create three concise benefit areas:
+
+1.
+
+Title:
+Sai a che punto è ogni trattativa
+
+Text:
+Ogni opportunità mantiene il proprio stato e il proprio contesto commerciale.
+
+
+2.
+
+Title:
+Sai chi la sta seguendo
+
+Text:
+Cliente, venditore e informazioni della trattativa rimangono collegati.
+
+
+3.
+
+Title:
+Sai cosa può diventare vendita
+
+Text:
+Mantieni una visione chiara delle opportunità commerciali ancora aperte e della loro evoluzione.
+
+
+==================================================
+3. TUTTE LE TRATTATIVE
+==================================================
+
+Eyebrow:
+PANORAMICA COMMERCIALE
+
+H2:
+Tutte le trattative. Una sola vista.
+
+Body:
+Visualizza le opportunità commerciali dello showroom in un unico ambiente e passa rapidamente dalla visione generale al dettaglio della singola trattativa.
+
+L’obiettivo non è soltanto sapere quanti clienti stai seguendo, ma capire a che punto si trova ogni opportunità.
+
+Possible information to communicate ONLY if supported by the actual Totalone interface:
+
+- Cliente
+- Venditore
+- Stato
+- Valore
+- Showroom
+- Data
+- Provenienza
+
+VISUAL:
+Create ONLY this placeholder:
+
+[SCREENSHOT — ELENCO TRATTATIVE]
+
+Do not create any example rows.
+Do not invent customer names.
+Do not invent monetary values.
+Do not simulate Totalone UI.
+
+Caption:
+Una visione condivisa delle opportunità commerciali dello showroom.
+
+
+==================================================
+4. PIPELINE DI VENDITA
+==================================================
+
+Make this one of the strongest sections of the page.
+
+Eyebrow:
+PIPELINE
+
+H2:
+Trasforma le trattative in un processo visibile.
+
+Body:
+Quando le opportunità vengono gestite nella testa delle persone, nelle email o in fogli separati, diventa difficile capire cosa sta realmente succedendo.
+
+Totalone porta le trattative in una pipeline condivisa, permettendo al team di visualizzare il loro avanzamento e mantenere una lettura ordinata del lavoro commerciale.
+
+VISUAL:
+Create ONLY:
+
+[SCREENSHOT — PIPELINE TRATTATIVE]
+
+This will later contain the real Totalone pipeline / Kanban screenshot.
+
+Do NOT generate a fake Kanban.
+
+Do NOT invent pipeline stages.
+
+Use the real stages from the screenshot when I add it later.
+
+
+Supporting statement:
+
+“Non solo quante trattative hai. A che punto sono.”
+
+
+==================================================
+5. DAL LEAD ALLA TRATTATIVA
+==================================================
+
+Eyebrow:
+DAL CONTATTO ALL’OPPORTUNITÀ
+
+H2:
+Un cliente non deve perdersi dopo il primo contatto.
+
+Body:
+Una richiesta, una visita in showroom o un nuovo contatto possono diventare un’opportunità commerciale.
+
+Totalone mantiene il cliente all’interno dello stesso ecosistema, così la fase commerciale può proseguire senza ricostruire ogni volta informazioni e contesto.
+
+Create a simple website diagram:
+
+CONTATTO
+→
+OPPORTUNITÀ
+→
+TRATTATIVA
+
+Do NOT simulate Totalone UI.
+
+Supporting text:
+Il CRM raccoglie il cliente. La gestione trattative segue l’opportunità commerciale.
+
+Add contextual internal link:
+
+Scopri il CRM per arredatori →
+
+
+==================================================
+6. IL VALORE DELLE OPPORTUNITÀ
+==================================================
+
+Eyebrow:
+VALORE COMMERCIALE
+
+H2:
+Non tutte le trattative pesano allo stesso modo.
+
+Body:
+Sapere quante opportunità sono aperte è utile. Sapere quale valore commerciale rappresentano rende la lettura molto più significativa.
+
+Totalone permette di mantenere il valore della trattativa collegato alla relativa opportunità, aiutando il team a leggere il lavoro commerciale in modo più strutturato.
+
+IMPORTANT:
+Do NOT create fake revenue numbers.
+Do NOT create fake conversion percentages.
+Do NOT claim forecasting capabilities unless explicitly supported by the real product.
+Do NOT claim predictive sales functionality.
+
+VISUAL:
+Create ONLY:
+
+[SCREENSHOT — VALORI DELLE TRATTATIVE]
+
+Supporting statement:
+
+“Dai un valore alle opportunità, non soltanto un nome.”
+
+
+==================================================
+7. OGNI TRATTATIVA HA IL SUO CONTESTO
+==================================================
+
+Eyebrow:
+DETTAGLIO TRATTATIVA
+
+H2:
+Apri una trattativa e riparti da dove eri rimasto.
+
+Body:
+Ogni opportunità commerciale deve mantenere il proprio contesto.
+
+Cliente, responsabile, stato, valore e informazioni della trattativa rimangono collegati, così chi la segue non deve ricostruire ogni volta ciò che è successo.
+
+Only mention specific fields that are actually present in the real Totalone interface.
+
+VISUAL:
+Create ONLY:
+
+[SCREENSHOT — DETTAGLIO TRATTATIVA]
+
+This should later contain a real screenshot of an opened Totalone opportunity/trattativa.
+
+Do not create fake notes, activities, fields or customer information.
+
+
+==================================================
+8. DALLE TRATTATIVE AI PREVENTIVI
+==================================================
+
+Eyebrow:
+TUTTO COLLEGATO
+
+H2:
+Quando la trattativa diventa concreta, il preventivo è già nel flusso.
+
+Body:
+Una trattativa nel settore dell’arredamento evolve spesso attraverso una o più proposte.
+
+Totalone collega il processo commerciale alla creazione del preventivo, evitando che l’offerta diventi un documento scollegato dal cliente e dall’opportunità che l’ha generata.
+
+Create a minimal website diagram:
+
+TRATTATIVA
+→
+PREVENTIVO
+→
+DECISIONE
+
+Do not simulate the application UI.
+
+Add contextual internal link:
+
+Scopri i Preventivi Totalone →
+
+
+==================================================
+9. DAL PREVENTIVO ALLA VENDITA
+==================================================
+
+Eyebrow:
+CONVERSIONE
+
+H2:
+Segui l’opportunità fino a quando diventa una vendita.
+
+Body:
+La trattativa non termina quando viene inviato il preventivo.
+
+Il cliente può chiedere modifiche, valutare alternative e richiedere nuove versioni prima di prendere una decisione.
+
+Totalone mantiene continuità tra opportunità commerciale e preventivo, aiutando il team a seguire il percorso fino alla conclusione della trattativa.
+
+Create a simple visual progression:
+
+OPPORTUNITÀ
+→
+TRATTATIVA
+→
+PREVENTIVO
+→
+VENDITA
+
+Supporting statement:
+
+“Dal primo interesse alla vendita, senza perdere il contesto commerciale.”
+
+
+==================================================
+10. DAL COMMERCIALE ALLA COMMESSA
+==================================================
+
+This section must clearly explain where Gestione Trattative ends and Gestione Commesse begins.
+
+Eyebrow:
+DALLA VENDITA ALL’OPERATIVITÀ
+
+H2:
+Quando la trattativa si chiude, il lavoro continua.
+
+Body:
+La gestione trattative accompagna il processo commerciale fino alla vendita.
+
+Da quel momento, la Gestione Commesse permette di continuare a seguire ciò che è stato venduto all’interno dello stesso ecosistema Totalone.
+
+Create a minimal transition:
+
+TRATTATIVA
+→
+PREVENTIVO
+→
+VENDITA
+
+then visually transition into:
+
+COMMESSA
+
+Add internal link:
+
+Scopri la Gestione Commesse →
+
+IMPORTANT:
+Do not merge Gestione Trattative and Gestione Commesse into one functionality.
+
+They are connected but distinct product areas.
+
+
+==================================================
+11. FILTRI E ORGANIZZAZIONE
+==================================================
+
+Eyebrow:
+TROVA SUBITO QUELLO CHE CERCHI
+
+H2:
+Dal quadro generale alla singola opportunità.
+
+Body:
+Quando aumentano clienti e trattative, avere una vista ordinata diventa essenziale.
+
+Totalone permette di organizzare il lavoro commerciale e concentrarsi sulle opportunità rilevanti per il momento.
+
+Only show filters and organizational dimensions that exist in the actual interface.
+
+Potential examples, ONLY if supported by the product:
+
+Showroom
+Venditore
+Stato
+Cliente
+Data
+Provenienza
+
+VISUAL:
+Create ONLY:
+
+[SCREENSHOT — FILTRI GESTIONE TRATTATIVE]
+
+
+==================================================
+12. MULTI-SHOWROOM
+==================================================
+
+Eyebrow:
+PER CHI GESTISCE PIÙ SEDI
+
+H2:
+Una pipeline commerciale condivisa, anche quando l’azienda cresce.
+
+Body:
+Quando aumentano showroom e venditori, aumenta anche la complessità commerciale.
+
+Totalone permette di mantenere le trattative nello stesso sistema e di leggere il lavoro commerciale dalla prospettiva più utile alla propria organizzazione.
+
+Keep this section concise.
+
+Do NOT claim specific permissions, territory management or enterprise functionality unless actually supported.
+
+VISUAL:
+Create ONLY if needed:
+
+[SCREENSHOT — TRATTATIVE PER SHOWROOM / VENDITORE]
+
+
+==================================================
+13. IL FLUSSO TOTALONE
+==================================================
+
+Create a visually distinctive section without product screenshots.
+
+Eyebrow:
+UN UNICO FLUSSO
+
+H2:
+Dal primo contatto alla commessa.
+
+Create an elegant horizontal website diagram:
+
+CRM
+→
+TRATTATIVA
+→
+PREVENTIVO
+→
+VENDITA
+→
+COMMESSA
+
+Under each step:
+
+CRM
+Il cliente entra nel sistema.
+
+TRATTATIVA
+Segui l’opportunità commerciale.
+
+PREVENTIVO
+Costruisci la proposta.
+
+VENDITA
+La trattativa si conclude.
+
+COMMESSA
+Inizia la gestione di ciò che hai venduto.
+
+Body:
+Ogni fase mantiene continuità con quella precedente, riducendo la frammentazione tra strumenti, file e informazioni.
+
+On mobile transform this into a vertical flow.
+
+
+==================================================
+14. CONTROLLO COMMERCIALE
+==================================================
+
+Eyebrow:
+PIÙ VISIBILITÀ
+
+H2:
+Il commerciale segue le trattative. La direzione vede cosa sta succedendo.
+
+Body:
+Una pipeline condivisa permette al team di lavorare sulle proprie opportunità e allo stesso tempo rende più leggibile l’attività commerciale dello showroom.
+
+The message should focus on visibility and shared information.
+
+Do NOT claim:
+- automatic forecasting
+- AI sales prediction
+- revenue forecasting
+- automatic probability scoring
+
+unless those features are actually confirmed later.
+
+Create a concise contrast:
+
+SENZA UN PROCESSO CONDIVISO
+
+Trattative sparse
+Informazioni personali
+Aggiornamenti da chiedere
+Difficile capire cosa è aperto
+
+WITH TOTALONE
+
+Pipeline condivisa
+Stati visibili
+Responsabilità chiare
+Opportunità organizzate
+
+
+==================================================
+15. WHY TOTALONE
+==================================================
+
+Eyebrow:
+PERCHÉ TOTALONE
+
+H2:
+Un processo commerciale costruito per chi vende arredamento.
+
+Body:
+Vendere arredamento raramente significa chiudere una trattativa in una singola conversazione.
+
+Visite in showroom, richieste, preventivi, modifiche e decisioni possono distribuirsi nel tempo.
+
+Totalone mantiene questo percorso organizzato e collegato agli altri processi dello showroom.
+
+Create three pillars:
+
+VISIBILE
+
+Sai quali trattative sono aperte e a che punto sono.
+
+
+CONDIVISO
+
+Il lavoro commerciale non rimane nella testa del singolo venditore.
+
+
+COLLEGATO
+
+CRM, trattative, preventivi e commesse fanno parte dello stesso ecosistema.
+
+
+==================================================
+16. SEO CONTENT
+==================================================
+
+H2:
+Software per la gestione delle trattative commerciali nell’arredamento.
+
+Body:
+Totalone è un gestionale per arredatori e showroom che permette di organizzare le trattative commerciali e mantenere collegate opportunità, clienti, venditori e preventivi.
+
+La gestione della pipeline aiuta il team a seguire le opportunità durante il processo di vendita e a mantenere continuità dal primo contatto fino alla commessa.
+
+Naturally include:
+- gestione trattative arredamento
+- gestione trattative commerciali
+- pipeline vendite arredamento
+- gestionale per arredatori
+- software per showroom arredamento
+
+Avoid keyword stuffing.
+
+
+==================================================
+17. FINAL CTA
+==================================================
+
+Use the existing premium Totalone blue visual identity.
+
+Eyebrow:
+GESTIONE TRATTATIVE TOTALONE
+
+H2:
+Non lasciare che una trattativa si perda per strada.
+
+Body:
+Scopri come Totalone può aiutare il tuo showroom a organizzare opportunità, venditori e preventivi in un unico processo commerciale.
+
+Primary CTA:
+Prenota una demo →
+
+Secondary CTA:
+Scopri tutte le funzionalità
+
+Microcopy:
+Una demo costruita sul modo in cui lavora il tuo showroom.
+
+
+==================================================
+IMAGES AND SCREENSHOTS — CRITICAL
+==================================================
+
+DO NOT GENERATE ANY IMAGES.
+
+DO NOT:
+- generate AI images
+- search for stock images
+- create fake Totalone screenshots
+- recreate the Totalone interface
+- create fake Kanban boards
+- create fake dashboards
+- invent customer data
+- invent monetary values
+- modify existing product screenshots
+
+I will add all screenshots manually later.
+
+Wherever a screenshot is needed, create ONLY a responsive placeholder.
+
+Use temporary labels such as:
+
+[SCREENSHOT — PANORAMICA GESTIONE TRATTATIVE]
+
+[SCREENSHOT — ELENCO TRATTATIVE]
+
+[SCREENSHOT — PIPELINE TRATTATIVE]
+
+[SCREENSHOT — DETTAGLIO TRATTATIVA]
+
+[SCREENSHOT — VALORI DELLE TRATTATIVE]
+
+[SCREENSHOT — FILTRI]
+
+The placeholders must:
+- preserve the intended layout
+- have appropriate aspect ratios
+- work responsively
+- be easy to replace with the final screenshot
+- contain NO simulated product UI
+
+
+==================================================
+DESIGN DIRECTION
+==================================================
+
+Maintain exactly the visual language already established for:
+- Totalone homepage
+- CRM product page
+- other Totalone product pages
+
+Do not create a new design system.
+
+Use:
+- generous whitespace
+- strong typography
+- Totalone blue accents
+- large screenshot placeholders
+- alternating compositions
+- occasional full-width product sections
+- minimal diagrams
+- restrained cards
+- subtle scroll animations
+- premium B2B SaaS presentation
+
+Avoid:
+- stock photography
+- generated imagery
+- excessive gradients
+- excessive rounded cards
+- repetitive two-column layouts
+- generic CRM illustrations
+- fake dashboards
+- fake screenshots
+- invented functionality
+- unnecessary decorative graphics
+
+
+==================================================
+PAGE STORYTELLING
+==================================================
+
+The page should tell this story:
+
+A NEW COMMERCIAL OPPORTUNITY APPEARS
+↓
+IT BECOMES A TRATTATIVA
+↓
+THE SALESPERSON FOLLOWS IT
+↓
+THE PIPELINE MAKES ITS STATUS VISIBLE
+↓
+THE OPPORTUNITY HAS A COMMERCIAL VALUE
+↓
+A PREVENTIVO IS CREATED
+↓
+THE CUSTOMER DECIDES
+↓
+THE TRATTATIVA BECOMES A SALE
+↓
+THE SALE BECOMES A COMMESSA
+
+
+==================================================
+CORE POSITIONING
+==================================================
+
+Do NOT position Gestione Trattative as a generic CRM.
+
+The CRM manages the customer relationship and customer data.
+
+Gestione Trattative manages the COMMERCIAL OPPORTUNITY.
+
+Do NOT position Gestione Trattative as Gestione Commesse.
+
+Gestione Commesse begins when the commercial process becomes operational after the sale.
+
+The core message is:
+
+“Totalone ti permette di vedere, organizzare e seguire ogni opportunità commerciale fino a quando diventa una vendita.”
+
+The visitor should immediately understand:
+
+1. Quali trattative sono aperte?
+2. Chi le sta seguendo?
+3. A che punto sono?
+4. Quanto valgono?
+5. Quali stanno avanzando verso il preventivo e la vendita?
+
+The page should make the commercial pipeline tangible without inventing functionality that is not present in Totalone.

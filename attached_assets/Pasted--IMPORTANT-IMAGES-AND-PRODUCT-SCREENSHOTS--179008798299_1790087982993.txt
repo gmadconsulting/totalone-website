@@ -1,0 +1,144 @@
+==================================================
+IMPORTANT — IMAGES AND PRODUCT SCREENSHOTS
+==================================================
+
+DO NOT generate any images.
+
+DO NOT generate, recreate, mock up, redraw or modify Totalone product screenshots.
+
+DO NOT create fake Totalone dashboards or fake UI elements to represent the software.
+
+DO NOT use AI-generated images.
+
+DO NOT use stock images.
+
+I will manually add the real Totalone screenshots later.
+
+Where a product screenshot is required, create ONLY a clean image placeholder inside the page layout.
+
+Each placeholder should:
+- have the correct size and responsive behavior for the intended screenshot
+- use a very subtle neutral background
+- preserve the premium Totalone website aesthetic
+- contain a small internal label describing which screenshot should be inserted later
+- NOT contain any simulated interface
+
+Use labels such as:
+
+[SCREENSHOT — ELENCO COMMESSE]
+
+[SCREENSHOT — DETTAGLIO COMMESSA]
+
+[SCREENSHOT — PRODOTTI DELLA COMMESSA]
+
+[SCREENSHOT — STATI ORDINE / MAGAZZINO]
+
+[SCREENSHOT — DOCUMENTI, NOTE E ASSISTENZA]
+
+These labels are temporary editor references and should be easy to remove when the real screenshots are inserted.
+
+Do not search for images online.
+
+Do not create decorative product illustrations as replacements.
+
+Build the page around the future screenshots using:
+- spacing
+- containers
+- responsive image areas
+- text/screenshot compositions
+- subtle borders or shadows where consistent with the existing Totalone website
+
+The final layout must be ready for me to simply replace each placeholder with a real screenshot.
+
+
+==================================================
+SCREENSHOT PLACEMENT
+==================================================
+
+HERO:
+Create a large placeholder:
+
+[SCREENSHOT — DETTAGLIO COMMESSA]
+
+Do not put it inside a laptop, browser mockup or device frame.
+
+
+SECTION “TUTTE LE COMMESSE”:
+Placeholder:
+
+[SCREENSHOT — ELENCO COMMESSE]
+
+
+SECTION “SINGOLA COMMESSA”:
+Placeholder:
+
+[SCREENSHOT — DETTAGLIO COMMESSA]
+
+
+SECTION “PRODOTTO PER PRODOTTO”:
+Use the largest screenshot area on the page.
+
+Placeholder:
+
+[SCREENSHOT — PRODOTTI DELLA COMMESSA]
+
+This screenshot will show the product table with different brands and different operational statuses.
+
+
+SECTION “AVANZAMENTO”:
+Do NOT create a fake screenshot.
+
+The status flow can be created with normal HTML/CSS text elements:
+
+DA ORDINARE
+→
+CONFERMATO
+→
+ORDINATO
+→
+ARRIVATO
+→
+IN MAGAZZINO
+→
+PROGRAMMATO
+
+These are website elements, not simulated Totalone UI.
+
+
+SECTION “TUTTO CIÒ CHE RIGUARDA LA COMMESSA”:
+Do not recreate the Totalone tabs as fake application UI.
+
+Use normal marketing-page typography to explain:
+
+Prodotti
+Costi di servizio
+Documenti
+Note
+Assistenza
+
+Optionally leave a placeholder:
+
+[SCREENSHOT — DETTAGLIO COMMESSA / TAB]
+
+
+==================================================
+CRITICAL RULE
+==================================================
+
+The website must explain the real Totalone product.
+
+It must NOT attempt to visually recreate it.
+
+Whenever the design would normally require a product image, leave a clean placeholder for the real screenshot that I will insert manually later.
+
+Focus on:
+- page architecture
+- copy
+- hierarchy
+- spacing
+- responsive behavior
+- SEO
+- CTAs
+- positioning
+
+I will handle all product screenshots myself.
