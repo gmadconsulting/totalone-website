@@ -125,7 +125,32 @@ function getPreviewPath(): string | null {
       ? pathname.slice(basePath.length) || "/"
       : pathname;
   const match = local.match(/^\/preview\/(.+)$/);
-  return match ? match[1] : null;
+  if (match) {
+    return match[1];
+  }
+
+  const publicRoutes: Record<string, string> = {
+    "/risorse/": "totalone-risorse/RisorseArchitecturePage",
+    "/blog/": "totalone-site-architecture/ResourcesHub",
+    "/blog/gestione-showroom": "totalone-site-architecture/ResourcesHub",
+    "/blog/vendite-crm": "totalone-site-architecture/ResourcesHub",
+    "/blog/preventivi": "totalone-site-architecture/ResourcesHub",
+    "/blog/commesse-progetti": "totalone-site-architecture/ResourcesHub",
+    "/blog/logistica-magazzino": "totalone-site-architecture/ResourcesHub",
+    "/blog/montaggi-post-vendita": "totalone-site-architecture/ResourcesHub",
+    "/blog/gestione-showroom/software-gestionale-negozio-arredamento": "totalone-blog/SoftwareGestionaleNegozioArredamentoArticle",
+    "/blog/gestione-showroom/gestionale-per-arredatori": "totalone-blog/GestionalePerArredatoriArticle",
+    "/blog/preventivi/software-preventivi-arredamento": "totalone-blog/SoftwarePreventiviArredamentoArticle",
+    "/blog/commesse-progetti/gestione-commesse-arredamento": "totalone-blog/GestioneCommesseArredamentoArticle",
+    "/blog/vendite-crm/crm-negozio-arredamento": "totalone-blog/CrmNegozioArredamentoArticle",
+    "/blog/vendite-crm/gestire-ingressi-showroom": "totalone-blog/GestireIngressiShowroomArticle",
+    "/blog/logistica-magazzino/gestione-magazzino-arredamento": "totalone-blog/GestioneMagazzinoArredamentoArticle",
+    "/blog/montaggi-post-vendita/gestione-montaggi-arredamento": "totalone-blog/GestioneMontaggiArredamentoArticle",
+    "/blog/montaggi-post-vendita/gestione-post-vendita-arredamento": "totalone-blog/GestionePostVenditaArredamentoArticle",
+    "/blog/gestione-showroom/excel-vs-gestionale-arredamento": "totalone-blog/ExcelVsGestionaleArredamentoArticle",
+  };
+
+  return publicRoutes[local] ?? null;
 }
 
 function App() {

@@ -4,22 +4,13 @@ import { MarketingShell } from "../totalone-site-architecture/_shared/MarketingS
 import { blogArticleById, type ArticleSection, type BlogArticleData } from "./blogContent";
 import "./BlogArticle.css";
 
-const previewRoot = "/__mockup/preview/totalone-blog/";
-const previewComponents: Record<string, string> = {
-  "software-gestionale-negozio-arredamento": "SoftwareGestionaleNegozioArredamentoArticle",
-  "gestionale-per-arredatori": "GestionalePerArredatoriArticle",
-  "software-preventivi-arredamento": "SoftwarePreventiviArredamentoArticle",
-  "gestione-commesse-arredamento": "GestioneCommesseArredamentoArticle",
-  "crm-negozio-arredamento": "CrmNegozioArredamentoArticle",
-  "gestire-ingressi-showroom": "GestireIngressiShowroomArticle",
-  "gestione-magazzino-arredamento": "GestioneMagazzinoArredamentoArticle",
-  "gestione-montaggi-arredamento": "GestioneMontaggiArredamentoArticle",
-  "gestione-post-vendita-arredamento": "GestionePostVenditaArredamentoArticle",
-  "excel-vs-gestionale-arredamento": "ExcelVsGestionaleArredamentoArticle",
-};
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const sitePath = (path: string) => `${basePath}${path}`;
+const linkPath = (path: string) => path.startsWith("/__mockup/") ? path : sitePath(path);
 
 function PreviewLink({ id, children }: { id: string; children: ReactNode }) {
-  return <a href={`${previewRoot}${previewComponents[id] ?? id}`}>{children}</a>;
+  const article = blogArticleById[id];
+  return <a href={sitePath(article.route)}>{children}</a>;
 }
 
 function readTime(article: BlogArticleData) {
@@ -103,7 +94,7 @@ export function BlogArticle({ article }: { article: BlogArticleData }) {
       <main className="blog-article">
         <header className="blog-article-header">
           <div className="to-wrap">
-            <nav className="blog-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/risorse/">Risorse</a><span>/</span><a href={article.categoryRoute}>{article.category}</a><span>/</span><strong>{article.h1}</strong></nav>
+            <nav className="blog-breadcrumb" aria-label="Breadcrumb"><a href={sitePath("/")}>Home</a><span>/</span><a href={sitePath("/risorse/")}>Risorse</a><span>/</span><a href={sitePath(article.categoryRoute)}>{article.category}</a><span>/</span><strong>{article.h1}</strong></nav>
             <div className="blog-header-grid">
               <div className="blog-header-copy">
                 <span className="blog-kicker">{article.category}</span>
@@ -121,13 +112,13 @@ export function BlogArticle({ article }: { article: BlogArticleData }) {
             <details open={tocOpen} onToggle={(event) => setTocOpen(event.currentTarget.open)} className="blog-toc-mobile"><summary>In questa guida <ChevronDown size={16} /></summary><div>{sections.map((section) => <a href={`#${section.id}`} key={section.id}>{section.heading}</a>)}</div></details>
           </aside>
           <article className="blog-content">
-            <div className="blog-guide-link"><span>Guida correlata</span><a href={article.guide.href}>{article.guide.label}<ArrowRight size={15} /></a></div>
+            <div className="blog-guide-link"><span>Guida correlata</span><a href={linkPath(article.guide.href)}>{article.guide.label}<ArrowRight size={15} /></a></div>
             {sections.map((section) => <section className="blog-section" id={section.id} key={section.id}><h2>{section.heading}</h2><SectionBody section={section} /></section>)}
-            <section className="blog-context-cta"><span className="blog-kicker">Collegamento Totalone</span><h2>Porta questo processo nel lavoro quotidiano.</h2><p>Scopri la pagina prodotto collegata a questo approfondimento e verifica il flusso con un caso reale del tuo showroom.</p><a className="to-button" href={article.product.href}>{article.product.label} <ArrowRight size={15} /></a></section>
+            <section className="blog-context-cta"><span className="blog-kicker">Collegamento Totalone</span><h2>Porta questo processo nel lavoro quotidiano.</h2><p>Scopri la pagina prodotto collegata a questo approfondimento e verifica il flusso con un caso reale del tuo showroom.</p><a className="to-button" href={linkPath(article.product.href)}>{article.product.label} <ArrowRight size={15} /></a></section>
           </article>
         </div>
         <RelatedArticles article={article} />
-        <section className="blog-final-cta"><div className="to-wrap"><div><span className="blog-kicker">TOTALONE</span><h2>{article.finalCta.heading}</h2><p>{article.finalCta.text}</p></div><div className="blog-final-actions"><a className="to-button light" href={article.finalCta.primaryHref}>{article.finalCta.primaryLabel} <ArrowRight size={15} /></a><a className="to-button secondary" href={article.finalCta.secondaryHref}>{article.finalCta.secondaryLabel} <ArrowRight size={15} /></a></div></div></section>
+        <section className="blog-final-cta"><div className="to-wrap"><div><span className="blog-kicker">TOTALONE</span><h2>{article.finalCta.heading}</h2><p>{article.finalCta.text}</p></div><div className="blog-final-actions"><a className="to-button light" href={linkPath(article.finalCta.primaryHref)}>{article.finalCta.primaryLabel} <ArrowRight size={15} /></a><a className="to-button secondary" href={linkPath(article.finalCta.secondaryHref)}>{article.finalCta.secondaryLabel} <ArrowRight size={15} /></a></div></div></section>
       </main>
     </MarketingShell>
   );
