@@ -1,0 +1,761 @@
+Create the complete “Assistenza e Post-vendita” product page for the Totalone marketing website.
+
+IMPORTANT:
+- Work ONLY on the public Totalone marketing website.
+- Do NOT modify the Totalone application/dashboard.
+- Keep the existing Totalone website design system, navbar, typography, colors, spacing, buttons, border radius and overall visual language.
+- The page must feel like a premium modern B2B SaaS product page.
+- Preserve the current Totalone brand identity.
+- All copy must be in Italian.
+- Mobile and tablet responsive.
+- DO NOT generate images.
+- DO NOT generate screenshots.
+- DO NOT recreate fake versions of the Totalone interface.
+- I will manually add the real Totalone screenshots later.
+- Wherever a product screenshot is required, create ONLY a clean responsive placeholder.
+- Do NOT invent functionality that is not visible or described below.
+- Avoid excessive cards and repetitive layouts.
+- Use subtle animations only where they improve comprehension.
+
+The real Totalone Assistenze module includes:
+
+- overview of customers with products in assistance
+- number of assistances for each customer
+- number of products involved
+- search by customer, product, brand and salesperson
+- advanced filters
+- assistance statuses:
+  - da gestire
+  - in gestione
+  - pronte
+- archive
+- customer view
+- product view
+- expected arrivals view
+- individual assistance detail
+- products involved in an assistance
+- brand / colour information
+- expected arrival date
+- date
+- product status
+- documents
+- product addition
+- costs section
+- actions and notes associated with products where available
+
+The core positioning must be:
+
+“Il post-vendita continua nello stesso sistema in cui hai gestito il cliente.”
+
+The page should communicate that an assistance is not an isolated ticket:
+it remains connected to the customer and to the products involved.
+
+
+PAGE URL:
+/assistenza-post-vendita-arredamento
+
+SEO TITLE:
+Assistenza e Post-vendita per Arredatori e Showroom | Totalone
+
+META DESCRIPTION:
+Gestisci assistenze, prodotti, stati e arrivi previsti con Totalone. Il software post-vendita pensato per negozi e showroom di arredamento.
+
+PRIMARY KEYWORD:
+gestione assistenza arredamento
+
+SECONDARY KEYWORDS:
+software assistenza arredamento
+gestione post vendita arredamento
+software post vendita arredatori
+gestionale assistenze showroom
+gestione assistenze clienti arredamento
+software showroom arredamento
+
+
+==================================================
+1. HERO
+==================================================
+
+Eyebrow:
+ASSISTENZA E POST-VENDITA
+
+H1:
+Il cliente resta seguito, anche dopo il montaggio.
+
+Subtitle:
+Gestisci le assistenze post-vendita mantenendo collegati clienti, prodotti, stati, arrivi previsti e documenti. Tutto nello stesso sistema utilizzato dal tuo showroom.
+
+Primary CTA:
+Prenota una demo →
+
+Secondary CTA:
+Scopri come funziona ↓
+
+Microcopy:
+Pensato per showroom, negozi di arredamento e realtà multi-store.
+
+VISUAL:
+
+Create ONLY:
+
+[SCREENSHOT — PANORAMICA ASSISTENZE]
+
+I will manually insert the real Totalone screenshot.
+
+Make the screenshot area large and visually dominant.
+
+Do not generate or recreate the Totalone UI.
+Do not place it inside a laptop mockup.
+
+The screenshot will show:
+- customers
+- number of assistances
+- number of products
+- “Da gestire”
+- “In gestione”
+- “Pronte”
+- search and filters
+
+
+==================================================
+2. VALUE PROPOSITION
+==================================================
+
+Eyebrow:
+DOPO LA VENDITA
+
+H2:
+L’assistenza non dovrebbe ricominciare da zero.
+
+Body:
+Quando un cliente segnala un problema dopo la consegna o il montaggio, il team non dovrebbe dover ricostruire la situazione cercando informazioni tra email, messaggi, documenti e fogli separati.
+
+Totalone organizza il post-vendita intorno a ciò che conta davvero: il cliente e i prodotti coinvolti.
+
+Così ogni assistenza mantiene il proprio contesto e può essere seguita fino alla sua gestione.
+
+Create three concise benefit blocks:
+
+CLIENTE
+
+Sai immediatamente quali clienti hanno assistenze aperte.
+
+PRODOTTI
+
+Ogni assistenza mantiene visibili i prodotti coinvolti.
+
+STATO
+
+Distingui ciò che è da gestire, ciò che è in gestione e ciò che è pronto.
+
+
+==================================================
+3. PANORAMICA ASSISTENZE
+==================================================
+
+Eyebrow:
+UNA VISIONE COMPLETA
+
+H2:
+Tutte le assistenze. Senza perdere il contesto.
+
+Body:
+La panoramica raccoglie i clienti con prodotti in assistenza e permette di capire immediatamente quante assistenze e quanti prodotti sono coinvolti.
+
+La ricerca e i filtri aiutano il team a concentrarsi rapidamente sui casi che servono.
+
+Feature labels:
+
+Cliente
+Venditore
+Assistenze
+Prodotti
+Stato
+Ricerca
+Filtri
+
+VISUAL:
+
+[SCREENSHOT — LISTA CLIENTI IN ASSISTENZA]
+
+Use the real screenshot later.
+
+Keep it large enough for the customer names and assistance/product counts to remain readable.
+
+Caption:
+“Dal cliente alla singola assistenza, mantenendo sempre il contesto.”
+
+
+==================================================
+4. STATI DELL’ASSISTENZA
+==================================================
+
+Eyebrow:
+COSA RICHIEDE ATTENZIONE
+
+H2:
+Sai subito cosa devi ancora gestire.
+
+Body:
+Non tutte le assistenze sono nello stesso momento del loro percorso.
+
+Totalone distingue visivamente i diversi stati, permettendo al team di capire rapidamente dove concentrare l’attenzione.
+
+Create a clean visual progression:
+
+DA GESTIRE
+→
+IN GESTIONE
+→
+PRONTE
+
+Supporting text:
+“Una lettura immediata del lavoro ancora aperto e di quello che sta avanzando.”
+
+IMPORTANT:
+Do not invent additional statuses.
+Do not create fake statistics.
+
+
+==================================================
+5. DAL CLIENTE AI PRODOTTI
+==================================================
+
+Make this one of the strongest sections.
+
+Eyebrow:
+NON UN TICKET GENERICO
+
+H2:
+Sai esattamente quali prodotti sono coinvolti.
+
+Body:
+Nel settore dell’arredamento, sapere che un cliente ha un’assistenza aperta non basta.
+
+Devi sapere su quale prodotto intervenire, di quale brand si tratta e quali informazioni sono collegate a quel caso.
+
+Totalone porta il post-vendita fino al livello del singolo prodotto.
+
+Create a minimal conceptual flow:
+
+CLIENTE
+→
+ASSISTENZA
+→
+PRODOTTI
+
+Supporting line:
+“Il problema non è scollegato dalla commessa: ha un cliente e prodotti precisi.”
+
+
+==================================================
+6. DETTAGLIO ASSISTENZA
+==================================================
+
+Eyebrow:
+IL CONTESTO IN UNA SCHERMATA
+
+H2:
+Apri l’assistenza e trovi i prodotti coinvolti.
+
+Body:
+Nel dettaglio della singola assistenza puoi visualizzare i prodotti associati e le informazioni necessarie per seguirne l’evoluzione.
+
+Cliente, responsabile, prodotti, brand, arrivo previsto, data e stato rimangono raccolti nello stesso ambiente.
+
+Feature labels:
+
+Cliente
+Responsabile
+Prodotto
+Brand / Colore
+Arrivo previsto
+Data
+Stato
+Documenti
+
+VISUAL:
+
+[SCREENSHOT — DETTAGLIO SCHEDINA ASSISTENZA]
+
+Use the real Totalone screenshot later.
+
+The screenshot should eventually show:
+- customer name
+- salesperson / responsible person
+- number of products
+- product names
+- brand / colour
+- expected arrival
+- date
+- status
+- Documents button
+- Add product button
+
+Do not alter the screenshot data.
+
+
+==================================================
+7. OGNI PRODOTTO HA IL SUO STATO
+==================================================
+
+Eyebrow:
+CONTROLLO PER PRODOTTO
+
+H2:
+Un’assistenza può coinvolgere più prodotti. Ognuno segue il proprio percorso.
+
+Body:
+All’interno della stessa assistenza puoi distinguere i diversi prodotti coinvolti e mantenere visibili le informazioni relative a ciascuno.
+
+Questo evita di trattare un intervento complesso come un unico blocco indistinto.
+
+VISUAL:
+
+[SCREENSHOT — PRODOTTI IN ASSISTENZA]
+
+Use a crop of the real assistance detail screenshot.
+
+Focus visually on:
+- product
+- brand / colour
+- expected arrival
+- status
+- actions
+
+Do not generate a replacement interface.
+
+
+==================================================
+8. ARRIVI PREVISTI
+==================================================
+
+Eyebrow:
+TEMPI
+
+H2:
+Sai cosa stai aspettando.
+
+Body:
+Quando la gestione di un’assistenza dipende dall’arrivo di un prodotto o di un componente, la data prevista deve essere facile da trovare.
+
+Totalone mantiene visibili gli arrivi previsti anche all’interno del flusso post-vendita, aiutando il team a capire quali assistenze possono avanzare e quali sono ancora in attesa.
+
+Highlight:
+
+PRODOTTO
+→
+ARRIVO PREVISTO
+→
+ASSISTENZA
+
+VISUAL:
+
+[SCREENSHOT — ARRIVI PREVISTI ASSISTENZA]
+
+Placeholder only.
+
+Do not invent a calendar or interface if a real screenshot has not yet been provided.
+
+
+==================================================
+9. DOCUMENTI
+==================================================
+
+Eyebrow:
+TUTTO NEL SUO CONTESTO
+
+H2:
+I documenti rimangono collegati all’assistenza.
+
+Body:
+Evita di separare le informazioni operative dai documenti necessari per gestire il caso.
+
+Totalone permette di mantenere la documentazione associata alla singola assistenza, così il team può recuperarla dal punto in cui sta già lavorando.
+
+VISUAL:
+
+Use a crop from the real assistance detail screenshot focusing on the “Documenti” action.
+
+Do not claim:
+- automatic document generation
+- automatic supplier documents
+- electronic signatures
+- AI document analysis
+
+unless explicitly confirmed.
+
+
+==================================================
+10. COSTI
+==================================================
+
+Eyebrow:
+COSTI DI ASSISTENZA
+
+H2:
+Anche il post-vendita ha un costo.
+
+Body:
+All’interno della schedina di assistenza, Totalone prevede uno spazio dedicato ai costi.
+
+Questo permette di mantenere le informazioni economiche dell’intervento collegate alla relativa assistenza, invece di gestirle in strumenti separati.
+
+VISUAL:
+
+[SCREENSHOT — COSTI ASSISTENZA]
+
+Placeholder only.
+
+IMPORTANT:
+Do not communicate functionality beyond what is actually present in the Costs section.
+Do not invent margin calculations or profitability metrics.
+
+
+==================================================
+11. SEARCH AND FILTERS
+==================================================
+
+Eyebrow:
+TROVA SUBITO QUELLO CHE CERCHI
+
+H2:
+Da decine di assistenze al caso giusto, in pochi secondi.
+
+Body:
+Cerca per cliente, prodotto, brand o venditore e utilizza i filtri per restringere rapidamente la vista.
+
+Quando il numero di clienti cresce, trovare l’informazione giusta diventa parte del lavoro.
+
+Highlight:
+
+CLIENTE
+PRODOTTO
+BRAND
+VENDITORE
+FILTRI
+
+VISUAL:
+
+Use a crop of the real overview screenshot showing search and “Filtri avanzati”.
+
+
+==================================================
+12. STORICO E ARCHIVIO
+==================================================
+
+Eyebrow:
+NON PERDERE LA STORIA
+
+H2:
+Chiudere un’assistenza non significa perdere le informazioni.
+
+Body:
+Le assistenze concluse possono essere separate dal lavoro operativo corrente mantenendo uno storico consultabile.
+
+In questo modo la vista quotidiana rimane ordinata senza perdere il contesto dei casi precedenti.
+
+Highlight:
+Assistenze attive → Pronte → Archivio
+
+VISUAL:
+
+Use the real overview screenshot with the “Archivio” action visible.
+
+Do not invent retention periods or archive functionality beyond what is actually present.
+
+
+==================================================
+13. DAL MONTAGGIO AL POST-VENDITA
+==================================================
+
+Eyebrow:
+CONTINUITÀ
+
+H2:
+Il post-vendita inizia dove il montaggio finisce.
+
+Body:
+Consegna e montaggio non rappresentano necessariamente l’ultimo passaggio della relazione con il cliente.
+
+Quando serve un intervento successivo, Totalone permette di continuare a gestire il lavoro nello stesso ecosistema utilizzato nelle fasi precedenti.
+
+Create a clean visual flow:
+
+MONTAGGIO
+→
+ASSISTENZA
+→
+RISOLUZIONE
+→
+STORICO
+
+Add contextual internal link:
+
+Scopri la gestione Montaggi →
+
+
+==================================================
+14. THE TOTALONE AFTER-SALES FLOW
+==================================================
+
+Create a visually distinctive workflow section.
+
+Eyebrow:
+UN UNICO FLUSSO
+
+H2:
+Dalla segnalazione alla gestione dell’assistenza.
+
+Create an elegant horizontal flow:
+
+CLIENTE
+→
+ASSISTENZA
+→
+PRODOTTI
+→
+ARRIVI PREVISTI
+→
+GESTIONE
+→
+ARCHIVIO
+
+Body:
+Ogni passaggio mantiene il collegamento con il cliente e con i prodotti coinvolti, evitando di ricostruire ogni volta informazioni già presenti nel sistema.
+
+On mobile transform the horizontal workflow into a vertical flow.
+
+Do not use a product screenshot here.
+
+
+==================================================
+15. MENO INFORMAZIONI SPARSE
+==================================================
+
+Eyebrow:
+POST-VENDITA ORGANIZZATO
+
+H2:
+Meno tempo a ricostruire il problema. Più chiarezza su cosa fare.
+
+Create a restrained comparison.
+
+SENZA UN SISTEMA CONDIVISO:
+
+Email
+Messaggi
+Foto
+Documenti
+Fogli Excel
+Informazioni da ricostruire
+
+CON TOTALONE:
+
+Cliente
+Assistenza
+Prodotti
+Stati
+Arrivi previsti
+Documenti
+Costi
+Storico
+
+Closing statement:
+
+“Il post-vendita rimane parte della storia del cliente.”
+
+
+==================================================
+16. WHY TOTALONE
+==================================================
+
+Eyebrow:
+PERCHÉ TOTALONE
+
+H2:
+Vendere un arredo è solo una parte della relazione con il cliente.
+
+Body:
+Per uno showroom, il servizio continua anche dopo consegna e montaggio.
+
+Totalone porta l’assistenza nello stesso ecosistema utilizzato per seguire il cliente, permettendo al team di mantenere una visione più ordinata del post-vendita.
+
+Create three pillars:
+
+CONTESTO
+
+Cliente e prodotti rimangono collegati all’assistenza.
+
+CONTROLLO
+
+Sai cosa è da gestire, cosa è in gestione e cosa è pronto.
+
+CONTINUITÀ
+
+Il post-vendita continua nello stesso sistema utilizzato nelle fasi precedenti.
+
+
+==================================================
+17. TOTALONE ECOSYSTEM
+==================================================
+
+Eyebrow:
+UN PROCESSO, NON TANTI SOFTWARE
+
+H2:
+Dal primo contatto al post-vendita.
+
+Create an elegant ecosystem flow:
+
+CRM
+→
+TRATTATIVA
+→
+PREVENTIVO
+→
+COMMESSA
+→
+MAGAZZINO
+→
+MONTAGGIO
+→
+ASSISTENZA
+
+Body:
+Totalone collega le diverse fasi del lavoro di uno showroom in un unico sistema, mantenendo continuità tra vendita, operatività e servizio al cliente.
+
+Use internal links to existing product pages where available.
+
+
+==================================================
+18. SEO CONTENT
+==================================================
+
+H2:
+Software per la gestione dell’assistenza nel settore arredamento.
+
+Body:
+Totalone è un gestionale per arredatori e showroom che permette di organizzare le attività di assistenza e post-vendita mantenendo collegati clienti e prodotti.
+
+Dalla panoramica delle assistenze al dettaglio dei prodotti coinvolti, Totalone aiuta il team a gestire stati, arrivi previsti, documenti e informazioni operative in un unico ambiente.
+
+Naturally include:
+- gestione assistenza arredamento
+- software assistenza arredamento
+- gestione post vendita arredamento
+- gestionale per arredatori
+- assistenza clienti showroom
+- software showroom arredamento
+
+Avoid keyword stuffing.
+
+
+==================================================
+19. FINAL CTA
+==================================================
+
+Create a strong premium CTA using the existing Totalone blue visual identity.
+
+Eyebrow:
+ASSISTENZA TOTALONE
+
+H2:
+Il rapporto con il cliente non finisce con la consegna.
+
+Body:
+Scopri come Totalone può aiutarti a organizzare il post-vendita e mantenere clienti, prodotti e assistenze nello stesso sistema.
+
+Primary CTA:
+Prenota una demo →
+
+Secondary CTA:
+Scopri tutte le funzionalità
+
+Microcopy:
+Una demo costruita sul modo in cui lavora il tuo showroom.
+
+
+==================================================
+SCREENSHOTS — CRITICAL
+==================================================
+
+DO NOT GENERATE ANY IMAGES.
+
+DO NOT:
+- generate AI images
+- search for stock images
+- recreate Totalone screens
+- create fake assistance dashboards
+- create fake product tables
+- create fake customer data
+- invent statistics
+
+I will manually add all screenshots.
+
+Create ONLY responsive placeholders:
+
+[SCREENSHOT — PANORAMICA ASSISTENZE]
+[SCREENSHOT — DETTAGLIO SCHEDINA ASSISTENZA]
+[SCREENSHOT — PRODOTTI IN ASSISTENZA]
+[SCREENSHOT — ARRIVI PREVISTI ASSISTENZA]
+[SCREENSHOT — COSTI ASSISTENZA]
+
+Make every placeholder easy to replace later.
+
+
+==================================================
+DESIGN DIRECTION
+==================================================
+
+Maintain exactly the visual language already established across the Totalone website.
+
+Use:
+- generous whitespace
+- strong typographic hierarchy
+- large real product screenshot areas
+- alternating layouts
+- occasional full-width UI
+- restrained cards
+- subtle Totalone blue accents
+- minimal diagrams
+- premium B2B SaaS presentation
+- subtle scroll animations
+
+Avoid:
+- generic customer support illustrations
+- headset/customer-service stock photography
+- fake dashboards
+- excessive gradients
+- excessive cards
+- repetitive layouts
+- invented metrics
+- invented functionality
+
+
+==================================================
+CORE POSITIONING
+==================================================
+
+Do NOT position this as generic ticketing software.
+
+Totalone understands that furniture after-sales revolves around:
+
+CLIENTE
+→
+PRODOTTO
+→
+ASSISTENZA
+
+The page should immediately communicate:
+
+1. So quali clienti hanno assistenze aperte.
+2. So quali prodotti sono coinvolti.
+3. So cosa è ancora da gestire.
+4. Posso seguire gli arrivi previsti.
+5. Documenti e costi rimangono collegati al caso.
+6. Il post-vendita continua nello stesso sistema usato dal resto dello showroom.
+
+CORE MESSAGE:
+
+“Il cliente resta seguito, anche dopo il montaggio.”
