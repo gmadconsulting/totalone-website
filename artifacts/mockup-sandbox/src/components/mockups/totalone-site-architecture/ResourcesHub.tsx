@@ -1,0 +1,27 @@
+import { ArrowRight, BookOpen, ChevronRight, FileText, Search } from "lucide-react";
+import { useState } from "react";
+import { MarketingShell, SeoMetaPanel } from "./_shared/MarketingShell";
+
+const topics = [
+  ["Organizzazione", "Come gestire una commessa di arredamento", "Una traccia concreta per tenere insieme vendita, forniture e consegna.", "/gestione-commesse-arredamento/"],
+  ["Operatività", "Come organizzare consegne e montaggi", "Dove nascono i passaggi invisibili e come preparare meglio il giorno del montaggio.", "/gestione-montaggi-arredamento/"],
+  ["Vendite", "CRM per negozi di arredamento", "Il contesto che serve al team per seguire ogni relazione senza ricominciare.", "/crm-arredamento/"],
+  ["Controllo", "Come controllare la marginalità delle commesse", "Una lettura più ordinata per capire dove intervenire prima che sia tardi.", "/controllo-gestione-arredamento/"],
+  ["Crescita", "Come gestire più showroom", "Lo stesso metodo, più punti vendita, una visione condivisa.", "/soluzioni/multi-showroom-arredamento/"],
+  ["Scelta", "Come scegliere un gestionale per arredamento", "Le domande da fare prima di aggiungere l’ennesimo strumento al lavoro.", "/gestionale-arredamento/"],
+  ["Metodo", "Quando Excel non basta più per gestire un negozio di arredamento", "I segnali organizzativi che chiedono un modo diverso di lavorare.", "/soluzioni/negozi-showroom-arredamento/"],
+];
+
+export function ResourcesHub() {
+  const [filter, setFilter] = useState("Tutti");
+  const filters = ["Tutti", "Organizzazione", "Operatività", "Vendite", "Controllo", "Crescita", "Scelta", "Metodo"];
+  const visibleTopics = filter === "Tutti" ? topics : topics.filter(([category]) => category === filter);
+  return <MarketingShell active="Risorse" eyebrow="RISORSE · IDEE OPERATIVE" title="Domande reali, risposte utili per il lavoro dell’arredamento" description="Un hub editoriale per capire meglio commesse, showroom, consegne e controllo. Ogni contenuto riporta al punto del sistema che può aiutarti a fare il passo successivo.">
+    <main>
+      <section className="to-section"><div className="to-wrap"><div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", gap: 24, flexWrap: "wrap" }}><div><span className="to-eyebrow coral">ESPLORA PER TEMA</span><h2 className="to-section-title">Non contenuti generici. Passaggi di lavoro.</h2></div><div className="to-card" style={{ display: "flex", alignItems: "center", gap: 9, padding: "11px 14px", minWidth: 230 }}><Search size={15} color="#557090" /><span style={{ color: "#8aa3bd", fontSize: 12 }}>Cerca una domanda</span></div></div><div className="to-filter-row">{filters.map((item) => <button className={`to-filter ${filter === item ? "active" : ""}`} key={item} onClick={() => setFilter(item)}>{item}</button>)}</div><div className="to-grid-3">{visibleTopics.map(([category, title, body, href]) => <article className="to-card to-resource-card" key={title}><div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}><span className="to-card-kicker">{category}</span><BookOpen size={17} color="#0b55c6" /></div><h3>{title}</h3><p>{body}</p><div className="to-card-footer"><span>Articolo in preparazione</span><a href={href} aria-label={`Leggi ${title}`}><ChevronRight size={15} /></a></div></article>)}</div></div></section>
+      <section className="to-section sky"><div className="to-wrap"><div className="to-split-grid-wide"><div><span className="to-eyebrow">DAL CONTENUTO AL PRODOTTO</span><h2 className="to-section-title">Ogni risposta apre una strada.</h2></div><div><p className="to-section-lead" style={{ marginTop: 0 }}>L’hub non è un vicolo cieco: collega le domande a una pagina prodotto, a una soluzione organizzativa o alla pagina pilastro del gestionale per arredamento.</p><div className="to-link-list"><a className="to-link-row" href="/gestionale-arredamento/"><span><FileText size={15} style={{ verticalAlign: "middle", marginRight: 8 }} />Leggi la pagina pilastro</span><ArrowRight size={15} /></a><a className="to-link-row" href="/soluzioni/aziende-arredamento-in-crescita/"><span><FileText size={15} style={{ verticalAlign: "middle", marginRight: 8 }} />Trova la soluzione per la tua azienda</span><ArrowRight size={15} /></a></div></div></div></div></section>
+      <section className="to-section warm"><div className="to-wrap"><div className="to-card" style={{ display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}><div style={{ width: 46, height: 46, display: "grid", placeItems: "center", borderRadius: 12, background: "#ffdcd2", color: "#c34d35" }}><BookOpen size={20} /></div><div style={{ flex: "1 1 300px" }}><span className="to-card-kicker">ARCHITETTURA EDITORIALE</span><h3 style={{ marginTop: 7 }}>Un hub pronto ad accogliere nuovi approfondimenti.</h3><p>Categoria, breadcrumb, link contestuali e CTA demo sono già previsti nel template. I nuovi articoli entreranno senza cambiare il sistema.</p></div><a className="to-button" href="/gestionale-arredamento/">Scopri Totalone <ArrowRight size={15} /></a></div></div></section>
+      <section className="to-section"><div className="to-wrap"><span className="to-eyebrow">SEO · HUB</span><h2 className="to-section-title">Un ingresso editoriale, molte strade interne.</h2><SeoMetaPanel url="/risorse/" title="Risorse Totalone per aziende di arredamento" description="Guide operative su commesse, showroom, consegne e controllo." /></div></section>
+    </main>
+  </MarketingShell>;
+}

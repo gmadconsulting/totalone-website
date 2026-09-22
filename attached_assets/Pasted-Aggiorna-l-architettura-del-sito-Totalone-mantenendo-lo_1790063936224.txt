@@ -1,0 +1,175 @@
+Aggiorna l’architettura del sito Totalone mantenendo lo stile visuale attuale.
+
+OBIETTIVO
+Totalone deve posizionarsi come software gestionale verticale per negozi, showroom e aziende di arredamento.
+
+Non ridisegnare da zero la homepage e non modificare il software Totalone.
+Lavora sul sito marketing pubblico, creando una struttura SEO scalabile.
+
+NAVIGAZIONE PRINCIPALE
+
+Header:
+- Prodotto
+- Soluzioni
+- Perché Totalone
+- Risorse
+- Prezzi
+- Login
+- CTA: Prenota una demo
+
+PRODOTTO
+
+Crea un mega-menu diviso in 3 gruppi:
+
+VENDITE
+- CRM
+- Gestione trattative
+- Preventivi
+
+OPERATIVITÀ
+- Gestione progetti
+- Gestione commesse
+- Magazzino e logistica
+- Montaggi
+- Assistenza e post-vendita
+
+CONTROLLO
+- Controllo e performance
+
+Crea queste pagine:
+
+1. /crm-arredamento/
+H1: CRM per negozi e showroom di arredamento
+Include: clienti, ingressi showroom, contatti aziendali, conversazioni, calendario e automazioni.
+
+2. /gestione-trattative-arredamento/
+H1: Gestione delle trattative commerciali per aziende di arredamento
+
+3. /software-preventivi-arredamento/
+H1: Software per preventivi per negozi di arredamento
+
+4. /gestione-progetti-arredamento/
+H1: Gestione progetti per aziende di arredamento
+Include task, scadenze, responsabili, calendario e Action Plan.
+
+5. /gestione-commesse-arredamento/
+H1: Gestione commesse per aziende di arredamento
+Messaggio chiave: “Una sola commessa. Tutta la sua storia.”
+
+6. /gestione-magazzino-arredamento/
+H1: Gestione magazzino e logistica per aziende di arredamento
+
+7. /gestione-montaggi-arredamento/
+H1: Gestione consegne e montaggi per aziende di arredamento
+
+8. /post-vendita-arredamento/
+H1: Gestione assistenza e post-vendita per aziende di arredamento
+
+9. /controllo-gestione-arredamento/
+H1: Controllo di gestione per aziende di arredamento
+Raggruppa analytics, finance, fatturazione e performance senza inventare funzionalità.
+
+PAGINA PILLAR SEO
+
+Crea:
+/gestionale-arredamento/
+
+H1:
+Gestionale per negozi e showroom di arredamento
+
+Questa deve essere la principale landing SEO di Totalone.
+
+Deve spiegare l’intero flusso:
+
+CRM → Trattative → Preventivi → Progetti → Commesse → Magazzino → Montaggi → Post-vendita → Controllo
+
+e collegarsi tramite internal linking a tutte le relative pagine prodotto.
+
+Lavora semanticamente anche su:
+- gestionale arredamento
+- gestionale per arredamento
+- software gestionale arredamento
+- gestionale negozio arredamento
+- gestionale per mobilifici
+- software per showroom di arredamento
+
+Non fare keyword stuffing.
+
+SOLUZIONI
+
+Crea:
+
+/soluzioni/negozi-showroom-arredamento/
+H1: Totalone per negozi e showroom di arredamento
+
+/soluzioni/aziende-arredamento-in-crescita/
+H1: Un gestionale che cresce insieme alla tua azienda di arredamento
+
+/soluzioni/multi-showroom-arredamento/
+H1: Gestionale per aziende di arredamento multi-showroom
+
+/soluzioni/gruppi-arredamento/
+H1: Totalone per gruppi e aziende di arredamento strutturate
+
+Le pagine Soluzioni devono parlare dei problemi organizzativi del tipo di azienda, non ripetere semplicemente le feature.
+
+RISORSE
+
+Crea /risorse/ come hub editoriale SEO.
+
+Predisponi una struttura scalabile per guide e articoli, ad esempio:
+- Come gestire una commessa di arredamento
+- Come organizzare consegne e montaggi
+- CRM per negozi di arredamento
+- Come controllare la marginalità delle commesse
+- Come gestire più showroom
+- Come scegliere un gestionale per arredamento
+- Quando Excel non basta più per gestire un negozio di arredamento
+
+Non è necessario scrivere ora tutti gli articoli: crea l’architettura.
+
+SEO
+
+Per ogni pagina:
+- URL SEO-friendly
+- title tag unico
+- meta description unica
+- un solo H1
+- corretta gerarchia H2/H3
+- copy naturale in italiano
+- breadcrumb
+- internal linking contestuale
+- CTA verso Prenota una demo
+- struttura predisposta per FAQ quando utile
+- canonical corretto
+- Open Graph metadata
+- sitemap.xml
+- robots.txt
+
+Evita pagine duplicate e keyword cannibalization.
+
+IMPORTANTE
+
+Non creare immagini.
+Non generare screenshot finti.
+Non inventare dashboard.
+Non ricreare l’interfaccia Totalone.
+
+Inserisci placeholder chiari dove serviranno screenshot reali del prodotto: li aggiungerò io successivamente.
+
+Non inventare funzionalità che non sono state confermate.
+
+Non creare una pagina SEO per ogni singola voce del software: Ingressi Showroom, Calendario, Conversazioni, Task, Action Plan ecc. devono essere raccontati all’interno delle macro-pagine appropriate.
+
+PRINCIPIO DI COMUNICAZIONE
+
+Il sito deve raccontare Totalone attraverso il ciclo reale di un’azienda di arredamento:
+
+VENDERE → GESTIRE → CONSEGNARE → CONTROLLARE
+
+Totalone non deve sembrare un CRM generico o un ERP adattato all’arredamento.
+
+Deve emergere chiaramente che è stato progettato attorno al modo in cui lavorano negozi, showroom e aziende di arredamento.
+
+Mantieni il design premium e minimale già sviluppato.
+Prima costruisci sitemap, navigazione, template delle pagine e internal linking. Non stravolgere la homepage esistente.
