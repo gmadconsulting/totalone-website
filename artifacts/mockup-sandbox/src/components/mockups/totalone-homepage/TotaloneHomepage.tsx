@@ -27,7 +27,7 @@ const navItems = [
   { label: "Prezzi", href: "/__mockup/preview/totalone-prezzi/TotalonePrezzi" },
 ];
 const productGroups = [
-  { label: "VENDITE", links: [["CRM", "/__mockup/preview/totalone-crm/CrmProductPage"], ["Gestione trattative", "/__mockup/preview/totalone-crm/CrmProductPage#trattative"], ["Preventivi", "/__mockup/preview/totalone-preventivi/PreventiviProductPage"]] },
+  { label: "VENDITE", links: [["CRM", "/__mockup/preview/totalone-crm/CrmProductPage"], ["Gestione trattative", "/__mockup/preview/totalone-trattative/GestioneTrattative"], ["Preventivi", "/__mockup/preview/totalone-preventivi/PreventiviProductPage"]] },
   { label: "OPERATIVITÀ", links: [["Gestione progetti", "/gestione-progetti-arredamento/"], ["Gestione commesse", "/__mockup/preview/totalone-commesse/CommesseProductPage"], ["Magazzino e logistica", "/gestione-magazzino-arredamento/"], ["Montaggi", "/gestione-montaggi-arredamento/"], ["Assistenza e post-vendita", "/post-vendita-arredamento/"]] },
   { label: "CONTROLLO", links: [["Controllo e performance", "/controllo-gestione-arredamento/"]] },
 ];

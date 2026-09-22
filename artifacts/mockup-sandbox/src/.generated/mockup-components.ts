@@ -9,5 +9,6 @@ export const modules: ModuleMap = {
   "./components/mockups/totalone-site-architecture/ProductTemplate.tsx": () => import("../components/mockups/totalone-site-architecture/ProductTemplate.tsx"),
   "./components/mockups/totalone-site-architecture/ResourcesHub.tsx": () => import("../components/mockups/totalone-site-architecture/ResourcesHub.tsx"),
   "./components/mockups/totalone-site-architecture/Sitemap.tsx": () => import("../components/mockups/totalone-site-architecture/Sitemap.tsx"),
-  "./components/mockups/totalone-site-architecture/SolutionsTemplate.tsx": () => import("../components/mockups/totalone-site-architecture/SolutionsTemplate.tsx")
+  "./components/mockups/totalone-site-architecture/SolutionsTemplate.tsx": () => import("../components/mockups/totalone-site-architecture/SolutionsTemplate.tsx"),
+  "./components/mockups/totalone-trattative/GestioneTrattative.tsx": () => import("../components/mockups/totalone-trattative/GestioneTrattative.tsx")
 };
