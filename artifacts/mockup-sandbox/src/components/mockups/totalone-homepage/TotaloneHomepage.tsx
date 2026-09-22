@@ -23,7 +23,7 @@ import {
 
 const navItems = [
   { label: "Soluzioni", href: "/soluzioni/negozi-showroom-arredamento/" },
-  { label: "Perché Totalone", href: "#per-chi" },
+  { label: "Perché Totalone", href: "/__mockup/preview/totalone-perche/PercheTotalonePage" },
   { label: "Risorse", href: "/risorse/" },
   { label: "Prezzi", href: "/__mockup/preview/totalone-prezzi/TotalonePrezzi" },
 ];

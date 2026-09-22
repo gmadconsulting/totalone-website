@@ -1,0 +1,771 @@
+Create the complete “Perché Totalone” page for the Totalone marketing website.
+
+IMPORTANT:
+- Work ONLY on the public Totalone marketing website.
+- Do NOT modify the Totalone application/dashboard.
+- Keep exactly the existing Totalone website design system:
+  navbar, typography, colors, spacing, buttons, border radius and visual language.
+- This page must feel part of the SAME website as the Homepage and all existing Totalone product pages.
+- All copy must be in Italian.
+- Mobile and tablet responsive.
+- Do NOT generate images.
+- Do NOT generate fake product screenshots.
+- Do NOT use stock photography.
+- Do NOT invent product functionality or statistics.
+- Use subtle animations only where they improve comprehension.
+- Avoid excessive cards.
+- Avoid making this page look like another feature catalogue.
+
+PURPOSE OF THIS PAGE:
+
+This is NOT a product feature page.
+
+It must answer:
+
+“Perché dovrei scegliere Totalone invece di continuare con Excel, strumenti separati o un gestionale generico?”
+
+The central positioning is:
+
+TOTALONE È IL GESTIONALE COSTRUITO INTORNO AL MODO IN CUI LAVORA DAVVERO UN’AZIENDA DI ARREDAMENTO.
+
+The page should progressively communicate:
+
+1. Totalone is vertical for the furniture industry.
+2. It was born from real experience managing furniture showrooms.
+3. It connects processes that normally live in separate tools.
+4. It creates one shared way of working across the company.
+5. Information follows the customer/project through the entire lifecycle.
+6. It becomes increasingly valuable as the company and number of showrooms grow.
+
+
+PAGE URL:
+/perche-totalone
+
+SEO TITLE:
+Perché Totalone | Il Gestionale per Arredatori e Showroom
+
+META DESCRIPTION:
+Scopri perché Totalone è diverso dai gestionali tradizionali. Un unico sistema pensato per organizzare vendite, commesse, logistica e post-vendita degli showroom di arredamento.
+
+
+==================================================
+1. HERO
+==================================================
+
+Use a strong, editorial hero.
+
+Do NOT use the same exact structure as every product feature page.
+
+Eyebrow:
+PERCHÉ TOTALONE
+
+H1:
+Il gestionale che parte dall’arredamento. Non dal software.
+
+Subtitle:
+Totalone nasce dal modo in cui lavora davvero uno showroom: clienti, preventivi, commesse, ordini, consegne, montaggi e post-vendita fanno parte dello stesso processo.
+
+Primary CTA:
+Prenota una demo →
+
+Secondary CTA:
+Scopri Totalone ↓
+
+Supporting microcopy:
+Un unico sistema. Un unico modo di lavorare.
+
+VISUAL:
+
+Do NOT generate an image.
+
+Instead of a screenshot placeholder, create a subtle abstract visual composition using ONLY native website elements:
+- typography
+- thin lines
+- Totalone blue
+- small labels
+- connecting paths
+
+The concept should visually suggest multiple processes converging into “Totalone”.
+
+For example:
+
+CRM
+Preventivi
+Commesse
+Magazzino
+Montaggi
+Assistenza
+
+            ↓
+
+        TOTALONE
+
+Keep it sophisticated and minimal.
+Do not turn it into a generic infographic.
+
+
+==================================================
+2. THE PROBLEM
+==================================================
+
+Eyebrow:
+IL PROBLEMA NON È AVERE POCHI STRUMENTI
+
+H2:
+È avere informazioni che non si parlano.
+
+Body:
+
+Un cliente entra in showroom.
+
+Poi arriva un preventivo.
+Una trattativa.
+Una commessa.
+Gli ordini.
+La merce.
+Il montaggio.
+Forse un’assistenza.
+
+Quando ogni fase vive in un file, una chat o un software diverso, il problema non è solo perdere tempo.
+
+È perdere il filo.
+
+Create an elegant fragmented visual sequence:
+
+CRM
+   ↘
+
+EXCEL
+       ↘
+
+EMAIL
+            ↘
+
+WHATSAPP
+                 ↘
+
+DOCUMENTI
+                      ↘
+
+CALENDARI
+
+Then a final line:
+
+“Le informazioni esistono. Ma sono sparse.”
+
+IMPORTANT:
+Do not attack specific competitors.
+Do not claim that every showroom works this way.
+
+The tone should be observational, not aggressive.
+
+
+==================================================
+3. THE TOTALONE IDEA
+==================================================
+
+Make this a major visual transition.
+
+Use a dark/blue Totalone background or another strong treatment consistent with the current website.
+
+Eyebrow:
+UN’IDEA SEMPLICE
+
+H2:
+E se tutto facesse parte dello stesso flusso?
+
+Body:
+
+Totalone collega le diverse fasi del lavoro in un unico sistema.
+
+Il cliente non scompare quando diventa una trattativa.
+La trattativa non riparte da zero quando diventa un preventivo.
+La vendita non si scollega dalla commessa.
+E la commessa continua attraverso logistica, montaggio e post-vendita.
+
+Create a large horizontal lifecycle:
+
+CLIENTE
+→
+TRATTATIVA
+→
+PREVENTIVO
+→
+COMMESSA
+→
+MAGAZZINO
+→
+MONTAGGIO
+→
+ASSISTENZA
+
+Underneath:
+
+“Le informazioni avanzano insieme al lavoro.”
+
+On mobile make this a vertical journey.
+
+Use subtle progression animation as the user scrolls.
+
+
+==================================================
+4. VERTICAL BY DESIGN
+==================================================
+
+Eyebrow:
+NATO PER L’ARREDAMENTO
+
+H2:
+Non abbiamo adattato un gestionale all’arredamento.
+
+H2 continuation / emphasized statement:
+Abbiamo fatto il contrario.
+
+Body:
+
+Totalone è stato costruito partendo dai processi reali di chi vende e gestisce arredamento.
+
+Per questo parla la lingua del settore: showroom, trattative, preventivi complessi, commesse, prodotti, arrivi, montaggi e assistenze.
+
+Non devi trasformare il tuo lavoro per farlo entrare nel software.
+
+È il software ad essere stato progettato intorno al tuo lavoro.
+
+Create a large typographic statement:
+
+NON:
+Software → adattato → arredamento
+
+MA:
+
+Arredamento → processi reali → Totalone
+
+Keep this extremely clean and premium.
+
+
+==================================================
+5. BORN INSIDE A REAL BUSINESS
+==================================================
+
+This section is strategically important.
+
+Eyebrow:
+NATO SUL CAMPO
+
+H2:
+Prima di diventare un software, è stato un problema da risolvere.
+
+Body:
+
+Totalone nasce dall’esperienza diretta nella gestione di showroom di arredamento.
+
+Non da un’ipotesi su come dovrebbe funzionare questo settore, ma dalla necessità quotidiana di coordinare clienti, vendite, commesse e attività operative.
+
+Il prodotto è stato costruito partendo da questi processi e continua a evolversi intorno alle esigenze reali di chi lavora nell’arredamento.
+
+Create a large editorial statement:
+
+“Costruito da chi conosce il lavoro, per chi lo fa ogni giorno.”
+
+IMPORTANT:
+Do NOT invent company statistics here.
+Do NOT invent customer counts.
+Do NOT invent years of software development.
+Do NOT make unverifiable claims.
+
+If company history figures are already approved elsewhere on the website, they may be reused.
+Otherwise keep this qualitative.
+
+
+==================================================
+6. ONE SOURCE OF TRUTH
+==================================================
+
+Eyebrow:
+UN’UNICA FONTE DI INFORMAZIONI
+
+H2:
+Il dato viene inserito una volta. Poi continua a essere utile.
+
+Body:
+
+Quando le informazioni sono collegate, ogni reparto non deve ricostruire ciò che è già successo prima.
+
+Il commerciale conosce il cliente.
+La commessa mantiene il contesto della vendita.
+La logistica sa quali prodotti deve seguire.
+Il montaggio lavora sulle stesse informazioni.
+Il post-vendita continua dalla storia già esistente.
+
+Create a visually connected chain:
+
+COMMERCIALE
+↓
+COMMESSA
+↓
+LOGISTICA
+↓
+MONTAGGIO
+↓
+POST-VENDITA
+
+Alongside it show:
+
+STESSO CLIENTE
+STESSE INFORMAZIONI
+STESSO SISTEMA
+
+Closing line:
+
+“Meno passaggi di informazioni. Più continuità.”
+
+
+==================================================
+7. ONE SHARED WAY OF WORKING
+==================================================
+
+Eyebrow:
+UN METODO CONDIVISO
+
+H2:
+Il vero vantaggio non è avere tutto in un software.
+
+H2 emphasized continuation:
+È far lavorare tutti nello stesso modo.
+
+Body:
+
+Quando ogni persona organizza clienti, attività e commesse con strumenti diversi, la conoscenza rimane nelle persone.
+
+Totalone crea un processo condiviso.
+
+Le informazioni diventano accessibili al team, le attività seguono uno stesso flusso e il modo di lavorare non dipende più da file personali o procedure diverse per ogni persona.
+
+Create three large pillars:
+
+CONDIVISO
+
+Le informazioni importanti non rimangono isolate.
+
+STRUTTURATO
+
+Ogni fase segue un processo riconoscibile.
+
+CONTINUO
+
+Il lavoro passa da una fase alla successiva senza ricominciare da zero.
+
+
+==================================================
+8. FROM TOOL TO OPERATING SYSTEM
+==================================================
+
+This should be one of the strongest brand sections.
+
+Eyebrow:
+PIÙ DI UN GESTIONALE
+
+H2:
+Un sistema operativo per il tuo showroom.
+
+Body:
+
+Totalone non nasce per risolvere una singola attività.
+
+Collega il lavoro commerciale, operativo e gestionale in un unico ambiente.
+
+CRM
+Gestione trattative
+Preventivi
+Gestione commesse
+Gestione progetti
+Magazzino e logistica
+Montaggi
+Assistenza e post-vendita
+Controllo e performance
+
+Do NOT present these as nine generic cards.
+
+Instead create an elegant connected ecosystem diagram.
+
+At the center:
+
+TOTALONE
+
+Around it, grouped into three areas:
+
+VENDITE
+CRM
+Gestione trattative
+Preventivi
+
+OPERATIVITÀ
+Gestione progetti
+Gestione commesse
+Magazzino e logistica
+Montaggi
+Assistenza e post-vendita
+
+CONTROLLO
+Controllo e performance
+
+Each item should link to its corresponding product page where the route already exists.
+
+Do NOT create new routes that do not exist.
+
+
+==================================================
+9. BUILT TO GROW
+==================================================
+
+Eyebrow:
+DALLO SHOWROOM ALL’AZIENDA
+
+H2:
+Funziona quando sei piccolo. Diventa ancora più importante quando cresci.
+
+Body:
+
+Più aumentano persone, clienti, commesse e sedi, più diventa difficile affidarsi a informazioni distribuite tra strumenti diversi.
+
+Totalone crea una struttura condivisa che può accompagnare l’azienda mentre cresce.
+
+Create a minimal progression:
+
+1 SHOWROOM
+→
+PIÙ PERSONE
+→
+PIÙ COMMESSE
+→
+PIÙ SEDI
+→
+UN SOLO SISTEMA
+
+Supporting statement:
+
+“La complessità cresce. Il modo di lavorare rimane chiaro.”
+
+IMPORTANT:
+Do not imply unlimited scalability or technical performance claims.
+This is about organizational structure, not infrastructure.
+
+
+==================================================
+10. LESS ADMIN, MORE VALUE
+==================================================
+
+Eyebrow:
+IL TEMPO DEL TEAM
+
+H2:
+Il software dovrebbe togliere lavoro. Non crearne altro.
+
+Body:
+
+Cercare informazioni.
+Aggiornare più file.
+Copiare gli stessi dati.
+Chiedere continuamente aggiornamenti.
+Ricostruire cosa è successo.
+
+Sono piccoli passaggi che, ripetuti ogni giorno da più persone, diventano ore di lavoro.
+
+Totalone nasce per ridurre questi passaggi e lasciare più tempo alle attività che generano valore.
+
+Create a before/after typographic composition:
+
+TEMPO SPESO A:
+
+cercare
+copiare
+aggiornare
+ricostruire
+chiedere
+
+↓
+
+TEMPO DA RESTITUIRE AL TEAM
+
+Do NOT make a quantitative hours-saved claim in this section.
+
+Add contextual CTA:
+
+Calcola il valore del tempo che potresti recuperare →
+
+This can link to the ROI/pricing section when implemented.
+
+
+==================================================
+11. TOTALONE VS FRAGMENTED WORK
+==================================================
+
+Create a clean comparison.
+
+Do NOT make a competitor comparison table.
+
+Eyebrow:
+DUE MODI DI LAVORARE
+
+H2:
+Stesse attività. Un’organizzazione completamente diversa.
+
+LEFT SIDE:
+
+STRUMENTI SEPARATI
+
+Clienti in un sistema
+Preventivi in un altro
+Excel per il controllo
+Messaggi per gli aggiornamenti
+Documenti nelle cartelle
+Informazioni da ricostruire
+
+RIGHT SIDE:
+
+TOTALONE
+
+Un unico cliente
+Un unico flusso
+Informazioni collegate
+Processi condivisi
+Storia accessibile
+Controllo centralizzato
+
+Closing statement:
+
+“Non significa semplicemente avere meno software.
+Significa avere meno frammentazione.”
+
+Keep this visually sophisticated.
+Avoid red vs green clichés.
+
+
+==================================================
+12. THREE REASONS
+==================================================
+
+Use a large editorial section rather than small cards.
+
+Eyebrow:
+PERCHÉ TOTALONE
+
+H2:
+Tre principi. Un solo sistema.
+
+01
+VERTICALE
+
+Pensato intorno ai processi reali del settore arredamento.
+
+02
+COLLEGATO
+
+Vendita, operatività e controllo fanno parte dello stesso flusso.
+
+03
+CONDIVISO
+
+Persone e showroom lavorano sulle stesse informazioni.
+
+Use oversized numbers and typography.
+
+This section should feel premium and highly memorable.
+
+
+==================================================
+13. EXPLORE THE PRODUCT
+==================================================
+
+Eyebrow:
+SCOPRI TOTALONE
+
+H2:
+Un sistema. Tutto il lavoro dello showroom.
+
+Body:
+
+Esplora le diverse aree di Totalone e scopri come ogni funzione si collega alle altre.
+
+Use the existing Product mega-menu architecture.
+
+VENDITE
+
+CRM →
+Gestione trattative →
+Preventivi →
+
+OPERATIVITÀ
+
+Gestione progetti →
+Gestione commesse →
+Magazzino e logistica →
+Montaggi →
+Assistenza e post-vendita →
+
+CONTROLLO
+
+Controllo e performance →
+
+Do not use nine repetitive cards.
+
+Use a clean directory / editorial navigation layout.
+
+
+==================================================
+14. FINAL BRAND STATEMENT
+==================================================
+
+Before the final CTA, create a strong minimal section.
+
+Large centered typography:
+
+“Il tuo showroom non lavora per moduli.
+
+Totalone nemmeno.”
+
+Supporting text:
+
+Dal primo contatto con il cliente al post-vendita, ogni fase rimane parte dello stesso processo.
+
+Use generous whitespace.
+
+No screenshot.
+No cards.
+No decorative illustration.
+
+
+==================================================
+15. FINAL CTA
+==================================================
+
+Create a strong premium CTA using the existing Totalone blue visual identity.
+
+Eyebrow:
+SCOPRI TOTALONE
+
+H2:
+Guarda cosa cambia quando tutto lavora insieme.
+
+Body:
+Prenota una demo e scopri come Totalone può adattarsi ai processi del tuo showroom.
+
+Primary CTA:
+Prenota una demo →
+
+Secondary CTA:
+Esplora il prodotto
+
+Microcopy:
+Una demo costruita sul modo in cui lavora la tua azienda.
+
+
+==================================================
+SEO CONTENT
+==================================================
+
+Naturally integrate these concepts throughout the page:
+
+- gestionale per arredatori
+- gestionale per negozi di arredamento
+- software per showroom
+- software gestionale arredamento
+- gestionale showroom arredamento
+- software per negozi di mobili
+- gestione showroom
+- gestionale settore arredamento
+
+Do NOT keyword stuff.
+
+The copy must remain elegant and natural.
+
+Use semantic headings correctly:
+- only one H1
+- H2 for main sections
+- H3 where necessary
+
+
+==================================================
+DESIGN DIRECTION
+==================================================
+
+This page should be MORE editorial and brand-driven than the individual product pages.
+
+It should not feel like:
+“another page with screenshot + text + screenshot + text”.
+
+Create more rhythm.
+
+Alternate:
+- large typography
+- whitespace
+- process diagrams
+- connected flows
+- selective text blocks
+- ecosystem visualization
+- comparison
+- strong blue brand sections
+
+Use:
+- generous whitespace
+- oversized typography where appropriate
+- Totalone blue
+- subtle gradients only where already part of the brand
+- fine connecting lines
+- restrained animation
+- progressive reveal on workflows
+- premium B2B SaaS aesthetics
+
+Avoid:
+- stock photography
+- AI-generated images
+- generic SaaS illustrations
+- excessive cards
+- fake screenshots
+- fake metrics
+- invented testimonials
+- invented customer logos
+- repetitive two-column layouts
+
+
+==================================================
+ANIMATION
+==================================================
+
+Use animation sparingly and purposefully.
+
+Good examples:
+
+- fragmented tools gradually converge into Totalone
+- lifecycle line progresses on scroll
+- ecosystem connections appear progressively
+- “1 showroom → più sedi → un solo sistema” progresses on scroll
+
+Keep all animations subtle and professional.
+
+Do not use flashy effects.
+
+
+==================================================
+CORE MESSAGE
+==================================================
+
+The visitor should finish this page understanding:
+
+1. Totalone is not a generic ERP adapted to furniture.
+2. It was conceived around real furniture showroom workflows.
+3. The different areas of a furniture business are connected.
+4. Information follows the customer throughout the lifecycle.
+5. The entire team works within one shared process.
+6. Totalone provides structure as the company grows.
+
+The emotional takeaway should be:
+
+“Finalmente un gestionale che ragiona come lavora il mio showroom.”
+
+The rational takeaway should be:
+
+“Posso collegare vendite, commesse, operatività e controllo in un unico sistema.”
+
+Do not literally use the emotional takeaway as a testimonial or customer quote.
+It is the feeling the page should create.

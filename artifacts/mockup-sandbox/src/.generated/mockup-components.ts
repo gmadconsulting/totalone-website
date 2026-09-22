@@ -8,6 +8,7 @@ export const modules: ModuleMap = {
   "./components/mockups/totalone-homepage/TotaloneHomepage.tsx": () => import("../components/mockups/totalone-homepage/TotaloneHomepage.tsx"),
   "./components/mockups/totalone-magazzino/MagazzinoProductPage.tsx": () => import("../components/mockups/totalone-magazzino/MagazzinoProductPage.tsx"),
   "./components/mockups/totalone-montaggi/MontaggiProductPage.tsx": () => import("../components/mockups/totalone-montaggi/MontaggiProductPage.tsx"),
+  "./components/mockups/totalone-perche/PercheTotalonePage.tsx": () => import("../components/mockups/totalone-perche/PercheTotalonePage.tsx"),
   "./components/mockups/totalone-preventivi/PreventiviProductPage.tsx": () => import("../components/mockups/totalone-preventivi/PreventiviProductPage.tsx"),
   "./components/mockups/totalone-prezzi/TotalonePrezzi.tsx": () => import("../components/mockups/totalone-prezzi/TotalonePrezzi.tsx"),
   "./components/mockups/totalone-progetti/ProgettiProductPage.tsx": () => import("../components/mockups/totalone-progetti/ProgettiProductPage.tsx"),
