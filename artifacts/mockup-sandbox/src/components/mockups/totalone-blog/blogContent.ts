@@ -150,7 +150,7 @@ export const blogArticles: BlogArticleData[] = [
       heading: "Un unico modo di lavorare, costruito per l’arredamento.",
       text: "Totalone riunisce clienti, trattative, preventivi, commesse e operatività in un sistema progettato intorno al lavoro reale di showroom e negozi di arredamento.",
       primaryLabel: "Scopri Totalone",
-      primaryHref: preview("TotaloneArchitectureArticleHub"),
+      primaryHref: "/__mockup/preview/totalone-perche/PercheTotalonePage",
       secondaryLabel: "Prenota una demo",
       secondaryHref: "/demo/",
     },

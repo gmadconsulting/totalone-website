@@ -1,14 +1,25 @@
 import { ArrowRight, BookOpen, ChevronDown, ChevronRight, Clock3, List, Quote } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { MarketingShell } from "../totalone-site-architecture/_shared/MarketingShell";
 import { blogArticleById, type ArticleSection, type BlogArticleData } from "./blogContent";
 import "./BlogArticle.css";
 
 const previewRoot = "/__mockup/preview/totalone-blog/";
+const previewComponents: Record<string, string> = {
+  "software-gestionale-negozio-arredamento": "SoftwareGestionaleNegozioArredamentoArticle",
+  "gestionale-per-arredatori": "GestionalePerArredatoriArticle",
+  "software-preventivi-arredamento": "SoftwarePreventiviArredamentoArticle",
+  "gestione-commesse-arredamento": "GestioneCommesseArredamentoArticle",
+  "crm-negozio-arredamento": "CrmNegozioArredamentoArticle",
+  "gestire-ingressi-showroom": "GestireIngressiShowroomArticle",
+  "gestione-magazzino-arredamento": "GestioneMagazzinoArredamentoArticle",
+  "gestione-montaggi-arredamento": "GestioneMontaggiArredamentoArticle",
+  "gestione-post-vendita-arredamento": "GestionePostVenditaArredamentoArticle",
+  "excel-vs-gestionale-arredamento": "ExcelVsGestionaleArredamentoArticle",
+};
 
-function PreviewLink({ id, children }: { id: string; children: React.ReactNode }) {
-  const article = blogArticleById[id];
-  return <a href={`${previewRoot}${article?.previewComponent ?? id}`}>{children}</a>;
+function PreviewLink({ id, children }: { id: string; children: ReactNode }) {
+  return <a href={`${previewRoot}${previewComponents[id] ?? id}`}>{children}</a>;
 }
 
 function readTime(article: BlogArticleData) {

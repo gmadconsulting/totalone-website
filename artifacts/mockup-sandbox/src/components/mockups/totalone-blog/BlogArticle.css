@@ -365,6 +365,11 @@
   background: #fffaf7;
 }
 
+.blog-content-width {
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
 .blog-related-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
