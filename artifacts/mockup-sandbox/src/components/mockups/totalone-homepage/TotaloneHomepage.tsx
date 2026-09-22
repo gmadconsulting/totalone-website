@@ -1,7 +1,8 @@
-import { useState, type MouseEvent, type ReactNode } from "react";
+import { useEffect, useState, type MouseEvent, type ReactNode } from "react";
 import {
   ArrowRight,
   BarChart3,
+  Calculator,
   Check,
   ChevronDown,
   ChevronRight,
@@ -9,7 +10,9 @@ import {
   FileText,
   Headphones,
   Menu,
+  Minus,
   PackageCheck,
+  Plus,
   Route,
   Send,
   Store,
@@ -114,6 +117,12 @@ const heroTrustSignals = [
   ["GESTIONE AUTONOMA", "Gestisci utenti, showroom e modifiche organizzative."],
   ["NESSUNA FEE DI MODIFICA", "Non paghi un intervento per ogni normale cambiamento."],
 ] as const;
+const calculatorModules = [
+  { id: "crm", label: "CRM e trattative", price: 42 },
+  { id: "preventivi", label: "Preventivi", price: 38 },
+  { id: "commesse", label: "Commesse e progetti", price: 56 },
+  { id: "logistica", label: "Logistica e montaggi", price: 44 },
+] as const;
 
 function Logo({ dark = false }: { dark?: boolean }) {
   return (
@@ -173,6 +182,53 @@ function ProductPlaceholder({ label, hero = false }: { label: string; hero?: boo
   );
 }
 
+function PricingCalculator({ onRequestDemo }: { onRequestDemo: () => void }) {
+  const [showrooms, setShowrooms] = useState(1);
+  const [users, setUsers] = useState(6);
+  const [selectedModules, setSelectedModules] = useState<string[]>(["crm", "preventivi", "commesse"]);
+  const modulesTotal = calculatorModules
+    .filter((module) => selectedModules.includes(module.id))
+    .reduce((total, module) => total + module.price, 0);
+  const monthlyEstimate = 189 + showrooms * 74 + users * 13 + modulesTotal;
+
+  const changeCount = (setter: (value: number) => void, value: number, minimum: number, maximum: number) => {
+    setter(Math.min(maximum, Math.max(minimum, value)));
+  };
+
+  const toggleModule = (moduleId: string) => {
+    setSelectedModules((current) => current.includes(moduleId) ? current.filter((id) => id !== moduleId) : [...current, moduleId]);
+  };
+
+  return (
+    <div className="mt-14 overflow-hidden rounded-[22px] border border-[#a9cbed] bg-[#082c68] text-white shadow-[0_22px_60px_rgba(7,62,137,.16)]">
+      <div className="grid lg:grid-cols-[.95fr_1.05fr]">
+        <div className="p-7 sm:p-10">
+          <div className="flex items-center gap-3"><div className="grid h-10 w-10 place-items-center rounded-[11px] bg-[#9fe0ff] text-[#082c68]"><Calculator className="h-5 w-5" /></div><div><p className="text-[10px] font-bold uppercase tracking-[.12em] text-[#9fe0ff]">CALCOLA LA TUA CONFIGURAZIONE</p><p className="mt-1 text-sm font-semibold text-[#d5ebff]">Una prima stima, senza sorprese.</p></div></div>
+          <h3 className="mt-8 max-w-lg text-4xl font-bold leading-[.96] tracking-[-0.06em] sm:text-5xl">Quanto costa per la tua azienda?</h3>
+          <p className="mt-5 max-w-lg text-sm leading-6 text-[#d5ebff]">Imposta la struttura che vuoi gestire. Il risultato è una stima indicativa del canone mensile: il prezzo commerciale finale dipende dalla configurazione concordata.</p>
+          <div className="mt-9 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-[14px] border border-[#3f78bd] bg-[#123e7c] p-4">
+              <div className="flex items-center justify-between"><span className="text-xs font-bold text-[#d5ebff]">Showroom</span><span className="text-[10px] font-bold uppercase tracking-[.1em] text-[#9fe0ff]">sedi</span></div>
+              <div className="mt-4 flex items-center justify-between"><button type="button" onClick={() => changeCount(setShowrooms, showrooms - 1, 1, 20)} className="grid h-9 w-9 place-items-center rounded-[9px] border border-[#6e9ed2] text-[#d5ebff] hover:bg-[#245b96]" aria-label="Riduci showroom"><Minus className="h-4 w-4" /></button><strong className="text-3xl tracking-[-0.05em]">{showrooms}</strong><button type="button" onClick={() => changeCount(setShowrooms, showrooms + 1, 1, 20)} className="grid h-9 w-9 place-items-center rounded-[9px] border border-[#6e9ed2] text-[#d5ebff] hover:bg-[#245b96]" aria-label="Aumenta showroom"><Plus className="h-4 w-4" /></button></div>
+            </div>
+            <div className="rounded-[14px] border border-[#3f78bd] bg-[#123e7c] p-4">
+              <div className="flex items-center justify-between"><span className="text-xs font-bold text-[#d5ebff]">Persone</span><span className="text-[10px] font-bold uppercase tracking-[.1em] text-[#9fe0ff]">utenti</span></div>
+              <div className="mt-4 flex items-center justify-between"><button type="button" onClick={() => changeCount(setUsers, users - 1, 1, 100)} className="grid h-9 w-9 place-items-center rounded-[9px] border border-[#6e9ed2] text-[#d5ebff] hover:bg-[#245b96]" aria-label="Riduci utenti"><Minus className="h-4 w-4" /></button><strong className="text-3xl tracking-[-0.05em]">{users}</strong><button type="button" onClick={() => changeCount(setUsers, users + 1, 1, 100)} className="grid h-9 w-9 place-items-center rounded-[9px] border border-[#6e9ed2] text-[#d5ebff] hover:bg-[#245b96]" aria-label="Aumenta utenti"><Plus className="h-4 w-4" /></button></div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-[#f7fbff] p-7 text-[#102744] sm:p-10">
+          <div className="flex items-center justify-between border-b border-[#cfe1f4] pb-5"><div><p className="text-[10px] font-bold uppercase tracking-[.12em] text-[#0b55c6]">MODULI</p><p className="mt-1 text-sm font-semibold text-[#557090]">Scegli cosa vuoi portare dentro.</p></div><span className="rounded-full bg-[#dcecff] px-3 py-1.5 text-[10px] font-bold text-[#0b55c6]">{selectedModules.length} selezionati</span></div>
+          <div className="mt-5 grid gap-2">{calculatorModules.map((module) => <label key={module.id} className={`flex cursor-pointer items-center justify-between gap-3 rounded-[11px] border px-4 py-3 transition-colors ${selectedModules.includes(module.id) ? "border-[#73a9dc] bg-[#eaf4ff]" : "border-[#d7e6f5] bg-white hover:border-[#a9cbed]"}`}><span className="flex items-center gap-3 text-sm font-bold text-[#245b96]"><input type="checkbox" checked={selectedModules.includes(module.id)} onChange={() => toggleModule(module.id)} className="h-4 w-4 accent-[#1769d5]" />{module.label}</span><span className="text-xs font-semibold text-[#8296ad]">+ €{module.price}/mese</span></label>)}</div>
+          <div className="mt-7 rounded-[14px] bg-[#082c68] p-5 text-white"><div className="flex items-end justify-between gap-4"><div><p className="text-[10px] font-bold uppercase tracking-[.12em] text-[#9fe0ff]">STIMA INDICATIVA</p><p className="mt-2 text-xs text-[#d5ebff]">canone mensile</p></div><strong className="text-4xl tracking-[-0.06em]">€{monthlyEstimate.toLocaleString("it-IT")}</strong></div><div className="mt-5 grid gap-2 border-t border-[#3f78bd] pt-4 text-xs text-[#d5ebff]"><div className="flex justify-between"><span>Installazione</span><span className="font-bold text-white">€0</span></div><div className="flex justify-between"><span>Avviamento</span><span className="font-bold text-white">€0</span></div><div className="flex justify-between"><span>Aggiornamenti</span><span className="font-bold text-white">inclusi</span></div></div></div>
+          <button type="button" onClick={onRequestDemo} className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-[9px] bg-[#f36b4d] px-5 py-3.5 text-sm font-bold text-white shadow-[0_10px_24px_rgba(173,57,35,.2)] hover:bg-[#ff8668] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f36b4d]">Parliamo della tua configurazione <ArrowRight className="h-4 w-4" /></button>
+          <p className="mt-4 text-[10px] leading-4 text-[#8296ad]">La stima non è un’offerta commerciale. Il canone può variare in base ad accordi, esigenze e configurazione finale.</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function DemoModal({ onClose }: { onClose: () => void }) {
   const [sent, setSent] = useState(false);
 
@@ -225,6 +281,14 @@ export function TotaloneHomepage() {
     document.getElementById(href.slice(1))?.scrollIntoView({ behavior: "smooth", block: "start" });
     window.history.replaceState(null, "", href);
   };
+  useEffect(() => {
+    const targetId = window.location.hash.slice(1);
+    if (!targetId) return;
+    const frame = window.requestAnimationFrame(() => {
+      document.getElementById(targetId)?.scrollIntoView({ block: "start" });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
 
   return (
     <main id="top" className="min-h-[100dvh] overflow-hidden bg-[#fbfdff] text-[#102744]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
@@ -337,6 +401,7 @@ export function TotaloneHomepage() {
             <div><span className="inline-flex rounded-full bg-[#ffdcd2] px-3 py-1.5 text-xs font-bold text-[#c34d35]">SENZA FEE INUTILI</span><h2 className="mt-6 max-w-xl text-5xl font-bold leading-[.95] tracking-[-0.065em] text-[#102744] sm:text-7xl">Non paghi un intervento ogni volta che devi cambiare qualcosa.</h2><p className="mt-7 max-w-lg text-base leading-7 text-[#557090]">Totalone nasce come piattaforma moderna e self-service. Le normali modifiche amministrative vengono gestite direttamente dalla tua azienda, senza dipendere dal fornitore per ogni cambiamento.</p></div>
             <div className="rounded-[18px] border border-[#bcd7f1] bg-white p-6 sm:p-9"><div className="grid gap-4 sm:grid-cols-2">{["Nessun costo di installazione", "Nessun costo di avviamento", "Nessuna fee tecnica per le normali modifiche amministrative", "Utenti gestibili direttamente dalla piattaforma", "Showroom e struttura aziendale gestibili in autonomia", "Informazioni e anagrafiche aggiornabili direttamente dal tuo team", "Aggiornamenti software inclusi"].map((item) => <div key={item} className="flex items-start gap-3 border-b border-[#e4eef8] pb-4 text-sm font-bold leading-5 text-[#245b96]"><Check className="mt-0.5 h-4 w-4 shrink-0 text-[#1769d5]" />{item}</div>)}</div><p className="mt-7 text-[11px] leading-5 text-[#8296ad]">Il canone può variare in base alla configurazione commerciale scelta. Le normali modifiche gestibili autonomamente dalla piattaforma non comportano costi di intervento.</p></div>
           </div>
+          <PricingCalculator onRequestDemo={() => setDemoOpen(true)} />
         </div>
       </section>
 
