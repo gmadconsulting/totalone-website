@@ -1,0 +1,221 @@
+IMPORTANT CONTENT CHANGE:
+
+Remove ALL references to:
+- ricarichi / markup
+- costi nascosti / hidden costs
+- margini
+- internal pricing logic
+- costs that are hidden from the customer
+- any explanation of how internal profitability or markup is calculated
+
+These functionalities must NOT be mentioned anywhere on the public marketing page, even if they are visible inside some of the supplied screenshots.
+
+When screenshots contain these interface elements, do not highlight them, annotate them or discuss them in the copy.
+
+The marketing narrative should focus instead on:
+- creating furniture quotations
+- organizing complex furniture proposals
+- kitchens
+- systems
+- furniture
+- appliances
+- finishes
+- dimensions
+- quantities
+- options and extras
+- images
+- discounts
+- VAT
+- installation and transport
+- quotation versions
+- quotation status
+- PDF presentation
+- document layout
+- multi-showroom branding
+- quotation pipeline and conversion
+
+
+DELETE ENTIRELY:
+
+SECTION “RICARICHI E SCONTI”
+
+SECTION “COSTI NASCOSTI”
+
+
+REPLACE THE FIRST SECTION WITH:
+
+==================================================
+5. PREZZI, SCONTI E TOTALI
+==================================================
+
+Eyebrow:
+CONTROLLO DEL PREVENTIVO
+
+H2:
+Prezzi, sconti e totali sempre sotto controllo.
+
+Body:
+Gestisci prezzi, quantità, sconti e IVA direttamente all’interno del preventivo.
+
+Totalone aggiorna i valori delle diverse componenti della proposta e ti permette di mantenere sotto controllo il totale mentre costruisci l’offerta.
+
+Highlight visually:
+
+PREZZO
+×
+QUANTITÀ
+−
+SCONTO
+=
+TOTALE
+
+VISUAL:
+Use a crop from the real interface showing product prices, discounts and totals.
+
+Do NOT highlight or mention markup fields or hidden costs even when they are visible in the original screenshot.
+
+
+==================================================
+6. EXTRA E OPZIONI
+==================================================
+
+Eyebrow:
+UNA PROPOSTA PIÙ FLESSIBILE
+
+H2:
+Gestisci alternative, extra e opzioni nello stesso preventivo.
+
+Body:
+Una proposta di arredamento cambia continuamente.
+
+Aggiungi elementi extra e opzioni alla configurazione principale, organizzandoli insieme al resto dell’offerta senza creare documenti separati.
+
+Il preventivo rimane leggibile anche quando il cliente sta valutando più possibilità.
+
+VISUAL:
+Use the supplied interface showing “Extra & Opzioni”.
+
+Focus the screenshot crop on the relevant area and avoid emphasizing internal pricing fields.
+
+
+==================================================
+UPDATE SECTION “PREVENTIVI CUCINE”
+==================================================
+
+Replace its body with:
+
+Organizza la cucina in composizioni e aree, separando elementi, marmo, elettrodomestici, extra e opzioni.
+
+Ogni componente rimane organizzata all’interno dello stesso preventivo, così anche una proposta articolata resta semplice da costruire, modificare e presentare.
+
+Feature highlights:
+Composizione cucina
+Aree e nicchie
+Marmo
+Elettrodomestici
+Extra e opzioni
+Quantità
+Sconti
+IVA
+
+
+==================================================
+UPDATE SECTION “PREVENTIVI ARREDAMENTO”
+==================================================
+
+Body:
+
+Inserisci nel preventivo le informazioni che servono davvero quando vendi arredamento: brand, modello, composizione, area, dimensioni, finiture, note e immagini.
+
+Prodotti e relative specifiche rimangono organizzati all’interno della stessa proposta, insieme a quantità, prezzi e sconti.
+
+Feature highlights:
+Brand
+Modello
+Area
+Dimensioni
+Finiture
+Note
+Immagini
+Quantità
+Prezzo
+Sconto
+IVA
+
+
+==================================================
+UPDATE SECTION “RIEPILOGO”
+==================================================
+
+Eyebrow:
+TOTALE SEMPRE SOTTO CONTROLLO
+
+H2:
+Tutto il preventivo, in un unico riepilogo.
+
+Body:
+Totalone raccoglie le diverse componenti della proposta e rende immediatamente leggibile il valore complessivo del preventivo.
+
+Cucina, elettrodomestici, arredamento, sistemi, extra e servizi confluiscono in un unico riepilogo.
+
+VISUAL:
+Use the supplied summary screenshot, but crop or frame it so that hidden-cost functionality is NOT emphasized.
+
+
+==================================================
+UPDATE WORKFLOW
+==================================================
+
+Replace the workflow with:
+
+TRATTATIVA
+→
+CREA PREVENTIVO
+→
+INSERISCI PRODOTTI
+→
+AGGIUNGI SPECIFICHE E FINITURE
+→
+AGGIUNGI IMMAGINI
+→
+CONTROLLA IL TOTALE
+→
+IMPAGINA
+→
+GENERA IL PDF
+
+
+==================================================
+UPDATE SEO SECTION
+==================================================
+
+H2:
+Software preventivi per negozi di arredamento e showroom
+
+Body:
+Totalone è un software per preventivi dedicato al settore dell’arredamento. Aiuta negozi, showroom e rivenditori a creare offerte per cucine, sistemi, mobili e servizi, organizzando prodotti, specifiche, immagini, prezzi e documentazione in un unico flusso.
+
+Do not mention markup, margins or hidden costs anywhere.
+
+
+==================================================
+FINAL CONTENT RULE
+==================================================
+
+Before completing the page, scan ALL page copy and remove any remaining reference, direct or indirect, to:
+
+“ricarico”
+“markup”
+“margine”
+“costo nascosto”
+“hidden cost”
+“profitability”
+“internal cost”
+
+These concepts must not be part of the public positioning of the Preventivi per arredatori page.
+
+The core positioning must remain:
+
+“Un preventivatore costruito per la complessità dell’arredamento.”
+
+Focus on how Totalone helps a furniture retailer transform a complex furniture proposal into an organized, visual and professional quotation for the client.

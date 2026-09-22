@@ -8,7 +8,7 @@ const productGroups = [
     links: [
       ["CRM", "/__mockup/preview/totalone-crm/CrmProductPage"],
       ["Gestione trattative", "/gestione-trattative-arredamento/"],
-      ["Preventivi", "/software-preventivi-arredamento/"],
+      ["Preventivi", "/__mockup/preview/totalone-preventivi/PreventiviProductPage"],
     ],
   },
   {
