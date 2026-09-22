@@ -1,0 +1,689 @@
+Create the complete “Gestione Montaggi” product page for the Totalone marketing website.
+
+IMPORTANT:
+- Work ONLY on the public Totalone marketing website.
+- Do NOT modify the Totalone application/dashboard.
+- Keep the existing Totalone website design system, navbar, typography, colors, spacing, buttons, border radius and overall visual language.
+- The page must feel like a premium modern B2B SaaS product page.
+- Preserve the current Totalone brand identity.
+- All copy must be in Italian.
+- Mobile and tablet responsive.
+- DO NOT generate images.
+- DO NOT generate screenshots.
+- DO NOT recreate fake versions of the Totalone interface.
+- I will manually add the real Totalone screenshots later.
+- Wherever a product screenshot is required, create ONLY a clean responsive placeholder.
+- Do NOT invent functionality that is not visible or described below.
+- Avoid excessive cards and repetitive layouts.
+- Use subtle animations only where they improve comprehension.
+
+The real Totalone Montaggi module currently includes two main areas:
+
+1. Montaggi previsti
+   - calendar view
+   - scheduled installations by date
+   - customer associated with each installation
+   - economic value visible on the scheduled installation
+
+2. Rapportini di montaggio
+   - reports created after installation work
+   - customer
+   - date
+   - report author
+   - notes / description of the completed work
+   - photos / attachments when present
+   - report history
+   - search
+   - period filter
+   - create new report
+   - view and edit existing reports
+
+The core positioning of this page is:
+
+PIANIFICA → ESEGUI → DOCUMENTA
+
+Totalone connects the planning of an installation with what actually happened on site.
+
+
+PAGE URL:
+/gestione-montaggi-arredamento
+
+SEO TITLE:
+Gestione Montaggi per Arredatori e Showroom | Totalone
+
+META DESCRIPTION:
+Pianifica i montaggi e raccogli i rapportini di fine lavori con Totalone. Il software per la gestione dei montaggi di showroom e negozi di arredamento.
+
+PRIMARY KEYWORD:
+gestione montaggi arredamento
+
+SECONDARY KEYWORDS:
+software montaggi arredamento
+gestionale montaggi arredatori
+programma montaggi mobili
+pianificazione montaggi arredamento
+rapportini montaggio
+software showroom arredamento
+
+
+==================================================
+1. HERO
+==================================================
+
+Eyebrow:
+GESTIONE MONTAGGI
+
+H1:
+Dal calendario al fine lavori, ogni montaggio sotto controllo.
+
+Subtitle:
+Pianifica i montaggi, visualizza gli interventi previsti e raccogli i rapportini di fine lavori in un unico sistema collegato alle attività del tuo showroom.
+
+Primary CTA:
+Prenota una demo →
+
+Secondary CTA:
+Scopri come funziona ↓
+
+Microcopy:
+Pensato per showroom, negozi di arredamento e team di installazione.
+
+VISUAL:
+
+Create ONLY:
+
+[SCREENSHOT — CALENDARIO MONTAGGI PREVISTI]
+
+This area will later contain the real Totalone screenshot.
+
+Make it large and visually dominant.
+
+Do not place it inside a laptop or browser mockup.
+Do not recreate the calendar interface.
+The screenshot must eventually remain large enough to read customer names and scheduled dates.
+
+
+==================================================
+2. VALUE PROPOSITION
+==================================================
+
+Eyebrow:
+DALLA PIANIFICAZIONE AL CANTIERE
+
+H2:
+Il montaggio non dovrebbe iniziare da un foglio Excel e finire in una chat.
+
+Body:
+La fase di montaggio è uno dei momenti più delicati di una commessa di arredamento.
+
+Date, clienti, interventi e informazioni di fine lavori devono rimanere accessibili anche quando il lavoro esce dallo showroom.
+
+Totalone riunisce pianificazione e rapportini in uno stesso flusso, così il team può sapere cosa deve essere montato e mantenere traccia di ciò che è successo.
+
+Create three concise benefit blocks:
+
+PIANIFICA
+
+Visualizza i montaggi previsti direttamente a calendario.
+
+COORDINA
+
+Sai quali clienti hanno un montaggio programmato e quando.
+
+DOCUMENTA
+
+A fine lavori, il rapportino mantiene traccia dell’intervento effettuato.
+
+
+==================================================
+3. MONTAGGI PREVISTI
+==================================================
+
+Eyebrow:
+PIANIFICAZIONE
+
+H2:
+Guarda i prossimi montaggi direttamente a calendario.
+
+Body:
+Totalone organizza i montaggi previsti in una vista temporale semplice da leggere.
+
+In pochi secondi puoi capire quali clienti hanno un intervento programmato, in quale giorno e come sono distribuiti i montaggi nel corso del mese.
+
+VISUAL:
+
+[SCREENSHOT — MONTAGGI PREVISTI]
+
+Use the real screenshot later.
+
+Make this a large full-width product section.
+
+The screenshot should eventually show:
+- monthly calendar
+- customer names
+- scheduled dates
+- multiple installations on different days
+- economic values where visible
+
+Do NOT recreate these elements as website cards.
+
+Caption:
+“Una vista immediata dei montaggi programmati nel tempo.”
+
+
+==================================================
+4. FROM MONTH TO SINGLE INSTALLATION
+==================================================
+
+Eyebrow:
+UNA VISIONE CHIARA
+
+H2:
+Sai cosa è previsto oggi, questa settimana e nelle prossime.
+
+Body:
+La vista calendario rende immediatamente leggibile la distribuzione dei montaggi e aiuta il team a mantenere una visione condivisa degli interventi programmati.
+
+Instead of creating fake application UI, create a minimal website storytelling element:
+
+OGGI
+→
+QUESTA SETTIMANA
+→
+PROSSIMI MONTAGGI
+
+Supporting line:
+
+“Dal calendario generale al singolo cliente, senza ricostruire la pianificazione tra strumenti diversi.”
+
+
+==================================================
+5. CONNECTED TO THE CUSTOMER
+==================================================
+
+Eyebrow:
+OGNI MONTAGGIO HA UN CLIENTE
+
+H2:
+Non pianifichi semplicemente una data.
+
+Body:
+Ogni montaggio appartiene a un cliente e fa parte di un processo iniziato molto prima dell’intervento.
+
+Totalone mantiene il contesto visibile anche nella fase operativa, evitando che la pianificazione diventi una lista di appuntamenti scollegati dal resto del lavoro.
+
+Create a minimal conceptual flow:
+
+CLIENTE
+→
+COMMESSA
+→
+MONTAGGIO
+
+Supporting statement:
+
+“Il montaggio continua la storia della commessa.”
+
+
+==================================================
+6. FROM WAREHOUSE TO INSTALLATION
+==================================================
+
+Eyebrow:
+DAL MAGAZZINO AL MONTAGGIO
+
+H2:
+Quando i prodotti sono pronti, il lavoro continua.
+
+Body:
+La logistica e il montaggio fanno parte dello stesso percorso operativo.
+
+Totalone mantiene questi processi nello stesso ecosistema, riducendo la frammentazione tra ciò che viene gestito in magazzino e ciò che deve essere installato.
+
+Create an elegant website flow:
+
+PRODOTTI
+→
+MAGAZZINO
+→
+MONTAGGIO
+
+Add contextual internal link:
+
+Scopri Magazzino e Logistica →
+
+
+==================================================
+7. RAPPORTINI DI MONTAGGIO
+==================================================
+
+Make this one of the strongest sections of the page.
+
+Eyebrow:
+FINE LAVORI
+
+H2:
+Il montaggio finisce. Le informazioni rimangono.
+
+Body:
+Al termine dell’intervento puoi creare un rapportino di montaggio e mantenere traccia di ciò che è stato fatto.
+
+Cliente, data, autore, note e documentazione dell’intervento rimangono raccolti nello stesso ambiente e possono essere consultati successivamente.
+
+VISUAL:
+
+[SCREENSHOT — RAPPORTINI DI MONTAGGIO]
+
+Use the real Totalone screenshot later.
+
+Make the screenshot large enough to show multiple rapportini simultaneously.
+
+The screenshot should eventually make visible:
+- customer
+- date
+- author
+- notes
+- photos where present
+- actions to view/edit the report
+
+Caption:
+“Ogni intervento lascia una traccia consultabile.”
+
+
+==================================================
+8. WHAT A REPORT CONTAINS
+==================================================
+
+Eyebrow:
+DOCUMENTAZIONE
+
+H2:
+Scrivi cosa è successo. E ritrovalo quando serve.
+
+Body:
+Il rapportino permette di raccogliere le informazioni di fine lavori direttamente dopo l’intervento.
+
+Communicate only confirmed information:
+
+Cliente
+Data
+Autore
+Note dell’intervento
+Foto, quando presenti
+
+Do not invent:
+- digital signatures
+- customer approval workflows
+- automatic PDFs
+- GPS tracking
+- installer geolocation
+- time tracking
+- automatic checklists
+
+unless these functionalities are explicitly confirmed later.
+
+Create a simple conceptual composition:
+
+INTERVENTO
++
+NOTE
++
+FOTO
+=
+STORICO DEL MONTAGGIO
+
+
+==================================================
+9. PHOTOS AND NOTES
+==================================================
+
+Eyebrow:
+QUELLO CHE È SUCCESSO, DOCUMENTATO
+
+H2:
+Una nota oggi può evitare una ricerca domani.
+
+Body:
+A fine lavori puoi descrivere ciò che è stato eseguito e allegare fotografie quando necessario.
+
+Questo permette di conservare il contesto dell’intervento e rende più semplice recuperare le informazioni anche a distanza di tempo.
+
+Use examples inspired by the type of information visible in the real screenshot, but DO NOT present them as fixed templates or automatic categories.
+
+Examples can include:
+- montaggio completato
+- lavorazioni eseguite
+- eventuali osservazioni
+- informazioni utili per attività successive
+
+Do not invent claims about automatic issue detection.
+
+
+==================================================
+10. REPORT HISTORY
+==================================================
+
+Eyebrow:
+STORICO
+
+H2:
+I rapportini non spariscono in una cartella.
+
+Body:
+Consulta i rapportini già creati e recupera rapidamente le informazioni relative agli interventi precedenti.
+
+La ricerca permette di trovare un rapportino utilizzando informazioni come cliente, autore o note, mentre il filtro temporale aiuta a restringere il periodo da analizzare.
+
+Communicate confirmed controls:
+
+Ricerca
+Cliente
+Autore
+Note
+Periodo
+
+VISUAL:
+
+[SCREENSHOT — STORICO RAPPORTINI]
+
+This can use the same real interface with a different crop.
+
+Do not generate a second fake UI.
+
+
+==================================================
+11. FROM INSTALLATION TO AFTER-SALES
+==================================================
+
+Eyebrow:
+IL PROCESSO CONTINUA
+
+H2:
+Se dopo il montaggio serve intervenire, il contesto è già lì.
+
+Body:
+Il fine lavori non significa necessariamente la fine della relazione con il cliente.
+
+Mantenere uno storico dell’intervento aiuta il team a conservare informazioni utili anche nelle fasi successive della commessa.
+
+Create a minimal flow:
+
+MONTAGGIO
+→
+RAPPORTINO
+→
+ASSISTENZA
+
+Add contextual internal link:
+
+Scopri la gestione Assistenze →
+
+IMPORTANT:
+Do not claim that an assistance ticket is automatically generated from a report unless this functionality is confirmed.
+
+
+==================================================
+12. THE TOTALONE INSTALLATION FLOW
+==================================================
+
+Create a visually distinctive workflow section.
+
+Eyebrow:
+UN UNICO FLUSSO
+
+H2:
+Prima pianifichi. Poi monti. Infine documenti.
+
+Create a premium horizontal flow:
+
+MONTAGGIO PREVISTO
+→
+PIANIFICAZIONE
+→
+INTERVENTO
+→
+RAPPORTINO
+→
+STORICO
+
+Supporting text:
+Le informazioni accompagnano il lavoro dalla programmazione dell’intervento fino alla documentazione di ciò che è stato eseguito.
+
+On mobile transform this into a vertical flow.
+
+Do not use a screenshot in this section.
+
+
+==================================================
+13. LESS FRAGMENTATION
+==================================================
+
+Eyebrow:
+MENO PASSAGGI
+
+H2:
+Meno informazioni disperse tra ufficio e montaggio.
+
+Create a clean comparison.
+
+BEFORE TOTALONE:
+
+Calendari separati
+Fogli Excel
+Messaggi
+Foto nelle chat
+Note sparse
+Rapportini difficili da recuperare
+
+WITH TOTALONE:
+
+Montaggi previsti
+Calendario
+Clienti
+Rapportini
+Note
+Foto
+Storico
+
+Closing sentence:
+
+“Pianificazione e fine lavori rimangono nello stesso sistema.”
+
+
+==================================================
+14. WHY TOTALONE
+==================================================
+
+Eyebrow:
+PERCHÉ TOTALONE
+
+H2:
+Il montaggio fa parte della commessa.
+
+Body:
+Per un negozio di arredamento il lavoro non termina quando il prodotto viene venduto.
+
+La consegna e il montaggio sono parte dell’esperienza del cliente e devono rimanere collegati al resto del processo.
+
+Totalone porta anche questa fase nello stesso ecosistema utilizzato dal team.
+
+Create three pillars:
+
+PIANIFICATO
+
+I prossimi montaggi sono visibili nel calendario.
+
+DOCUMENTATO
+
+Note e fotografie mantengono traccia dell’intervento.
+
+COLLEGATO
+
+Il montaggio continua il processo iniziato con cliente e commessa.
+
+
+==================================================
+15. TOTALONE ECOSYSTEM
+==================================================
+
+Eyebrow:
+TOTALONE
+
+H2:
+Dal primo contatto al fine lavori.
+
+Create an elegant ecosystem flow:
+
+CRM
+→
+TRATTATIVA
+→
+PREVENTIVO
+→
+COMMESSA
+→
+MAGAZZINO
+→
+MONTAGGIO
+→
+ASSISTENZA
+
+Supporting text:
+Ogni fase continua nello stesso ecosistema, senza trasformarsi ogni volta in un nuovo file o in uno strumento separato.
+
+Use internal links where corresponding product pages already exist.
+
+
+==================================================
+16. SEO CONTENT
+==================================================
+
+H2:
+Software per la gestione dei montaggi nell’arredamento.
+
+Body:
+Totalone è un gestionale per arredatori e showroom che permette di pianificare i montaggi e raccogliere i rapportini di fine lavori nello stesso ambiente utilizzato per gestire il resto della commessa.
+
+La vista calendario rende immediatamente visibili gli interventi programmati, mentre i rapportini permettono di mantenere uno storico delle attività svolte, delle note e della documentazione disponibile.
+
+Naturally include:
+- gestione montaggi arredamento
+- software montaggi arredamento
+- gestionale per arredatori
+- pianificazione montaggi mobili
+- rapportini montaggio
+- software showroom arredamento
+
+Avoid keyword stuffing.
+
+
+==================================================
+17. FINAL CTA
+==================================================
+
+Create a strong premium CTA using the existing Totalone blue visual identity.
+
+Eyebrow:
+MONTAGGI TOTALONE
+
+H2:
+Dal prossimo montaggio al fine lavori, tutto nello stesso posto.
+
+Body:
+Scopri come Totalone può aiutarti a pianificare gli interventi e mantenere uno storico chiaro del lavoro svolto.
+
+Primary CTA:
+Prenota una demo →
+
+Secondary CTA:
+Scopri tutte le funzionalità
+
+Microcopy:
+Una demo costruita sul modo in cui lavora il tuo showroom.
+
+
+==================================================
+SCREENSHOTS — CRITICAL
+==================================================
+
+DO NOT GENERATE ANY IMAGES.
+
+DO NOT:
+- generate AI images
+- search for stock images
+- generate product screenshots
+- recreate Totalone UI
+- create fake calendars
+- create fake reports
+- invent customers
+- invent installation data
+
+I will manually add all screenshots.
+
+Create ONLY clean responsive placeholders:
+
+[SCREENSHOT — CALENDARIO MONTAGGI PREVISTI]
+[SCREENSHOT — RAPPORTINI DI MONTAGGIO]
+[SCREENSHOT — STORICO RAPPORTINI]
+[SCREENSHOT — DETTAGLIO RAPPORTINO]
+
+Make every placeholder easy to replace later.
+
+
+==================================================
+DESIGN DIRECTION
+==================================================
+
+Maintain exactly the visual language already established across the Totalone marketing website.
+
+Use:
+- generous whitespace
+- strong typographic hierarchy
+- subtle Totalone blue accents
+- large screenshot areas
+- full-width calendar presentation
+- minimal diagrams
+- restrained use of cards
+- alternating compositions
+- premium B2B SaaS presentation
+- subtle scroll animations
+
+Avoid:
+- stock photography of installers
+- generic construction imagery
+- tool icons everywhere
+- fake dashboards
+- excessive cards
+- excessive gradients
+- invented functionality
+
+The actual Totalone interface will later become the primary visual proof.
+
+
+==================================================
+CORE POSITIONING
+==================================================
+
+The page should NOT communicate Montaggi as a simple calendar.
+
+The value comes from connecting planning and documentation:
+
+PIANIFICA
+→
+ESEGUI
+→
+DOCUMENTA
+
+The page should immediately answer:
+
+- Quali montaggi sono previsti?
+- Quando sono programmati?
+- Per quale cliente?
+- Cosa è stato fatto durante il montaggio?
+- Chi ha compilato il rapportino?
+- Ci sono note o fotografie?
+- Posso recuperare lo storico successivamente?
+
+CORE MESSAGE:
+
+“Totalone accompagna il montaggio dalla pianificazione al rapportino di fine lavori.”
