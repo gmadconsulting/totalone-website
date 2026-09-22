@@ -29,7 +29,7 @@ const navItems = [
 ];
 const productGroups = [
   { label: "VENDITE", links: [["CRM", "/__mockup/preview/totalone-crm/CrmProductPage"], ["Gestione trattative", "/__mockup/preview/totalone-trattative/GestioneTrattative"], ["Preventivi", "/__mockup/preview/totalone-preventivi/PreventiviProductPage"]] },
-  { label: "OPERATIVITÀ", links: [["Gestione progetti", "/__mockup/preview/totalone-progetti/ProgettiProductPage"], ["Gestione commesse", "/__mockup/preview/totalone-commesse/CommesseProductPage"], ["Magazzino e logistica", "/gestione-magazzino-arredamento/"], ["Montaggi", "/gestione-montaggi-arredamento/"], ["Assistenza e post-vendita", "/post-vendita-arredamento/"]] },
+  { label: "OPERATIVITÀ", links: [["Gestione progetti", "/__mockup/preview/totalone-progetti/ProgettiProductPage"], ["Gestione commesse", "/__mockup/preview/totalone-commesse/CommesseProductPage"], ["Magazzino e logistica", "/__mockup/preview/totalone-magazzino/MagazzinoProductPage"], ["Montaggi", "/gestione-montaggi-arredamento/"], ["Assistenza e post-vendita", "/post-vendita-arredamento/"]] },
   { label: "CONTROLLO", links: [["Controllo e performance", "/controllo-gestione-arredamento/"]] },
 ];
 
@@ -85,10 +85,10 @@ const areas: Area[] = [
     icon: PackageCheck,
   },
   {
-    id: "logistica",
-    label: "Logistica",
-    title: "Meno rincorse. Più consegne preparate.",
-    body: "La squadra sa cosa deve muoversi, quando e per quale cliente. La logistica segue la commessa invece di diventare una chat separata.",
+    id: "magazzino",
+    label: "Magazzino e logistica",
+    title: "Sai cosa arriva. Sai dove si trova.",
+    body: "Prodotti, arrivi, colli e magazzini restano collegati a cliente e commessa, così la logistica segue il venduto fino al montaggio.",
     icon: Truck,
   },
   {

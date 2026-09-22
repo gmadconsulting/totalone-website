@@ -1,0 +1,756 @@
+Create the complete “Magazzino e Logistica” product page for the Totalone marketing website.
+
+IMPORTANT:
+- Work ONLY on the public Totalone marketing website.
+- Do NOT modify the Totalone application/dashboard.
+- Keep exactly the existing Totalone website design system, navbar, typography, colors, spacing, buttons, border radius and visual language.
+- The page must feel like a premium modern B2B SaaS product page.
+- All copy must be in Italian.
+- Mobile and tablet responsive.
+- DO NOT generate images.
+- DO NOT generate product screenshots.
+- DO NOT recreate fake Totalone interfaces.
+- I will manually add all real Totalone screenshots later.
+- Wherever a screenshot is required, create ONLY a clean responsive placeholder.
+- Do NOT invent functionality not described in this prompt.
+- Avoid excessive cards and repetitive layouts.
+- Use subtle animations only where they improve comprehension.
+
+PRODUCT POSITIONING:
+
+Totalone Magazzino is not a generic inventory management tool.
+
+It is designed around the logistics of furniture showrooms.
+
+The goal is to answer practical questions such as:
+
+- Cosa deve ancora arrivare?
+- Cosa è già arrivato?
+- A quale cliente appartiene?
+- A quale commessa appartiene?
+- Dove si trova?
+- Quanti colli ci sono?
+- Qual è lo stato del prodotto?
+- Cosa è previsto in arrivo nei prossimi giorni?
+- Quali documenti logistici sono stati generati?
+
+The central concept is:
+
+“Dal prodotto venduto al prodotto fisicamente disponibile: sai sempre dove sei.”
+
+
+PAGE URL:
+/magazzino-logistica-arredamento
+
+SEO TITLE:
+Gestione Magazzino per Arredatori e Showroom | Totalone
+
+META DESCRIPTION:
+Gestisci magazzino, arrivi previsti, prodotti, colli e documenti logistici con Totalone. Il software di magazzino pensato per showroom e negozi di arredamento.
+
+PRIMARY KEYWORD:
+gestione magazzino arredamento
+
+SECONDARY KEYWORDS:
+software magazzino arredamento
+gestionale magazzino arredatori
+gestione logistica arredamento
+software logistica showroom
+gestione arrivi mobili
+gestionale negozio arredamento
+
+
+==================================================
+1. HERO
+==================================================
+
+Eyebrow:
+MAGAZZINO E LOGISTICA
+
+H1:
+Sai cosa arriva. Sai dove si trova.
+
+Subtitle:
+Segui prodotti, arrivi e colli dal momento dell’ordine fino al magazzino, mantenendo ogni elemento collegato al cliente e alla relativa commessa.
+
+Primary CTA:
+Prenota una demo →
+
+Secondary CTA:
+Scopri come funziona ↓
+
+Microcopy:
+Pensato per la logistica di showroom e negozi di arredamento.
+
+VISUAL:
+
+Create ONLY:
+
+[SCREENSHOT — MAGAZZINO LOGISTICO]
+
+This should later contain the real Totalone Magazzino screenshot.
+
+Make the screenshot area large and visually dominant.
+
+Do not place it inside a laptop or device mockup.
+Do not recreate any UI.
+
+
+==================================================
+2. VALUE PROPOSITION
+==================================================
+
+Eyebrow:
+UNA LOGISTICA PIÙ LEGGIBILE
+
+H2:
+Ogni prodotto ha una destinazione. E una storia.
+
+Body:
+In una commessa di arredamento, i prodotti raramente arrivano tutti insieme.
+
+Brand diversi, ordini diversi, date diverse e decine di colli possono rendere difficile capire cosa è realmente disponibile.
+
+Totalone mantiene la logistica collegata alla vendita, così ogni prodotto conserva il proprio contesto.
+
+Create a minimal conceptual flow:
+
+CLIENTE
+→
+COMMESSA
+→
+PRODOTTO
+→
+ARRIVO
+→
+MAGAZZINO
+
+Supporting statement:
+
+“Non gestisci semplicemente merce. Gestisci prodotti che appartengono a clienti e commesse precise.”
+
+
+==================================================
+3. MAGAZZINO LOGISTICO
+==================================================
+
+Eyebrow:
+TUTTO IL MAGAZZINO
+
+H2:
+Tutto quello che passa dal magazzino, in una sola vista.
+
+Body:
+Consulta i prodotti gestiti dalla logistica e trova rapidamente ciò che stai cercando.
+
+Totalone mantiene visibili le informazioni necessarie per riconoscere ogni elemento e capire a quale cliente appartiene e a che punto si trova.
+
+Based on the real interface, communicate:
+
+Cliente
+Sede / Magazzino
+Brand
+Prodotto
+Quantità
+Stato
+Colli
+Prezzo
+
+VISUAL:
+
+[SCREENSHOT — TABELLA MAGAZZINO]
+
+Use a large placeholder.
+
+The final real screenshot should remain readable, showing several rows at the same time.
+
+Caption:
+
+“Dal cliente al singolo prodotto, senza perdere il contesto della commessa.”
+
+
+==================================================
+4. SEARCH AND FILTERS
+==================================================
+
+Eyebrow:
+TROVA SUBITO QUELLO CHE CERCHI
+
+H2:
+Cerca per cliente, brand o prodotto.
+
+Body:
+Quando il numero di commesse cresce, trovare rapidamente un elemento diventa fondamentale.
+
+Totalone permette di cercare tra i prodotti e restringere la vista in base alle informazioni disponibili nel magazzino.
+
+Communicate only controls visible in the real product:
+
+Ricerca cliente
+Brand
+Prodotto
+Stato
+Filtri
+Magazzino selezionato
+
+VISUAL:
+
+[SCREENSHOT — RICERCA E FILTRI MAGAZZINO]
+
+Do not invent additional filters.
+
+
+==================================================
+5. PRODUCT STATUS
+==================================================
+
+Make this one of the strongest sections.
+
+Eyebrow:
+STATO DEI PRODOTTI
+
+H2:
+Ogni prodotto può essere in una fase diversa.
+
+Body:
+Una stessa commessa può contenere prodotti ordinati, altri già arrivati e altri ancora in lavorazione.
+
+Totalone rende lo stato del singolo elemento immediatamente visibile, così il team può capire cosa sta succedendo senza ricostruire la situazione manualmente.
+
+Use normal WEBSITE elements to show examples of statuses visible in the real product:
+
+CONFERMATO
+ORDINATO
+ARRIVATO
+PROGRAMMATO
+IN CORSO
+ASSISTENZA
+
+IMPORTANT:
+Do not imply that these states necessarily form one mandatory linear workflow.
+
+Supporting statement:
+
+“Lo stato appartiene al prodotto, non soltanto alla commessa.”
+
+
+==================================================
+6. ARRIVI PREVISTI
+==================================================
+
+This is a major differentiating section.
+
+Eyebrow:
+ARRIVI PREVISTI
+
+H2:
+Guarda cosa sta arrivando, prima che arrivi.
+
+Body:
+La vista calendario permette di leggere gli arrivi previsti nel tempo e capire quali prodotti sono attesi nei diversi giorni.
+
+Invece di ricostruire le consegne tra email, conferme d’ordine e appunti, il team ha una visione temporale condivisa degli arrivi.
+
+VISUAL:
+
+[SCREENSHOT — CALENDARIO ARRIVI PREVISTI]
+
+Make this screenshot large, possibly full-width.
+
+The real screenshot should clearly show:
+- monthly calendar
+- products on individual dates
+- customer names
+- days with multiple arrivals
+
+Do not recreate the calendar.
+
+Highlight statement:
+
+“Il magazzino non vede soltanto cosa c’è. Vede anche cosa sta arrivando.”
+
+
+==================================================
+7. FROM CALENDAR TO PRODUCT
+==================================================
+
+Eyebrow:
+PIANIFICAZIONE
+
+H2:
+Dalla settimana al singolo prodotto.
+
+Body:
+La vista degli arrivi aiuta a distribuire nel tempo ciò che deve essere ricevuto e rende più semplice capire quando più prodotti o commesse convergono sugli stessi giorni.
+
+Create a minimal website flow:
+
+OGGI
+→
+PROSSIMI ARRIVI
+→
+RICEZIONE
+→
+MAGAZZINO
+
+Do not create fake statistics or warehouse capacity calculations.
+
+
+==================================================
+8. COLLI
+==================================================
+
+Eyebrow:
+COLLI
+
+H2:
+Un prodotto può essere uno. I colli molti di più.
+
+Body:
+Nel settore dell’arredamento sapere che un prodotto è arrivato non è sempre sufficiente.
+
+Totalone mantiene visibile anche il numero di colli associati agli elementi della commessa, aiutando il team a verificare con maggiore chiarezza ciò che viene movimentato.
+
+Create a simple conceptual visual:
+
+PRODOTTO
+↓
+1 / 2 / 3 / 4... COLLI
+
+Supporting statement:
+
+“Più controllo su ciò che entra fisicamente in magazzino.”
+
+
+==================================================
+9. MULTI-WAREHOUSE
+==================================================
+
+Eyebrow:
+PIÙ MAGAZZINI
+
+H2:
+Sai anche dove si trova.
+
+Body:
+Quando l’azienda lavora con più sedi o magazzini, la posizione diventa parte dell’informazione.
+
+Totalone permette di lavorare sulla vista del magazzino selezionato e mantenere chiaro dove sono gestiti i diversi prodotti.
+
+Use the real warehouse selector visible in the application.
+
+VISUAL:
+
+[SCREENSHOT — SELETTORE MAGAZZINO]
+
+Do NOT invent warehouse transfer functionality unless explicitly supported elsewhere in the product.
+
+
+==================================================
+10. TRANSACTIONS
+==================================================
+
+Eyebrow:
+MOVIMENTI
+
+H2:
+Segui i movimenti, non soltanto la situazione attuale.
+
+Body:
+La sezione Transazioni permette di affiancare alla vista del magazzino una lettura dei movimenti registrati.
+
+Questo aiuta a mantenere maggiore continuità tra ciò che entra, ciò che viene gestito e la situazione corrente del magazzino.
+
+VISUAL:
+
+[SCREENSHOT — TRANSAZIONI MAGAZZINO]
+
+IMPORTANT:
+Do not describe specific transaction types unless confirmed by the actual interface.
+Do not invent stock adjustment or transfer workflows.
+
+
+==================================================
+11. LOGISTICAL AND ACCOUNTING VIEWS
+==================================================
+
+Eyebrow:
+DUE PROSPETTIVE
+
+H2:
+La logistica e il controllo possono richiedere viste diverse.
+
+Body:
+Totalone distingue la vista del Magazzino logistico dalla vista del Magazzino contabile, mantenendo le diverse esigenze di lettura all’interno dello stesso ambiente.
+
+Create a very minimal website representation:
+
+MAGAZZINO LOGISTICO
+↔
+MAGAZZINO CONTABILE
+
+Keep this section concise.
+
+Do not explain accounting logic that is not explicitly confirmed by the product.
+
+
+==================================================
+12. DDT AND DOCUMENT HISTORY
+==================================================
+
+Eyebrow:
+DOCUMENTI LOGISTICI
+
+H2:
+Anche lo storico rimane accessibile.
+
+Body:
+Totalone mantiene accesso alle informazioni e ai documenti collegati alle attività di magazzino, evitando che lo storico operativo venga disperso.
+
+Communicate only confirmed areas visible in the product:
+
+Archivio
+Storico DDT
+Storico distinte
+
+VISUAL:
+
+[SCREENSHOT — ARCHIVIO / STORICO DDT / STORICO DISTINTE]
+
+Do not invent document-generation functionality unless explicitly confirmed.
+
+
+==================================================
+13. CONNECTED TO THE COMMESSA
+==================================================
+
+Eyebrow:
+DAL VENDUTO AL FISICO
+
+H2:
+Il magazzino non parte da zero.
+
+Body:
+I prodotti gestiti dalla logistica arrivano da ciò che è già stato venduto e organizzato nella commessa.
+
+Questo permette di mantenere continuità tra cliente, prodotto e operatività, senza ricreare manualmente le stesse informazioni in un software separato.
+
+Create an elegant flow:
+
+COMMESSA
+→
+PRODOTTI
+→
+ORDINI
+→
+ARRIVI
+→
+MAGAZZINO
+
+Supporting statement:
+
+“Ciò che hai venduto continua a essere lo stesso prodotto anche quando entra in magazzino.”
+
+Add contextual link:
+
+Scopri la Gestione Commesse →
+
+
+==================================================
+14. FROM WAREHOUSE TO INSTALLATION
+==================================================
+
+Eyebrow:
+IL PASSAGGIO SUCCESSIVO
+
+H2:
+Quando tutto è pronto, il lavoro passa al montaggio.
+
+Body:
+L’arrivo in magazzino non è la fine del processo.
+
+Totalone mantiene la logistica nello stesso ecosistema della gestione operativa, permettendo al team di proseguire verso la fase di montaggio senza perdere il contesto della commessa.
+
+Create:
+
+PRODOTTI
+→
+MAGAZZINO
+→
+MONTAGGIO
+
+Add contextual link:
+
+Scopri la gestione Montaggi →
+
+
+==================================================
+15. ONE CONNECTED FLOW
+==================================================
+
+Eyebrow:
+UN UNICO FLUSSO
+
+H2:
+Dall’ordine all’installazione.
+
+Create a distinctive horizontal workflow:
+
+ORDINE
+→
+ARRIVO PREVISTO
+→
+RICEZIONE
+→
+MAGAZZINO
+→
+MONTAGGIO
+
+Body:
+Ogni fase mantiene il collegamento con il prodotto, il cliente e la commessa a cui appartiene.
+
+On mobile transform this into a vertical flow.
+
+Do not create fake application UI.
+
+
+==================================================
+16. LESS FRAGMENTATION
+==================================================
+
+Eyebrow:
+MENO INFORMAZIONI SPARSE
+
+H2:
+Il magazzino non dovrebbe dipendere da fogli, email e memoria.
+
+Create a clean comparison:
+
+INFORMAZIONI SPARSE
+
+Fogli Excel
+Email dei fornitori
+Liste separate
+Appunti
+Telefonate
+Date da ricordare
+
+WITH TOTALONE
+
+Prodotti
+Clienti
+Stati
+Arrivi previsti
+Colli
+Magazzini
+Storico
+
+Closing sentence:
+
+“Un unico posto per capire cosa deve arrivare, cosa è arrivato e dove si trova.”
+
+
+==================================================
+17. WHY TOTALONE
+==================================================
+
+Eyebrow:
+PERCHÉ TOTALONE
+
+H2:
+Un magazzino costruito intorno alle commesse di arredamento.
+
+Body:
+La logistica di un negozio di arredamento non funziona come quella di un normale e-commerce.
+
+Ogni prodotto appartiene a un cliente, a una commessa e a un processo che continua fino alla consegna e al montaggio.
+
+Totalone mantiene questi collegamenti anche quando la vendita diventa logistica.
+
+Create three pillars:
+
+VISIBILE
+
+Sai cosa è arrivato e cosa deve ancora arrivare.
+
+COLLEGATO
+
+Ogni prodotto mantiene il collegamento con cliente e commessa.
+
+PIANIFICATO
+
+Gli arrivi previsti diventano visibili nel tempo.
+
+
+==================================================
+18. TOTALONE ECOSYSTEM
+==================================================
+
+Eyebrow:
+TOTALONE
+
+H2:
+Il magazzino è una fase del processo, non un software isolato.
+
+Create a visual ecosystem:
+
+GESTIONE COMMESSE
+↓
+MAGAZZINO E LOGISTICA
+↓
+MONTAGGI
+↓
+ASSISTENZA
+
+Supporting text:
+Dal prodotto venduto fino al post-vendita, le informazioni continuano nello stesso ecosistema.
+
+Add contextual internal links to the relevant Totalone product pages.
+
+
+==================================================
+19. SEO CONTENT
+==================================================
+
+H2:
+Software per la gestione del magazzino nell’arredamento.
+
+Body:
+Totalone è un gestionale per arredatori e showroom che permette di organizzare prodotti, arrivi, colli e informazioni di magazzino mantenendoli collegati alle relative commesse.
+
+La vista del magazzino e il calendario degli arrivi previsti aiutano il team a sapere cosa deve arrivare, cosa è già disponibile e dove si trovano i prodotti durante il processo logistico.
+
+Naturally include:
+- gestione magazzino arredamento
+- software magazzino arredamento
+- gestionale per arredatori
+- gestione logistica arredamento
+- gestione arrivi mobili
+- software showroom arredamento
+
+Avoid keyword stuffing.
+
+
+==================================================
+20. FINAL CTA
+==================================================
+
+Use the existing Totalone premium blue visual identity.
+
+Eyebrow:
+MAGAZZINO TOTALONE
+
+H2:
+Dal prossimo arrivo al montaggio, sai sempre dove sei.
+
+Body:
+Scopri come Totalone può aiutarti a collegare prodotti, commesse, arrivi e magazzino in un unico flusso costruito per il settore dell’arredamento.
+
+Primary CTA:
+Prenota una demo →
+
+Secondary CTA:
+Scopri tutte le funzionalità
+
+Microcopy:
+Una demo costruita sul modo in cui lavora il tuo showroom.
+
+
+==================================================
+SCREENSHOTS — CRITICAL
+==================================================
+
+DO NOT GENERATE ANY IMAGES.
+
+DO NOT:
+- generate AI images
+- search for stock images
+- generate screenshots
+- recreate Totalone UI
+- create fake tables
+- create fake calendars
+- invent customers
+- invent products
+- invent warehouse data
+
+I will add all screenshots manually.
+
+Create ONLY placeholders:
+
+[SCREENSHOT — MAGAZZINO LOGISTICO]
+[SCREENSHOT — RICERCA E FILTRI]
+[SCREENSHOT — STATI PRODOTTI]
+[SCREENSHOT — ARRIVI PREVISTI]
+[SCREENSHOT — SELETTORE MAGAZZINO]
+[SCREENSHOT — TRANSAZIONI]
+[SCREENSHOT — MAGAZZINO CONTABILE]
+[SCREENSHOT — STORICO DDT / DISTINTE]
+
+All placeholders must be responsive and easy to replace.
+
+
+==================================================
+DESIGN DIRECTION
+==================================================
+
+Maintain exactly the visual language already established across the Totalone marketing website.
+
+Use:
+- generous whitespace
+- strong typography
+- Totalone blue accents
+- large screenshot areas
+- full-width Arrivi Previsti calendar section
+- minimal diagrams
+- restrained cards
+- alternating compositions
+- subtle animations
+- premium B2B SaaS presentation
+
+Avoid:
+- warehouse stock photography
+- boxes/truck illustrations
+- generic logistics illustrations
+- fake dashboards
+- excessive cards
+- excessive gradients
+- invented functionality
+
+The actual Totalone interface will be the main visual proof.
+
+
+==================================================
+CORE POSITIONING
+==================================================
+
+Do NOT position Totalone as generic inventory software.
+
+The key difference is the connection between:
+
+CLIENTE
+→
+COMMESSA
+→
+PRODOTTO
+→
+ARRIVO
+→
+MAGAZZINO
+→
+MONTAGGIO
+
+The page should immediately answer:
+
+- Cosa deve arrivare?
+- Quando è previsto?
+- Cosa è già arrivato?
+- A quale cliente appartiene?
+- A quale commessa appartiene?
+- Qual è lo stato del prodotto?
+- In quale magazzino si trova?
+- Quanti colli ci sono?
+- Qual è lo storico logistico?
+
+CORE MESSAGE:
+
+“Totalone collega ciò che hai venduto a ciò che deve arrivare, entrare in magazzino e andare in montaggio.”
