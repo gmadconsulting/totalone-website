@@ -30,7 +30,7 @@ const navItems = [
 const productGroups = [
   { label: "VENDITE", links: [["CRM", "/__mockup/preview/totalone-crm/CrmProductPage"], ["Gestione trattative", "/__mockup/preview/totalone-trattative/GestioneTrattative"], ["Preventivi", "/__mockup/preview/totalone-preventivi/PreventiviProductPage"]] },
   { label: "OPERATIVITÀ", links: [["Gestione progetti", "/__mockup/preview/totalone-progetti/ProgettiProductPage"], ["Gestione commesse", "/__mockup/preview/totalone-commesse/CommesseProductPage"], ["Magazzino e logistica", "/__mockup/preview/totalone-magazzino/MagazzinoProductPage"], ["Montaggi", "/__mockup/preview/totalone-montaggi/MontaggiProductPage"], ["Assistenza e post-vendita", "/__mockup/preview/totalone-assistenza/AssistenzaPostVenditaProductPage"]] },
-  { label: "CONTROLLO", links: [["Controllo e performance", "/controllo-gestione-arredamento/"]] },
+  { label: "CONTROLLO", links: [["Controllo e performance", "/__mockup/preview/totalone-controllo/ControlloPerformanceProductPage"]] },
 ];
 
 type Area = {

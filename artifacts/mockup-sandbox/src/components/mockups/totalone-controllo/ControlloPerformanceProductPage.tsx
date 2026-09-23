@@ -26,7 +26,7 @@ function Eyebrow({ children, tone = "" }: { children: ReactNode; tone?: string }
   return <span className={`controllo-eyebrow ${tone}`}>{children}</span>;
 }
 
-function SectionHeading({ eyebrow, title, body }: { eyebrow: string; title: string; body?: ReactNode }) {
+function SectionHeading({ eyebrow, title, body }: { eyebrow: string; title: ReactNode; body?: ReactNode }) {
   return <div className="controllo-heading"><Eyebrow>{eyebrow}</Eyebrow><h2>{title}</h2>{body && <div className="controllo-lead">{body}</div>}</div>;
 }
 

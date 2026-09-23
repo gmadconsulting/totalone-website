@@ -126,6 +126,7 @@ function getPreviewPath(): string | null {
       : pathname;
   const publicRoutes: Record<string, string> = {
     "/risorse/": "totalone-risorse/RisorseArchitecturePage",
+    "/controllo-performance-arredamento": "totalone-controllo/ControlloPerformanceProductPage",
     "/blog/": "totalone-site-architecture/ResourcesHub",
     "/blog/gestione-showroom": "totalone-site-architecture/ResourcesHub",
     "/blog/vendite-crm": "totalone-site-architecture/ResourcesHub",

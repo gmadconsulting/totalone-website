@@ -36,7 +36,7 @@ const topicClusters: TopicCluster[] = [
   { label: "Commesse & Progetti", slug: "/blog/commesse-progetti", h1: "Gestione di commesse e progetti nell’arredamento", topics: ["gestione commesse", "organizzazione progetti", "attività", "controllo commessa", "coordinamento team", "avanzamento"], destination: "/__mockup/preview/totalone-commesse/CommesseProductPage", destinationLabel: "Gestione commesse" },
   { label: "Logistica & Magazzino", slug: "/blog/logistica-magazzino", h1: "Logistica e magazzino per negozi di arredamento", topics: ["arrivi", "magazzino", "prodotti", "colli", "consegne", "logistica"], destination: "/gestione-magazzino-arredamento/", destinationLabel: "Magazzino e logistica" },
   { label: "Montaggi & Post-vendita", slug: "/blog/montaggi-post-vendita", h1: "Montaggi e post-vendita nell’arredamento", topics: ["pianificazione montaggi", "calendario montaggi", "rapportini", "assistenza", "prodotti in assistenza", "post-vendita"], destination: "/gestione-montaggi-arredamento/", destinationLabel: "Montaggi" },
-  { label: "Controllo & Performance", slug: "/blog/controllo-performance", h1: "Controllo e performance per showroom di arredamento", topics: ["KPI", "vendite", "conversioni", "performance venditori", "performance showroom", "controllo aziendale"], destination: "/controllo-gestione-arredamento/", destinationLabel: "Controllo e performance" },
+  { label: "Controllo & Performance", slug: "/blog/controllo-performance", h1: "Controllo e performance per showroom di arredamento", topics: ["KPI", "vendite", "conversioni", "performance venditori", "performance showroom", "controllo aziendale"], destination: "/controllo-performance-arredamento", destinationLabel: "Controllo e performance" },
 ];
 
 const guides: GuideDefinition[] = [

@@ -40,7 +40,7 @@ const ecosystem: { label: string; items: LinkItem[] }[] = [
   },
   {
     label: "CONTROLLO",
-    items: [["Controllo e performance", "/controllo-gestione-arredamento/"]],
+    items: [["Controllo e performance", "/__mockup/preview/totalone-controllo/ControlloPerformanceProductPage"]],
   },
 ];
 

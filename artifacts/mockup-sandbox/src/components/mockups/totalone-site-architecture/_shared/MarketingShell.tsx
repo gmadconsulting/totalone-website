@@ -23,7 +23,7 @@ const productGroups = [
   },
   {
     label: "CONTROLLO",
-    links: [["Controllo e performance", "/controllo-gestione-arredamento/"]],
+    links: [["Controllo e performance", "/__mockup/preview/totalone-controllo/ControlloPerformanceProductPage"]],
   },
 ];
 

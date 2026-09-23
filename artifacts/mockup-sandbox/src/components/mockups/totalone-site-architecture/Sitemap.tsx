@@ -2,7 +2,7 @@ import { ArrowRight, Boxes, BookOpen, Building2, CheckCircle2, CircleDollarSign,
 import { MarketingShell } from "./_shared/MarketingShell";
 
 const productLinks = [
-  ["CRM", "/crm-arredamento/"], ["Trattative", "/gestione-trattative-arredamento/"], ["Preventivi", "/software-preventivi-arredamento/"], ["Progetti", "/gestione-progetti-arredamento/"], ["Commesse", "/gestione-commesse-arredamento/"], ["Magazzino", "/gestione-magazzino-arredamento/"], ["Montaggi", "/gestione-montaggi-arredamento/"], ["Post-vendita", "/post-vendita-arredamento/"], ["Controllo", "/controllo-gestione-arredamento/"],
+  ["CRM", "/crm-arredamento/"], ["Trattative", "/gestione-trattative-arredamento/"], ["Preventivi", "/software-preventivi-arredamento/"], ["Progetti", "/gestione-progetti-arredamento/"], ["Commesse", "/gestione-commesse-arredamento/"], ["Magazzino", "/gestione-magazzino-arredamento/"], ["Montaggi", "/gestione-montaggi-arredamento/"], ["Post-vendita", "/post-vendita-arredamento/"], ["Controllo", "/controllo-performance-arredamento"],
 ];
 
 export function Sitemap() {
