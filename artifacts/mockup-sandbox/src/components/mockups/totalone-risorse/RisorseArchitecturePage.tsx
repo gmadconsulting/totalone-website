@@ -3,6 +3,8 @@ import { useState } from "react";
 import { MarketingShell } from "../totalone-site-architecture/_shared/MarketingShell";
 import "./RisorseArchitecturePage.css";
 
+const appPath = (path: string) => path.startsWith("/__mockup/") ? path : `${import.meta.env.BASE_URL.replace(/\/$/, "")}/preview${path}`;
+
 type TopicCluster = {
   label: string;
   slug: string;
@@ -112,19 +114,19 @@ export function RisorseArchitecturePage() {
                 <div className="ra-pillar-icon"><BookOpen size={19} /></div>
                 <h3>Approfondimenti dal mondo dell’arredamento</h3>
                 <p>Strategie, processi e consigli pratici per organizzare meglio il lavoro quotidiano dello showroom.</p>
-                <a className="ra-pillar-link" href="/blog/">Esplora il blog <ArrowRight size={14} /></a>
+                <a className="ra-pillar-link" href={appPath("/blog/")}>Esplora il blog <ArrowRight size={14} /></a>
               </article>
               <article className="ra-pillar">
                 <div className="ra-pillar-icon"><Layers3 size={19} /></div>
                 <h3>Guide pratiche</h3>
                 <p>Contenuti approfonditi dedicati ai processi più importanti di un’azienda di arredamento.</p>
-                <a className="ra-pillar-link" href="/guide/">Scopri le guide <ArrowRight size={14} /></a>
+                <a className="ra-pillar-link" href={appPath("/guide/")}>Scopri le guide <ArrowRight size={14} /></a>
               </article>
               <article className="ra-pillar">
                 <div className="ra-pillar-icon"><Boxes size={19} /></div>
                 <h3>Strumenti per il tuo showroom</h3>
                 <p>Risorse pratiche per analizzare organizzazione, tempo e processi della tua azienda.</p>
-                <a className="ra-pillar-link" href="/strumenti/roi/">Calcola il valore del tuo tempo <ArrowRight size={14} /></a>
+                <a className="ra-pillar-link" href={appPath("/strumenti/roi/")}>Calcola il valore del tuo tempo <ArrowRight size={14} /></a>
               </article>
             </div>
           </div>
@@ -138,7 +140,7 @@ export function RisorseArchitecturePage() {
             </div>
             <div className="ra-topic-layout">
               <nav className="ra-topic-list" aria-label="Cluster SEO del blog">
-                {topicClusters.map((cluster, index) => <a className="ra-topic-row" href={cluster.slug} key={cluster.slug}><span className="ra-topic-number">0{index + 1}</span><span><strong>{cluster.label}</strong><small>{cluster.h1}</small></span><ChevronRight size={16} /></a>)}
+                {topicClusters.map((cluster, index) => <a className="ra-topic-row" href={appPath(cluster.slug)} key={cluster.slug}><span className="ra-topic-number">0{index + 1}</span><span><strong>{cluster.label}</strong><small>{cluster.h1}</small></span><ChevronRight size={16} /></a>)}
               </nav>
               <aside className="ra-topic-note">
                 <span className="ra-kicker">Regola di collegamento</span>
@@ -159,13 +161,13 @@ export function RisorseArchitecturePage() {
             <div className="ra-blog-layout">
               <article className="ra-editorial-feature">
                 <div className="ra-feature-mark" aria-label="Segnaposto editoriale senza immagine"><div className="ra-feature-mark-inner" /></div>
-                <div className="ra-feature-content"><span className="ra-kicker">Articolo in evidenza · da pubblicare</span><h3>Come gestire una domanda reale dello showroom senza perdere il filo.</h3><p>Spazio riservato a un articolo pubblicato dal CMS. Nessuna data, autore o statistica viene mostrata prima che esista contenuto finito.</p><a className="ra-pillar-link" href="/blog/">Apri il blog hub <ArrowRight size={14} /></a></div>
+                <div className="ra-feature-content"><span className="ra-kicker">Articolo in evidenza · da pubblicare</span><h3>Come gestire una domanda reale dello showroom senza perdere il filo.</h3><p>Spazio riservato a un articolo pubblicato dal CMS. Nessuna data, autore o statistica viene mostrata prima che esista contenuto finito.</p><a className="ra-pillar-link" href={appPath("/blog/")}>Apri il blog hub <ArrowRight size={14} /></a></div>
               </article>
-              <aside className="ra-editorial-side"><div><span className="ra-kicker" style={{ color: "#9fe0ff" }}>Guide highlights</span><h3>Dal singolo passaggio al metodo completo.</h3><p>Le guide approfondiscono i processi e collegano gli articoli alle pagine prodotto esistenti.</p></div><a className="ra-pillar-link" href="/guide/">Scopri le guide <ArrowRight size={14} /></a></aside>
+              <aside className="ra-editorial-side"><div><span className="ra-kicker" style={{ color: "#9fe0ff" }}>Guide highlights</span><h3>Dal singolo passaggio al metodo completo.</h3><p>Le guide approfondiscono i processi e collegano gli articoli alle pagine prodotto esistenti.</p></div><a className="ra-pillar-link" href={appPath("/guide/")}>Scopri le guide <ArrowRight size={14} /></a></aside>
             </div>
             <div className="ra-category-board">
                 <div className="ra-category-board-header"><h3>Navigazione per categoria</h3><span>7 destinazioni editoriali</span></div>
-              <div className="ra-category-chips">{topicClusters.map((cluster) => <a className="ra-category-chip" href={cluster.slug} key={cluster.slug}>{cluster.label}</a>)}</div>
+              <div className="ra-category-chips">{topicClusters.map((cluster) => <a className="ra-category-chip" href={appPath(cluster.slug)} key={cluster.slug}>{cluster.label}</a>)}</div>
             </div>
           </div>
         </section>
@@ -179,7 +181,7 @@ export function RisorseArchitecturePage() {
             <div className="ra-journey" aria-label="Percorso di navigazione interno">
               {[["01", "Articolo", "Intento informativo specifico"], ["02", "Categoria", "Il tema di riferimento"], ["03", "Guida", "Il processo completo"], ["04", "Pagina prodotto", "La destinazione commerciale"], ["05", "Demo", "Il prossimo passo"]].map(([number, title, body]) => <div className="ra-journey-step" key={title}><span>{number}</span><strong>{title}</strong><small>{body}</small></div>)}
             </div>
-            <div className="to-flow" aria-label="Esempio di percorso interno"><a href="/blog/vendite-crm/gestire-ingressi-showroom"><FileText size={13} /> gestire-ingressi-showroom</a><i>→</i><a href="/guide/crm-per-arredatori"><BookOpen size={13} /> CRM per arredatori</a><i>→</i><a href="/crm-per-arredatori">CRM Totalone</a><i>→</i><a href="/demo/">Prenota una demo</a></div>
+            <div className="to-flow" aria-label="Esempio di percorso interno"><a href={appPath("/blog/vendite-crm/gestire-ingressi-showroom")}><FileText size={13} /> gestire-ingressi-showroom</a><i>→</i><a href={appPath("/guide/crm-per-arredatori")}><BookOpen size={13} /> CRM per arredatori</a><i>→</i><a href={appPath("/crm-per-arredatori")}>CRM Totalone</a><i>→</i><a href={appPath("/demo/")}>Prenota una demo</a></div>
           </div>
         </section>
 
@@ -190,7 +192,7 @@ export function RisorseArchitecturePage() {
               <p>Approfondimenti pratici sui processi che collegano vendite, operatività e controllo nel settore dell’arredamento. Più autorevoli del blog, strutturati per capitoli e con una destinazione prodotto esplicita.</p>
             </div>
             <div className="ra-guide-grid">
-              {guides.map((guide) => <article className="ra-guide-card" key={guide.slug}><span className="ra-guide-index">{guide.number}</span><div><h3>{guide.title}</h3><code className="ra-route">{guide.slug}</code><div className="ra-chapter-preview">{guide.chapters.slice(0, 4).map((chapter) => <span key={chapter}>{chapter}</span>)}</div><a className="ra-guide-cta" href={guide.link}>{guide.cta} <ArrowRight size={14} /></a></div></article>)}
+              {guides.map((guide) => <article className="ra-guide-card" key={guide.slug}><span className="ra-guide-index">{guide.number}</span><div><h3>{guide.title}</h3><code className="ra-route">{guide.slug}</code><div className="ra-chapter-preview">{guide.chapters.slice(0, 4).map((chapter) => <span key={chapter}>{chapter}</span>)}</div><a className="ra-guide-cta" href={appPath(guide.link)}>{guide.cta} <ArrowRight size={14} /></a></div></article>)}
             </div>
           </div>
         </section>
@@ -250,7 +252,7 @@ export function RisorseArchitecturePage() {
           <div className="to-wrap">
             <div className="ra-final">
               <div><span className="ra-kicker" style={{ color: "#9fe0ff" }}>Il prossimo passo</span><h2 id="final-title" className="ra-display" style={{ color: "white" }}>Dalla domanda alla tua commessa.</h2><p>Le risorse aiutano a capire il processo. Totalone aiuta a portarlo nello stesso modo di lavorare.</p></div>
-              <div className="ra-final-actions"><a className="to-button light" href="/demo/">Prenota una demo <ArrowRight size={15} /></a><a className="to-button secondary" href="/gestionale-arredamento/">Scopri il gestionale <ArrowRight size={15} /></a></div>
+              <div className="ra-final-actions"><a className="to-button light" href={appPath("/demo/")}>Prenota una demo <ArrowRight size={15} /></a><a className="to-button secondary" href={appPath("/gestionale-arredamento/")}>Scopri il gestionale <ArrowRight size={15} /></a></div>
             </div>
           </div>
         </section>

@@ -124,11 +124,6 @@ function getPreviewPath(): string | null {
     basePath && pathname.startsWith(basePath)
       ? pathname.slice(basePath.length) || "/"
       : pathname;
-  const match = local.match(/^\/preview\/(.+)$/);
-  if (match) {
-    return match[1];
-  }
-
   const publicRoutes: Record<string, string> = {
     "/risorse/": "totalone-risorse/RisorseArchitecturePage",
     "/blog/": "totalone-site-architecture/ResourcesHub",
@@ -150,7 +145,13 @@ function getPreviewPath(): string | null {
     "/blog/gestione-showroom/excel-vs-gestionale-arredamento": "totalone-blog/ExcelVsGestionaleArredamentoArticle",
   };
 
-  return publicRoutes[local] ?? null;
+  const publicRoute = local.startsWith("/preview") ? local.slice("/preview".length) || "/" : local;
+  if (publicRoutes[publicRoute]) {
+    return publicRoutes[publicRoute];
+  }
+
+  const match = local.match(/^\/preview\/(.+)$/);
+  return match ? match[1] : null;
 }
 
 function App() {

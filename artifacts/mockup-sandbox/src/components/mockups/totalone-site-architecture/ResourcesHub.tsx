@@ -4,7 +4,7 @@ import { MarketingShell, SeoMetaPanel } from "./_shared/MarketingShell";
 
 import { blogArticles, blogCategories } from "../totalone-blog/blogContent";
 
-const sitePath = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, "")}${path}`;
+const sitePath = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/preview${path}`;
 
 export function ResourcesHub() {
   const [filter, setFilter] = useState("Tutti");

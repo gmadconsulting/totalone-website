@@ -5,7 +5,7 @@ import { blogArticleById, type ArticleSection, type BlogArticleData } from "./bl
 import "./BlogArticle.css";
 
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
-const sitePath = (path: string) => `${basePath}${path}`;
+const sitePath = (path: string) => `${basePath}/preview${path}`;
 const linkPath = (path: string) => path.startsWith("/__mockup/") ? path : sitePath(path);
 
 function PreviewLink({ id, children }: { id: string; children: ReactNode }) {
