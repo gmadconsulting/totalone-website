@@ -15,6 +15,7 @@ export const modules: ModuleMap = {
   "./components/mockups/totalone-blog/SoftwarePreventiviArredamentoArticle.tsx": () => import("../components/mockups/totalone-blog/SoftwarePreventiviArredamentoArticle.tsx"),
   "./components/mockups/totalone-commesse/CommesseProductPage.tsx": () => import("../components/mockups/totalone-commesse/CommesseProductPage.tsx"),
   "./components/mockups/totalone-commesse-margini/CommesseMarginiFocus.tsx": () => import("../components/mockups/totalone-commesse-margini/CommesseMarginiFocus.tsx"),
+  "./components/mockups/totalone-controllo/ControlloPerformanceProductPage.tsx": () => import("../components/mockups/totalone-controllo/ControlloPerformanceProductPage.tsx"),
   "./components/mockups/totalone-crm/CrmProductPage.tsx": () => import("../components/mockups/totalone-crm/CrmProductPage.tsx"),
   "./components/mockups/totalone-homepage/TotaloneHomepage.tsx": () => import("../components/mockups/totalone-homepage/TotaloneHomepage.tsx"),
   "./components/mockups/totalone-magazzino/MagazzinoProductPage.tsx": () => import("../components/mockups/totalone-magazzino/MagazzinoProductPage.tsx"),
