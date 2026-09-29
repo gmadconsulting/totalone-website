@@ -50,11 +50,6 @@ export function CrmProductPage() {
                 <a className="crm-button dark-secondary" href="#funzionalita">Scopri le funzionalità <ArrowDown size={15} /></a>
               </div>
               <p className="crm-micro">Pensato per showroom, negozi di arredamento e realtà multi-store.</p>
-              <div className="crm-seo" aria-label="Metadati SEO della pagina">
-                <div className="crm-seo-item"><span>URL</span><strong>/crm-per-arredatori</strong></div>
-                <div className="crm-seo-item"><span>SEO title</span><strong>CRM per Arredatori e Negozi di Arredamento | Totalone</strong></div>
-                <div className="crm-seo-item"><span>Meta description</span><strong>Gestisci clienti, ingressi showroom, lead, appuntamenti e trattative con Totalone, il CRM pensato per negozi e showroom di arredamento.</strong></div>
-              </div>
             </div>
             <div className="crm-hero-visual">
               <Placeholder label="[SCREENSHOT REALE DA INSERIRE · CONTATTI CLIENTI]" detail="Visual principale: interfaccia Contatti Clienti, con tabella, ricerca e Smart List" />
