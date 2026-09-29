@@ -416,6 +416,10 @@ export function TotaloneHomepage() {
                 </div>
               ))}
             </div>
+            <div className="mt-8 flex flex-col gap-5 border-t border-[#c8dcf3] pt-7 sm:flex-row sm:items-center sm:justify-between">
+              <p className="max-w-xl text-sm leading-6 text-[#557090]">Dalla prima richiesta al montaggio: guarda come potrebbe scorrere una commessa nella tua azienda.</p>
+              <Button onClick={() => setDemoOpen(true)}>Prenota una demo</Button>
+            </div>
           </div>
         </div>
       </section>
@@ -426,6 +430,10 @@ export function TotaloneHomepage() {
           <div className="mt-12 grid gap-10 lg:grid-cols-[.42fr_.58fr] lg:gap-16">
             <div className="lg:sticky lg:top-8 lg:self-start"><div className="mb-6 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.1em] text-[#557090]"><Route className="h-4 w-4 text-[#1769d5]" /> Seleziona un’area</div><div className="divide-y divide-[#cfe1f4] rounded-[12px] border-y border-[#cfe1f4]">{areas.map((area) => <button key={area.id} onClick={() => setActiveArea(area.id)} className={`flex w-full items-center justify-between py-4 text-left text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1769d5] ${activeArea === area.id ? "font-bold text-[#0b55c6]" : "font-semibold text-[#557090] hover:text-[#0b55c6]"}`}><span>{area.label}</span><ChevronRight className={`h-4 w-4 transition-transform ${activeArea === area.id ? "translate-x-1" : ""}`} /></button>)}</div></div>
             <div key={selectedArea.id} className="animate-[fadeIn_.3s_ease-out] self-center pb-4 lg:py-10"><div className="mb-6 grid h-12 w-12 place-items-center rounded-[12px] bg-[#ffdcd2] text-[#c34d35]"><ActiveIcon className="h-5 w-5" /></div><p className="text-xs font-bold uppercase tracking-[0.1em] text-[#0b55c6]">{selectedArea.label}</p><h3 className="mt-4 max-w-2xl text-4xl font-bold leading-[1] tracking-[-0.06em] text-[#102744] sm:text-5xl">{selectedArea.title}</h3><p className="mt-5 max-w-xl text-base leading-7 text-[#557090]">{selectedArea.body}</p></div>
+          </div>
+          <div className="mt-8 flex flex-col gap-5 border-t border-[#cfe1f4] pt-7 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-xl text-sm leading-6 text-[#557090]">Partiamo dal flusso che oggi richiede più coordinamento nel tuo showroom.</p>
+            <Button onClick={() => setDemoOpen(true)}>Prenota una demo</Button>
           </div>
         </div>
       </section>
@@ -450,6 +458,10 @@ export function TotaloneHomepage() {
              <div><span className="inline-flex rounded-full bg-[#dcecff] px-3 py-1.5 text-xs font-bold text-[#0b55c6]">CONTROLLO DEL BUSINESS</span><h2 className="mt-6 max-w-xl text-5xl font-bold leading-[.94] tracking-[-0.065em] text-[#102744] sm:text-6xl">Capire cosa sta succedendo, prima di decidere.</h2><p className="mt-7 max-w-lg text-base leading-7 text-[#557090]">Totalone aiuta a leggere il lavoro dell’azienda attraverso vendite, commesse, pagamenti, costi, marginalità e performance. Un quadro più chiaro per intervenire dove serve.</p><div className="mt-8 flex flex-wrap gap-2">{["Vendite", "Commesse", "Pagamenti", "Costi", "Marginalità", "Performance"].map((item) => <span key={item} className="rounded-full border border-[#bcd7f1] bg-white px-3.5 py-2 text-xs font-semibold text-[#245b96]">{item}</span>)}</div></div>
             <ProductPlaceholder label="[DASHBOARD SCREENSHOT]" />
           </div>
+          <div className="mt-10 flex flex-col gap-5 border-t border-[#cfe1f4] pt-7 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-xl text-sm leading-6 text-[#557090]">Porta una domanda sui numeri della tua azienda. La esploriamo insieme.</p>
+            <Button onClick={() => setDemoOpen(true)}>Prenota una demo</Button>
+          </div>
         </div>
       </section>
 
@@ -462,7 +474,7 @@ export function TotaloneHomepage() {
       </section>
 
       <section className="bg-[#fbfdff] py-24 sm:py-32" id="faq">
-        <div className="mx-auto max-w-[900px] px-5 sm:px-8 lg:px-10"><span className="inline-flex rounded-full bg-[#dcecff] px-3 py-1.5 text-xs font-bold text-[#0b55c6]">FAQ · AUTONOMIA</span><h2 className="mt-6 max-w-3xl text-5xl font-bold leading-[.95] tracking-[-0.065em] text-[#102744] sm:text-7xl">Le normali modifiche restano nelle tue mani.</h2><div className="mt-12 grid gap-2">{[["Se assumo una nuova persona devo contattarvi?", "No. Puoi aggiungere e gestire direttamente gli utenti dalla piattaforma, senza richiedere un intervento da parte nostra."], ["Se apro un nuovo showroom dovete configurarlo voi?", "Le normali modifiche alla struttura della tua organizzazione possono essere gestite direttamente dalla piattaforma, senza dover richiedere ogni volta un intervento tecnico."], ["Devo pagare per modificare utenti, nomi o informazioni?", "No. Le normali modifiche amministrative che puoi effettuare direttamente dalla piattaforma non prevedono costi di intervento."]].map(([question, answer]) => <details key={question} className="border-b border-[#cfe1f4] py-5"><summary className="cursor-pointer text-base font-bold text-[#245b96]">{question}</summary><p className="mt-3 max-w-2xl text-sm leading-6 text-[#557090]">{answer}</p></details>)}</div></div>
+        <div className="mx-auto max-w-[900px] px-5 sm:px-8 lg:px-10"><span className="inline-flex rounded-full bg-[#dcecff] px-3 py-1.5 text-xs font-bold text-[#0b55c6]">FAQ · AUTONOMIA</span><h2 className="mt-6 max-w-3xl text-5xl font-bold leading-[.95] tracking-[-0.065em] text-[#102744] sm:text-7xl">Le normali modifiche restano nelle tue mani.</h2><div className="mt-12 grid gap-2">{[["Se assumo una nuova persona devo contattarvi?", "No. Puoi aggiungere e gestire direttamente gli utenti dalla piattaforma, senza richiedere un intervento da parte nostra."], ["Se apro un nuovo showroom dovete configurarlo voi?", "Le normali modifiche alla struttura della tua organizzazione possono essere gestite direttamente dalla piattaforma, senza dover richiedere ogni volta un intervento tecnico."], ["Devo pagare per modificare utenti, nomi o informazioni?", "No. Le normali modifiche amministrative che puoi effettuare direttamente dalla piattaforma non prevedono costi di intervento."]].map(([question, answer]) => <details key={question} className="border-b border-[#cfe1f4] py-5"><summary className="cursor-pointer text-base font-bold text-[#245b96]">{question}</summary><p className="mt-3 max-w-2xl text-sm leading-6 text-[#557090]">{answer}</p></details>)}</div><div className="mt-9 flex flex-col gap-4 rounded-[14px] bg-[#eff7ff] p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6"><p className="text-sm font-semibold leading-6 text-[#245b96]">Hai un caso specifico da chiarire? Parliamone davanti alla tua commessa.</p><Button onClick={() => setDemoOpen(true)}>Prenota una demo</Button></div></div>
       </section>
 
       <section className="border-y border-[#cfe1f4] bg-[#eff7ff] py-20 sm:py-28" id="tutte-le-pagine" aria-labelledby="directory-title">
