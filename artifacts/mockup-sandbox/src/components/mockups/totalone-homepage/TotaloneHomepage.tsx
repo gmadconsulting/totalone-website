@@ -21,10 +21,12 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+const previewPage = (page: string) => `/__mockup/preview/${page}`;
 const navItems = [
-  { label: "Soluzioni", href: "/soluzioni/negozi-showroom-arredamento/" },
+  { label: "Esplora", href: "#tutte-le-pagine" },
+  { label: "Soluzioni", href: previewPage("totalone-site-architecture/SolutionsTemplate") },
   { label: "Perché Totalone", href: "/__mockup/preview/totalone-perche/PercheTotalonePage" },
-  { label: "Risorse", href: "/__mockup/preview/totalone-risorse/RisorseArchitecturePage" },
+  { label: "Risorse", href: previewPage("totalone-site-architecture/ResourcesHub") },
   { label: "Prezzi", href: "/__mockup/preview/totalone-prezzi/TotalonePrezzi" },
 ];
 const productGroups = [
@@ -32,6 +34,89 @@ const productGroups = [
   { label: "OPERATIVITÀ", links: [["Gestione progetti", "/__mockup/preview/totalone-progetti/ProgettiProductPage"], ["Gestione commesse", "/__mockup/preview/totalone-commesse/CommesseProductPage"], ["Magazzino e logistica", "/__mockup/preview/totalone-magazzino/MagazzinoProductPage"], ["Montaggi", "/__mockup/preview/totalone-montaggi/MontaggiProductPage"], ["Assistenza e post-vendita", "/__mockup/preview/totalone-assistenza/AssistenzaPostVenditaProductPage"]] },
   { label: "CONTROLLO", links: [["Controllo e performance", "/__mockup/preview/totalone-controllo/ControlloPerformanceProductPage"]] },
 ];
+const pageDirectoryGroups = [
+  {
+    label: "VENDERE",
+    description: "Dalla prima relazione alla proposta.",
+    links: [
+      ["CRM", previewPage("totalone-crm/CrmProductPage")],
+      ["Gestione trattative", previewPage("totalone-trattative/GestioneTrattative")],
+      ["Preventivi", previewPage("totalone-preventivi/PreventiviProductPage")],
+    ],
+  },
+  {
+    label: "GESTIRE",
+    description: "Persone, attività e commesse nello stesso filo.",
+    links: [
+      ["Gestione progetti", previewPage("totalone-progetti/ProgettiProductPage")],
+      ["Gestione commesse", previewPage("totalone-commesse/CommesseProductPage")],
+      ["Margini di commessa", previewPage("totalone-commesse-margini/CommesseMarginiFocus")],
+      ["Magazzino e logistica", previewPage("totalone-magazzino/MagazzinoProductPage")],
+    ],
+  },
+  {
+    label: "CONSEGNARE",
+    description: "Fino al montaggio, e oltre.",
+    links: [
+      ["Montaggi", previewPage("totalone-montaggi/MontaggiProductPage")],
+      ["Assistenza e post-vendita", previewPage("totalone-assistenza/AssistenzaPostVenditaProductPage")],
+    ],
+  },
+  {
+    label: "CONTROLLARE",
+    description: "Una lettura più chiara del lavoro.",
+    links: [
+      ["Controllo e performance", previewPage("totalone-controllo/ControlloPerformanceProductPage")],
+    ],
+  },
+  {
+    label: "ORIENTARSI",
+    description: "Scegli il percorso più vicino alla tua azienda.",
+    links: [
+      ["Negozi e showroom", previewPage("totalone-site-architecture/SolutionsTemplate")],
+      ["Perché Totalone", previewPage("totalone-perche/PercheTotalonePage")],
+      ["Prezzi e investimento", previewPage("totalone-prezzi/TotalonePrezzi")],
+    ],
+  },
+  {
+    label: "GUIDE · SHOWROOM E VENDITE",
+    description: "Risposte pratiche per il lavoro in showroom.",
+    links: [
+      ["Software gestionale per negozi di arredamento", previewPage("totalone-blog/SoftwareGestionaleNegozioArredamentoArticle")],
+      ["Gestionale per arredatori", previewPage("totalone-blog/GestionalePerArredatoriArticle")],
+      ["CRM per negozi di arredamento", previewPage("totalone-blog/CrmNegozioArredamentoArticle")],
+      ["Gestire gli ingressi in showroom", previewPage("totalone-blog/GestireIngressiShowroomArticle")],
+    ],
+  },
+  {
+    label: "GUIDE · PREVENTIVI E COMMESSE",
+    description: "Dalla proposta al controllo del lavoro.",
+    links: [
+      ["Software per preventivi di arredamento", previewPage("totalone-blog/SoftwarePreventiviArredamentoArticle")],
+      ["Gestione delle commesse di arredamento", previewPage("totalone-blog/GestioneCommesseArredamentoArticle")],
+      ["Excel o gestionale per arredamento?", previewPage("totalone-blog/ExcelVsGestionaleArredamentoArticle")],
+    ],
+  },
+  {
+    label: "GUIDE · LOGISTICA E SERVIZIO",
+    description: "Il filo prosegue fino al cliente.",
+    links: [
+      ["Gestione del magazzino", previewPage("totalone-blog/GestioneMagazzinoArredamentoArticle")],
+      ["Gestione dei montaggi", previewPage("totalone-blog/GestioneMontaggiArredamentoArticle")],
+      ["Gestione del post-vendita", previewPage("totalone-blog/GestionePostVenditaArredamentoArticle")],
+    ],
+  },
+  {
+    label: "MAPPA E STRUTTURA",
+    description: "Tutti i percorsi, senza pagine isolate.",
+    links: [
+      ["Hub delle risorse", previewPage("totalone-site-architecture/ResourcesHub")],
+      ["Mappa del sito", previewPage("totalone-site-architecture/Sitemap")],
+      ["Architettura editoriale", previewPage("totalone-risorse/RisorseArchitecturePage")],
+      ["Modello pagina prodotto", previewPage("totalone-site-architecture/ProductTemplate")],
+    ],
+  },
+] as const;
 
 type Area = {
   id: string;
@@ -241,10 +326,15 @@ export function TotaloneHomepage() {
     window.history.replaceState(null, "", href);
   };
   useEffect(() => {
+    const shouldOpenDemo =
+      new URLSearchParams(window.location.search).get("demo") === "1" ||
+      /\/demo\/?$/.test(window.location.pathname);
+    if (shouldOpenDemo) setDemoOpen(true);
+
     const targetId = window.location.hash.slice(1);
     if (!targetId) return;
     const frame = window.requestAnimationFrame(() => {
-      document.getElementById(targetId)?.scrollIntoView({ block: "start" });
+      document.getElementById(targetId)?.scrollIntoView({ block: "start", behavior: "instant" });
     });
     return () => window.cancelAnimationFrame(frame);
   }, []);
@@ -255,7 +345,7 @@ export function TotaloneHomepage() {
       <header className="absolute left-0 right-0 top-0 z-40">
         <div className="mx-auto flex max-w-[1240px] items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
           <Logo />
-          <nav className="hidden items-center gap-7 md:flex">
+          <nav className="hidden items-center gap-4 md:flex lg:gap-7">
             <button onClick={() => setProductMenuOpen((open) => !open)} aria-expanded={productMenuOpen} className="inline-flex items-center gap-1 text-[13px] font-semibold text-[#d9eaff] transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Prodotto <ChevronDown className="h-3.5 w-3.5" /></button>
             {navItems.map((item) => <a key={item.href} href={item.href} onClick={(event) => handleNavClick(event, item.href)} className="text-[13px] font-semibold text-[#d9eaff] transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">{item.label}</a>)}
             <a href="/login/" className="text-[13px] font-semibold text-[#d9eaff] transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Login</a>
@@ -373,6 +463,45 @@ export function TotaloneHomepage() {
 
       <section className="bg-[#fbfdff] py-24 sm:py-32" id="faq">
         <div className="mx-auto max-w-[900px] px-5 sm:px-8 lg:px-10"><span className="inline-flex rounded-full bg-[#dcecff] px-3 py-1.5 text-xs font-bold text-[#0b55c6]">FAQ · AUTONOMIA</span><h2 className="mt-6 max-w-3xl text-5xl font-bold leading-[.95] tracking-[-0.065em] text-[#102744] sm:text-7xl">Le normali modifiche restano nelle tue mani.</h2><div className="mt-12 grid gap-2">{[["Se assumo una nuova persona devo contattarvi?", "No. Puoi aggiungere e gestire direttamente gli utenti dalla piattaforma, senza richiedere un intervento da parte nostra."], ["Se apro un nuovo showroom dovete configurarlo voi?", "Le normali modifiche alla struttura della tua organizzazione possono essere gestite direttamente dalla piattaforma, senza dover richiedere ogni volta un intervento tecnico."], ["Devo pagare per modificare utenti, nomi o informazioni?", "No. Le normali modifiche amministrative che puoi effettuare direttamente dalla piattaforma non prevedono costi di intervento."]].map(([question, answer]) => <details key={question} className="border-b border-[#cfe1f4] py-5"><summary className="cursor-pointer text-base font-bold text-[#245b96]">{question}</summary><p className="mt-3 max-w-2xl text-sm leading-6 text-[#557090]">{answer}</p></details>)}</div></div>
+      </section>
+
+      <section className="border-y border-[#cfe1f4] bg-[#eff7ff] py-20 sm:py-28" id="tutte-le-pagine" aria-labelledby="directory-title">
+        <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-10">
+          <div className="grid gap-12 lg:grid-cols-[.62fr_1.38fr] lg:gap-16">
+            <div className="lg:sticky lg:top-8 lg:self-start">
+              <span className="inline-flex rounded-full bg-[#dcecff] px-3 py-1.5 text-xs font-bold text-[#0b55c6]">ESPLORA TOTALONE</span>
+              <h2 id="directory-title" className="mt-6 max-w-lg text-5xl font-bold leading-[.94] tracking-[-0.065em] text-[#102744] sm:text-6xl">Ogni passaggio apre una strada.</h2>
+              <p className="mt-6 max-w-md text-base leading-7 text-[#557090]">Dal primo contatto alle guide operative: qui trovi tutti i percorsi del sito, organizzati intorno al lavoro reale dello showroom.</p>
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <span className="rounded-full border border-[#bcd7f1] bg-white px-3.5 py-2 text-xs font-bold text-[#245b96]">{pageDirectoryGroups.reduce((count, group) => count + group.links.length, 0)} pagine collegate</span>
+                <a href={previewPage("totalone-site-architecture/Sitemap")} className="group inline-flex items-center gap-2 rounded-full bg-[#082c68] px-4 py-2.5 text-xs font-bold text-white transition-colors hover:bg-[#0b55c6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1769d5]">
+                  Apri la mappa del sito <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                </a>
+              </div>
+            </div>
+            <div className="grid gap-x-8 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
+              {pageDirectoryGroups.map((group, index) => (
+                <section key={group.label} className="border-t border-[#bcd7f1] pt-4">
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#0b55c6]">{group.label}</h3>
+                    <span className="font-mono text-[10px] font-semibold text-[#8aa3bd]">0{index + 1}</span>
+                  </div>
+                  <p className="mt-2 text-xs leading-5 text-[#557090]">{group.description}</p>
+                  <ul className="mt-3 divide-y divide-[#d8e7f5]">
+                    {group.links.map(([label, href]) => (
+                      <li key={href}>
+                        <a href={href} className="group flex items-start justify-between gap-3 py-2.5 text-[13px] font-semibold leading-5 text-[#245b96] transition-colors hover:text-[#c34d35] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1769d5]">
+                          <span>{label}</span>
+                          <ChevronRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#72a5d9] transition-transform group-hover:translate-x-0.5 group-hover:text-[#f36b4d]" />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       <footer className="bg-[#eaf4ff] py-16 sm:py-20"><div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-10"><div className="flex flex-col justify-between gap-10 rounded-[22px] bg-[linear-gradient(120deg,#082652,#0b62ce)] p-7 text-white sm:p-12 lg:flex-row lg:items-end"><div><Logo /><h2 className="mt-10 max-w-2xl text-4xl font-bold leading-[.96] tracking-[-0.06em] sm:text-6xl">Partiamo da una tua commessa.</h2><p className="mt-5 max-w-lg text-sm leading-6 text-[#d5ebff]">Non una demo generica. Vediamo insieme come Totalone può inserirsi nel modo in cui lavori oggi.</p></div><Button onClick={() => setDemoOpen(true)} light>Prenota una demo</Button></div><div className="flex flex-col justify-between gap-4 pt-8 text-xs font-semibold text-[#557090] sm:flex-row"><span>© Totalone — il sistema operativo per l'arredamento</span><span>Un modo più chiaro di lavorare insieme.</span></div></div></footer>

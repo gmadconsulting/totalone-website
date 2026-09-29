@@ -91,6 +91,63 @@ function getBasePath(): string {
   return import.meta.env.BASE_URL.replace(/\/$/, "");
 }
 
+const publicRoutes: Record<string, string> = {
+  "/": "totalone-homepage/TotaloneHomepage",
+  "/gestionale-arredamento": "totalone-homepage/TotaloneHomepage",
+  "/demo": "totalone-homepage/TotaloneHomepage",
+  "/login": "totalone-site-architecture/CustomerAccessPage",
+  "/crm-arredamento": "totalone-crm/CrmProductPage",
+  "/crm-per-arredatori": "totalone-crm/CrmProductPage",
+  "/crm-per-arredatori/ingressi-showroom": "totalone-blog/GestireIngressiShowroomArticle",
+  "/gestione-trattative-arredamento": "totalone-trattative/GestioneTrattative",
+  "/software-preventivi-arredamento": "totalone-preventivi/PreventiviProductPage",
+  "/preventivi-arredatori": "totalone-preventivi/PreventiviProductPage",
+  "/gestione-progetti-arredamento": "totalone-progetti/ProgettiProductPage",
+  "/gestione-commesse-arredamento": "totalone-commesse/CommesseProductPage",
+  "/gestione-magazzino-arredamento": "totalone-magazzino/MagazzinoProductPage",
+  "/gestione-montaggi-arredamento": "totalone-montaggi/MontaggiProductPage",
+  "/post-vendita-arredamento": "totalone-assistenza/AssistenzaPostVenditaProductPage",
+  "/controllo-performance-arredamento": "totalone-controllo/ControlloPerformanceProductPage",
+  "/perche-totalone": "totalone-perche/PercheTotalonePage",
+  "/prezzi": "totalone-prezzi/TotalonePrezzi",
+  "/strumenti/roi": "totalone-prezzi/TotalonePrezzi",
+  "/risorse": "totalone-risorse/RisorseArchitecturePage",
+  "/guide": "totalone-risorse/RisorseArchitecturePage",
+  "/guide/crm-per-arredatori": "totalone-blog/CrmNegozioArredamentoArticle",
+  "/guide/digitalizzazione-negozio-arredamento": "totalone-blog/SoftwareGestionaleNegozioArredamentoArticle",
+  "/guide/gestione-commesse-arredamento": "totalone-blog/GestioneCommesseArredamentoArticle",
+  "/guide/gestione-magazzino-arredamento": "totalone-blog/GestioneMagazzinoArredamentoArticle",
+  "/guide/gestione-showroom-arredamento": "totalone-blog/SoftwareGestionaleNegozioArredamentoArticle",
+  "/guide/preventivi-arredamento": "totalone-blog/SoftwarePreventiviArredamentoArticle",
+  "/blog": "totalone-site-architecture/ResourcesHub",
+  "/blog/gestione-showroom": "totalone-site-architecture/ResourcesHub",
+  "/blog/vendite-crm": "totalone-site-architecture/ResourcesHub",
+  "/blog/preventivi": "totalone-site-architecture/ResourcesHub",
+  "/blog/commesse-progetti": "totalone-site-architecture/ResourcesHub",
+  "/blog/logistica-magazzino": "totalone-site-architecture/ResourcesHub",
+  "/blog/montaggi-post-vendita": "totalone-site-architecture/ResourcesHub",
+  "/blog/controllo-performance": "totalone-controllo/ControlloPerformanceProductPage",
+  "/blog/gestione-showroom/software-gestionale-negozio-arredamento": "totalone-blog/SoftwareGestionaleNegozioArredamentoArticle",
+  "/blog/gestione-showroom/gestionale-per-arredatori": "totalone-blog/GestionalePerArredatoriArticle",
+  "/blog/preventivi/software-preventivi-arredamento": "totalone-blog/SoftwarePreventiviArredamentoArticle",
+  "/blog/commesse-progetti/gestione-commesse-arredamento": "totalone-blog/GestioneCommesseArredamentoArticle",
+  "/blog/vendite-crm/crm-negozio-arredamento": "totalone-blog/CrmNegozioArredamentoArticle",
+  "/blog/vendite-crm/gestire-ingressi-showroom": "totalone-blog/GestireIngressiShowroomArticle",
+  "/blog/logistica-magazzino/gestione-magazzino-arredamento": "totalone-blog/GestioneMagazzinoArredamentoArticle",
+  "/blog/montaggi-post-vendita/gestione-montaggi-arredamento": "totalone-blog/GestioneMontaggiArredamentoArticle",
+  "/blog/montaggi-post-vendita/gestione-post-vendita-arredamento": "totalone-blog/GestionePostVenditaArredamentoArticle",
+  "/blog/gestione-showroom/excel-vs-gestionale-arredamento": "totalone-blog/ExcelVsGestionaleArredamentoArticle",
+  "/soluzioni/negozi-showroom-arredamento": "totalone-site-architecture/SolutionsTemplate",
+  "/soluzioni/aziende-arredamento-in-crescita": "totalone-site-architecture/SolutionsTemplate",
+  "/soluzioni/multi-showroom-arredamento": "totalone-site-architecture/SolutionsTemplate",
+  "/soluzioni/gruppi-arredamento": "totalone-site-architecture/SolutionsTemplate",
+};
+
+function normalizePublicPath(path: string): string {
+  const normalized = path.replace(/\/+/g, "/");
+  return normalized === "/" ? "/" : normalized.replace(/\/+$/, "");
+}
+
 function getPreviewExamplePath(): string {
   const basePath = getBasePath();
   return `${basePath}/preview/ComponentName`;
@@ -124,29 +181,9 @@ function getPreviewPath(): string | null {
     basePath && pathname.startsWith(basePath)
       ? pathname.slice(basePath.length) || "/"
       : pathname;
-  const publicRoutes: Record<string, string> = {
-    "/risorse/": "totalone-risorse/RisorseArchitecturePage",
-    "/controllo-performance-arredamento": "totalone-controllo/ControlloPerformanceProductPage",
-    "/blog/": "totalone-site-architecture/ResourcesHub",
-    "/blog/gestione-showroom": "totalone-site-architecture/ResourcesHub",
-    "/blog/vendite-crm": "totalone-site-architecture/ResourcesHub",
-    "/blog/preventivi": "totalone-site-architecture/ResourcesHub",
-    "/blog/commesse-progetti": "totalone-site-architecture/ResourcesHub",
-    "/blog/logistica-magazzino": "totalone-site-architecture/ResourcesHub",
-    "/blog/montaggi-post-vendita": "totalone-site-architecture/ResourcesHub",
-    "/blog/gestione-showroom/software-gestionale-negozio-arredamento": "totalone-blog/SoftwareGestionaleNegozioArredamentoArticle",
-    "/blog/gestione-showroom/gestionale-per-arredatori": "totalone-blog/GestionalePerArredatoriArticle",
-    "/blog/preventivi/software-preventivi-arredamento": "totalone-blog/SoftwarePreventiviArredamentoArticle",
-    "/blog/commesse-progetti/gestione-commesse-arredamento": "totalone-blog/GestioneCommesseArredamentoArticle",
-    "/blog/vendite-crm/crm-negozio-arredamento": "totalone-blog/CrmNegozioArredamentoArticle",
-    "/blog/vendite-crm/gestire-ingressi-showroom": "totalone-blog/GestireIngressiShowroomArticle",
-    "/blog/logistica-magazzino/gestione-magazzino-arredamento": "totalone-blog/GestioneMagazzinoArredamentoArticle",
-    "/blog/montaggi-post-vendita/gestione-montaggi-arredamento": "totalone-blog/GestioneMontaggiArredamentoArticle",
-    "/blog/montaggi-post-vendita/gestione-post-vendita-arredamento": "totalone-blog/GestionePostVenditaArredamentoArticle",
-    "/blog/gestione-showroom/excel-vs-gestionale-arredamento": "totalone-blog/ExcelVsGestionaleArredamentoArticle",
-  };
-
-  const publicRoute = local.startsWith("/preview") ? local.slice("/preview".length) || "/" : local;
+  const publicRoute = normalizePublicPath(
+    local.startsWith("/preview") ? local.slice("/preview".length) || "/" : local,
+  );
   if (publicRoutes[publicRoute]) {
     return publicRoutes[publicRoute];
   }
@@ -155,15 +192,53 @@ function getPreviewPath(): string | null {
   return match ? match[1] : null;
 }
 
+function PreviewLinkBridge() {
+  useEffect(() => {
+    const basePath = getBasePath();
+    if (!basePath) return;
+
+    const handleClick = (event: MouseEvent) => {
+      if (event.defaultPrevented || event.button !== 0) return;
+      if (!(event.target instanceof Element)) return;
+
+      const anchor = event.target.closest<HTMLAnchorElement>("a[href]");
+      if (!anchor || anchor.hasAttribute("download")) return;
+
+      const target = new URL(anchor.href, window.location.href);
+      if (target.origin !== window.location.origin) return;
+      if (target.pathname === basePath || target.pathname.startsWith(`${basePath}/`)) return;
+
+      const publicPath = normalizePublicPath(target.pathname);
+      const componentPath = publicRoutes[publicPath];
+      if (!componentPath) return;
+
+      if (publicPath === "/demo") target.searchParams.set("demo", "1");
+      const destination = `${basePath}/preview/${componentPath}${target.search}${target.hash}`;
+      event.preventDefault();
+
+      if (anchor.target === "_blank" || event.metaKey || event.ctrlKey || event.shiftKey) {
+        window.open(destination, "_blank", "noopener,noreferrer");
+      } else {
+        window.location.assign(destination);
+      }
+    };
+
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, []);
+
+  return null;
+}
+
 function App() {
   const previewPath = getPreviewPath();
 
   if (previewPath) {
     return (
-      <PreviewRenderer
-        componentPath={previewPath}
-        modules={discoveredModules}
-      />
+      <>
+        <PreviewLinkBridge />
+        <PreviewRenderer componentPath={previewPath} modules={discoveredModules} />
+      </>
     );
   }
 
