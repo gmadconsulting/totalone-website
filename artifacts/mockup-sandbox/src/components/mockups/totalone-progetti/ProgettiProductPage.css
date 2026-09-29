@@ -12,6 +12,7 @@
   color:var(--p-ink);
   font-family:"DM Sans",ui-sans-serif,system-ui,sans-serif;
 }
+.progetti-copy-only{max-width:980px;margin-right:auto;margin-left:auto}
 .progetti-page *,.progetti-page *:before,.progetti-page *:after{box-sizing:border-box}
 .progetti-page a{color:inherit;text-decoration:none}
 .progetti-wrap{width:min(1240px,calc(100% - 40px));margin:0 auto}

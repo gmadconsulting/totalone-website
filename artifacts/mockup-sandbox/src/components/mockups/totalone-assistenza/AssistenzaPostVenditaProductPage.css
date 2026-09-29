@@ -1,4 +1,5 @@
 .assistenza-page{--a-ink:#102744;--a-muted:#557090;--a-blue:#0b55c6;--a-deep:#082c68;--a-sky:#eaf4ff;--a-line:#cfe1f4;--a-coral:#f36b4d;--a-warm:#fffaf7;overflow:hidden;background:#fbfdff;color:var(--a-ink);font-family:"DM Sans",ui-sans-serif,system-ui,sans-serif}
+.assistenza-text-feature{max-width:920px}
 .assistenza-page *,.assistenza-page *:before,.assistenza-page *:after{box-sizing:border-box}
 .assistenza-page a{color:inherit;text-decoration:none}
 .assistenza-wrap{width:min(1240px,calc(100% - 40px));margin:0 auto}

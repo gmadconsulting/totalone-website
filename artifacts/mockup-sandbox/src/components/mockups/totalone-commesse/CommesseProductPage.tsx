@@ -149,7 +149,7 @@ export function CommesseProductPage() {
         </section>
 
         <section className="commesse-section" id="tutte-le-commesse">
-          <div className="commesse-wrap commesse-split">
+          <div className="commesse-wrap commesse-copy-only">
             <div>
               <SectionHeading eyebrow="PANORAMICA" title="Tutte le commesse. Una sola vista." body={<><p>Consulta tutte le Schedine Cliente dello showroom e trova rapidamente la commessa che stai cercando.</p><p>Per ogni commessa puoi avere immediatamente il contesto principale senza aprire file, email o strumenti diversi.</p></>} />
               <TagList items={overviewFields} />
@@ -158,17 +158,15 @@ export function CommesseProductPage() {
               <p className="commesse-small-label">Stati visibili</p>
               <TagList items={["Ordinato", "Da ordinare", "Arrivato"]} className="state-tags" />
             </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — ELENCO SCHEDINE CLIENTI]" caption="Dal quadro generale al dettaglio della singola commessa in pochi secondi." />
           </div>
         </section>
 
         <section className="commesse-section commesse-connected" id="singola-commessa">
-          <div className="commesse-wrap commesse-split-wide">
+          <div className="commesse-wrap commesse-copy-only">
             <div>
               <SectionHeading eyebrow="DETTAGLIO COMMESSA" title="Apri una commessa e ritrovi tutto il suo contesto." body={<><p>La Schedina Cliente raccoglie le informazioni commerciali e operative legate alla commessa e le mantiene accessibili nello stesso ambiente.</p><p>Cliente, venditore, stato, prodotti e informazioni economiche rimangono collegati mentre il progetto avanza.</p></>} />
               <TagList items={detailFields} className="warm-tags" />
             </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — DETTAGLIO SCHEDINA CLIENTE]" caption="Placeholder per lo screenshot reale della commessa aperta." />
           </div>
         </section>
 
@@ -187,7 +185,6 @@ export function CommesseProductPage() {
             <FlowStrip items={orderStatus} className="economic-flow order-flow" />
             <div className="commesse-state-notes"><span>IN CORSO</span><span>ASSISTENZA</span><p>Non tutti i prodotti seguono necessariamente la stessa sequenza: ogni elemento può avere il proprio stato.</p></div>
             <p className="commesse-highlight">“Non devi chiedere a qualcuno a che punto è un prodotto. Lo vedi.”</p>
-            <ScreenshotPlaceholder label="[SCREENSHOT — STATI PRODOTTI]" caption="Placeholder opzionale per la schermata reale degli stati." className="commesse-state-shot" />
           </div>
         </section>
 
@@ -209,22 +206,20 @@ export function CommesseProductPage() {
         </section>
 
         <section className="commesse-section commesse-connected" id="servizi">
-          <div className="commesse-wrap commesse-split">
+          <div className="commesse-wrap commesse-copy-only">
             <div>
               <SectionHeading eyebrow="OLTRE AI PRODOTTI" title="Anche i servizi fanno parte della commessa." body={<><p>Una vendita di arredamento non è composta soltanto dai prodotti.</p><p>Trasporto, smontaggio, imballaggi speciali e altri servizi possono essere associati direttamente alla Schedina Cliente, mantenendo anche queste attività all’interno del contesto della commessa.</p></>} />
               <TagList items={["Trasporto", "Smontaggio", "Imballaggi speciali", "Altri servizi"]} className="service-tags" />
             </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — COSTI DI SERVIZIO]" caption="Placeholder per lo screenshot reale dei costi di servizio." />
           </div>
         </section>
 
         <section className="commesse-section commesse-sky" id="documenti">
-          <div className="commesse-wrap commesse-split-wide">
+          <div className="commesse-wrap commesse-copy-only">
             <div>
               <SectionHeading eyebrow="DOCUMENTI" title="I documenti restano dove servono." body={<><p>Contratti, planimetrie, comunicazioni e altri documenti possono essere associati alla commessa e organizzati nello stesso contesto operativo.</p><p>Il team non deve ricostruire ogni volta la documentazione tra cartelle, email e strumenti diversi.</p></>} />
               <TagList items={["Contratti", "Planimetrie", "Comunicazioni"]} className="document-tags" />
             </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — DOCUMENTI COMMESSA]" caption="Placeholder per lo screenshot reale dei documenti." />
           </div>
         </section>
 
@@ -239,13 +234,12 @@ export function CommesseProductPage() {
         </section>
 
         <section className="commesse-section">
-          <div className="commesse-wrap commesse-split">
+          <div className="commesse-wrap commesse-copy-only">
             <div>
               <SectionHeading eyebrow="FINO AL MONTAGGIO" title="La commessa continua fino a quando il lavoro non è concluso." body={<><p>La Schedina Cliente mantiene anche le informazioni necessarie per collegare la commessa alla fase di montaggio.</p><p>Data prevista e informazioni operative rimangono associate al progetto, mantenendo continuità tra ciò che è stato venduto e ciò che deve essere installato.</p></>} />
               <FlowStrip items={["COMMESSA", "PRODOTTI", "ARRIVO", "MONTAGGIO"]} className="economic-flow" />
               <TextLink href="/gestione-montaggi-arredamento/">Scopri la gestione Montaggi</TextLink>
             </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — MONTAGGIO]" caption="Placeholder per lo screenshot reale delle informazioni di montaggio." />
           </div>
         </section>
 
@@ -281,11 +275,10 @@ export function CommesseProductPage() {
         </section>
 
         <section className="commesse-section">
-          <div className="commesse-wrap commesse-split-wide">
+          <div className="commesse-wrap commesse-copy-only">
             <div>
               <SectionHeading eyebrow="PER CHI GESTISCE PIÙ SEDI" title="Le commesse restano organizzate anche quando l’azienda cresce." body={<p>Filtra e consulta le Schedine Cliente per showroom, venditore, anno e stato. Dalla singola sede alla visione complessiva dell’azienda, Totalone mantiene le commesse nello stesso sistema.</p>} />
             </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — FILTRI SCHEDINE / SHOWROOM / VENDITORE]" caption="Placeholder per la vista reale organizzata per sede e venditore." />
           </div>
         </section>
 

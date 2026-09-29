@@ -165,41 +165,37 @@ export function AssistenzaPostVenditaProductPage() {
         </section>
 
         <section className="assistenza-section warm">
-          <div className="assistenza-wrap assistenza-split">
+          <div className="assistenza-wrap assistenza-text-feature">
             <div>
               <SectionHeading eyebrow="CONTROLLO PER PRODOTTO" title="Un’assistenza può coinvolgere più prodotti. Ognuno segue il proprio percorso." body={<><p>All’interno della stessa assistenza puoi distinguere i diversi prodotti coinvolti e mantenere visibili le informazioni relative a ciascuno.</p><p>Questo evita di trattare un intervento complesso come un unico blocco indistinto.</p></>} />
               <TagList items={["Prodotto", "Brand / Colore", "Arrivo previsto", "Stato", "Azioni"]} warm />
             </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — PRODOTTI IN ASSISTENZA]" caption="Un dettaglio da sostituire con il crop reale della schedina." className="assistenza-shot-large" />
           </div>
         </section>
 
         <section className="assistenza-section sky">
-          <div className="assistenza-wrap assistenza-split reverse">
+          <div className="assistenza-wrap assistenza-text-feature">
             <div>
               <SectionHeading eyebrow="TEMPI" title="Sai cosa stai aspettando." body={<p>Quando la gestione di un’assistenza dipende dall’arrivo di un prodotto o di un componente, la data prevista deve essere facile da trovare. Totalone mantiene visibili gli arrivi previsti anche all’interno del flusso post-vendita.</p>} />
               <Flow items={["PRODOTTO", "ARRIVO PREVISTO", "ASSISTENZA"]} className="mini-flow" />
             </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — ARRIVI PREVISTI ASSISTENZA]" className="assistenza-shot-large" />
           </div>
         </section>
 
         <section className="assistenza-section">
-          <div className="assistenza-wrap assistenza-split">
+          <div className="assistenza-wrap assistenza-text-feature">
             <div>
               <SectionHeading eyebrow="TUTTO NEL SUO CONTESTO" title="I documenti rimangono collegati all’assistenza." body={<p>Evita di separare le informazioni operative dai documenti necessari per gestire il caso. La documentazione rimane associata alla singola assistenza, così il team può recuperarla dal punto in cui sta già lavorando.</p>} />
               <a className="assistenza-inline-link" href="#top">Documenti dell’assistenza <ChevronRight size={15} /></a>
             </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — DOCUMENTI ASSISTENZA]" caption="Placeholder da sostituire con il crop reale dell’azione Documenti." className="assistenza-shot-compact" />
           </div>
         </section>
 
         <section className="assistenza-section warm">
-          <div className="assistenza-wrap assistenza-split reverse">
+          <div className="assistenza-wrap assistenza-text-feature">
             <div>
               <SectionHeading eyebrow="COSTI DI ASSISTENZA" title="Anche il post-vendita ha un costo." body={<p>All’interno della schedina di assistenza, Totalone prevede uno spazio dedicato ai costi. Le informazioni economiche dell’intervento rimangono collegate alla relativa assistenza, invece di essere gestite in strumenti separati.</p>} />
             </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — COSTI ASSISTENZA]" className="assistenza-shot-compact" />
           </div>
         </section>
 
@@ -211,12 +207,11 @@ export function AssistenzaPostVenditaProductPage() {
         </section>
 
         <section className="assistenza-section connected">
-          <div className="assistenza-wrap assistenza-split">
+          <div className="assistenza-wrap assistenza-text-feature">
             <div>
               <SectionHeading eyebrow="NON PERDERE LA STORIA" title="Chiudere un’assistenza non significa perdere le informazioni." body={<p>Le assistenze concluse possono essere separate dal lavoro operativo corrente mantenendo uno storico consultabile. La vista quotidiana rimane ordinata senza perdere il contesto dei casi precedenti.</p>} />
               <Flow items={["ASSISTENZE ATTIVE", "PRONTE", "ARCHIVIO"]} className="mini-flow" />
             </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — ARCHIVIO ASSISTENZE]" caption="Lo storico resta disponibile senza appesantire il lavoro corrente." className="assistenza-shot-compact" />
           </div>
         </section>
 

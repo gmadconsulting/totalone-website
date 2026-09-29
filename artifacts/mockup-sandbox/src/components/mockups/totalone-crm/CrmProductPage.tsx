@@ -80,23 +80,20 @@ export function CrmProductPage() {
         </section>
 
         <section className="crm-section" id="contatti">
-          <div className="crm-wrap crm-split">
+          <div className="crm-wrap crm-copy-section">
             <div>
               <span className="crm-eyebrow">CONTATTI E LEAD</span>
               <h2>Tutti i tuoi clienti. Una sola vista.</h2>
               <p>Centralizza clienti e lead in un database condiviso e facilmente consultabile. Cerca rapidamente per nome, email, telefono o città e organizza i contatti in Smart List per avere sempre sotto controllo il pubblico che ti interessa.</p>
               <p>Dal nuovo lead al cliente storico, le informazioni restano accessibili al team e pronte per essere utilizzate nelle attività commerciali.</p>
               <FeaturePills items={contactFeatures} />
+              <p className="crm-visual-caption">Organizza centinaia di contatti senza perdere di vista quelli che contano.</p>
             </div>
-            <figure>
-              <Placeholder label="[SCREENSHOT REALE DA INSERIRE · CONTATTI CLIENTI]" detail="Contatti, Smart List, ricerca e tabella clienti" />
-              <figcaption className="crm-visual-caption">Organizza centinaia di contatti senza perdere di vista quelli che contano.</figcaption>
-            </figure>
           </div>
         </section>
 
         <section className="crm-section sky">
-          <div className="crm-wrap crm-split reverse">
+          <div className="crm-wrap crm-copy-section">
             <div>
               <span className="crm-eyebrow coral">INGRESSI SHOWROOM</span>
               <h2>Sai davvero chi entra nel tuo showroom?</h2>
@@ -106,7 +103,6 @@ export function CrmProductPage() {
               <FeaturePills items={showroomFeatures} />
               <a className="crm-text-link" href="/crm-per-arredatori/ingressi-showroom">Scopri la gestione ingressi showroom <ArrowRight size={15} /></a>
             </div>
-            <div><Placeholder label="[SCREENSHOT REALE DA INSERIRE · INGRESSI SHOWROOM]" detail="Lista ingressi showroom con data, venditore, provenienza e motivo della visita" /></div>
           </div>
         </section>
 
@@ -116,7 +112,6 @@ export function CrmProductPage() {
             <div className="crm-kpi-row">
               {["Totale ingressi", "Trend", "Showroom", "Venditori"].map((item, index) => <div className="crm-kpi" key={item}><span>{item}</span><strong>{["247", "+18,4%", "4 sedi", "12"][index]}</strong><small>{index === 1 ? "rispetto al periodo precedente" : "concetto KPI"}</small></div>)}
             </div>
-            <div className="crm-data-visual"><Placeholder label="[SCREENSHOT REALE DA INSERIRE · DASHBOARD INGRESSI]" detail="Dashboard con KPI, distribuzione ingressi per showroom, classifica venditori e affluenza settimanale" /></div>
           </div>
         </section>
 
@@ -135,13 +130,12 @@ export function CrmProductPage() {
             </div>
             <div className="crm-pipeline-images">
               <figure className="crm-real-shot"><img src="/__mockup/images/crm-pipeline-overview.png" alt="Vista reale Totalone della pipeline trattative con KPI e opportunità commerciali" /><figcaption>Vista reale Totalone della pipeline trattative: KPI, fasi e opportunità commerciali.</figcaption></figure>
-              <figure className="crm-real-shot"><img src="/__mockup/images/crm-pipeline-list.png" alt="Vista reale Totalone dell’elenco trattative con stato e valori" /><figcaption>Vista reale Totalone dell’elenco trattative con stato, valori e saldo.</figcaption></figure>
             </div>
           </div>
         </section>
 
         <section className="crm-section">
-          <div className="crm-wrap crm-split">
+          <div className="crm-wrap crm-copy-section">
             <div>
               <span className="crm-eyebrow coral">CONVERSAZIONI</span>
               <h2>Le conversazioni non restano separate dai clienti.</h2>
@@ -149,24 +143,22 @@ export function CrmProductPage() {
               <p>Quando arriva un nuovo contatto, puoi trasformarlo direttamente in un lead e iniziare a costruire il suo storico commerciale senza copiare manualmente informazioni da uno strumento all’altro.</p>
               <div className="crm-highlight">Una conversazione può diventare un’opportunità. In un click.</div>
             </div>
-            <Placeholder label="[SCREENSHOT REALE DA INSERIRE · CONVERSAZIONI]" detail="Lista conversazioni con azione “Aggiungi al CRM”" />
           </div>
         </section>
 
         <section className="crm-section warm">
-          <div className="crm-wrap crm-split reverse">
+          <div className="crm-wrap crm-copy-section">
             <div>
               <span className="crm-eyebrow gold">AGENDA E APPUNTAMENTI</span>
               <h2>Clienti, appuntamenti e follow-up nello stesso flusso.</h2>
               <p>Organizza appuntamenti, incontri e attività commerciali in un calendario condiviso.</p>
               <p>Il team può vedere gli impegni, pianificare le prossime azioni e mantenere continuità nella relazione con il cliente senza affidarsi alla memoria personale del singolo venditore.</p>
             </div>
-            <Placeholder label="[SCREENSHOT REALE DA INSERIRE · CALENDARIO]" detail="Calendario mensile Totalone con appuntamenti e attività commerciali" />
           </div>
         </section>
 
         <section className="crm-section sky">
-          <div className="crm-wrap crm-split">
+          <div className="crm-wrap crm-copy-section">
             <div>
               <span className="crm-eyebrow">NON SOLO CLIENTI</span>
               <h2>Anche la tua rete professionale, organizzata.</h2>
@@ -174,12 +166,11 @@ export function CrmProductPage() {
               <p>Totalone permette di creare anagrafiche aziendali e associare i relativi contatti, così anche la rete professionale dello showroom rimane ordinata e accessibile.</p>
               <FeaturePills items={["Fornitori", "Partner", "Trasportatori", "Aziende", "Referenti"]} />
             </div>
-            <Placeholder label="[SCREENSHOT REALE DA INSERIRE · CONTATTI AZIENDALI]" detail="Anagrafiche aziendali e relativi referenti" />
           </div>
         </section>
 
         <section className="crm-section">
-          <div className="crm-wrap crm-split reverse">
+          <div className="crm-wrap crm-copy-section">
             <div>
               <span className="crm-eyebrow coral">SEGMENTAZIONE E AUTOMATION</span>
               <h2>Il tuo database non deve essere solo un archivio.</h2>
@@ -188,7 +179,6 @@ export function CrmProductPage() {
               <div className="crm-stage-flow"><span>Segmenta</span><i>→</i><span>Crea una lista</span><i>→</i><span>Comunica</span></div>
               <p className="crm-visual-caption">Più informazioni raccogli durante il lavoro quotidiano, più il tuo CRM diventa uno strumento utile per mantenere viva la relazione con clienti e prospect.</p>
             </div>
-            <div className="crm-data-visual"><Placeholder label="[SCREENSHOT REALE DA INSERIRE · EMAIL MARKETING + SMART LIST]" detail="Email Marketing combinato con dettaglio Smart Lists" /></div>
           </div>
         </section>
 

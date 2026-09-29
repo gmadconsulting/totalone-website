@@ -128,7 +128,7 @@ export function ProgettiProductPage() {
         </section>
 
         <section className="progetti-section" id="progetti">
-          <div className="progetti-wrap progetti-split">
+          <div className="progetti-wrap progetti-copy-only">
             <div>
               <SectionHeading
                 eyebrow="PROGETTI"
@@ -139,7 +139,6 @@ export function ProgettiProductPage() {
               <p className="progetti-small-label">Viste e filtri disponibili</p>
               <TagList items={["Griglia", "Calendario", "Archivio", "Showroom", "Utenti", "I miei progetti", "Più recenti"]} className="blue" />
             </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — GRIGLIA PROGETTI]" caption="Una visione immediata di ciò che è attivo e di quanto lavoro è stato completato." className="progetti-shot large" />
           </div>
         </section>
 
@@ -220,7 +219,7 @@ export function ProgettiProductPage() {
         </section>
 
         <section className="progetti-section sky">
-          <div className="progetti-wrap progetti-split reverse">
+          <div className="progetti-wrap progetti-copy-only">
             <div>
               <SectionHeading
                 eyebrow="AVANZAMENTO"
@@ -229,7 +228,6 @@ export function ProgettiProductPage() {
               />
               <div className="progetti-progress"><div><small>12 TASK</small><div className="progetti-progress-track"><span /></div><small>8 COMPLETATI</small></div><strong>67%</strong></div>
             </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — CARD PROGETTO]" caption="La card reale del progetto con il suo avanzamento." className="progetti-shot compact" />
           </div>
         </section>
 
@@ -244,7 +242,7 @@ export function ProgettiProductPage() {
         </section>
 
         <section className="progetti-section warm">
-          <div className="progetti-wrap progetti-split reverse">
+          <div className="progetti-wrap progetti-copy-only">
             <div>
               <SectionHeading
                 eyebrow="WHITE PAPER"
@@ -253,7 +251,6 @@ export function ProgettiProductPage() {
               />
               <TagList items={["Editor di testo", "Formattazione", "Contenuti organizzati", "Selezione showroom", "Salvataggio", "Copia del contenuto", "Download nei documenti"]} className="warm" />
             </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — WHITE PAPER]" caption="Uno spazio condiviso per raccogliere ciò che il team deve sapere." className="progetti-shot large" />
           </div>
         </section>
 
@@ -276,11 +273,10 @@ export function ProgettiProductPage() {
         </section>
 
         <section className="progetti-section connected">
-          <div className="progetti-wrap progetti-split">
+          <div className="progetti-wrap progetti-copy-only">
             <div>
               <SectionHeading eyebrow="STORICO" title="I progetti conclusi non devono occupare il lavoro di oggi." body={<><p>Archivia i progetti completati mantenendo la vista principale concentrata sulle attività ancora operative.</p><p>Il lavoro corrente rimane pulito senza perdere lo storico dei progetti precedenti.</p></>} />
             </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — ARCHIVIO PROGETTI]" caption="Lo storico resta disponibile senza appesantire il lavoro corrente." className="progetti-shot compact" />
           </div>
         </section>
 

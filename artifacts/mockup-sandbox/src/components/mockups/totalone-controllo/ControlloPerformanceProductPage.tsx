@@ -114,7 +114,7 @@ export function ControlloPerformanceProductPage() {
       <section className="controllo-hero">
         <div className="controllo-orb controllo-orb-one" aria-hidden="true" />
         <div className="controllo-orb controllo-orb-two" aria-hidden="true" />
-        <div className="controllo-wrap">
+          <div className="controllo-wrap">
           <nav className="controllo-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span>Controllo e performance</span></nav>
           <div className="controllo-hero-grid">
             <div className="controllo-hero-copy">
@@ -137,24 +137,21 @@ export function ControlloPerformanceProductPage() {
       </section>
 
       <section className="controllo-section" id="panoramica">
-        <div className="controllo-wrap">
+          <div className="controllo-wrap">
           <SectionHeading eyebrow="OVERVIEW" title="Parti dall’insieme. Poi vai in profondità." body={<><p>La panoramica riunisce gli indicatori principali dell’azienda e permette di leggere immediatamente l’andamento del periodo selezionato.</p><p>Filtra i dati per periodo, showroom e venditore e confronta ciò che sta succedendo nelle diverse aree dell’azienda.</p></>} />
           <MetricList items={["Venduto", "Preventivato", "Fatturato", "Conversione preventivo → venduto", "Andamento temporale", "Venduto per showroom", "Venduto geografico", "Sintesi del periodo"]} />
-          <ScreenshotPlaceholder label="[SCREENSHOT — ANALYTICS OVERVIEW]" caption="Visual dominante per la panoramica delle performance." className="controllo-large-shot" />
         </div>
       </section>
 
       <section className="controllo-section controllo-sky" id="vendite">
-        <div className="controllo-wrap controllo-split">
-          <div><SectionHeading eyebrow="VENDITE" title="Capisci cosa vendi. Dove. E attraverso chi." body={<p>Totalone permette di approfondire le performance commerciali partendo dal venduto complessivo fino alle dimensioni che aiutano a capire da dove nasce il risultato.</p>} /><MetricList items={["Venduto IVA inclusa", "Venduto netto", "Ticket medio", "Numero ordini", "Venduto per brand", "Venduto geografico", "Ticket medio per venditore", "Venduto per categoria", "Ordini e clienti"]} /></div>
-          <ScreenshotPlaceholder label="[SCREENSHOT — ANALYTICS VENDITE]" caption="Inserisci qui uno screenshot reale dell’analisi Vendite." />
-        </div>
+         <div className="controllo-wrap controllo-text-feature">
+           <div><SectionHeading eyebrow="VENDITE" title="Capisci cosa vendi. Dove. E attraverso chi." body={<p>Totalone permette di approfondire le performance commerciali partendo dal venduto complessivo fino alle dimensioni che aiutano a capire da dove nasce il risultato.</p>} /><MetricList items={["Venduto IVA inclusa", "Venduto netto", "Ticket medio", "Numero ordini", "Venduto per brand", "Venduto geografico", "Ticket medio per venditore", "Venduto per categoria", "Ordini e clienti"]} /></div>
+         </div>
         <div className="controllo-wrap"><FlowStrip items={["AZIENDA", "SHOWROOM", "VENDITORE", "BRAND", "CATEGORIA", "CLIENTE"]} className="controllo-taxonomy" /><p className="controllo-statement">Non soltanto quanto hai venduto, ma come si compone il venduto.</p></div>
       </section>
 
       <section className="controllo-section" id="fatturato">
-        <div className="controllo-wrap controllo-split controllo-split-reverse">
-          <ScreenshotPlaceholder label="[SCREENSHOT — ANALYTICS FATTURATO]" caption="Placeholder per l’analisi del rapporto tra venduto e fatturato." />
+         <div className="controllo-wrap controllo-text-feature">
           <div><SectionHeading eyebrow="FATTURATO" title="Venduto e fatturato non sono la stessa cosa." body={<><p>Una vendita conclusa non significa necessariamente che tutto sia già stato documentato o fatturato.</p><p>Totalone permette di mettere in relazione il valore dei contratti con quanto risulta fatturato nel periodo e di evidenziare ciò che resta ancora da documentare.</p></>} /><div className="controllo-highlight-grid"><strong>Fatturato DDT</strong><strong>Venduto contratti</strong><strong>Gap venduto / fatturato</strong></div><p className="controllo-small-copy">L’analisi può essere approfondita per brand, permettendo di confrontare il valore della merce venduta con quella già documentata.</p></div>
         </div>
       </section>
@@ -180,11 +177,11 @@ export function ControlloPerformanceProductPage() {
       </section>
 
       <section className="controllo-section controllo-sky" id="operativo">
-        <div className="controllo-wrap controllo-split"><div><SectionHeading eyebrow="OPERATIVO" title="Le performance non finiscono con la vendita." body={<><p>Una commessa deve ancora essere consegnata, montata e, in alcuni casi, gestita nel post-vendita.</p><p>Per questo Totalone porta nel controllo anche alcuni indicatori operativi, affiancando alla performance commerciale una lettura di ciò che accade dopo la vendita.</p></>} /><MetricList items={["Consegne nel periodo", "Percentuale prodotti in assistenza", "Lifecycle assistenza", "Installazioni senza assistenza", "Rapporto installazioni-assistenze", "Consegne nel tempo", "Ordini nel tempo"]} /></div><ScreenshotPlaceholder label="[SCREENSHOT — ANALYTICS OPERATIVO]" caption="Inserisci qui lo screenshot reale degli indicatori operativi." /></div>
+          <div className="controllo-wrap controllo-text-feature"><div><SectionHeading eyebrow="OPERATIVO" title="Le performance non finiscono con la vendita." body={<><p>Una commessa deve ancora essere consegnata, montata e, in alcuni casi, gestita nel post-vendita.</p><p>Per questo Totalone porta nel controllo anche alcuni indicatori operativi, affiancando alla performance commerciale una lettura di ciò che accade dopo la vendita.</p></>} /><MetricList items={["Consegne nel periodo", "Percentuale prodotti in assistenza", "Lifecycle assistenza", "Installazioni senza assistenza", "Rapporto installazioni-assistenze", "Consegne nel tempo", "Ordini nel tempo"]} /></div></div>
       </section>
 
       <section className="controllo-section" id="budget">
-        <div className="controllo-wrap controllo-split controllo-split-reverse"><ScreenshotPlaceholder label="[SCREENSHOT — ANALYTICS BUDGET]" caption="Placeholder per il confronto Budget vs Actual." /><div><SectionHeading eyebrow="BUDGET" title="Trasforma gli obiettivi in qualcosa che puoi seguire." body={<><p>Definisci un target per una metrica e confrontalo con il risultato effettivo del periodo.</p><p>Totalone permette di impostare obiettivi temporali e visualizzare il confronto tra budget e actual.</p></>} /><MetricList items={["Scelta metrica", "Tipo periodo", "Periodo di riferimento", "Importo target", "Actual del periodo", "Confronto Budget vs Actual"]} /><div className="controllo-objective"><strong>OBIETTIVO</strong><span>vs</span><strong>RISULTATO</strong></div><p className="controllo-small-copy">Il budget può essere letto accanto ai dati effettivi generati dall’attività.</p></div></div>
+          <div className="controllo-wrap controllo-text-feature"><div><SectionHeading eyebrow="BUDGET" title="Trasforma gli obiettivi in qualcosa che puoi seguire." body={<><p>Definisci un target per una metrica e confrontalo con il risultato effettivo del periodo.</p><p>Totalone permette di impostare obiettivi temporali e visualizzare il confronto tra budget e actual.</p></>} /><MetricList items={["Scelta metrica", "Tipo periodo", "Periodo di riferimento", "Importo target", "Actual del periodo", "Confronto Budget vs Actual"]} /><div className="controllo-objective"><strong>OBIETTIVO</strong><span>vs</span><strong>RISULTATO</strong></div><p className="controllo-small-copy">Il budget può essere letto accanto ai dati effettivi generati dall’attività.</p></div></div>
       </section>
 
       <section className="controllo-section controllo-warm" id="filtri">
@@ -192,7 +189,7 @@ export function ControlloPerformanceProductPage() {
       </section>
 
       <section className="controllo-section controllo-sky" id="multi-showroom">
-        <div className="controllo-wrap controllo-split"><div><SectionHeading eyebrow="MULTI-SHOWROOM" title="Un’azienda. Più showroom. Una sola lettura." body={<><p>Quando l’azienda cresce su più sedi, confrontare le performance diventa più complesso.</p><p>Totalone permette di analizzare i dati complessivi oppure concentrarsi su uno specifico showroom, mantenendo una struttura condivisa.</p></>} /><LinkPill href={links.perche}>Scopri l’architettura Totalone</LinkPill></div><ScreenshotPlaceholder label="[SCREENSHOT — PERFORMANCE PER SHOWROOM]" caption="Inserisci qui una vista reale del confronto tra showroom." /></div>
+         <div className="controllo-wrap controllo-text-feature"><div><SectionHeading eyebrow="MULTI-SHOWROOM" title="Un’azienda. Più showroom. Una sola lettura." body={<><p>Quando l’azienda cresce su più sedi, confrontare le performance diventa più complesso.</p><p>Totalone permette di analizzare i dati complessivi oppure concentrarsi su uno specifico showroom, mantenendo una struttura condivisa.</p></>} /><LinkPill href={links.perche}>Scopri l’architettura Totalone</LinkPill></div></div>
       </section>
 
       <section className="controllo-section controllo-why">

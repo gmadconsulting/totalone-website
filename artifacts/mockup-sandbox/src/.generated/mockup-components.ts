@@ -2,6 +2,7 @@
 type ModuleMap = Record<string, () => Promise<Record<string, unknown>>>;
 export const modules: ModuleMap = {
   "./components/mockups/totalone-assistenza/AssistenzaPostVenditaProductPage.tsx": () => import("../components/mockups/totalone-assistenza/AssistenzaPostVenditaProductPage.tsx"),
+  "./components/mockups/totalone-commesse/CommesseProductPage.tsx": () => import("../components/mockups/totalone-commesse/CommesseProductPage.tsx"),
   "./components/mockups/totalone-blog/BlogArticle.tsx": () => import("../components/mockups/totalone-blog/BlogArticle.tsx"),
   "./components/mockups/totalone-blog/CrmNegozioArredamentoArticle.tsx": () => import("../components/mockups/totalone-blog/CrmNegozioArredamentoArticle.tsx"),
   "./components/mockups/totalone-blog/ExcelVsGestionaleArredamentoArticle.tsx": () => import("../components/mockups/totalone-blog/ExcelVsGestionaleArredamentoArticle.tsx"),
@@ -14,7 +15,6 @@ export const modules: ModuleMap = {
   "./components/mockups/totalone-blog/SoftwareGestionaleNegozioArredamentoArticle.tsx": () => import("../components/mockups/totalone-blog/SoftwareGestionaleNegozioArredamentoArticle.tsx"),
   "./components/mockups/totalone-blog/SoftwarePreventiviArredamentoArticle.tsx": () => import("../components/mockups/totalone-blog/SoftwarePreventiviArredamentoArticle.tsx"),
   "./components/mockups/totalone-commesse-margini/CommesseMarginiFocus.tsx": () => import("../components/mockups/totalone-commesse-margini/CommesseMarginiFocus.tsx"),
-  "./components/mockups/totalone-commesse/CommesseProductPage.tsx": () => import("../components/mockups/totalone-commesse/CommesseProductPage.tsx"),
   "./components/mockups/totalone-controllo/ControlloPerformanceProductPage.tsx": () => import("../components/mockups/totalone-controllo/ControlloPerformanceProductPage.tsx"),
   "./components/mockups/totalone-crm/CrmProductPage.tsx": () => import("../components/mockups/totalone-crm/CrmProductPage.tsx"),
   "./components/mockups/totalone-homepage/TotaloneHomepage.tsx": () => import("../components/mockups/totalone-homepage/TotaloneHomepage.tsx"),

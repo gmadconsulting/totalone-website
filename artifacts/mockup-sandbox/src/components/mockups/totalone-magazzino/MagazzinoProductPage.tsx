@@ -103,9 +103,8 @@ export function MagazzinoProductPage() {
         </section>
 
         <section className="mag-section sky">
-          <div className="mag-wrap mag-split">
+          <div className="mag-wrap mag-text-feature">
             <div><SectionHeading eyebrow="TROVA SUBITO QUELLO CHE CERCHI" title="Cerca per cliente, brand o prodotto." body={<><p>Quando il numero di commesse cresce, trovare rapidamente un elemento diventa fondamentale.</p><p>Totalone permette di cercare tra i prodotti e restringere la vista in base alle informazioni disponibili nel magazzino.</p></>} /><TagList items={["Ricerca cliente", "Brand", "Prodotto", "Stato", "Filtri", "Magazzino selezionato"]} className="blue" /></div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — RICERCA E FILTRI MAGAZZINO]" />
           </div>
         </section>
 
@@ -139,16 +138,14 @@ export function MagazzinoProductPage() {
         </section>
 
         <section className="mag-section">
-          <div className="mag-wrap mag-split reverse">
+          <div className="mag-wrap mag-text-feature">
             <div><SectionHeading eyebrow="PIÙ MAGAZZINI" title="Sai anche dove si trova." body={<><p>Quando l’azienda lavora con più sedi o magazzini, la posizione diventa parte dell’informazione.</p><p>Totalone permette di lavorare sulla vista del magazzino selezionato e mantenere chiaro dove sono gestiti i diversi prodotti.</p></>} /><TagList items={["Magazzino selezionato", "Prodotti collegati", "Vista della sede"]} /></div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — SELETTORE MAGAZZINO]" />
           </div>
         </section>
 
         <section className="mag-section sky">
-          <div className="mag-wrap mag-split">
+          <div className="mag-wrap mag-text-feature">
             <div><SectionHeading eyebrow="MOVIMENTI" title="Segui i movimenti, non soltanto la situazione attuale." body={<><p>La sezione Transazioni permette di affiancare alla vista del magazzino una lettura dei movimenti registrati.</p><p>Questo aiuta a mantenere maggiore continuità tra ciò che entra, ciò che viene gestito e la situazione corrente del magazzino.</p></>} /></div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — TRANSAZIONI MAGAZZINO]" />
           </div>
         </section>
 
@@ -157,9 +154,8 @@ export function MagazzinoProductPage() {
         </section>
 
         <section className="mag-section">
-          <div className="mag-wrap mag-split reverse">
+          <div className="mag-wrap mag-text-feature">
             <div><SectionHeading eyebrow="DOCUMENTI LOGISTICI" title="Anche lo storico rimane accessibile." body={<p>Totalone mantiene accesso alle informazioni e ai documenti collegati alle attività di magazzino, evitando che lo storico operativo venga disperso.</p>} /><TagList items={["Archivio", "Storico DDT", "Storico distinte"]} /></div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — ARCHIVIO / STORICO DDT / STORICO DISTINTE]" />
           </div>
         </section>
 

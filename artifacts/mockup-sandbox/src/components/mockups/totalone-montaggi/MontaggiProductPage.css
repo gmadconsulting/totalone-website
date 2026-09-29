@@ -1,4 +1,5 @@
 .montaggi-page{--m-ink:#102744;--m-muted:#557090;--m-blue:#0b55c6;--m-deep:#082c68;--m-sky:#eaf4ff;--m-line:#cfe1f4;--m-coral:#f36b4d;--m-warm:#fffaf7;overflow:hidden;background:#fbfdff;color:var(--m-ink);font-family:"DM Sans",ui-sans-serif,system-ui,sans-serif}
+.montaggi-text-feature{max-width:920px}
 .montaggi-page *,.montaggi-page *:before,.montaggi-page *:after{box-sizing:border-box}
 .montaggi-page a{color:inherit;text-decoration:none}
 .montaggi-wrap{width:min(1240px,calc(100% - 40px));margin:0 auto}

@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
-import { ArrowDown, ArrowLeft, ArrowRight, Check, ChevronDown, Send, X } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight, Check, Send, X } from "lucide-react";
 
 const benefits = [
   ["Sai a che punto è ogni trattativa", "Ogni opportunità mantiene il proprio stato e il proprio contesto commerciale."],
@@ -171,9 +171,8 @@ export function GestioneTrattative() {
 
       <section className="bg-[#fbfdff] py-24 sm:py-32" id="panoramica">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-10">
-          <div className="grid gap-12 lg:grid-cols-[.72fr_1.28fr] lg:items-center lg:gap-24">
+          <div className="mx-auto max-w-[900px]">
             <div><Eyebrow>PANORAMICA COMMERCIALE</Eyebrow><h2 className="mt-6 max-w-xl text-5xl font-bold leading-[.95] tracking-[-0.065em] sm:text-7xl">Tutte le trattative. Una sola vista.</h2><div className="mt-6 max-w-lg text-base leading-7 text-[#557090]"><p>Visualizza le opportunità commerciali dello showroom in un unico ambiente e passa rapidamente dalla visione generale al dettaglio della singola trattativa.</p><p className="mt-5">L’obiettivo non è soltanto sapere quanti clienti stai seguendo, ma capire a che punto si trova ogni opportunità.</p></div></div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — ELENCO TRATTATIVE]" caption="Una visione condivisa delle opportunità commerciali dello showroom." />
           </div>
         </div>
       </section>
@@ -198,9 +197,8 @@ export function GestioneTrattative() {
 
       <section className="bg-[#fffaf7] py-24 sm:py-32">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-10">
-          <div className="grid gap-12 lg:grid-cols-[.72fr_1.28fr] lg:items-center lg:gap-24">
+          <div className="mx-auto max-w-[900px]">
             <div><Eyebrow>VALORE COMMERCIALE</Eyebrow><h2 className="mt-6 max-w-xl text-5xl font-bold leading-[.95] tracking-[-0.065em] sm:text-7xl">Non tutte le trattative pesano allo stesso modo.</h2><p className="mt-7 max-w-lg text-base leading-7 text-[#557090]">Sapere quante opportunità sono aperte è utile. Sapere quale valore commerciale rappresentano rende la lettura molto più significativa.</p><p className="mt-6 max-w-lg text-base leading-7 text-[#557090]">Totalone mantiene il valore della trattativa collegato alla relativa opportunità, aiutando il team a leggere il lavoro commerciale in modo più strutturato.</p><p className="mt-8 text-2xl font-bold leading-tight tracking-[-0.04em] text-[#c34d35]">Dai un valore alle opportunità, non soltanto un nome.</p></div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — VALORI DELLE TRATTATIVE]" caption="Placeholder per la schermata reale dei valori delle opportunità." />
           </div>
         </div>
       </section>
@@ -242,18 +240,16 @@ export function GestioneTrattative() {
 
       <section className="bg-[#fbfdff] py-24 sm:py-32">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-10">
-          <div className="grid gap-12 lg:grid-cols-[.72fr_1.28fr] lg:items-center lg:gap-24">
+          <div className="mx-auto max-w-[900px]">
             <div><Eyebrow>TROVA SUBITO QUELLO CHE CERCHI</Eyebrow><h2 className="mt-6 max-w-xl text-5xl font-bold leading-[.95] tracking-[-0.065em] sm:text-6xl">Dal quadro generale alla singola opportunità.</h2><p className="mt-7 max-w-lg text-base leading-7 text-[#557090]">Quando aumentano clienti e trattative, avere una vista ordinata diventa essenziale. Totalone permette di organizzare il lavoro commerciale e concentrarsi sulle opportunità rilevanti per il momento.</p></div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — FILTRI GESTIONE TRATTATIVE]" caption="Placeholder per la schermata reale dei filtri e dell’organizzazione delle opportunità." />
           </div>
         </div>
       </section>
 
       <section className="bg-[#eaf4ff] py-24 sm:py-32">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-10">
-          <div className="grid gap-12 lg:grid-cols-[.78fr_1.22fr] lg:items-center lg:gap-24">
+          <div className="mx-auto max-w-[900px]">
             <div><Eyebrow>PER CHI GESTISCE PIÙ SEDI</Eyebrow><h2 className="mt-6 max-w-xl text-5xl font-bold leading-[.95] tracking-[-0.065em] sm:text-6xl">Una pipeline commerciale condivisa, anche quando l’azienda cresce.</h2><p className="mt-7 max-w-lg text-base leading-7 text-[#557090]">Quando aumentano showroom e venditori, aumenta anche la complessità commerciale. Totalone permette di mantenere le trattative nello stesso sistema e di leggere il lavoro commerciale dalla prospettiva più utile alla propria organizzazione.</p></div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — TRATTATIVE PER SHOWROOM / VENDITORE]" caption="Placeholder opzionale per la vista reale organizzata per showroom o venditore." />
           </div>
         </div>
       </section>

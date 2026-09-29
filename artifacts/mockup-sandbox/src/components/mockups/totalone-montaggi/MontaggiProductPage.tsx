@@ -178,13 +178,12 @@ export function MontaggiProductPage() {
         </section>
 
         <section className="montaggi-section">
-          <div className="montaggi-wrap montaggi-split">
+          <div className="montaggi-wrap montaggi-text-feature">
             <div>
               <SectionHeading eyebrow="STORICO" title="I rapportini non spariscono in una cartella." body={<p>Consulta i rapportini già creati e recupera rapidamente le informazioni relative agli interventi precedenti.</p>} />
               <p className="montaggi-copy montaggi-search-copy">La ricerca permette di trovare un rapportino utilizzando informazioni come cliente, autore o note, mentre il filtro temporale aiuta a restringere il periodo da analizzare.</p>
               <PillList items={["Ricerca", "Cliente", "Autore", "Note", "Periodo"]} />
             </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — STORICO RAPPORTINI]" caption="Lo storico resta consultabile quando serve." className="montaggi-shot-medium" />
           </div>
         </section>
 
