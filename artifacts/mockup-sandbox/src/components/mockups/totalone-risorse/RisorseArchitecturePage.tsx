@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, Boxes, ChevronRight, FileText, Layers3 } from "lucide-react";
+import { ArrowRight, BookOpen, Boxes, Layers3 } from "lucide-react";
 import { MarketingShell } from "../totalone-site-architecture/_shared/MarketingShell";
 import "./RisorseArchitecturePage.css";
 
@@ -83,26 +83,6 @@ export function RisorseArchitecturePage() {
           </div>
         </section>
 
-        <section className="to-section sky" aria-labelledby="topics-title">
-          <div className="to-wrap">
-            <div className="ra-section-head">
-              <div><span className="ra-kicker">Esplora per argomento</span><h2 id="topics-title" className="ra-display">Sette cluster. Un solo contesto.</h2></div>
-              <p>Ogni cluster parte da un problema di lavoro riconoscibile, raccoglie articoli specifici e porta alla destinazione Totalone pertinente.</p>
-            </div>
-            <div className="ra-topic-layout">
-              <nav className="ra-topic-list" aria-label="Cluster SEO del blog">
-                {topicClusters.map((cluster, index) => <a className="ra-topic-row" href={appPath(cluster.slug)} key={cluster.slug}><span className="ra-topic-number">0{index + 1}</span><span><strong>{cluster.label}</strong><small>{cluster.h1}</small></span><ChevronRight size={16} /></a>)}
-              </nav>
-              <aside className="ra-topic-note">
-                <span className="ra-kicker">Regola di collegamento</span>
-                <h3>Imparare, capire, scegliere.</h3>
-                <p>Il blog intercetta intenti informativi specifici. Le guide organizzano il processo. Le pagine prodotto restano il punto commerciale più forte.</p>
-                <div className="ra-note-lines"><span>1 guida pillar primaria per articolo</span><span>1 pagina prodotto contestuale</span><span>2–4 articoli laterali rilevanti</span><span>1 CTA verso la demo</span></div>
-              </aside>
-            </div>
-          </div>
-        </section>
-
         <section className="to-section" aria-labelledby="blog-title">
           <div className="to-wrap">
             <div className="ra-section-head">
@@ -120,19 +100,6 @@ export function RisorseArchitecturePage() {
                 <div className="ra-category-board-header"><h3>Navigazione per categoria</h3><span>7 destinazioni editoriali</span></div>
               <div className="ra-category-chips">{topicClusters.map((cluster) => <a className="ra-category-chip" href={appPath(cluster.slug)} key={cluster.slug}>{cluster.label}</a>)}</div>
             </div>
-          </div>
-        </section>
-
-        <section className="to-section" style={{ background: "#082c68" }} aria-labelledby="journey-title">
-          <div className="to-wrap">
-            <div className="ra-section-head">
-              <div><span className="ra-kicker" style={{ color: "#9fe0ff" }}>Sistema di linking interno</span><h2 id="journey-title" className="ra-display" style={{ color: "white" }}>Ogni contenuto apre il passo successivo.</h2></div>
-              <p style={{ color: "#cfe7ff" }}>Una gerarchia leggibile per utenti e motori di ricerca, senza collegamenti aggiunti solo per aumentare il conteggio.</p>
-            </div>
-            <div className="ra-journey" aria-label="Percorso di navigazione interno">
-              {[["01", "Articolo", "Intento informativo specifico"], ["02", "Categoria", "Il tema di riferimento"], ["03", "Guida", "Il processo completo"], ["04", "Pagina prodotto", "La destinazione commerciale"], ["05", "Demo", "Il prossimo passo"]].map(([number, title, body]) => <div className="ra-journey-step" key={title}><span>{number}</span><strong>{title}</strong><small>{body}</small></div>)}
-            </div>
-            <div className="to-flow" aria-label="Esempio di percorso interno"><a href={appPath("/blog/vendite-crm/gestire-ingressi-showroom")}><FileText size={13} /> gestire-ingressi-showroom</a><i>→</i><a href={appPath("/guide/crm-per-arredatori")}><BookOpen size={13} /> CRM per arredatori</a><i>→</i><a href={appPath("/crm-per-arredatori")}>CRM Totalone</a><i>→</i><a href={appPath("/demo/")}>Prenota una demo</a></div>
           </div>
         </section>
 
