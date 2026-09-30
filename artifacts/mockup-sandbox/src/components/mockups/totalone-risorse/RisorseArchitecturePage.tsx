@@ -1,5 +1,4 @@
-import { ArrowRight, BookOpen, Boxes, Check, ChevronRight, FileText, Layers3, Link2, ShieldCheck } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight, BookOpen, Boxes, ChevronRight, FileText, Layers3 } from "lucide-react";
 import { MarketingShell } from "../totalone-site-architecture/_shared/MarketingShell";
 import "./RisorseArchitecturePage.css";
 
@@ -24,11 +23,6 @@ type GuideDefinition = {
   link: string;
 };
 
-type ArticleRoute = {
-  cluster: string;
-  route: string;
-};
-
 const topicClusters: TopicCluster[] = [
   { label: "Gestione showroom", slug: "/blog/gestione-showroom", h1: "Gestione di negozi e showroom di arredamento", topics: ["organizzazione showroom", "digitalizzazione", "software gestionale", "processi", "multi-showroom", "organizzazione aziendale"], destination: "/perche-totalone", destinationLabel: "Perché Totalone" },
   { label: "Vendite & CRM", slug: "/blog/vendite-crm", h1: "Vendite e CRM per showroom di arredamento", topics: ["clienti", "lead", "ingressi showroom", "trattative", "pipeline", "follow-up", "conversione"], destination: "/crm-per-arredatori", destinationLabel: "CRM per arredatori" },
@@ -48,50 +42,7 @@ const guides: GuideDefinition[] = [
   { number: "06", slug: "/guide/digitalizzazione-negozio-arredamento", title: "Digitalizzazione negozio", h1: "Come digitalizzare un negozio di arredamento", chapters: ["Perché digitalizzare i processi", "Da Excel a un sistema condiviso", "Centralizzare clienti e contatti", "Digitalizzare i preventivi", "Gestire le commesse", "Misurare le performance"], cta: "Scopri perché Totalone →", link: "/perche-totalone" },
 ];
 
-const articleRoutes: ArticleRoute[] = [
-  ...["come-gestire-negozio-arredamento", "software-gestionale-negozio-arredamento", "come-digitalizzare-showroom-arredamento", "organizzare-processi-showroom", "gestire-piu-showroom", "excel-vs-gestionale-arredamento", "come-scegliere-gestionale-arredamento"].map((route) => ({ cluster: "Gestione showroom", route: `/blog/gestione-showroom/${route}` })),
-  ...["crm-per-negozio-arredamento", "gestire-clienti-showroom", "gestire-lead-arredamento", "gestire-ingressi-showroom", "pipeline-vendite-arredamento", "follow-up-clienti-arredamento", "aumentare-conversione-showroom"].map((route) => ({ cluster: "Vendite & CRM", route: `/blog/vendite-crm/${route}` })),
-  ...["come-fare-preventivo-arredamento", "software-preventivi-arredamento", "preventivo-cucina", "gestire-revisioni-preventivo", "come-presentare-preventivo-arredamento", "organizzare-preventivi-clienti", "da-preventivo-a-commessa"].map((route) => ({ cluster: "Preventivi", route: `/blog/preventivi/${route}` })),
-  ...["gestione-commesse-arredamento", "come-organizzare-commessa-arredamento", "controllo-commessa-arredamento", "monitorare-stato-commessa", "gestire-progetti-arredamento", "task-progetto-arredamento", "coordinare-team-progetto"].map((route) => ({ cluster: "Commesse & Progetti", route: `/blog/commesse-progetti/${route}` })),
-  ...["gestione-magazzino-arredamento", "software-magazzino-mobili", "gestire-arrivi-merce", "organizzare-consegne-arredamento", "tracciare-prodotti-commessa", "gestione-colli-arredamento"].map((route) => ({ cluster: "Logistica & Magazzino", route: `/blog/logistica-magazzino/${route}` })),
-  ...["gestione-montaggi-arredamento", "pianificare-montaggi-clienti", "rapportino-montaggio", "gestione-post-vendita-arredamento", "gestire-assistenza-clienti-arredamento", "gestire-prodotto-in-assistenza"].map((route) => ({ cluster: "Montaggi & Post-vendita", route: `/blog/montaggi-post-vendita/${route}` })),
-  ...["kpi-showroom-arredamento", "kpi-venditori-arredamento", "tasso-conversione-preventivi", "monitorare-performance-showroom", "confrontare-performance-showroom", "dashboard-negozio-arredamento"].map((route) => ({ cluster: "Controllo & Performance", route: `/blog/controllo-performance/${route}` })),
-];
-
-const articleTemplate = ["Definizione e contesto", "Come funziona il processo", "Applicazione a uno showroom di arredamento", "Problemi o errori comuni", "Come organizzare il processo", "Come il software può supportare il processo", "Domande frequenti", "CTA Totalone contestuale", "Guida correlata", "Articoli correlati", "Funzionalità Totalone correlata"];
-const guideTemplate = ["Breadcrumb", "H1", "Introduzione breve", "Indice dei contenuti", "Capitoli chiaramente separati", "Link interni contestuali", "CTA prodotto Totalone occasionale", "Articoli correlati", "Moduli Totalone correlati", "CTA finale"];
-
-const totaloneRisorseContentModel = {
-  articles: {
-    fields: ["slug", "title", "seoTitle", "metaDescription", "excerpt", "category", "publishDate", "updatedDate", "author", "featured", "content", "relatedArticles", "relatedGuide", "relatedProduct", "canonical"],
-    routes: articleRoutes,
-  },
-  guides: {
-    fields: ["slug", "title", "seoTitle", "metaDescription", "excerpt", "chapters", "relatedArticles", "relatedProducts", "updatedDate", "canonical"],
-    routes: guides.map((guide) => guide.slug),
-  },
-  linking: ["article", "category", "guide", "product page", "demo"],
-} as const;
-
-function RouteDirectory() {
-  const clusterRoutes = topicClusters.map((cluster) => ({ cluster: cluster.label, routes: articleRoutes.filter((article) => article.cluster === cluster.label).map((article) => article.route) }));
-  return (
-    <div className="ra-directory" aria-label="Directory delle route articolo">
-      {clusterRoutes.map((group, index) => (
-        <details key={group.cluster} open={index === 0}>
-          <summary>{group.cluster}<ChevronRight size={16} /></summary>
-          <div className="ra-route-list">
-            {group.routes.map((route) => <span className="ra-route-item" key={route}>{route}</span>)}
-          </div>
-        </details>
-      ))}
-    </div>
-  );
-}
-
 export function RisorseArchitecturePage() {
-  const [template, setTemplate] = useState<"article" | "guide">("article");
-  const activeOutline = template === "article" ? articleTemplate : guideTemplate;
   return (
     <MarketingShell active="Risorse" eyebrow="RISORSE · ARCHITETTURA EDITORIALE" title="Risorse per gestire meglio il tuo showroom." description="Guide, approfondimenti e risorse per organizzare vendite, preventivi, commesse, logistica e operatività di negozi e showroom di arredamento.">
       <main className="risorse-architecture">
@@ -194,57 +145,6 @@ export function RisorseArchitecturePage() {
             <div className="ra-guide-grid">
               {guides.map((guide) => <article className="ra-guide-card" key={guide.slug}><span className="ra-guide-index">{guide.number}</span><div><h3>{guide.title}</h3><code className="ra-route">{guide.slug}</code><div className="ra-chapter-preview">{guide.chapters.slice(0, 4).map((chapter) => <span key={chapter}>{chapter}</span>)}</div><a className="ra-guide-cta" href={appPath(guide.link)}>{guide.cta} <ArrowRight size={14} /></a></div></article>)}
             </div>
-          </div>
-        </section>
-
-        <section className="to-section warm" aria-labelledby="templates-title">
-          <div className="to-wrap">
-            <div className="ra-section-head">
-              <div><span className="ra-kicker">Template riutilizzabili</span><h2 id="templates-title" className="ra-display">La struttura cambia il meno possibile. Il contenuto resta specifico.</h2></div>
-              <p>Una base semantica condivisa per aggiungere articoli e guide senza creare una nuova pagina ogni volta.</p>
-            </div>
-            <div className="ra-template-layout">
-              <div className="ra-template-tabs" role="tablist" aria-label="Seleziona template">
-                <button className="ra-template-tab" role="tab" aria-selected={template === "article"} onClick={() => setTemplate("article")}>Struttura articolo <ChevronRight size={15} /></button>
-                <button className="ra-template-tab" role="tab" aria-selected={template === "guide"} onClick={() => setTemplate("guide")}>Struttura guida <ChevronRight size={15} /></button>
-              </div>
-              <div className="ra-template-panel" role="tabpanel">
-                <div className="ra-template-panel-head"><div><span className="ra-kicker">{template === "article" ? "Struttura SEO per articolo" : "Struttura per guida"}</span><h3>{template === "article" ? "Un articolo orientato all’intento." : "Una guida con profondità editoriale."}</h3></div><p>{template === "article" ? "Le intestazioni esatte cambiano secondo il tema: il template definisce la gerarchia, non una copia identica." : "Desktop: contenuto principale a sinistra e indice fisso a destra. Mobile: indice collassabile sotto l’introduzione."}</p></div>
-                <div className="ra-outline">{activeOutline.map((item) => <div className="ra-outline-item" key={item}>{item}</div>)}</div>
-                <div className="ra-template-footer"><span>Breadcrumb semantico</span><span>H1 unico</span><span>CTA contestuale</span><span>Link interni rilevanti</span><span>FAQ solo se visibili</span></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="to-section" aria-labelledby="model-title">
-          <div className="to-wrap">
-            <div className="ra-model-layout">
-              <div className="ra-model-copy"><span className="ra-kicker">Modello contenuti e directory route</span><h2 id="model-title" className="ra-display">Il sistema è pronto per il prossimo contenuto.</h2><p>Ogni articolo e guida ha un modello dati definito, una route descrittiva e relazioni editoriali esplicite. I placeholder restano bozze: non entrano nella navigazione pubblica né nella sitemap.</p><div className="ra-publish-rules"><div className="ra-rule"><strong><Check size={13} style={{ verticalAlign: "middle", marginRight: 5 }} />Pubblica solo finito</strong><p>Niente pagine SEO vuote o sottili.</p></div><div className="ra-rule"><strong><ShieldCheck size={13} style={{ verticalAlign: "middle", marginRight: 5 }} />Intento distinto</strong><p>Blog informativo, guide di valutazione, prodotto commerciale.</p></div><div className="ra-rule"><strong><Link2 size={13} style={{ verticalAlign: "middle", marginRight: 5 }} />Collega con contesto</strong><p>Link laterali solo quando aiutano davvero.</p></div></div></div>
-              <div>
-                <div className="ra-code-board" aria-label="Esempio di content model">
-                  <div className="ra-code-head"><i /><i /><i /> modello-contenuti.ts</div>
-                  <pre><span className="ra-code-key">type</span> Article = {"{"}
-{"\n  "}slug: <span className="ra-code-string">string</span>;
-{"\n  "}title: <span className="ra-code-string">string</span>;
-{"\n  "}seoTitle: <span className="ra-code-string">string</span>;
-{"\n  "}metaDescription: <span className="ra-code-string">string</span>;
-{"\n  "}category: <span className="ra-code-string">string</span>;
-{"\n  "}relatedGuide: <span className="ra-code-string">string</span>;
-{"\n  "}relatedProduct: <span className="ra-code-string">string</span>;
-{"\n  "}canonical: <span className="ra-code-string">string</span>;
-{"\n"}{"}"}{"\n\n"}<span className="ra-code-key">type</span> Guide = {"{"}
-{"\n  "}slug: <span className="ra-code-string">string</span>;
-{"\n  "}title: <span className="ra-code-string">string</span>;
-{"\n  "}chapters: <span className="ra-code-string">Chapter[]</span>;
-{"\n  "}relatedArticles: <span className="ra-code-string">string[]</span>;
-{"\n  "}relatedProducts: <span className="ra-code-string">string[]</span>;
-{"\n"}{"}"}</pre>
-                </div>
-              </div>
-            </div>
-            <div className="ra-seo-preview"><span className="ra-schema-label">Anteprima metadati · /guide/crm-per-arredatori</span><span className="ra-url">totalone.it/guide/crm-per-arredatori</span><h3>CRM per arredatori: guida alla gestione di clienti e trattative</h3><p>Meta description, canonical, Open Graph e BreadcrumbList verranno valorizzati quando la guida sarà pubblicata con contenuto completo. FAQPage solo dove esiste una FAQ visibile.</p></div>
-            <RouteDirectory />
           </div>
         </section>
 
