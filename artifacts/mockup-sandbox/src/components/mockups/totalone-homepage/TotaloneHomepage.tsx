@@ -341,7 +341,7 @@ export function TotaloneHomepage() {
 
   return (
     <main id="top" className="min-h-[100dvh] overflow-hidden bg-[#fbfdff] text-[#102744]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-      <header className="absolute left-0 right-0 top-0 z-40">
+      <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[#082c68]/95 shadow-[0_6px_24px_rgba(4,35,82,.16)] backdrop-blur-sm">
         <div className="mx-auto flex max-w-[1240px] items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
           <Logo />
           <nav className="hidden items-center gap-4 md:flex lg:gap-7">
