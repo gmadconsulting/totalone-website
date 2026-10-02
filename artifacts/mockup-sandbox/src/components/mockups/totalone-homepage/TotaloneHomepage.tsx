@@ -106,16 +106,6 @@ const pageDirectoryGroups = [
       ["Gestione del post-vendita", previewPage("totalone-blog/GestionePostVenditaArredamentoArticle")],
     ],
   },
-  {
-    label: "MAPPA E STRUTTURA",
-    description: "Tutti i percorsi, senza pagine isolate.",
-    links: [
-      ["Hub delle risorse", previewPage("totalone-site-architecture/ResourcesHub")],
-      ["Mappa del sito", previewPage("totalone-site-architecture/Sitemap")],
-      ["Architettura editoriale", previewPage("totalone-risorse/RisorseArchitecturePage")],
-      ["Modello pagina prodotto", previewPage("totalone-site-architecture/ProductTemplate")],
-    ],
-  },
 ] as const;
 
 type Area = {
