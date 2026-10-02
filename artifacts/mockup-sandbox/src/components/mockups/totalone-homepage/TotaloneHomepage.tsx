@@ -339,80 +339,9 @@ export function TotaloneHomepage() {
     return () => window.cancelAnimationFrame(frame);
   }, []);
 
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    if (!("IntersectionObserver" in window)) return;
-
-    const homepage = document.getElementById("top");
-    if (!homepage) return;
-
-    const sections = Array.from(
-      homepage.querySelectorAll<HTMLElement>(":scope > section, :scope > footer"),
-    ).slice(1);
-    const targets = sections.flatMap((section) => {
-      const content = section.firstElementChild;
-      if (!(content instanceof HTMLElement)) return [];
-
-      return Array.from(content.children)
-        .filter((child): child is HTMLElement => child instanceof HTMLElement)
-        .map((element, index) => ({
-          element,
-          delay: Math.min(index * 80, 240),
-        }));
-    });
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const element = entry.target as HTMLElement;
-          element.dataset.scrollReveal = "visible";
-          observer.unobserve(element);
-        });
-      },
-      { threshold: 0.08, rootMargin: "0px 0px -8% 0px" },
-    );
-
-    targets.forEach(({ element, delay }) => {
-      element.dataset.scrollReveal = "pending";
-      element.style.setProperty("--scroll-reveal-delay", `${delay}ms`);
-      observer.observe(element);
-    });
-
-    return () => {
-      observer.disconnect();
-      targets.forEach(({ element }) => {
-        delete element.dataset.scrollReveal;
-        element.style.removeProperty("--scroll-reveal-delay");
-      });
-    };
-  }, []);
-
   return (
     <main id="top" className="min-h-[100dvh] overflow-hidden bg-[#fbfdff] text-[#102744]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-      <style>{`
-        html { scroll-behavior: smooth; }
-        #top [data-scroll-reveal="pending"] {
-          opacity: 0;
-          transform: translate3d(0, 22px, 0);
-          transition:
-            opacity 680ms cubic-bezier(.2,.7,.25,1),
-            transform 680ms cubic-bezier(.2,.7,.25,1);
-          transition-delay: var(--scroll-reveal-delay, 0ms);
-        }
-        #top [data-scroll-reveal="visible"] {
-          opacity: 1;
-          transform: translate3d(0, 0, 0);
-        }
-        @media (prefers-reduced-motion: reduce) {
-          html { scroll-behavior: auto !important; }
-          #top [data-scroll-reveal] {
-            opacity: 1;
-            transform: none;
-            transition: none;
-          }
-        }
-      `}</style>
+      <style>{`html { scroll-behavior: smooth; }`}</style>
       <header className="absolute left-0 right-0 top-0 z-40">
         <div className="mx-auto flex max-w-[1240px] items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
           <Logo />
