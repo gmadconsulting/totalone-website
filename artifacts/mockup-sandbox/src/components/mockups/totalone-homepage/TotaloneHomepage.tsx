@@ -322,7 +322,7 @@ export function TotaloneHomepage() {
   const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
     if (!href.startsWith("#")) return;
     event.preventDefault();
-    document.getElementById(href.slice(1))?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document.getElementById(href.slice(1))?.scrollIntoView({ behavior: "instant", block: "start" });
     window.history.replaceState(null, "", href);
   };
   useEffect(() => {
@@ -341,7 +341,6 @@ export function TotaloneHomepage() {
 
   return (
     <main id="top" className="min-h-[100dvh] overflow-hidden bg-[#fbfdff] text-[#102744]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-      <style>{`html { scroll-behavior: smooth; }`}</style>
       <header className="absolute left-0 right-0 top-0 z-40">
         <div className="mx-auto flex max-w-[1240px] items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
           <Logo />
