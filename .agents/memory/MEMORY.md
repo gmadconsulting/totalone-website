@@ -1,1 +1,1 @@
-- [Git provider access](git-provider-access.md) — Git transport may authenticate even when GitHub CLI and generic connector API access are unavailable.
+- [Git provider access](git-provider-access.md) — public Git reads do not prove push authentication; an active OAuth connection can still lack usable workspace credentials.
