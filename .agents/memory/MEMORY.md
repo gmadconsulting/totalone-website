@@ -1,1 +1,1 @@
-- [Git provider access](git-provider-access.md) — an active GitHub connection does not guarantee usable CLI or API access in the current session.
+- [Git provider access](git-provider-access.md) — Git transport may authenticate even when GitHub CLI and generic connector API access are unavailable.
