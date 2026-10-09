@@ -1,0 +1,1 @@
+- [Git provider access](git-provider-access.md) — an active GitHub connection does not guarantee usable CLI or API access in the current session.
