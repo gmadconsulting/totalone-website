@@ -1,0 +1,601 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm --filter @workspace/mockup-sandbox run build:vercel",
+  "outputDirectory": "artifacts/mockup-sandbox/dist",
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/gestionale-arredamento",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/login",
+      "destination": "https://app.thetotalone.com",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/crm-per-arredatori",
+      "destination": "/crm-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/crm-per-arredatori/ingressi-showroom",
+      "destination": "/blog/vendite-crm/gestire-ingressi-showroom",
+      "permanent": true
+    },
+    {
+      "source": "/preventivi-arredatori",
+      "destination": "/software-preventivi-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/strumenti/roi",
+      "destination": "/prezzi#calcolatore",
+      "permanent": true
+    },
+    {
+      "source": "/risorse",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/guide",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/guide/crm-per-arredatori",
+      "destination": "/blog/vendite-crm/crm-negozio-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/guide/digitalizzazione-negozio-arredamento",
+      "destination": "/blog/gestione-showroom/software-gestionale-negozio-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/guide/gestione-showroom-arredamento",
+      "destination": "/blog/gestione-showroom/software-gestionale-negozio-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/guide/gestione-commesse-arredamento",
+      "destination": "/blog/commesse-progetti/gestione-commesse-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/guide/gestione-magazzino-arredamento",
+      "destination": "/blog/logistica-magazzino/gestione-magazzino-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/guide/preventivi-arredamento",
+      "destination": "/blog/preventivi/software-preventivi-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/guide/:path*",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/controllo-performance",
+      "destination": "/controllo-performance-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/soluzioni",
+      "destination": "/#per-chi",
+      "permanent": true
+    },
+    {
+      "source": "/soluzioni/:path*",
+      "destination": "/#per-chi",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-homepage/TotaloneHomepage",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-homepage/TotaloneHomepage",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-crm/CrmProductPage",
+      "destination": "/crm-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-crm/CrmProductPage",
+      "destination": "/crm-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-trattative/GestioneTrattative",
+      "destination": "/gestione-trattative-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-trattative/GestioneTrattative",
+      "destination": "/gestione-trattative-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-preventivi/PreventiviProductPage",
+      "destination": "/software-preventivi-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-preventivi/PreventiviProductPage",
+      "destination": "/software-preventivi-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-progetti/ProgettiProductPage",
+      "destination": "/gestione-progetti-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-progetti/ProgettiProductPage",
+      "destination": "/gestione-progetti-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-commesse/CommesseProductPage",
+      "destination": "/gestione-commesse-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-commesse/CommesseProductPage",
+      "destination": "/gestione-commesse-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-commesse-margini/CommesseMarginiFocus",
+      "destination": "/gestione-commesse-arredamento/margini",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-commesse-margini/CommesseMarginiFocus",
+      "destination": "/gestione-commesse-arredamento/margini",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-magazzino/MagazzinoProductPage",
+      "destination": "/gestione-magazzino-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-magazzino/MagazzinoProductPage",
+      "destination": "/gestione-magazzino-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-montaggi/MontaggiProductPage",
+      "destination": "/gestione-montaggi-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-montaggi/MontaggiProductPage",
+      "destination": "/gestione-montaggi-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-assistenza/AssistenzaPostVenditaProductPage",
+      "destination": "/post-vendita-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-assistenza/AssistenzaPostVenditaProductPage",
+      "destination": "/post-vendita-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-controllo/ControlloPerformanceProductPage",
+      "destination": "/controllo-performance-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-controllo/ControlloPerformanceProductPage",
+      "destination": "/controllo-performance-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-perche/PercheTotalonePage",
+      "destination": "/perche-totalone",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-perche/PercheTotalonePage",
+      "destination": "/perche-totalone",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-prezzi/TotalonePrezzi",
+      "destination": "/prezzi",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-prezzi/TotalonePrezzi",
+      "destination": "/prezzi",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-site-architecture/ResourcesHub",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-site-architecture/ResourcesHub",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-legal/PrivacyPolicyPage",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-legal/PrivacyPolicyPage",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-site-architecture/CustomerAccessPage",
+      "destination": "https://app.thetotalone.com",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-site-architecture/CustomerAccessPage",
+      "destination": "https://app.thetotalone.com",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-site-architecture/SolutionsTemplate",
+      "destination": "/#per-chi",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-site-architecture/SolutionsTemplate",
+      "destination": "/#per-chi",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-site-architecture/Sitemap",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-site-architecture/Sitemap",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-site-architecture/ProductTemplate",
+      "destination": "/gestione-commesse-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-site-architecture/ProductTemplate",
+      "destination": "/gestione-commesse-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-risorse/RisorseArchitecturePage",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-risorse/RisorseArchitecturePage",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-blog/SoftwareGestionaleNegozioArredamentoArticle",
+      "destination": "/blog/gestione-showroom/software-gestionale-negozio-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-blog/SoftwareGestionaleNegozioArredamentoArticle",
+      "destination": "/blog/gestione-showroom/software-gestionale-negozio-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-blog/GestionalePerArredatoriArticle",
+      "destination": "/blog/gestione-showroom/gestionale-per-arredatori",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-blog/GestionalePerArredatoriArticle",
+      "destination": "/blog/gestione-showroom/gestionale-per-arredatori",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-blog/ExcelVsGestionaleArredamentoArticle",
+      "destination": "/blog/gestione-showroom/excel-vs-gestionale-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-blog/ExcelVsGestionaleArredamentoArticle",
+      "destination": "/blog/gestione-showroom/excel-vs-gestionale-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-blog/SoftwarePreventiviArredamentoArticle",
+      "destination": "/blog/preventivi/software-preventivi-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-blog/SoftwarePreventiviArredamentoArticle",
+      "destination": "/blog/preventivi/software-preventivi-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-blog/GestioneCommesseArredamentoArticle",
+      "destination": "/blog/commesse-progetti/gestione-commesse-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-blog/GestioneCommesseArredamentoArticle",
+      "destination": "/blog/commesse-progetti/gestione-commesse-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-blog/CrmNegozioArredamentoArticle",
+      "destination": "/blog/vendite-crm/crm-negozio-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-blog/CrmNegozioArredamentoArticle",
+      "destination": "/blog/vendite-crm/crm-negozio-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-blog/GestireIngressiShowroomArticle",
+      "destination": "/blog/vendite-crm/gestire-ingressi-showroom",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-blog/GestireIngressiShowroomArticle",
+      "destination": "/blog/vendite-crm/gestire-ingressi-showroom",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-blog/GestioneMagazzinoArredamentoArticle",
+      "destination": "/blog/logistica-magazzino/gestione-magazzino-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-blog/GestioneMagazzinoArredamentoArticle",
+      "destination": "/blog/logistica-magazzino/gestione-magazzino-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-blog/GestioneMontaggiArredamentoArticle",
+      "destination": "/blog/montaggi-post-vendita/gestione-montaggi-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-blog/GestioneMontaggiArredamentoArticle",
+      "destination": "/blog/montaggi-post-vendita/gestione-montaggi-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/__mockup/preview/totalone-blog/GestionePostVenditaArredamentoArticle",
+      "destination": "/blog/montaggi-post-vendita/gestione-post-vendita-arredamento",
+      "permanent": true
+    },
+    {
+      "source": "/preview/totalone-blog/GestionePostVenditaArredamentoArticle",
+      "destination": "/blog/montaggi-post-vendita/gestione-post-vendita-arredamento",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/crm-arredamento",
+      "destination": "/crm-arredamento/index.html"
+    },
+    {
+      "source": "/gestione-trattative-arredamento",
+      "destination": "/gestione-trattative-arredamento/index.html"
+    },
+    {
+      "source": "/software-preventivi-arredamento",
+      "destination": "/software-preventivi-arredamento/index.html"
+    },
+    {
+      "source": "/gestione-progetti-arredamento",
+      "destination": "/gestione-progetti-arredamento/index.html"
+    },
+    {
+      "source": "/gestione-commesse-arredamento",
+      "destination": "/gestione-commesse-arredamento/index.html"
+    },
+    {
+      "source": "/gestione-commesse-arredamento/margini",
+      "destination": "/gestione-commesse-arredamento/margini/index.html"
+    },
+    {
+      "source": "/gestione-magazzino-arredamento",
+      "destination": "/gestione-magazzino-arredamento/index.html"
+    },
+    {
+      "source": "/gestione-montaggi-arredamento",
+      "destination": "/gestione-montaggi-arredamento/index.html"
+    },
+    {
+      "source": "/post-vendita-arredamento",
+      "destination": "/post-vendita-arredamento/index.html"
+    },
+    {
+      "source": "/controllo-performance-arredamento",
+      "destination": "/controllo-performance-arredamento/index.html"
+    },
+    {
+      "source": "/perche-totalone",
+      "destination": "/perche-totalone/index.html"
+    },
+    {
+      "source": "/prezzi",
+      "destination": "/prezzi/index.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy/index.html"
+    },
+    {
+      "source": "/demo",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/gestione-showroom",
+      "destination": "/blog/gestione-showroom/index.html"
+    },
+    {
+      "source": "/blog/vendite-crm",
+      "destination": "/blog/vendite-crm/index.html"
+    },
+    {
+      "source": "/blog/preventivi",
+      "destination": "/blog/preventivi/index.html"
+    },
+    {
+      "source": "/blog/commesse-progetti",
+      "destination": "/blog/commesse-progetti/index.html"
+    },
+    {
+      "source": "/blog/logistica-magazzino",
+      "destination": "/blog/logistica-magazzino/index.html"
+    },
+    {
+      "source": "/blog/montaggi-post-vendita",
+      "destination": "/blog/montaggi-post-vendita/index.html"
+    },
+    {
+      "source": "/blog/gestione-showroom/software-gestionale-negozio-arredamento",
+      "destination": "/blog/gestione-showroom/software-gestionale-negozio-arredamento/index.html"
+    },
+    {
+      "source": "/blog/gestione-showroom/gestionale-per-arredatori",
+      "destination": "/blog/gestione-showroom/gestionale-per-arredatori/index.html"
+    },
+    {
+      "source": "/blog/gestione-showroom/excel-vs-gestionale-arredamento",
+      "destination": "/blog/gestione-showroom/excel-vs-gestionale-arredamento/index.html"
+    },
+    {
+      "source": "/blog/preventivi/software-preventivi-arredamento",
+      "destination": "/blog/preventivi/software-preventivi-arredamento/index.html"
+    },
+    {
+      "source": "/blog/commesse-progetti/gestione-commesse-arredamento",
+      "destination": "/blog/commesse-progetti/gestione-commesse-arredamento/index.html"
+    },
+    {
+      "source": "/blog/vendite-crm/crm-negozio-arredamento",
+      "destination": "/blog/vendite-crm/crm-negozio-arredamento/index.html"
+    },
+    {
+      "source": "/blog/vendite-crm/gestire-ingressi-showroom",
+      "destination": "/blog/vendite-crm/gestire-ingressi-showroom/index.html"
+    },
+    {
+      "source": "/blog/logistica-magazzino/gestione-magazzino-arredamento",
+      "destination": "/blog/logistica-magazzino/gestione-magazzino-arredamento/index.html"
+    },
+    {
+      "source": "/blog/montaggi-post-vendita/gestione-montaggi-arredamento",
+      "destination": "/blog/montaggi-post-vendita/gestione-montaggi-arredamento/index.html"
+    },
+    {
+      "source": "/blog/montaggi-post-vendita/gestione-post-vendita-arredamento",
+      "destination": "/blog/montaggi-post-vendita/gestione-post-vendita-arredamento/index.html"
+    },
+    {
+      "source": "/blog/gestione-showroom/gestionale-mobilificio",
+      "destination": "/blog/gestione-showroom/gestionale-mobilificio/index.html"
+    },
+    {
+      "source": "/blog/preventivi/come-fare-preventivo-cucina",
+      "destination": "/blog/preventivi/come-fare-preventivo-cucina/index.html"
+    },
+    {
+      "source": "/blog/commesse-progetti/calcolare-margine-arredamento",
+      "destination": "/blog/commesse-progetti/calcolare-margine-arredamento/index.html"
+    },
+    {
+      "source": "/blog/commesse-progetti/acconti-caparra-saldo-mobili",
+      "destination": "/blog/commesse-progetti/acconti-caparra-saldo-mobili/index.html"
+    },
+    {
+      "source": "/blog/vendite-crm/showroom-architetti-interior-designer",
+      "destination": "/blog/vendite-crm/showroom-architetti-interior-designer/index.html"
+    },
+    {
+      "source": "/blog/vendite-crm/follow-up-clienti-showroom",
+      "destination": "/blog/vendite-crm/follow-up-clienti-showroom/index.html"
+    },
+    {
+      "source": "/blog/logistica-magazzino/ritardi-fornitori-consegne-mobili",
+      "destination": "/blog/logistica-magazzino/ritardi-fornitori-consegne-mobili/index.html"
+    },
+    {
+      "source": "/blog/gestione-showroom/kpi-negozio-arredamento",
+      "destination": "/blog/gestione-showroom/kpi-negozio-arredamento/index.html"
+    },
+    {
+      "source": "/blog/gestione-showroom/gestire-piu-showroom-arredamento",
+      "destination": "/blog/gestione-showroom/gestire-piu-showroom-arredamento/index.html"
+    },
+    {
+      "source": "/blog/montaggi-post-vendita/rapportino-montaggio-mobili",
+      "destination": "/blog/montaggi-post-vendita/rapportino-montaggio-mobili/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/demo",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/__mockup/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/preview/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
+  ]
+}
