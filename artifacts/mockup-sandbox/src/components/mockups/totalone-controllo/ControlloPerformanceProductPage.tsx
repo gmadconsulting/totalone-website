@@ -1,210 +1,362 @@
-import { useEffect, type ReactNode } from "react";
-import { ArrowDown, ArrowRight, Check, ChevronRight } from "lucide-react";
-import { MarketingShell } from "../totalone-site-architecture/_shared/MarketingShell";
-import "./ControlloPerformanceProductPage.css";
+import type { ReactNode } from "react";
+import { motion } from "framer-motion";
+import { ArrowDown, ArrowRight, Check } from "lucide-react";
+import { MarketingShell, openDemo } from "../totalone-site-architecture/_shared/MarketingShell";
+import { Reveal, Stagger, StaggerItem, WordReveal, tpEase } from "@/components/totalone/motion-kit";
+import { AppWindow } from "@/components/totalone/app-ui";
+import { PreventiviListScreen, VenditeScreen } from "@/components/totalone/app-screens";
+import { TrattativeKpiScreen } from "@/components/totalone/pages/trattative/TrattativeScreens";
+import { TasksDashboardScreen } from "@/components/totalone/pages/controllo/ControlloScreens";
+import { routes } from "@/components/totalone/site/siteRoutes";
+import { ProcessoStrip } from "@/components/totalone/site/ProcessoStrip";
+import { useSeo } from "@/components/totalone/site/useSeo";
 
-const preview = (path: string) => `/__mockup/preview/${path}`;
+const wrap = "mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10";
+const focusRing = "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1769d5]";
 
-const links = {
-  crm: preview("totalone-crm/CrmProductPage"),
-  trattative: preview("totalone-trattative/GestioneTrattative"),
-  preventivi: preview("totalone-preventivi/PreventiviProductPage"),
-  commesse: preview("totalone-commesse/CommesseProductPage"),
-  magazzino: preview("totalone-magazzino/MagazzinoProductPage"),
-  montaggi: preview("totalone-montaggi/MontaggiProductPage"),
-  assistenza: preview("totalone-assistenza/AssistenzaPostVenditaProductPage"),
-  perche: preview("totalone-perche/PercheTotalonePage"),
-  prezzi: "/prezzi/",
+/* ------------------------------------------------------------------ */
+/* Primitive                                                           */
+/* ------------------------------------------------------------------ */
+
+function DemoButton({ children, light = false }: { children: ReactNode; light?: boolean }) {
+  return (
+    <motion.button
+      type="button"
+      onClick={openDemo}
+      whileHover={{ y: -2 }}
+      whileTap={{ scale: 0.97 }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+      className={`group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[14px] font-bold transition-colors ${
+        light
+          ? "bg-white text-[#0b4fbd] shadow-[0_10px_28px_rgba(4,43,102,.22)] hover:bg-[#e9f3ff] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          : "bg-[#cf4a2b] text-white shadow-[0_10px_24px_rgba(173,57,35,.22)] hover:bg-[#b93f23] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#cf4a2b]"
+      }`}
+    >
+      {children}
+      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+    </motion.button>
+  );
+}
+
+function Tag({ children, tone = "blue" }: { children: ReactNode; tone?: "blue" | "coral" | "amber" | "dark" }) {
+  const tones = {
+    blue: "bg-[#dcecff] text-[#0b55c6]",
+    coral: "bg-[#ffdcd2] text-[#a33a22]",
+    amber: "bg-[#fff2dd] text-[#8a4f0f]",
+    dark: "bg-[#2b75cb] text-[#e8f5ff]",
+  };
+  return (
+    <Reveal y={10}>
+      <span className={`inline-flex rounded-full px-3 py-1.5 text-xs font-bold uppercase ${tones[tone]}`}>{children}</span>
+    </Reveal>
+  );
+}
+
+function Heading({ tag, tone, title, body }: { tag: string; tone?: "blue" | "coral" | "amber" | "dark"; title: string; body?: ReactNode }) {
+  return (
+    <div className="max-w-2xl">
+      <Tag tone={tone}>{tag}</Tag>
+      <h2 className="mt-6 text-[2.4rem] font-bold leading-[.95] tracking-[-0.065em] text-[#102744] sm:text-6xl lg:text-[3.4rem]">
+        <WordReveal text={title} />
+      </h2>
+      {body && (
+        <Reveal delay={0.1}>
+          <div className="mt-6 max-w-xl space-y-4 text-base leading-7 text-[#557090]">{body}</div>
+        </Reveal>
+      )}
+    </div>
+  );
+}
+
+function Checks({ items }: { items: string[] }) {
+  return (
+    <Stagger className="mt-8 grid gap-x-6 gap-y-3 sm:grid-cols-2" gap={0.05}>
+      {items.map((item) => (
+        <StaggerItem key={item}>
+          <span className="flex items-start gap-2.5 text-sm font-semibold text-[#245b96]">
+            <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#dcecff] text-[#1769d5]"><Check className="h-3 w-3" /></span>
+            {item}
+          </span>
+        </StaggerItem>
+      ))}
+    </Stagger>
+  );
+}
+
+const panelTones = {
+  blue: "bg-[radial-gradient(circle_at_20%_10%,#ffffff_0%,transparent_45%),linear-gradient(135deg,#dcecff,#c9e1ff)]",
+  coral: "bg-[radial-gradient(circle_at_80%_10%,#ffffff_0%,transparent_45%),linear-gradient(135deg,#ffe9e1,#ffd9cc)]",
+  amber: "bg-[radial-gradient(circle_at_20%_90%,#ffffff_0%,transparent_45%),linear-gradient(135deg,#fff2dd,#ffe4b8)]",
+  green: "bg-[radial-gradient(circle_at_80%_90%,#ffffff_0%,transparent_45%),linear-gradient(135deg,#e3f6ec,#cdeedd)]",
 };
 
-function DemoTrigger({ children, variant = "" }: { children: ReactNode; variant?: string }) {
-  const openDemo = () => document.querySelector<HTMLButtonElement>(".to-header-actions .to-button")?.click();
-  return <button className={`controllo-button ${variant}`} onClick={openDemo}>{children}<ArrowRight size={15} /></button>;
+/** Schermata reale del gestionale con didascalia: dove si trova e cosa mostra. */
+function AppShot({ active, title, children, tone = "blue", where, caption }: { active: string; title: string; children: ReactNode; tone?: keyof typeof panelTones; where: string; caption: string }) {
+  return (
+    <Reveal y={40} delay={0.08}>
+      <figure>
+        <div aria-hidden="true" className={`relative rounded-[36px] p-3 sm:p-5 ${panelTones[tone]}`}>
+          <AppWindow active={active} title={title} className="h-[400px] sm:h-[460px]">
+            {children}
+          </AppWindow>
+        </div>
+        <figcaption className="mt-4 text-[13px] leading-6 text-[#557090]">
+          <b className="font-semibold text-[#245b96]">{where}</b> · {caption}
+        </figcaption>
+      </figure>
+    </Reveal>
+  );
 }
 
-function Eyebrow({ children, tone = "" }: { children: ReactNode; tone?: string }) {
-  return <span className={`controllo-eyebrow ${tone}`}>{children}</span>;
-}
+/* ------------------------------------------------------------------ */
+/* 1 · HERO                                                            */
+/* ------------------------------------------------------------------ */
 
-function SectionHeading({ eyebrow, title, body }: { eyebrow: string; title: ReactNode; body?: ReactNode }) {
-  return <div className="controllo-heading"><Eyebrow>{eyebrow}</Eyebrow><h2>{title}</h2>{body && <div className="controllo-lead">{body}</div>}</div>;
-}
-
-function ScreenshotPlaceholder({ label, caption, className = "" }: { label: string; caption?: string; className?: string }) {
-  return <figure className={`controllo-shot ${className}`}><div className="controllo-shot-frame" role="img" aria-label={label}><div className="controllo-placeholder-copy"><span>{label}</span><small>Spazio riservato allo screenshot reale Totalone</small></div></div>{caption && <figcaption>{caption}</figcaption>}</figure>;
-}
-
-function FlowStrip({ items, className = "" }: { items: string[]; className?: string }) {
-  return <div className={`controllo-flow ${className}`} aria-label="Flusso di analisi">{items.map((item, index) => <span key={item}><b>{item}</b>{index < items.length - 1 && <i aria-hidden="true">→</i>}</span>)}</div>;
-}
-
-function MetricList({ items, className = "" }: { items: string[]; className?: string }) {
-  return <div className={`controllo-metrics ${className}`}>{items.map((item) => <span key={item}><Check size={14} />{item}</span>)}</div>;
-}
-
-function LinkPill({ href, children }: { href: string; children: ReactNode }) {
-  return <a className="controllo-link-pill" href={href}>{children}<ArrowRight size={13} /></a>;
-}
-
-function SeoMeta() {
-  useEffect(() => {
-    const title = "Controllo Performance per Arredatori e Showroom | Totalone";
-    const description = "Analizza vendite, fatturato, marginalità, CRM, operatività e budget con Totalone. Una visione completa delle performance del tuo showroom di arredamento.";
-    const canonical = "https://totalone.it/controllo-performance-arredamento";
-    document.title = title;
-    const upsert = (selector: string, attributes: Record<string, string>) => {
-      let node = document.head.querySelector<HTMLMetaElement>(selector);
-      if (!node) {
-        node = document.createElement("meta");
-        document.head.appendChild(node);
-      }
-      Object.entries(attributes).forEach(([key, value]) => node?.setAttribute(key, value));
-      return node;
-    };
-    const descriptionMeta = upsert('meta[name="description"]', { name: "description", content: description });
-    const ogTitle = upsert('meta[property="og:title"]', { property: "og:title", content: title });
-    const ogDescription = upsert('meta[property="og:description"]', { property: "og:description", content: description });
-    const canonicalLink = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]') ?? document.head.appendChild(document.createElement("link"));
-    canonicalLink.setAttribute("rel", "canonical");
-    canonicalLink.setAttribute("href", canonical);
-    const schema = document.createElement("script");
-    schema.type = "application/ld+json";
-    schema.dataset.totalonePage = "controllo-performance";
-    schema.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: title,
-      description,
-      url: canonical,
-      isPartOf: { "@type": "WebSite", name: "Totalone", url: "https://totalone.it/" },
-      about: { "@type": "Thing", name: "Controllo performance arredamento" },
-    });
-    document.head.appendChild(schema);
-    return () => {
-      descriptionMeta.remove();
-      ogTitle.remove();
-      ogDescription.remove();
-      schema.remove();
-    };
-  }, []);
-  return null;
-}
-
-function CommercialQuestions() {
-  return <div className="controllo-questions"><div><span>01</span><strong>Quali showroom stanno vendendo di più?</strong></div><div><span>02</span><strong>Quali brand stanno generando più valore?</strong></div><div><span>03</span><strong>Quali venditori convertono meglio?</strong></div><div><span>04</span><strong>Da quali canali arrivano le trattative che diventano clienti?</strong></div></div>;
-}
-
-function EcosystemFlow() {
-  const items = [
-    ["CRM", links.crm],
-    ["TRATTATIVE", links.trattative],
-    ["PREVENTIVI", links.preventivi],
-    ["COMMESSE", links.commesse],
-    ["MAGAZZINO", links.magazzino],
-    ["MONTAGGI", links.montaggi],
-    ["ASSISTENZA", links.assistenza],
-  ];
-  return <div className="controllo-ecosystem">{items.map(([label, href], index) => <span key={label}><a href={href}>{label}<ChevronRight size={13} /></a>{index < items.length - 1 && <i>→</i>}</span>)}<strong>CONTROLLO E PERFORMANCE</strong></div>;
-}
-
-export function ControlloPerformanceProductPage() {
-  return <MarketingShell active="Controllo e performance">
-    <SeoMeta />
-    <main className="controllo-page" id="top">
-      <section className="controllo-hero">
-        <div className="controllo-orb controllo-orb-one" aria-hidden="true" />
-        <div className="controllo-orb controllo-orb-two" aria-hidden="true" />
-          <div className="controllo-wrap">
-          <nav className="controllo-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span>Controllo e performance</span></nav>
-          <div className="controllo-hero-grid">
-            <div className="controllo-hero-copy">
-              <Eyebrow>CONTROLLO E PERFORMANCE</Eyebrow>
-              <h1>Sai come sta andando il tuo showroom.<br /><span>Non a fine mese. Adesso.</span></h1>
-              <p>Vendite, fatturato, marginalità, CRM, operatività e budget. Totalone trasforma i dati generati ogni giorno dal tuo team in una visione completa delle performance dell’azienda.</p>
-              <div className="controllo-actions"><DemoTrigger>Prenota una demo</DemoTrigger><a className="controllo-button outline" href="#overview">Scopri come funziona <ArrowDown size={15} /></a></div>
-              <p className="controllo-micro">Dal dato generale fino al singolo showroom, venditore, brand o categoria.</p>
+function Hero() {
+  return (
+    <section className="relative overflow-hidden bg-[linear-gradient(116deg,#082c68,#0d56bf_54%,#1387ee)] pb-20 pt-28 text-white sm:pb-28 sm:pt-36">
+      <div className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-[#9fe0ff]/20 blur-3xl" aria-hidden />
+      <div className="pointer-events-none absolute -left-40 bottom-0 h-[420px] w-[420px] rounded-full bg-[#f36b4d]/15 blur-3xl" aria-hidden />
+      <div className={`${wrap} relative`}>
+        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[13px] text-[#bfe3ff]">
+          <a href={routes.home} className="hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Home</a>
+          <span aria-hidden>/</span>
+          <span aria-current="page" className="text-white">Controllo e performance</span>
+        </nav>
+        <div className="mt-10 grid items-center gap-12 lg:grid-cols-[.95fr_1.05fr] lg:gap-14">
+          <div>
+            <Tag tone="dark">Controllo e performance</Tag>
+            <h1 className="mt-6 text-[2.7rem] font-bold leading-[.95] tracking-[-0.065em] sm:text-6xl lg:text-[4.6rem]">
+              <WordReveal text="I numeri dello showroom," />
+              <br />
+              <WordReveal text="senza ricostruirli in Excel." className="text-[#9fe0ff]" delay={0.25} />
+            </h1>
+            <Reveal delay={0.2}>
+              <p className="mt-7 max-w-xl text-base leading-7 text-[#d7e9ff] sm:text-lg sm:leading-8">
+                Preventivi, trattative, acconti e task del team finiscono nello stesso sistema. Totalone li somma per showroom e per venditore, così la direzione legge pipeline, venduto e incassi senza chiedere report a nessuno.
+              </p>
+              <div className="mt-9 flex flex-wrap items-center gap-3">
+                <DemoButton light>Prenota una demo</DemoButton>
+                <a href="#letture" className="group inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3.5 text-[14px] font-bold text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+                  Cosa puoi leggere <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+                </a>
+              </div>
+            </Reveal>
+          </div>
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: tpEase, delay: 0.3 }} className="min-w-0">
+            <div aria-hidden="true">
+              <AppWindow active="totalone" title="Totalone showroom" className="h-[380px] sm:h-[440px]">
+                <TrattativeKpiScreen mode="showroom" />
+              </AppWindow>
             </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — ANALYTICS OVERVIEW]" caption="Inserisci qui lo screenshot reale della panoramica Analytics." className="controllo-hero-shot" />
+            <p className="mt-4 text-[13px] leading-6 text-[#bfe3ff]">Pagina Totalone: i KPI della pipeline trattative e degli incassi, showroom per showroom. Schermate dimostrative, dati di esempio.</p>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 2 · VENDUTO PER VENDITORE                                           */
+/* ------------------------------------------------------------------ */
+
+function Venditori() {
+  return (
+    <section className="bg-[#fbfdff] py-24 sm:py-32" id="letture">
+      <div className={`${wrap} grid items-center gap-14 lg:grid-cols-[.85fr_1.15fr] lg:gap-20`}>
+        <div>
+          <Heading
+            tag="Pipeline e venduto"
+            title="Quanto è in trattativa, quanto è chiuso."
+            body={
+              <>
+                <p>In testa alla pagina Totalone ci sono i totali della pipeline: preventivi, finalizzato, venduto, da finalizzare e non confermato, con il numero di trattative per ciascuno.</p>
+                <p>Scegli lo showroom e il venditore e i totali si ricalcolano. Gli importi si leggono IVA inclusa, con l’equivalente IVA esclusa sotto.</p>
+              </>
+            }
+          />
+          <Checks items={["Totale preventivi", "Finalizzato", "Venduto", "Da finalizzare", "Non confermato", "Filtro per showroom e venditore"]} />
+        </div>
+        <AppShot active="totalone" title="Totalone showroom" where="Pagina Totalone" caption="Gli stessi KPI filtrati per venditore: Tutti, Giulia, Luca. Dati di esempio.">
+          <TrattativeKpiScreen mode="venditori" incassi={false} />
+        </AppShot>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 3 · PREVENTIVI                                                      */
+/* ------------------------------------------------------------------ */
+
+function Preventivi() {
+  return (
+    <section className="bg-[#fffaf7] py-24 sm:py-32" id="preventivi">
+      <div className={`${wrap} grid items-center gap-14 lg:grid-cols-[1.15fr_.85fr] lg:gap-20`}>
+        <div className="lg:order-2">
+          <Heading
+            tag="Preventivi"
+            tone="coral"
+            title="Quanti preventivi diventano vendite."
+            body={
+              <>
+                <p>La lista Preventivi riassume il valore ancora in pipeline, quello accettato e la percentuale di conversione.</p>
+                <p>Quando un preventivo viene convertito, i tre numeri si aggiornano da soli: nessuno deve contare a mano quanti ne sono stati firmati.</p>
+              </>
+            }
+          />
+          <div className="mt-8">
+            <a href={routes.preventivi} className={`group inline-flex items-center gap-1.5 text-sm font-bold text-[#0b55c6] hover:text-[#b93f23] ${focusRing}`}>
+              Come funzionano i preventivi <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
           </div>
         </div>
-      </section>
-
-      <section className="controllo-section controllo-warm" id="overview">
-        <div className="controllo-wrap">
-          <div className="controllo-intro-grid"><SectionHeading eyebrow="UNA SOLA VISTA" title="Non devi più ricostruire i numeri della tua azienda." /><div className="controllo-copy"><p>Quando clienti, preventivi, vendite, commesse e attività operative vengono gestiti in strumenti diversi, anche capire come sta andando l’azienda richiede tempo.</p><p>Totalone parte dai dati generati durante il lavoro quotidiano e li riunisce in un unico ambiente di analisi.</p><p>Venduto, preventivato, fatturato, conversioni, marginalità e indicatori operativi diventano così parti della stessa lettura.</p></div></div>
-          <FlowStrip items={["LAVORO QUOTIDIANO", "DATI CONDIVISI", "ANALISI", "DECISIONI"]} className="controllo-flow-large" />
+        <div className="lg:order-1">
+          <AppShot tone="coral" active="preventivi" title="Preventivi" where="Preventivi" caption="In pipeline, accettato e conversione cambiano alla conversione di un preventivo. Dati di esempio.">
+            <PreventiviListScreen />
+          </AppShot>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      <section className="controllo-section" id="panoramica">
-          <div className="controllo-wrap">
-          <SectionHeading eyebrow="OVERVIEW" title="Parti dall’insieme. Poi vai in profondità." body={<><p>La panoramica riunisce gli indicatori principali dell’azienda e permette di leggere immediatamente l’andamento del periodo selezionato.</p><p>Filtra i dati per periodo, showroom e venditore e confronta ciò che sta succedendo nelle diverse aree dell’azienda.</p></>} />
-          <MetricList items={["Venduto", "Preventivato", "Fatturato", "Conversione preventivo → venduto", "Andamento temporale", "Venduto per showroom", "Venduto geografico", "Sintesi del periodo"]} />
+/* ------------------------------------------------------------------ */
+/* 4 · INCASSI                                                         */
+/* ------------------------------------------------------------------ */
+
+function Incassi() {
+  return (
+    <section className="bg-[#eff7ff] py-24 sm:py-32" id="incassi">
+      <div className={`${wrap} grid items-center gap-14 lg:grid-cols-[.85fr_1.15fr] lg:gap-20`}>
+        <div>
+          <Heading
+            tag="Incassi"
+            tone="amber"
+            title="Acconti ricevuti e acconti da ricevere."
+            body={
+              <>
+                <p>Il riquadro “Incassi & clienti” somma gli acconti registrati su tutte le trattative e quelli ancora da incassare, insieme al numero di clienti.</p>
+                <p>Ogni acconto registrato su una commessa sposta subito i totali: sai sempre quanto deve ancora entrare.</p>
+              </>
+            }
+          />
         </div>
-      </section>
+        <AppShot tone="amber" active="totalone" title="Totalone showroom" where="Pagina Totalone · Incassi & clienti" caption="Un acconto di Casa Bianchi aggiorna ricevuti e da ricevere. Dati di esempio.">
+          <VenditeScreen />
+        </AppShot>
+      </div>
+    </section>
+  );
+}
 
-      <section className="controllo-section controllo-sky" id="vendite">
-         <div className="controllo-wrap controllo-text-feature">
-           <div><SectionHeading eyebrow="VENDITE" title="Capisci cosa vendi. Dove. E attraverso chi." body={<p>Totalone permette di approfondire le performance commerciali partendo dal venduto complessivo fino alle dimensioni che aiutano a capire da dove nasce il risultato.</p>} /><MetricList items={["Venduto IVA inclusa", "Venduto netto", "Ticket medio", "Numero ordini", "Venduto per brand", "Venduto geografico", "Ticket medio per venditore", "Venduto per categoria", "Ordini e clienti"]} /></div>
-         </div>
-        <div className="controllo-wrap"><FlowStrip items={["AZIENDA", "SHOWROOM", "VENDITORE", "BRAND", "CATEGORIA", "CLIENTE"]} className="controllo-taxonomy" /><p className="controllo-statement">Non soltanto quanto hai venduto, ma come si compone il venduto.</p></div>
-      </section>
+/* ------------------------------------------------------------------ */
+/* 5 · LAVORO DEL TEAM                                                 */
+/* ------------------------------------------------------------------ */
 
-      <section className="controllo-section" id="fatturato">
-         <div className="controllo-wrap controllo-text-feature">
-          <div><SectionHeading eyebrow="FATTURATO" title="Venduto e fatturato non sono la stessa cosa." body={<><p>Una vendita conclusa non significa necessariamente che tutto sia già stato documentato o fatturato.</p><p>Totalone permette di mettere in relazione il valore dei contratti con quanto risulta fatturato nel periodo e di evidenziare ciò che resta ancora da documentare.</p></>} /><div className="controllo-highlight-grid"><strong>Fatturato DDT</strong><strong>Venduto contratti</strong><strong>Gap venduto / fatturato</strong></div><p className="controllo-small-copy">L’analisi può essere approfondita per brand, permettendo di confrontare il valore della merce venduta con quella già documentata.</p></div>
+function Team() {
+  return (
+    <section className="bg-[#fbfdff] py-24 sm:py-32" id="team">
+      <div className={`${wrap} grid items-center gap-14 lg:grid-cols-[1.15fr_.85fr] lg:gap-20`}>
+        <div className="lg:order-2">
+          <Heading
+            tag="Lavoro del team"
+            title="Cosa è scaduto, cosa è stato chiuso, chi è carico."
+            body={
+              <>
+                <p>La dashboard dei task mostra le attività scadute, in scadenza e completate, il carico per persona e i task ancora senza responsabile.</p>
+                <p>È la lettura operativa del team: utile per capire dove si accumula il lavoro prima che diventi un ritardo con il cliente.</p>
+              </>
+            }
+          />
+          <div className="mt-8">
+            <a href={routes.progetti} className={`group inline-flex items-center gap-1.5 text-sm font-bold text-[#0b55c6] hover:text-[#b93f23] ${focusRing}`}>
+              Attività e task del team <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
         </div>
-      </section>
-
-      <section className="controllo-section controllo-deep" id="marginalita">
-        <div className="controllo-wrap controllo-split">
-          <div><SectionHeading eyebrow="MARGINALITÀ" title="Il fatturato racconta quanto vendi. Il margine racconta come vendi." body={<p>Totalone affianca ai dati commerciali una lettura della marginalità, permettendo alla direzione di osservare il risultato economico da più prospettive.</p>} /><MetricList items={["EBITDA", "Margine lordo", "Margine merce", "Costi fissi del periodo", "Margine per brand", "Margine per categoria"]} className="controllo-metrics-light" /><p className="controllo-small-copy light">La lettura dei costi fissi e variabili è disponibile secondo quanto previsto dal sistema.</p></div>
-          <ScreenshotPlaceholder label="[SCREENSHOT — ANALYTICS MARGINI]" caption="Una delle visual principali della pagina: inserisci lo screenshot reale dei Margini." className="controllo-dark-shot" />
+        <div className="lg:order-1">
+          <AppShot tone="green" active="tasks.dashboard" title="Dashboard task" where="Tasks · Dashboard" caption="Scadute, completate e carico per persona. Dati di esempio.">
+            <TasksDashboardScreen />
+          </AppShot>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      <section className="controllo-section controllo-warm" id="crm-funnel">
-        <div className="controllo-wrap">
-          <SectionHeading eyebrow="CRM FUNNEL" title="Dal primo ingresso alla vendita." body={<p>I dati commerciali diventano ancora più utili quando puoi capire il percorso che li ha generati. Totalone collega l’analisi alle attività CRM per leggere ingressi, trattative e chiusure.</p>} />
-          <FlowStrip items={["INGRESSO", "TRATTATIVA", "CHIUSURA", "VENDUTO"]} className="controllo-flow-large" />
-          <div className="controllo-funnel-grid"><div><h3>Quali canali generano davvero vendite?</h3><p>Confronta canali lead come showroom, referral e passaparola, digitale e altre fonti registrate nel sistema.</p><MetricList items={["Lifecycle trattativa", "Lifecycle da ingresso", "Ingressi nel periodo", "Tasso di chiusura globale", "Chiusura per canale lead", "Stagionalità"]} /></div><div><h3>Come performano i venditori?</h3><p>Analizza il tasso di chiusura e la conversione per venditore, partendo dai dati registrati nel percorso commerciale.</p><MetricList items={["Tasso di chiusura per venditore", "Performance per canale lead"]} /></div></div>
-          <ScreenshotPlaceholder label="[SCREENSHOT — ANALYTICS CRM FUNNEL]" caption="Placeholder per il funnel CRM reale." className="controllo-large-shot" />
+/* ------------------------------------------------------------------ */
+/* 6 · ALTRE LETTURE + PASSO SUCCESSIVO                                */
+/* ------------------------------------------------------------------ */
+
+function AltreLetture() {
+  const items: [string, string][] = [
+    ["Venduto e fatturato", "Il valore dei contratti messo a confronto con quanto risulta già fatturato nel periodo."],
+    ["Marginalità", "Il margine letto per periodo, brand o categoria, oltre a quello della singola commessa."],
+    ["Percorso commerciale", "Ingressi, trattative e vendite per canale di provenienza e per venditore."],
+    ["Obiettivi", "Un target per metrica e periodo, confrontato con il risultato effettivo."],
+  ];
+  return (
+    <section className="bg-[#f4f9ff] py-24 sm:py-28" id="altre-letture">
+      <div className={wrap}>
+        <Heading
+          tag="In demo"
+          tone="coral"
+          title="Le altre letture, sui tuoi dati."
+          body={<p>Ci sono analisi che hanno senso solo con i numeri veri dello showroom. Non le mostriamo con dati inventati: le vediamo insieme in demo, partendo dalla tua configurazione.</p>}
+        />
+        <Stagger className="mt-12 grid gap-4 sm:grid-cols-2" gap={0.06}>
+          {items.map(([t, b]) => (
+            <StaggerItem key={t}>
+              <div className="h-full rounded-[24px] border border-[#e4eef8] bg-white p-6">
+                <h3 className="text-xl font-bold tracking-[-0.035em] text-[#102744]">{t}</h3>
+                <p className="mt-2 text-[15px] leading-7 text-[#557090]">{b}</p>
+              </div>
+            </StaggerItem>
+          ))}
+        </Stagger>
+        <div className="mt-12 grid gap-4 md:grid-cols-2">
+          <a href={routes.margini} className={`group flex flex-col rounded-[28px] border border-[#cfe1f4] bg-white p-7 transition-transform hover:-translate-y-1 ${focusRing}`}>
+            <span className="text-[11px] font-bold tracking-[0.12em] text-[#0b55c6]">IL MARGINE DELLA SINGOLA COMMESSA</span>
+            <strong className="mt-3 text-2xl font-bold tracking-[-0.04em] text-[#102744]">Margini di commessa</strong>
+            <span className="mt-2 text-sm leading-6 text-[#557090]">Riga per riga, nella Schedina cliente.</span>
+            <ArrowRight className="mt-5 h-4 w-4 text-[#cf4a2b] transition-transform group-hover:translate-x-1" aria-hidden />
+          </a>
+          <a href={routes.prezzi} className={`group flex flex-col rounded-[28px] bg-[#082c68] p-7 text-white shadow-[0_24px_60px_rgba(8,44,104,.22)] transition-transform hover:-translate-y-1 ${focusRing}`}>
+            <span className="text-[11px] font-bold tracking-[0.12em] text-[#9fe0ff]">PASSO SUCCESSIVO</span>
+            <strong className="mt-3 text-2xl font-bold tracking-[-0.04em]">Prezzi e piani</strong>
+            <span className="mt-2 text-sm leading-6 text-[#d5ebff]">Piani e costi di Totalone, con il calcolatore per il tuo showroom.</span>
+            <ArrowRight className="mt-5 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
+          </a>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      <section className="controllo-section controllo-questions-section">
-        <div className="controllo-wrap"><SectionHeading eyebrow="PERFORMANCE COMMERCIALE" title={<>Non fermarti al risultato.<br /><span>Capisci cosa lo ha generato.</span></>} body={<p>Quando i dati commerciali fanno parte dello stesso sistema utilizzato dal team ogni giorno, puoi passare dal risultato alla sua origine senza ricostruire manualmente le informazioni.</p>} /><CommercialQuestions /></div>
-      </section>
+/* ------------------------------------------------------------------ */
+/* PAGINA                                                              */
+/* ------------------------------------------------------------------ */
 
-      <section className="controllo-section controllo-sky" id="operativo">
-          <div className="controllo-wrap controllo-text-feature"><div><SectionHeading eyebrow="OPERATIVO" title="Le performance non finiscono con la vendita." body={<><p>Una commessa deve ancora essere consegnata, montata e, in alcuni casi, gestita nel post-vendita.</p><p>Per questo Totalone porta nel controllo anche alcuni indicatori operativi, affiancando alla performance commerciale una lettura di ciò che accade dopo la vendita.</p></>} /><MetricList items={["Consegne nel periodo", "Percentuale prodotti in assistenza", "Lifecycle assistenza", "Installazioni senza assistenza", "Rapporto installazioni-assistenze", "Consegne nel tempo", "Ordini nel tempo"]} /></div></div>
-      </section>
+export function ControlloPerformanceProductPage() {
+  useSeo({
+    title: "KPI e controllo vendite per negozi di arredamento",
+    description: "Pipeline trattative, venduto, conversione dei preventivi, acconti e lavoro del team: i numeri dello showroom di arredamento letti per sede e venditore con Totalone.",
+    path: routes.controllo,
+  });
 
-      <section className="controllo-section" id="budget">
-          <div className="controllo-wrap controllo-text-feature"><div><SectionHeading eyebrow="BUDGET" title="Trasforma gli obiettivi in qualcosa che puoi seguire." body={<><p>Definisci un target per una metrica e confrontalo con il risultato effettivo del periodo.</p><p>Totalone permette di impostare obiettivi temporali e visualizzare il confronto tra budget e actual.</p></>} /><MetricList items={["Scelta metrica", "Tipo periodo", "Periodo di riferimento", "Importo target", "Actual del periodo", "Confronto Budget vs Actual"]} /><div className="controllo-objective"><strong>OBIETTIVO</strong><span>vs</span><strong>RISULTATO</strong></div><p className="controllo-small-copy">Il budget può essere letto accanto ai dati effettivi generati dall’attività.</p></div></div>
-      </section>
-
-      <section className="controllo-section controllo-warm" id="filtri">
-        <div className="controllo-wrap"><SectionHeading eyebrow="DAL GENERALE AL DETTAGLIO" title="Guarda l’azienda dalla prospettiva che ti serve." body={<p>La stessa informazione può assumere significati diversi a seconda del periodo, della sede o della persona che la genera. Per questo le analisi di Totalone possono essere filtrate secondo le dimensioni disponibili nel sistema.</p>} /><div className="controllo-filter-rail">{["PERIODO", "SHOWROOM", "VENDITORE", "GRANULARITÀ", "DATA DI RIFERIMENTO"].map((item, index) => <span key={item}><b>0{index + 1}</b>{item}</span>)}</div><p className="controllo-statement">Un’unica base dati, più modi di leggerla.</p></div>
-      </section>
-
-      <section className="controllo-section controllo-sky" id="multi-showroom">
-         <div className="controllo-wrap controllo-text-feature"><div><SectionHeading eyebrow="MULTI-SHOWROOM" title="Un’azienda. Più showroom. Una sola lettura." body={<><p>Quando l’azienda cresce su più sedi, confrontare le performance diventa più complesso.</p><p>Totalone permette di analizzare i dati complessivi oppure concentrarsi su uno specifico showroom, mantenendo una struttura condivisa.</p></>} /><LinkPill href={links.perche}>Scopri l’architettura Totalone</LinkPill></div></div>
-      </section>
-
-      <section className="controllo-section controllo-why">
-        <div className="controllo-wrap"><SectionHeading eyebrow="PERCHÉ CONTA" title="Dal “come stiamo andando?” al dato." /><div className="controllo-why-grid"><div><span>SENZA UNA VISIONE CONDIVISA</span><MetricList items={["Dati distribuiti tra più strumenti", "Report costruiti manualmente", "Numeri difficili da confrontare", "Informazioni aggiornate in momenti diversi", "Performance commerciali e operative separate"]} /></div><div><span>CON TOTALONE</span><MetricList items={["Dati provenienti dallo stesso flusso di lavoro", "Una vista condivisa", "Filtri per periodo, showroom e venditore", "Analisi commerciali e operative collegate", "Possibilità di approfondire il risultato"]} /></div></div></div>
-      </section>
-
-      <section className="controllo-section controllo-warm" id="ecosistema">
-        <div className="controllo-wrap"><SectionHeading eyebrow="UN SISTEMA COLLEGATO" title="Il controllo funziona perché nasce dal lavoro quotidiano." body={<><p>Totalone non parte da un report separato.</p><p>Le informazioni arrivano dai processi che il team utilizza ogni giorno. Il dato non deve essere ricostruito: fa già parte del processo.</p></>} /><EcosystemFlow /></div>
-      </section>
-
-      <section className="controllo-section controllo-seo">
-        <div className="controllo-wrap controllo-seo-copy"><SectionHeading eyebrow="CONTROLLO DI GESTIONE" title="Controllo di gestione per negozi e showroom di arredamento" body={<><p>Gestire le performance di un negozio di arredamento significa mettere in relazione informazioni commerciali, economiche e operative.</p><p>Venduto e preventivato raccontano una parte del risultato. Fatturato, marginalità, conversioni, performance dei venditori e andamento operativo permettono di leggerlo da prospettive diverse.</p><p>Totalone riunisce queste informazioni nello stesso ambiente utilizzato per gestire il lavoro dello showroom, offrendo alla direzione una visione più completa dell’azienda.</p></>} /></div>
-      </section>
-
-      <section className="controllo-final"><div className="controllo-wrap controllo-final-grid"><div><Eyebrow>CONTROLLO E PERFORMANCE</Eyebrow><h2>Meno tempo a ricostruire i numeri.<br /><span>Più tempo per capire cosa significano.</span></h2><p>Scopri come Totalone può aiutarti a leggere vendite, marginalità, CRM e operatività attraverso un unico sistema.</p></div><div className="controllo-actions"><DemoTrigger variant="light">Prenota una demo</DemoTrigger><a className="controllo-button outline" href={links.perche}>Scopri Totalone <ArrowRight size={15} /></a></div></div></section>
-    </main>
-  </MarketingShell>;
+  return (
+    <MarketingShell active="controllo" overlayHeader>
+      <main id="top" className="overflow-x-clip font-['DM_Sans',ui-sans-serif,system-ui,sans-serif] text-[#102744] [&_[id]]:scroll-mt-24">
+        <Hero />
+        <Venditori />
+        <Preventivi />
+        <Incassi />
+        <Team />
+        <AltreLetture />
+        <ProcessoStrip current="controllo" />
+      </main>
+    </MarketingShell>
+  );
 }

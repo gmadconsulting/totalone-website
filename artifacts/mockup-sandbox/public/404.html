@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+  Pagina 404 statica servita da Vercel (status 404) per gli URL non riscritti
+  verso l'app in public/vercel.json. Tenere i link allineati a
+  src/components/totalone/site/siteRoutes.ts. In sviluppo e per i percorsi
+  client-side la 404 è src/components/totalone/site/NotFound.tsx.
+-->
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Pagina non trovata | Totalone</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%230b55c6'/><circle cx='16' cy='16' r='6.5' fill='none' stroke='white' stroke-width='3'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&display=swap">
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif; color: #102744; background: #fbfdff; }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible, button:focus-visible { outline: 2px solid #1769d5; outline-offset: 3px; }
+      .wrap { width: min(1240px, calc(100% - 40px)); margin: 0 auto; }
+      header { position: absolute; inset: 0 0 auto; padding: 22px 0; }
+      .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+      .logo { display: inline-flex; align-items: center; gap: 10px; color: #fff; font-size: 18px; font-weight: 700; letter-spacing: -0.06em; }
+      .mark { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 10px; background: #fff; color: #0b55c6; }
+      .mark::before { content: ""; width: 14px; height: 14px; border: 2px solid currentColor; border-radius: 50%; }
+      .nav { display: flex; align-items: center; gap: 22px; font-size: 13px; font-weight: 600; color: #e6f1ff; }
+      .nav a:hover { color: #fff; }
+      .hero { background: linear-gradient(116deg, #082c68 0%, #0d56bf 60%, #1162d6 100%); color: #fff; padding: 9rem 0 5rem; }
+      .kicker { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #cfe8ff; }
+      h1 { max-width: 760px; margin: 20px 0 0; font-size: clamp(2.5rem, 6vw, 4.8rem); line-height: 1; letter-spacing: -0.06em; }
+      .lead { max-width: 560px; margin: 24px 0 0; font-size: 18px; line-height: 1.7; color: #f0f7ff; }
+      .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+      .btn { display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; padding: 14px 24px; font-size: 14px; font-weight: 700; }
+      .btn.light { background: #fff; color: #0b4fbd; }
+      .btn.light:hover { background: #e9f3ff; }
+      .btn.ghost { border: 1px solid #77b9f1; color: #fff; }
+      .btn.ghost:hover { background: rgba(255,255,255,.1); }
+      section.links { padding: 4rem 0 5rem; }
+      h2 { margin: 0; font-size: 32px; letter-spacing: -0.05em; }
+      .grid { display: grid; gap: 16px; margin-top: 28px; grid-template-columns: repeat(4, 1fr); }
+      .card { border: 1px solid #dbe8f5; border-radius: 24px; background: #fff; padding: 20px; }
+      .card p { margin: 0 0 10px; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #0b55c6; }
+      .card a { display: block; border-radius: 12px; padding: 8px 12px; font-size: 14px; font-weight: 600; color: #245b96; }
+      .card a:hover { background: #eef5fd; }
+      footer { border-top: 1px solid #cfe1f4; background: #eaf4ff; padding: 28px 0; font-size: 12px; font-weight: 600; color: #557090; }
+      footer a { text-decoration: underline; text-underline-offset: 4px; }
+      @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } .nav .hide-sm { display: none; } }
+      @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } .hero { padding-top: 7.5rem; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap bar">
+        <a class="logo" href="/" aria-label="Totalone — home"><span class="mark"></span>totalone</a>
+        <nav class="nav" aria-label="Navigazione principale">
+          <a class="hide-sm" href="/perche-totalone">Perché Totalone</a>
+          <a class="hide-sm" href="/prezzi">Prezzi</a>
+          <a class="hide-sm" href="/blog">Risorse</a>
+          <a href="https://app.thetotalone.com">Accedi</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <p class="kicker">Errore 404</p>
+          <h1>Questa pagina non esiste.</h1>
+          <p class="lead">Il link potrebbe essere vecchio o contenere un errore. Riparti dalla home o scegli un'area del prodotto qui sotto.</p>
+          <div class="actions">
+            <a class="btn light" href="/">Torna alla home →</a>
+            <a class="btn ghost" href="/demo">Prenota una demo</a>
+          </div>
+        </div>
+      </section>
+      <section class="links" aria-labelledby="prodotto">
+        <div class="wrap">
+          <h2 id="prodotto">Il prodotto</h2>
+          <div class="grid">
+            <div class="card"><p>Vendere</p><a href="/crm-arredamento">CRM</a><a href="/software-preventivi-arredamento">Preventivi</a><a href="/gestione-trattative-arredamento">Gestione trattative</a></div>
+            <div class="card"><p>Gestire</p><a href="/gestione-commesse-arredamento">Gestione commesse</a><a href="/gestione-progetti-arredamento">Gestione progetti</a><a href="/gestione-magazzino-arredamento">Magazzino e logistica</a></div>
+            <div class="card"><p>Consegnare</p><a href="/gestione-montaggi-arredamento">Montaggi</a><a href="/post-vendita-arredamento">Assistenza e post-vendita</a></div>
+            <div class="card"><p>Controllare</p><a href="/controllo-performance-arredamento">Controllo e performance</a></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">© Totalone · <a href="/privacy">Privacy policy</a></div>
+    </footer>
+  </body>
+</html>

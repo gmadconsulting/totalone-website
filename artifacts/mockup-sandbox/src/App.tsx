@@ -1,6 +1,9 @@
-import { useEffect, useState, type ComponentType } from "react";
+import { Suspense, lazy, useEffect, useState, type ComponentType } from "react";
 
 import { modules as discoveredModules } from "./.generated/mockup-components";
+import { blogRoutes, routes, type RouteKey } from "@/components/totalone/site/siteRoutes";
+
+const NotFound = lazy(() => import("@/components/totalone/site/NotFound"));
 
 type ModuleMap = Record<string, () => Promise<Record<string, unknown>>>;
 
@@ -91,56 +94,64 @@ function getBasePath(): string {
   return import.meta.env.BASE_URL.replace(/\/$/, "");
 }
 
+/** Componente (cartella/File sotto components/mockups) di ogni pagina canonica. */
+const pageComponents: Partial<Record<RouteKey, string>> = {
+  home: "totalone-homepage/TotaloneHomepage",
+  demo: "totalone-homepage/TotaloneHomepage",
+  crm: "totalone-crm/CrmProductPage",
+  trattative: "totalone-trattative/GestioneTrattative",
+  preventivi: "totalone-preventivi/PreventiviProductPage",
+  progetti: "totalone-progetti/ProgettiProductPage",
+  commesse: "totalone-commesse/CommesseProductPage",
+  margini: "totalone-commesse-margini/CommesseMarginiFocus",
+  magazzino: "totalone-magazzino/MagazzinoProductPage",
+  montaggi: "totalone-montaggi/MontaggiProductPage",
+  assistenza: "totalone-assistenza/AssistenzaPostVenditaProductPage",
+  controllo: "totalone-controllo/ControlloPerformanceProductPage",
+  perche: "totalone-perche/PercheTotalonePage",
+  prezzi: "totalone-prezzi/TotalonePrezzi",
+  risorse: "totalone-site-architecture/ResourcesHub",
+  privacy: "totalone-legal/PrivacyPolicyPage",
+};
+
+const articleComponents: Record<keyof typeof blogRoutes.articles, string> = {
+  softwareGestionaleNegozio: "totalone-blog/SoftwareGestionaleNegozioArredamentoArticle",
+  gestionalePerArredatori: "totalone-blog/GestionalePerArredatoriArticle",
+  excelVsGestionale: "totalone-blog/ExcelVsGestionaleArredamentoArticle",
+  softwarePreventivi: "totalone-blog/SoftwarePreventiviArredamentoArticle",
+  gestioneCommesse: "totalone-blog/GestioneCommesseArredamentoArticle",
+  crmNegozio: "totalone-blog/CrmNegozioArredamentoArticle",
+  gestireIngressiShowroom: "totalone-blog/GestireIngressiShowroomArticle",
+  gestioneMagazzino: "totalone-blog/GestioneMagazzinoArredamentoArticle",
+  gestioneMontaggi: "totalone-blog/GestioneMontaggiArredamentoArticle",
+  gestionePostVendita: "totalone-blog/GestionePostVenditaArredamentoArticle",
+  gestionaleMobilificio: "totalone-blog/GestionaleMobilificioArticle",
+  preventivoCucina: "totalone-blog/PreventivoCucinaArticle",
+  calcolareMargine: "totalone-blog/CalcolareMargineArredamentoArticle",
+  accontiCaparraSaldo: "totalone-blog/AccontiCaparraSaldoArticle",
+  architettiInteriorDesigner: "totalone-blog/ArchitettiInteriorDesignerArticle",
+  followUpClienti: "totalone-blog/FollowUpClientiShowroomArticle",
+  ritardiFornitori: "totalone-blog/RitardiFornitoriConsegneArticle",
+  kpiNegozio: "totalone-blog/KpiNegozioArredamentoArticle",
+  piuShowroom: "totalone-blog/GestirePiuShowroomArticle",
+  rapportinoMontaggio: "totalone-blog/RapportinoMontaggioArticle",
+};
+
+/**
+ * Percorsi pubblici → componente. Solo URL canonici: gli alias storici sono
+ * redirect 301 in `public/vercel.json`. Tenere allineati `public/sitemap.xml`
+ * e le rewrite di `public/vercel.json`.
+ */
 const publicRoutes: Record<string, string> = {
-  "/": "totalone-homepage/TotaloneHomepage",
-  "/gestionale-arredamento": "totalone-homepage/TotaloneHomepage",
-  "/demo": "totalone-homepage/TotaloneHomepage",
-  "/login": "totalone-site-architecture/CustomerAccessPage",
-  "/crm-arredamento": "totalone-crm/CrmProductPage",
-  "/crm-per-arredatori": "totalone-crm/CrmProductPage",
-  "/crm-per-arredatori/ingressi-showroom": "totalone-blog/GestireIngressiShowroomArticle",
-  "/gestione-trattative-arredamento": "totalone-trattative/GestioneTrattative",
-  "/software-preventivi-arredamento": "totalone-preventivi/PreventiviProductPage",
-  "/preventivi-arredatori": "totalone-preventivi/PreventiviProductPage",
-  "/gestione-progetti-arredamento": "totalone-progetti/ProgettiProductPage",
-  "/gestione-commesse-arredamento": "totalone-commesse/CommesseProductPage",
-  "/gestione-magazzino-arredamento": "totalone-magazzino/MagazzinoProductPage",
-  "/gestione-montaggi-arredamento": "totalone-montaggi/MontaggiProductPage",
-  "/post-vendita-arredamento": "totalone-assistenza/AssistenzaPostVenditaProductPage",
-  "/controllo-performance-arredamento": "totalone-controllo/ControlloPerformanceProductPage",
-  "/perche-totalone": "totalone-perche/PercheTotalonePage",
-  "/prezzi": "totalone-prezzi/TotalonePrezzi",
-  "/strumenti/roi": "totalone-prezzi/TotalonePrezzi",
-  "/risorse": "totalone-risorse/RisorseArchitecturePage",
-  "/guide": "totalone-risorse/RisorseArchitecturePage",
-  "/guide/crm-per-arredatori": "totalone-blog/CrmNegozioArredamentoArticle",
-  "/guide/digitalizzazione-negozio-arredamento": "totalone-blog/SoftwareGestionaleNegozioArredamentoArticle",
-  "/guide/gestione-commesse-arredamento": "totalone-blog/GestioneCommesseArredamentoArticle",
-  "/guide/gestione-magazzino-arredamento": "totalone-blog/GestioneMagazzinoArredamentoArticle",
-  "/guide/gestione-showroom-arredamento": "totalone-blog/SoftwareGestionaleNegozioArredamentoArticle",
-  "/guide/preventivi-arredamento": "totalone-blog/SoftwarePreventiviArredamentoArticle",
-  "/blog": "totalone-site-architecture/ResourcesHub",
-  "/blog/gestione-showroom": "totalone-site-architecture/ResourcesHub",
-  "/blog/vendite-crm": "totalone-site-architecture/ResourcesHub",
-  "/blog/preventivi": "totalone-site-architecture/ResourcesHub",
-  "/blog/commesse-progetti": "totalone-site-architecture/ResourcesHub",
-  "/blog/logistica-magazzino": "totalone-site-architecture/ResourcesHub",
-  "/blog/montaggi-post-vendita": "totalone-site-architecture/ResourcesHub",
-  "/blog/controllo-performance": "totalone-controllo/ControlloPerformanceProductPage",
-  "/blog/gestione-showroom/software-gestionale-negozio-arredamento": "totalone-blog/SoftwareGestionaleNegozioArredamentoArticle",
-  "/blog/gestione-showroom/gestionale-per-arredatori": "totalone-blog/GestionalePerArredatoriArticle",
-  "/blog/preventivi/software-preventivi-arredamento": "totalone-blog/SoftwarePreventiviArredamentoArticle",
-  "/blog/commesse-progetti/gestione-commesse-arredamento": "totalone-blog/GestioneCommesseArredamentoArticle",
-  "/blog/vendite-crm/crm-negozio-arredamento": "totalone-blog/CrmNegozioArredamentoArticle",
-  "/blog/vendite-crm/gestire-ingressi-showroom": "totalone-blog/GestireIngressiShowroomArticle",
-  "/blog/logistica-magazzino/gestione-magazzino-arredamento": "totalone-blog/GestioneMagazzinoArredamentoArticle",
-  "/blog/montaggi-post-vendita/gestione-montaggi-arredamento": "totalone-blog/GestioneMontaggiArredamentoArticle",
-  "/blog/montaggi-post-vendita/gestione-post-vendita-arredamento": "totalone-blog/GestionePostVenditaArredamentoArticle",
-  "/blog/gestione-showroom/excel-vs-gestionale-arredamento": "totalone-blog/ExcelVsGestionaleArredamentoArticle",
-  "/soluzioni/negozi-showroom-arredamento": "totalone-site-architecture/SolutionsTemplate",
-  "/soluzioni/aziende-arredamento-in-crescita": "totalone-site-architecture/SolutionsTemplate",
-  "/soluzioni/multi-showroom-arredamento": "totalone-site-architecture/SolutionsTemplate",
-  "/soluzioni/gruppi-arredamento": "totalone-site-architecture/SolutionsTemplate",
+  ...Object.fromEntries(
+    (Object.entries(pageComponents) as [RouteKey, string][]).map(([key, component]) => [routes[key], component]),
+  ),
+  ...Object.fromEntries(
+    Object.values(blogRoutes.categories).map((path) => [path, "totalone-site-architecture/ResourcesHub"]),
+  ),
+  ...Object.fromEntries(
+    (Object.entries(blogRoutes.articles) as [keyof typeof blogRoutes.articles, string][]).map(([key, path]) => [path, articleComponents[key]]),
+  ),
 };
 
 function normalizePublicPath(path: string): string {
@@ -148,39 +159,23 @@ function normalizePublicPath(path: string): string {
   return normalized === "/" ? "/" : normalized.replace(/\/+$/, "");
 }
 
-function getPreviewExamplePath(): string {
-  const basePath = getBasePath();
-  return `${basePath}/preview/ComponentName`;
-}
-
-function Gallery() {
-  return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8">
-      <div className="text-center max-w-md">
-        <h1 className="text-2xl font-semibold text-gray-900 mb-3">
-          Component Preview Server
-        </h1>
-        <p className="text-gray-500 mb-4">
-          This server renders individual components for the workspace canvas.
-        </p>
-        <p className="text-sm text-gray-400">
-          Access component previews at{" "}
-          <code className="bg-gray-100 px-1.5 py-0.5 rounded text-gray-600">
-            {getPreviewExamplePath()}
-          </code>
-        </p>
-      </div>
-    </div>
-  );
-}
+const isProd = import.meta.env.PROD;
 
 function getPreviewPath(): string | null {
   const basePath = getBasePath();
   const { pathname } = window.location;
-  const local =
-    basePath && pathname.startsWith(basePath)
-      ? pathname.slice(basePath.length) || "/"
-      : pathname;
+  const withoutBase =
+    basePath && pathname.startsWith(basePath) ? pathname.slice(basePath.length) || "/" : pathname;
+
+  // In produzione si servono solo i percorsi canonici: /preview/* e
+  // /__mockup/* (anteprime tecniche) mostrano la pagina 404.
+  if (isProd) {
+    return publicRoutes[normalizePublicPath(withoutBase)] ?? null;
+  }
+
+  // In sviluppo: i link usano il base path di Replit ("/__mockup"); in locale
+  // il base path è "/", quindi lo togliamo per risolvere la stessa pagina.
+  const local = withoutBase.replace(/^\/__mockup(?=\/|$)/, "") || "/";
   const publicRoute = normalizePublicPath(
     local.startsWith("/preview") ? local.slice("/preview".length) || "/" : local,
   );
@@ -236,13 +231,17 @@ function App() {
   if (previewPath) {
     return (
       <>
-        <PreviewLinkBridge />
+        {!isProd && <PreviewLinkBridge />}
         <PreviewRenderer componentPath={previewPath} modules={discoveredModules} />
       </>
     );
   }
 
-  return <Gallery />;
+  return (
+    <Suspense fallback={null}>
+      <NotFound />
+    </Suspense>
+  );
 }
 
 export default App;

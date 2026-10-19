@@ -1,334 +1,388 @@
-import { useEffect, type ReactNode } from "react";
-import { ArrowDown, ArrowRight, Check, ChevronRight } from "lucide-react";
+import type { ReactNode } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowDown, ArrowRight, Check, ClipboardList, FileText, FolderOpen, History, Mail, Package, StickyNote, Truck, Wrench } from "lucide-react";
 import { MarketingShell } from "../totalone-site-architecture/_shared/MarketingShell";
-import "./CommesseProductPage.css";
-import "./CommesseProductPageExtra.css";
+import { CountUp, Reveal, SpotlightCard, Stagger, StaggerItem, WordReveal, tpEase, useLoopSteps } from "@/components/totalone/motion-kit";
+import { AppWindow, uiFont } from "@/components/totalone/app-ui";
+import { ConversioneFlow } from "@/components/totalone/app-screens";
+import { AccontiScreen, SchedinaCompleta } from "@/components/totalone/pages/commesse/CommesseScreens";
+import { ArrowLink, Chips, DemoButton, PerspectiveMockup, SectionHead, panelTone, wrap } from "@/components/totalone/pages/commesse/CommesseKit";
+import { routes } from "@/components/totalone/site/siteRoutes";
+import { ProcessoStrip } from "@/components/totalone/site/ProcessoStrip";
+import { useSeo } from "@/components/totalone/site/useSeo";
 
-const orderStatus = ["DA ORDINARE", "CONFERMATO", "ORDINATO", "ARRIVATO", "IN MAGAZZINO", "PROGRAMMATO"];
-const overviewFields = ["Cliente", "Venditore", "Showroom", "Contratto", "Stato", "Schedine"];
-const detailFields = ["Cliente", "Anno", "Località", "Venditore", "Stato della commessa", "Valore acquistato", "Valore venduto", "Numero prodotti", "Numero colli"];
-const productFields = ["Brand", "Prodotto", "Quantità", "Listino", "Sconto", "Prezzo finale", "Stato fattura", "Stato ordine", "Magazzino", "Colli", "Allegati"];
+const caption = "mt-5 text-center text-xs font-semibold text-[#557090]";
 
-function DemoTrigger({ children, variant = "" }: { children: ReactNode; variant?: string }) {
-  const openDemo = () => {
-    document.querySelector<HTMLButtonElement>(".to-header-actions .to-button")?.click();
-  };
+/* ------------------------------------------------------------------ */
+/* 1 · HERO — la Schedina nasce dal preventivo convertito               */
+/* ------------------------------------------------------------------ */
 
-  return <button className={`commesse-button ${variant}`} onClick={openDemo}>{children}<ArrowRight size={15} /></button>;
-}
-
-function Eyebrow({ children, tone = "" }: { children: ReactNode; tone?: string }) {
-  return <span className={`commesse-eyebrow ${tone}`}>{children}</span>;
-}
-
-function SectionHeading({ eyebrow, title, body }: { eyebrow: string; title: string; body?: ReactNode }) {
+function Hero() {
   return (
-    <div className="commesse-heading">
-      <Eyebrow tone={eyebrow === "AVANZAMENTO" ? "gold" : ""}>{eyebrow}</Eyebrow>
-      <h2>{title}</h2>
-      {body && <div className="commesse-lead">{body}</div>}
-    </div>
+    <section className="relative overflow-hidden bg-[linear-gradient(116deg,#082c68_0%,#0d56bf_54%,#1387ee_100%)] pb-20 pt-28 text-white sm:pb-28 sm:pt-36">
+      <motion.div aria-hidden className="absolute -right-20 top-10 h-[420px] w-[420px] rounded-full bg-[#75d7ff]/30 blur-3xl" animate={{ x: [0, -60, 0], y: [0, 40, 0] }} transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }} />
+      <motion.div aria-hidden className="absolute -left-28 top-[380px] h-[420px] w-[420px] rounded-full bg-[#f36b4d]/20 blur-3xl" animate={{ x: [0, 50, 0], y: [0, -30, 0] }} transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }} />
+      <div aria-hidden className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_top,#000_20%,transparent_70%)]" />
+      <div className={`relative ${wrap}`}>
+        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-semibold text-[#cfe6ff]">
+          <a href={routes.home} className="hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Home</a>
+          <span aria-hidden>/</span>
+          <span aria-current="page" className="text-white">Gestione commesse</span>
+        </nav>
+        <div className="mt-10 grid items-end gap-10 lg:grid-cols-[1.15fr_.85fr] lg:gap-16">
+          <div>
+            <motion.span initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: tpEase }} className="inline-flex items-center gap-2 rounded-full border border-[#8ecbff] bg-[#5abaff]/20 px-3.5 py-2 text-xs font-bold tracking-[0.08em] text-[#eff8ff]">
+              <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#9fe0ff] opacity-75 motion-reduce:animate-none" /><span className="relative inline-flex h-2 w-2 rounded-full bg-[#9fe0ff]" /></span>
+              GESTIONE COMMESSE
+            </motion.span>
+            <h1 className="mt-7 max-w-3xl text-[clamp(2.8rem,6.4vw,5.8rem)] font-bold leading-[.93] tracking-[-0.075em]">
+              <WordReveal text="Il preventivo è accettato." />
+              <br />
+              <WordReveal text="La commessa è già pronta." className="text-[#9fe0ff]" delay={0.25} />
+            </h1>
+          </div>
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: tpEase, delay: 0.45 }}>
+            <p className="max-w-xl text-lg leading-8 text-[#e5f3ff]">
+              Quando converti il preventivo, Totalone crea in automatico la trattativa e la <b className="text-white">Schedina cliente</b>: prodotti, prezzi e margini sono già dentro, senza ricopiare nulla. Da lì segui ordini, fatture, documenti e pagamenti fino alla consegna.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <DemoButton light />
+              <a href="#schedina-cliente" className="group inline-flex items-center gap-2 px-2 text-sm font-bold text-white hover:text-[#d0e8ff] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+                Cosa c’è nella Schedina <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+              </a>
+            </div>
+          </motion.div>
+        </div>
+
+        <div aria-hidden="true">
+          <PerspectiveMockup className="mx-auto mt-16 max-w-[1080px] sm:mt-20">
+            <ConversioneFlow />
+          </PerspectiveMockup>
+        </div>
+        <p className="mt-6 text-center text-xs font-semibold text-[#cfe6ff]">Preventivo convertito → trattativa → Schedina cliente. Schermate dimostrative, dati di esempio.</p>
+      </div>
+    </section>
   );
 }
 
-function ScreenshotPlaceholder({ label, caption, className = "" }: { label: string; caption?: string; className?: string }) {
+/* ------------------------------------------------------------------ */
+/* 2 · PANORAMICA — la Schedina cliente, il fascicolo della commessa     */
+/* ------------------------------------------------------------------ */
+
+function Panoramica() {
+  const tabs = ["Prodotti", "Costi di servizio", "Documenti", "Note", "Assistenza"];
+  const facts = [
+    ["Cliente", "Casa Bianchi"],
+    ["Showroom", "Milano Centro"],
+    ["Venditore", "Giulia Ferri"],
+    ["Stato", "Finalizzato"],
+    ["Prodotti", "4"],
+    ["Colli", "23"],
+  ];
   return (
-    <figure className={`commesse-shot ${className}`}>
-      <div className="commesse-shot-frame" role="img" aria-label={label}>
-        <div className="commesse-placeholder-copy">
-          <span>{label}</span>
-          <small>Spazio riservato allo screenshot reale Totalone</small>
+    <section className="bg-[#fbfdff] py-24 sm:py-32" id="schedina-cliente">
+      <div className={wrap}>
+        <div className="grid gap-10 lg:grid-cols-[1fr_.9fr] lg:items-end lg:gap-20">
+          <SectionHead tag="LA SCHEDINA CLIENTE" title="Una scheda per commessa." accent="Tutto quello che è stato venduto." />
+          <Reveal delay={0.1}>
+            <div className="max-w-md space-y-4 text-base leading-7 text-[#557090] sm:text-lg sm:leading-8">
+              <p>La Schedina cliente è il fascicolo della commessa. In testa trovi il riepilogo economico, sotto la tabella dei prodotti con il loro stato di ordine e fattura.</p>
+              <p>Accanto ai prodotti ci sono le schede per servizi, documenti, note e assistenza: chi la apre ha il quadro completo, senza chiedere in giro.</p>
+            </div>
+          </Reveal>
+        </div>
+        <Reveal y={40} className="mt-12">
+          <div aria-hidden="true" className={`rounded-[36px] p-3 sm:p-5 ${panelTone.blue}`}>
+            <AppWindow active="schedine" title="Schedina" className="h-[440px] sm:h-[500px]">
+              <SchedinaCompleta />
+            </AppWindow>
+          </div>
+          <p className={caption}>Schermate dimostrative, dati di esempio.</p>
+        </Reveal>
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1fr]">
+          <div>
+            <p className="mb-2.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[#557090]">Le schede della Schedina</p>
+            <Chips items={tabs} />
+          </div>
+          <dl className="grid grid-cols-2 gap-2 sm:grid-cols-3" style={uiFont}>
+            {facts.map(([k, v]) => (
+              <div key={k} className="rounded-[14px] border border-[#e4eef8] bg-white px-3.5 py-2.5">
+                <dt className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#557090]">{k}</dt>
+                <dd className="mt-0.5 truncate text-[13px] font-semibold text-[#0F172A]">{v}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
-      {caption && <figcaption>{caption}</figcaption>}
-    </figure>
+    </section>
   );
 }
 
-function FlowStrip({ items, className = "" }: { items: string[]; className?: string }) {
+/* ------------------------------------------------------------------ */
+/* 3 · PRODOTTO PER PRODOTTO — stato ordine e fattura                   */
+/* ------------------------------------------------------------------ */
+
+const ordineStati = ["Da ordinare", "Ordinato", "Arrivato"] as const;
+const lanes = [
+  { name: "Cucina", brand: "Linea Cucine", start: 2, fattura: 1 },
+  { name: "Top in quarzo", brand: "Pietra & Co", start: 1, fattura: 2 },
+  { name: "Elettrodomestici", brand: "Casa Elettro", start: 1, fattura: 3 },
+  { name: "Lampade sospese", brand: "Luce & Co", start: 0, fattura: 3 },
+];
+
+function ProdottoPerProdotto() {
+  const [ref, step] = useLoopSteps(3, 1800);
   return (
-    <div className={`commesse-flow-strip ${className}`} aria-label="Flusso della commessa">
-      {items.map((item, index) => (
-        <span className="commesse-flow-item" key={item}>
-          <b>{String(index + 1).padStart(2, "0")}</b>{item}
-          {index < items.length - 1 && <i aria-hidden="true">→</i>}
+    <section className="bg-[#fffaf7] py-24 sm:py-32" id="stati">
+      <div className={`${wrap} grid items-start gap-12 lg:grid-cols-[.85fr_1.15fr] lg:gap-16`}>
+        <div>
+          <SectionHead
+            tag="PRODOTTO PER PRODOTTO"
+            tone="amber"
+            title="Ogni prodotto ha il suo stato."
+            body={
+              <>
+                <p>Una cucina, il top, gli elettrodomestici e le lampade arrivano da fornitori diversi e in momenti diversi. Nella Schedina ogni riga ha due stati chiari:</p>
+                <p><b className="text-[#102744]">Ordine</b>: Da ordinare, Ordinato, Arrivato.<br /><b className="text-[#102744]">Fattura</b>: Mancante o Ricevuta.</p>
+                <p>I prodotti con margine sotto soglia sono bordati in giallo e contati nel riquadro “Margine basso”.</p>
+              </>
+            }
+          />
+          <div className="mt-8"><ArrowLink href={routes.magazzino}>Arrivi, colli e ubicazione: Magazzino e logistica</ArrowLink></div>
+        </div>
+        <Reveal y={40}>
+          <div ref={ref} aria-hidden="true" className="rounded-[32px] border border-[#f3dcb4] bg-white p-5 shadow-[0_24px_60px_rgba(16,39,68,.06)] sm:p-8" style={uiFont}>
+            <div className="hidden grid-cols-[1.2fr_repeat(3,1fr)_.9fr] gap-2 pb-3 sm:grid">
+              <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#557090]">Prodotto</span>
+              {ordineStati.map((s) => <span key={s} className="text-center text-[10px] font-bold uppercase tracking-[0.1em] text-[#8a4f0f]">{s}</span>)}
+              <span className="text-center text-[10px] font-bold uppercase tracking-[0.1em] text-[#557090]">Fattura</span>
+            </div>
+            <div className="space-y-3">
+              {lanes.map((lane) => {
+                const pos = Math.min(ordineStati.length - 1, lane.start + step);
+                const ricevuta = step >= lane.fattura;
+                return (
+                  <div key={lane.name} className="grid items-center gap-2 sm:grid-cols-[1.2fr_repeat(3,1fr)_.9fr]">
+                    <div className="flex items-center justify-between gap-2 sm:block">
+                      <div>
+                        <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#557090]">{lane.brand}</p>
+                        <p className="text-sm font-bold text-[#102744]">{lane.name}</p>
+                      </div>
+                      <span className="text-[11px] font-bold text-[#8a4f0f] sm:hidden">{ordineStati[pos]} · {ricevuta ? "Ricevuta" : "Mancante"}</span>
+                    </div>
+                    {ordineStati.map((s, i) => (
+                      <div key={s} className="relative hidden h-9 rounded-[12px] bg-[#f6eee3] sm:block">
+                        <motion.div className="absolute inset-0 rounded-[12px]" initial={false} animate={{ backgroundColor: i < pos ? "#fde3b8" : i === pos ? "#cf4a2b" : "rgba(0,0,0,0)" }} transition={{ duration: 0.5, ease: tpEase }} />
+                        {i === pos && <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-white"><Check className="mr-1 h-3 w-3" />{s}</span>}
+                      </div>
+                    ))}
+                    <div className="hidden justify-center sm:flex">
+                      <AnimatePresence mode="wait">
+                        <motion.span key={String(ricevuta)} initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} className={`rounded-full px-2.5 py-1 text-[11px] font-semibold ring-1 ${ricevuta ? "text-[#047857] ring-[#a7f3d0]" : "text-[#b91c1c] ring-[#fecaca]"}`}>
+                          {ricevuta ? "Ricevuta" : "Mancante"}
+                        </motion.span>
+                      </AnimatePresence>
+                    </div>
+                    <div className="h-2 rounded-full bg-[#f6eee3] sm:hidden"><motion.div className="h-2 rounded-full bg-[#cf4a2b]" initial={false} animate={{ width: `${((pos + 1) / 3) * 100}%` }} /></div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 4 · MARGINI — sintesi con link all'approfondimento                    */
+/* ------------------------------------------------------------------ */
+
+function Margini() {
+  return (
+    <section className="bg-[#eff7ff] py-24 sm:py-28" id="margini">
+      <div className={`${wrap} grid items-center gap-12 lg:grid-cols-[.9fr_1.1fr] lg:gap-20`}>
+        <div>
+          <SectionHead
+            tag="MARGINI"
+            tone="green"
+            title="Il margine si vede prima della consegna."
+            body={
+              <>
+                <p>Prezzi finali e costi d’acquisto arrivano dal preventivo. La Schedina calcola il margine di ogni prodotto e lo somma nel riepilogo: acquistato più margine generato è uguale al venduto.</p>
+                <p>Se un prodotto è sotto soglia lo vedi subito, mentre la commessa è ancora aperta.</p>
+              </>
+            }
+          />
+          <div className="mt-8"><ArrowLink href={routes.margini}>Come si legge il margine, riga per riga</ArrowLink></div>
+        </div>
+        <Reveal y={30} delay={0.08}>
+          <div className="rounded-[32px] border border-[#cfe1f4] bg-white p-6 shadow-[0_30px_80px_rgba(16,39,68,.10)] sm:p-9" style={uiFont}>
+            <p className="text-[12px] text-[#557090]"><b className="text-[#0F172A]">Schedina cliente</b> · Casa Bianchi · importi IVA incl.</p>
+            <div className="mt-5 grid grid-cols-[1fr_auto_1fr_auto_1fr] items-end gap-2 rounded-[22px] bg-[#F8FAFC] p-4 sm:gap-4 sm:p-6">
+              <div className="min-w-0">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#557090]">Acquistato</p>
+                <p className="mt-1 whitespace-nowrap text-lg font-bold tracking-[-0.03em] text-[#0F172A] sm:text-3xl">€ <CountUp to={19200} /></p>
+              </div>
+              <span className="pb-1 text-lg text-[#94A3B8] sm:text-2xl" aria-hidden>+</span>
+              <div className="min-w-0">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#047857]">Margine</p>
+                <p className="mt-1 whitespace-nowrap text-lg font-bold tracking-[-0.03em] text-[#047857] sm:text-3xl">€ <CountUp to={7090} /></p>
+              </div>
+              <span className="pb-1 text-lg text-[#94A3B8] sm:text-2xl" aria-hidden>=</span>
+              <div className="min-w-0">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#557090]">Venduto</p>
+                <p className="mt-1 whitespace-nowrap text-lg font-bold tracking-[-0.03em] text-[#0F172A] sm:text-3xl">€ <CountUp to={26290} /></p>
+              </div>
+            </div>
+            <p className="mt-4 text-center text-xs font-semibold text-[#557090]">Dati di esempio. 2 prodotti su 4 sotto la soglia di margine.</p>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 5 · ACCONTI E SALDO                                                  */
+/* ------------------------------------------------------------------ */
+
+function Pagamenti() {
+  return (
+    <section className="bg-[#fbfdff] py-24 sm:py-32" id="pagamenti">
+      <div className={`${wrap} grid items-center gap-12 lg:grid-cols-[1.2fr_.8fr] lg:gap-16`}>
+        <Reveal y={40} className="lg:order-1">
+          <div aria-hidden="true" className={`rounded-[36px] p-3 sm:p-5 ${panelTone.green}`}>
+            <AppWindow active="totalone" title="Totalone showroom" className="h-[420px] sm:h-[470px]">
+              <AccontiScreen />
+            </AppWindow>
+          </div>
+          <p className={caption}>Dettaglio trattativa: un acconto registrato aggiorna il saldo. Dati di esempio.</p>
+        </Reveal>
+        <div className="lg:order-2">
+          <SectionHead
+            tag="ACCONTI E SALDO"
+            tone="green"
+            title="Sai sempre quanto resta da incassare."
+            body={
+              <>
+                <p>Gli acconti si registrano sulla trattativa nata dal preventivo, con data e importo. Totalone ricalcola il saldo residuo e lo mostra accanto al venduto.</p>
+                <p>Casa Bianchi: venduto € 26.290, acconto € 14.000, restano € 12.290 da pagare.</p>
+              </>
+            }
+          />
+          <div className="mt-8"><ArrowLink href={routes.trattative}>Come funziona la trattativa</ArrowLink></div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 6 · SERVIZI, DOCUMENTI, NOTE                                         */
+/* ------------------------------------------------------------------ */
+
+function IconStack({ items }: { items: [string, typeof Truck][] }) {
+  return (
+    <div className="flex flex-wrap gap-2">
+      {items.map(([label, Icon]) => (
+        <span key={label} className="inline-flex items-center gap-2 rounded-[14px] bg-[#eff7ff] px-3 py-2 text-xs font-bold text-[#0b55c6]">
+          <Icon className="h-4 w-4" strokeWidth={1.8} aria-hidden /> {label}
         </span>
       ))}
     </div>
   );
 }
 
-function TextLink({ href, children }: { href: string; children: ReactNode }) {
-  return <a className="commesse-text-link" href={href}>{children}<ArrowRight size={15} /></a>;
-}
-
-function TagList({ items, className = "" }: { items: string[]; className?: string }) {
-  return <div className={`commesse-tag-list ${className}`}>{items.map((item) => <span key={item}>{item}</span>)}</div>;
-}
-
-function ConnectedWorkflow() {
-  const items = [
-    ["TRATTATIVA", "L’opportunità commerciale."],
-    ["PREVENTIVO", "La proposta."],
-    ["VENDITA", "Ciò che è stato scelto."],
-    ["COMMESSA", "Il centro operativo."],
-    ["ORDINI", "Ciò che deve arrivare."],
-    ["MAGAZZINO", "Ciò che è disponibile."],
-    ["MONTAGGIO", "Ciò che deve essere installato."],
-    ["ASSISTENZA", "Ciò che continua dopo."],
-  ];
-
+function Card({ tag, title, children, visual }: { tag: string; title: string; children: ReactNode; visual: ReactNode }) {
   return (
-    <div className="commesse-workflow" aria-label="Flusso Totalone dalla vendita al post-vendita">
-      {items.map(([title, body], index) => (
-        <div className="commesse-workflow-node" key={title}>
-          <span>{String(index + 1).padStart(2, "0")}</span>
-          <strong>{title}</strong>
-          <small>{body}</small>
-          {index < items.length - 1 && <i aria-hidden="true">→</i>}
-        </div>
-      ))}
-    </div>
+    <StaggerItem>
+      <SpotlightCard className="h-full rounded-[28px] border border-[#e4eef8] bg-white p-7 shadow-[0_1px_4px_rgba(2,8,23,.04)] sm:p-8">
+        <article className="flex h-full flex-col">
+          <span className="text-[11px] font-bold tracking-[.12em] text-[#0b55c6]">{tag}</span>
+          <h3 className="mt-3 text-2xl font-bold leading-[1.05] tracking-[-0.045em] text-[#102744]">{title}</h3>
+          <div className="mt-3 space-y-2 text-[15px] leading-7 text-[#557090]">{children}</div>
+          <div className="mt-auto pt-6">{visual}</div>
+        </article>
+      </SpotlightCard>
+    </StaggerItem>
   );
 }
 
+function Contesto() {
+  return (
+    <section className="bg-[#f4f9ff] py-24 sm:py-32">
+      <div className={wrap}>
+        <SectionHead tag="OLTRE AI PRODOTTI" tone="coral" title="Servizi, documenti e note nella stessa scheda." />
+        <Stagger className="mt-12 grid gap-4 lg:grid-cols-3" gap={0.1}>
+          <Card tag="COSTI DI SERVIZIO" title="Trasporto e lavorazioni contano." visual={<IconStack items={[["Trasporto", Truck], ["Smontaggio", Wrench], ["Imballaggi", Package], ["Altri servizi", ClipboardList]]} />}>
+            <p>I servizi venduti con la commessa hanno la loro scheda nella Schedina, così entrano nel conto insieme ai prodotti.</p>
+          </Card>
+          <Card tag="DOCUMENTI" title="Contratto e planimetria a portata di mano." visual={<IconStack items={[["Contratti", FileText], ["Planimetrie", FolderOpen], ["Comunicazioni", Mail]]} />}>
+            <p>I file della commessa si allegano alla Schedina: chi prepara l’ordine o il montaggio li trova nello stesso punto.</p>
+          </Card>
+          <Card tag="NOTE E STORICO" title="Il contesto non resta in una testa sola." visual={<IconStack items={[["Note interne", StickyNote], ["Storico", History]]} />}>
+            <p>Accordi presi con il cliente, richieste particolari, cosa è già stato fatto: tutto scritto sulla commessa.</p>
+          </Card>
+        </Stagger>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 7 · PASSO SUCCESSIVO                                                 */
+/* ------------------------------------------------------------------ */
+
+function PassoSuccessivo() {
+  const after = [
+    { href: routes.magazzino, tag: "PASSO SUCCESSIVO", title: "Magazzino e logistica", body: "I prodotti ordinati diventano arrivi previsti, colli e ubicazioni." },
+    { href: routes.montaggi, tag: "POI", title: "Montaggi", body: "La commessa arriva in calendario con cliente, prodotti e indirizzo." },
+    { href: routes.assistenza, tag: "DOPO LA CONSEGNA", title: "Assistenza e post-vendita", body: "Ogni richiesta resta collegata al cliente e al prodotto della Schedina." },
+  ];
+  return (
+    <section className="bg-[#fbfdff] py-20 sm:py-24">
+      <div className={wrap}>
+        <Stagger className="grid gap-4 md:grid-cols-3" gap={0.08}>
+          {after.map((a, i) => (
+            <StaggerItem key={a.href}>
+              <a href={a.href} className={`group flex h-full flex-col rounded-[28px] p-7 transition-transform hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1769d5] ${i === 0 ? "bg-[#082c68] text-white shadow-[0_24px_60px_rgba(8,44,104,.22)]" : "border border-[#e4eef8] bg-white text-[#102744]"}`}>
+                <span className={`text-[11px] font-bold tracking-[0.12em] ${i === 0 ? "text-[#9fe0ff]" : "text-[#0b55c6]"}`}>{a.tag}</span>
+                <strong className="mt-4 text-2xl font-bold tracking-[-0.04em]">{a.title}</strong>
+                <span className={`mt-2 text-sm leading-6 ${i === 0 ? "text-[#d5ebff]" : "text-[#557090]"}`}>{a.body}</span>
+                <ArrowRight className={`mt-6 h-4 w-4 transition-transform group-hover:translate-x-1 ${i === 0 ? "text-white" : "text-[#cf4a2b]"}`} aria-hidden />
+              </a>
+            </StaggerItem>
+          ))}
+        </Stagger>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* PAGINA                                                              */
+/* ------------------------------------------------------------------ */
+
 export function CommesseProductPage() {
-  useEffect(() => {
-    document.title = "Gestione Commesse per Arredatori e Showroom | Totalone";
-    let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.name = "description";
-      document.head.appendChild(meta);
-    }
-    meta.content = "Gestisci commesse, prodotti, ordini, documenti, pagamenti e avanzamento con Totalone. Il software per la gestione delle commesse di negozi e showroom di arredamento.";
-  }, []);
+  useSeo({
+    title: "Gestione commesse per negozi di arredamento",
+    description: "Con Totalone la Schedina cliente nasce dal preventivo convertito: prodotti, margini, stato ordine e fattura, documenti, acconti e saldo di ogni commessa di arredamento.",
+    path: routes.commesse,
+  });
 
   return (
-    <MarketingShell active="Gestione commesse">
-      <main className="commesse-page" id="top">
-        <section className="commesse-hero">
-          <div className="commesse-orb commesse-orb-one" aria-hidden="true" />
-          <div className="commesse-orb commesse-orb-two" aria-hidden="true" />
-          <div className="commesse-wrap">
-            <div className="commesse-breadcrumb"><a href="/">Home</a><span>/</span><span>Gestione commesse</span></div>
-            <div className="commesse-hero-grid">
-              <div className="commesse-hero-copy">
-                <Eyebrow>GESTIONE COMMESSE</Eyebrow>
-                <h1>Tutta la commessa.<br /><span>In un unico posto.</span></h1>
-                <p>Dalla vendita alla consegna, Totalone raccoglie prodotti, ordini, documenti, pagamenti, servizi e avanzamento della commessa in un’unica Schedina Cliente.</p>
-                <div className="commesse-actions">
-                  <DemoTrigger>Prenota una demo</DemoTrigger>
-                  <a className="commesse-button outline" href="#schedina-cliente">Scopri come funziona <ArrowDown size={15} /></a>
-                </div>
-                <p className="commesse-micro">Pensato per showroom, negozi di arredamento e realtà multi-store.</p>
-              </div>
-              <ScreenshotPlaceholder label="[SCREENSHOT — DETTAGLIO SCHEDINA CLIENTE]" caption="Inserisci qui lo screenshot reale della Schedina Cliente." className="commesse-hero-shot" />
-            </div>
-          </div>
-        </section>
-
-        <section className="commesse-section commesse-warm" id="schedina-cliente">
-          <div className="commesse-wrap">
-            <div className="commesse-intro-grid">
-              <SectionHeading eyebrow="LA SCHEDINA CLIENTE" title="Una commessa non è solo un ordine." />
-              <div className="commesse-copy">
-                <p>Una commessa di arredamento può contenere decine di prodotti, brand diversi, ordini effettuati in momenti differenti, documenti, pagamenti, consegne e attività operative.</p>
-                <p>Totalone riunisce tutto nella Schedina Cliente: il punto di riferimento operativo della commessa.</p>
-              </div>
-            </div>
-            <div className="commesse-concept">
-              <div className="commesse-concept-items">
-                {["CLIENTE", "PRODOTTI", "ORDINI", "DOCUMENTI", "PAGAMENTI", "SERVIZI"].map((item) => <span key={item}>{item}</span>)}
-              </div>
-              <div className="commesse-concept-arrow">↓</div>
-              <strong>UNA SOLA COMMESSA</strong>
-            </div>
-            <p className="commesse-supporting-line">“Una sola scheda per sapere cosa hai venduto, cosa deve essere ordinato, cosa è arrivato e cosa deve ancora succedere.”</p>
-          </div>
-        </section>
-
-        <section className="commesse-section" id="tutte-le-commesse">
-          <div className="commesse-wrap commesse-copy-only">
-            <div>
-              <SectionHeading eyebrow="PANORAMICA" title="Tutte le commesse. Una sola vista." body={<><p>Consulta tutte le Schedine Cliente dello showroom e trova rapidamente la commessa che stai cercando.</p><p>Per ogni commessa puoi avere immediatamente il contesto principale senza aprire file, email o strumenti diversi.</p></>} />
-              <TagList items={overviewFields} />
-              <p className="commesse-small-label">Organizza la vista per</p>
-              <TagList items={["Anno", "Showroom", "Venditore", "Stato"]} className="muted-tags" />
-              <p className="commesse-small-label">Stati visibili</p>
-              <TagList items={["Ordinato", "Da ordinare", "Arrivato"]} className="state-tags" />
-            </div>
-          </div>
-        </section>
-
-        <section className="commesse-section commesse-connected" id="singola-commessa">
-          <div className="commesse-wrap commesse-copy-only">
-            <div>
-              <SectionHeading eyebrow="DETTAGLIO COMMESSA" title="Apri una commessa e ritrovi tutto il suo contesto." body={<><p>La Schedina Cliente raccoglie le informazioni commerciali e operative legate alla commessa e le mantiene accessibili nello stesso ambiente.</p><p>Cliente, venditore, stato, prodotti e informazioni economiche rimangono collegati mentre il progetto avanza.</p></>} />
-              <TagList items={detailFields} className="warm-tags" />
-            </div>
-          </div>
-        </section>
-
-        <section className="commesse-section commesse-sky commesse-product-section" id="prodotto-per-prodotto">
-          <div className="commesse-wrap">
-            <SectionHeading eyebrow="PRODOTTO PER PRODOTTO" title="Sai a che punto è ogni elemento della commessa." body={<><p>Una singola commessa può contenere decine di prodotti di brand diversi, ciascuno con tempi e stati differenti.</p><p>Totalone permette di seguirli individualmente senza perdere la visione complessiva della commessa.</p></>} />
-            <TagList items={productFields} className="product-tags" />
-            <ScreenshotPlaceholder label="[SCREENSHOT — PRODOTTI DELLA SCHEDINA]" caption="Inserisci qui lo screenshot reale della tabella prodotti." className="commesse-wide-shot commesse-product-shot" />
-            <p className="commesse-highlight">“Decine di prodotti diversi. Una sola commessa da seguire.”</p>
-          </div>
-        </section>
-
-        <section className="commesse-section commesse-warm" id="avanzamento">
-          <div className="commesse-wrap">
-            <SectionHeading eyebrow="AVANZAMENTO" title="Ogni prodotto può essere in una fase diversa." body={<><p>All’interno della stessa commessa alcuni prodotti possono essere ancora da ordinare, altri già confermati, altri arrivati o già disponibili in magazzino.</p><p>Totalone rende questa differenza immediatamente visibile.</p></>} />
-            <FlowStrip items={orderStatus} className="economic-flow order-flow" />
-            <div className="commesse-state-notes"><span>IN CORSO</span><span>ASSISTENZA</span><p>Non tutti i prodotti seguono necessariamente la stessa sequenza: ogni elemento può avere il proprio stato.</p></div>
-            <p className="commesse-highlight">“Non devi chiedere a qualcuno a che punto è un prodotto. Lo vedi.”</p>
-          </div>
-        </section>
-
-        <section className="commesse-section commesse-sky">
-          <div className="commesse-wrap">
-            <SectionHeading eyebrow="TUTTO COLLEGATO" title="Dal valore della vendita all’avanzamento operativo." body={<><p>La commessa non vive soltanto nella logistica.</p><p>Totalone mantiene nello stesso contesto le informazioni economiche della vendita e ciò che sta succedendo ai singoli prodotti.</p></>} />
-            <FlowStrip items={["VENDUTO", "PRODOTTI", "ORDINI", "MAGAZZINO", "COLLI"]} className="economic-flow" />
-          </div>
-        </section>
-
-        <section className="commesse-section" id="pagamenti">
-          <div className="commesse-wrap commesse-split-wide">
-            <div>
-              <SectionHeading eyebrow="ACCONTI E SALDO" title="Anche i pagamenti rimangono collegati alla commessa." body={<><p>Registra gli acconti ricevuti dal cliente e mantieni visibile la situazione economica della commessa.</p><p>Totalone collega i pagamenti alla relativa Schedina Cliente e calcola il saldo residuo sulla base del totale e degli acconti registrati.</p></>} />
-              <FlowStrip items={["ACCONTI RICEVUTI", "PAGAMENTI REGISTRATI", "SALDO RESIDUO"]} className="economic-flow" />
-            </div>
-            <ScreenshotPlaceholder label="[SCREENSHOT — ACCONTI E PAGAMENTI COMMESSA]" caption="Placeholder per lo screenshot reale dei pagamenti." />
-          </div>
-        </section>
-
-        <section className="commesse-section commesse-connected" id="servizi">
-          <div className="commesse-wrap commesse-copy-only">
-            <div>
-              <SectionHeading eyebrow="OLTRE AI PRODOTTI" title="Anche i servizi fanno parte della commessa." body={<><p>Una vendita di arredamento non è composta soltanto dai prodotti.</p><p>Trasporto, smontaggio, imballaggi speciali e altri servizi possono essere associati direttamente alla Schedina Cliente, mantenendo anche queste attività all’interno del contesto della commessa.</p></>} />
-              <TagList items={["Trasporto", "Smontaggio", "Imballaggi speciali", "Altri servizi"]} className="service-tags" />
-            </div>
-          </div>
-        </section>
-
-        <section className="commesse-section commesse-sky" id="documenti">
-          <div className="commesse-wrap commesse-copy-only">
-            <div>
-              <SectionHeading eyebrow="DOCUMENTI" title="I documenti restano dove servono." body={<><p>Contratti, planimetrie, comunicazioni e altri documenti possono essere associati alla commessa e organizzati nello stesso contesto operativo.</p><p>Il team non deve ricostruire ogni volta la documentazione tra cartelle, email e strumenti diversi.</p></>} />
-              <TagList items={["Contratti", "Planimetrie", "Comunicazioni"]} className="document-tags" />
-            </div>
-          </div>
-        </section>
-
-        <section className="commesse-section commesse-warm">
-          <div className="commesse-wrap">
-            <SectionHeading eyebrow="CONTESTO CONDIVISO" title="Le informazioni non rimangono nella testa di una persona." body={<><p>Note interne e storico delle attività aiutano il team a mantenere il contesto della commessa accessibile nel tempo.</p><p>Chi apre la Schedina Cliente può ritrovare le informazioni operative senza dover ricostruire ogni passaggio attraverso conversazioni separate.</p></>} />
-            <div className="commesse-note-history">
-              <article><span>01</span><strong>NOTE</strong><p>Informazioni operative collegate alla commessa.</p></article>
-              <article><span>02</span><strong>STORICO</strong><p>Continuità delle attività nel tempo.</p></article>
-            </div>
-          </div>
-        </section>
-
-        <section className="commesse-section">
-          <div className="commesse-wrap commesse-copy-only">
-            <div>
-              <SectionHeading eyebrow="FINO AL MONTAGGIO" title="La commessa continua fino a quando il lavoro non è concluso." body={<><p>La Schedina Cliente mantiene anche le informazioni necessarie per collegare la commessa alla fase di montaggio.</p><p>Data prevista e informazioni operative rimangono associate al progetto, mantenendo continuità tra ciò che è stato venduto e ciò che deve essere installato.</p></>} />
-              <FlowStrip items={["COMMESSA", "PRODOTTI", "ARRIVO", "MONTAGGIO"]} className="economic-flow" />
-              <TextLink href="/gestione-montaggi-arredamento/">Scopri la gestione Montaggi</TextLink>
-            </div>
-          </div>
-        </section>
-
-        <section className="commesse-section commesse-connected">
-          <div className="commesse-wrap commesse-split">
-            <div>
-              <SectionHeading eyebrow="ANCHE DOPO LA CONSEGNA" title="La storia della commessa non scompare dopo il montaggio." body={<><p>Se un prodotto richiede assistenza, la segnalazione rimane collegata al cliente, alla Schedina Cliente e al prodotto interessato.</p><p>In questo modo il post-vendita continua a partire dallo stesso contesto della commessa.</p></>} />
-              <FlowStrip items={["CLIENTE", "COMMESSA", "PRODOTTO", "ASSISTENZA"]} className="economic-flow" />
-              <TextLink href="/post-vendita-arredamento/">Scopri Assistenza e post-vendita</TextLink>
-            </div>
-            <div className="commesse-assistance-note"><span>POST-VENDITA</span><p>Il contesto della commessa rimane collegato anche dopo la consegna.</p></div>
-          </div>
-        </section>
-
-        <section className="commesse-section commesse-sky">
-          <div className="commesse-wrap">
-            <div className="commesse-centered-heading">
-              <SectionHeading eyebrow="UN UNICO FLUSSO" title="Dalla vendita al post-vendita." body={<p>La Schedina Cliente è il punto in cui ciò che è stato venduto diventa operativo. Prodotti, ordini, documenti e attività continuano nello stesso ecosistema senza perdere il collegamento con il cliente.</p>} />
-            </div>
-            <ConnectedWorkflow />
-          </div>
-        </section>
-
-        <section className="commesse-section commesse-warm">
-          <div className="commesse-wrap">
-            <SectionHeading eyebrow="MENO INFORMAZIONI SPARSE" title="Meno tempo a cercare. Più controllo sulla commessa." />
-            <div className="commesse-comparison">
-              <div><span>SENZA UN SISTEMA CONDIVISO</span><ul>{["Excel", "Email", "Cartelle", "Messaggi", "Telefonate", "Informazioni distribuite tra persone diverse"].map((item) => <li key={item}>{item}</li>)}</ul></div>
-              <div><span>CON TOTALONE</span><ul>{["Una Schedina Cliente", "Prodotti collegati", "Stati visibili", "Documenti associati", "Pagamenti collegati", "Informazioni condivise"].map((item) => <li key={item}><Check size={15} />{item}</li>)}</ul></div>
-            </div>
-            <p className="commesse-highlight">“L’informazione resta dove serve: dentro la commessa.”</p>
-          </div>
-        </section>
-
-        <section className="commesse-section">
-          <div className="commesse-wrap commesse-copy-only">
-            <div>
-              <SectionHeading eyebrow="PER CHI GESTISCE PIÙ SEDI" title="Le commesse restano organizzate anche quando l’azienda cresce." body={<p>Filtra e consulta le Schedine Cliente per showroom, venditore, anno e stato. Dalla singola sede alla visione complessiva dell’azienda, Totalone mantiene le commesse nello stesso sistema.</p>} />
-            </div>
-          </div>
-        </section>
-
-        <section className="commesse-section commesse-connected">
-          <div className="commesse-wrap">
-            <SectionHeading eyebrow="TOTALONE" title="La commessa è collegata a tutto il resto." body={<p>Gestione Commesse fa parte dello stesso flusso Totalone che accompagna il cliente dalla prima opportunità fino al post-vendita.</p>} />
-            <div className="commesse-ecosystem">
-              {[
-                ["CRM", "Il cliente entra nel sistema.", "/__mockup/preview/totalone-crm/CrmProductPage"],
-                ["GESTIONE TRATTATIVE", "Segui l’opportunità commerciale.", "/__mockup/preview/totalone-trattative/GestioneTrattative"],
-                ["PREVENTIVI", "Costruisci la proposta.", "/__mockup/preview/totalone-preventivi/PreventiviProductPage"],
-                ["GESTIONE COMMESSE", "Gestisci ciò che hai venduto.", "#top"],
-                ["MAGAZZINO E LOGISTICA", "Segui ciò che arriva.", "/gestione-magazzino-arredamento/"],
-                ["MONTAGGI", "Organizza l’installazione.", "/gestione-montaggi-arredamento/"],
-                ["ASSISTENZA E POST-VENDITA", "Continua a seguire il cliente.", "/post-vendita-arredamento/"],
-              ].map(([title, body, href], index) => <a className={`commesse-ecosystem-item ${title === "GESTIONE COMMESSE" ? "active" : ""}`} href={href} key={title}><span>0{index + 1}</span><strong>{title}</strong><small>{body}</small><ArrowRight size={15} /></a>)}
-            </div>
-          </div>
-        </section>
-
-        <section className="commesse-section commesse-why">
-          <div className="commesse-wrap">
-            <SectionHeading eyebrow="PERCHÉ TOTALONE" title="Costruito intorno a come funziona davvero una commessa di arredamento." body={<><p>Nel settore dell’arredamento, una vendita può trasformarsi in mesi di ordini, consegne, documenti, pagamenti e attività operative.</p><p>Totalone mantiene tutto collegato alla stessa commessa, dando alle persone coinvolte un unico punto da cui partire.</p></>} />
-            <div className="commesse-pillars">
-              <article><span>01</span><h3>VISIBILE</h3><p>Sai cosa sta succedendo nella commessa.</p></article>
-              <article><span>02</span><h3>COLLEGATO</h3><p>Prodotti, ordini, documenti, pagamenti e attività rimangono nello stesso contesto.</p></article>
-              <article><span>03</span><h3>CONDIVISO</h3><p>Le informazioni non dipendono dalla memoria della singola persona.</p></article>
-            </div>
-          </div>
-        </section>
-
-        <section className="commesse-section commesse-seo-section">
-          <div className="commesse-wrap">
-            <Eyebrow>GESTIONE COMMESSE ARREDAMENTO</Eyebrow>
-            <h2>Software per la gestione delle commesse di arredamento.</h2>
-            <div className="commesse-seo-copy"><p>Totalone è un gestionale per arredatori e showroom che permette di organizzare e seguire le commesse dalla vendita alle fasi operative.</p><p>Ogni Schedina Cliente mantiene collegati prodotti, ordini, documenti, pagamenti, servizi e informazioni sul montaggio, offrendo al team una visione condivisa dell’avanzamento della commessa.</p></div>
-          </div>
-        </section>
-
-        <section className="commesse-final">
-          <div className="commesse-wrap commesse-final-grid">
-            <div>
-              <Eyebrow>GESTIONE COMMESSE TOTALONE</Eyebrow>
-              <h2>Tutto quello che succede dopo la vendita, finalmente nello stesso posto.</h2>
-              <p>Scopri come Totalone può aiutare il tuo showroom a seguire prodotti, ordini, documenti, pagamenti e attività di ogni commessa.</p>
-              <div className="commesse-actions"><DemoTrigger variant="light">Prenota una demo</DemoTrigger><a className="commesse-button outline" href="/gestionale-arredamento/">Scopri tutte le funzionalità <ChevronRight size={15} /></a></div>
-              <p className="commesse-final-note">Una demo costruita sul modo in cui lavora il tuo showroom.</p>
-            </div>
-          </div>
-        </section>
+    <MarketingShell active="commesse" overlayHeader>
+      <main id="top" className="overflow-x-clip bg-[#fbfdff] text-[#102744] [&_[id]]:scroll-mt-24" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+        <Hero />
+        <Panoramica />
+        <ProdottoPerProdotto />
+        <Margini />
+        <Pagamenti />
+        <Contesto />
+        <PassoSuccessivo />
+        <ProcessoStrip current="commesse" />
       </main>
     </MarketingShell>
   );

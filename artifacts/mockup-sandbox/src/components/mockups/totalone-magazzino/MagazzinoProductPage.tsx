@@ -1,200 +1,476 @@
-import { useEffect, type ReactNode } from "react";
-import { ArrowDown, ArrowRight, Check, ChevronRight } from "lucide-react";
-import { MarketingShell } from "../totalone-site-architecture/_shared/MarketingShell";
-import "./MagazzinoProductPage.css";
+import { useRef, type ReactNode } from "react";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { ArrowDown, ArrowRight, Archive, Boxes, CalendarDays, FileText, MapPin, PackageCheck, Repeat, Search } from "lucide-react";
+import { MarketingShell, openDemo } from "../totalone-site-architecture/_shared/MarketingShell";
+import { Reveal, Stagger, StaggerItem, WordReveal, tpEase } from "@/components/totalone/motion-kit";
+import { AppWindow, uiFont } from "@/components/totalone/app-ui";
+import { ArriviScreen } from "@/components/totalone/app-screens";
+import { ColliScreen, DocumentiScreen, MagazzinoTabsScreen, RicercaScreen, SedeScreen } from "@/components/totalone/pages/magazzino/MagazzinoScreens";
+import { routes } from "@/components/totalone/site/siteRoutes";
+import { useSeo } from "@/components/totalone/site/useSeo";
+import { ProcessoStrip } from "@/components/totalone/site/ProcessoStrip";
 
-const SEO_TITLE = "Gestione Magazzino per Arredatori e Showroom | Totalone";
-const META_DESCRIPTION = "Gestisci magazzino, arrivi previsti, prodotti, colli e documenti logistici con Totalone. Il software di magazzino pensato per showroom e negozi di arredamento.";
+const focusRing = "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1769d5]";
+const h2Class = "text-4xl font-bold leading-[.95] tracking-[-0.065em] text-[#102744] sm:text-6xl";
 
-function DemoTrigger({ children, variant = "" }: { children: ReactNode; variant?: string }) {
-  const openDemo = () => document.querySelector<HTMLButtonElement>(".to-header-actions .to-button")?.click();
-  return <button className={`mag-button ${variant}`} onClick={openDemo}>{children}<ArrowRight size={15} /></button>;
-}
+/* ------------------------------------------------------------------ */
+/* Primitive di pagina                                                  */
+/* ------------------------------------------------------------------ */
 
-function Eyebrow({ children, tone = "" }: { children: ReactNode; tone?: string }) {
-  return <span className={`mag-eyebrow ${tone}`}>{children}</span>;
-}
-
-function SectionHeading({ eyebrow, title, body, tone = "" }: { eyebrow: string; title: string; body?: ReactNode; tone?: string }) {
+function DemoButton({ light = false, children = "Prenota una demo" }: { light?: boolean; children?: ReactNode }) {
   return (
-    <div className="mag-heading">
-      <Eyebrow tone={tone}>{eyebrow}</Eyebrow>
-      <h2>{title}</h2>
-      {body && <div className={`mag-lead ${tone === "dark" ? "mag-dark-copy" : ""}`}>{body}</div>}
+    <motion.button
+      type="button"
+      onClick={openDemo}
+      whileHover={{ y: -2 }}
+      whileTap={{ scale: 0.97 }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+      className={`group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[14px] font-bold transition-colors duration-200 ${
+        light
+          ? "bg-white text-[#0b4fbd] shadow-[0_10px_28px_rgba(4,43,102,.22)] hover:bg-[#e9f3ff] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          : "bg-[#cf4a2b] text-white shadow-[0_10px_24px_rgba(173,57,35,.22)] hover:bg-[#b93f23] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#cf4a2b]"
+      }`}
+    >
+      {children}
+      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+    </motion.button>
+  );
+}
+
+function Tag({ children, tone = "blue" }: { children: ReactNode; tone?: "blue" | "coral" | "amber" }) {
+  const tones = {
+    blue: "bg-[#dcecff] text-[#0b55c6]",
+    coral: "bg-[#ffdcd2] text-[#a33a22]",
+    amber: "bg-[#fff2dd] text-[#8a4f0f]",
+  };
+  return (
+    <Reveal y={10}>
+      <span className={`inline-flex rounded-full px-3 py-1.5 text-xs font-bold uppercase ${tones[tone]}`}>{children}</span>
+    </Reveal>
+  );
+}
+
+function TextLink({ href, children }: { href: string; children: ReactNode }) {
+  return (
+    <a href={href} className={`group inline-flex items-center gap-1.5 text-sm font-bold text-[#0b55c6] hover:text-[#a33a22] ${focusRing}`}>
+      {children} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+    </a>
+  );
+}
+
+const panelTones = {
+  blue: "bg-[radial-gradient(circle_at_20%_10%,#ffffff_0%,transparent_45%),linear-gradient(135deg,#dcecff,#c9e1ff)]",
+  coral: "bg-[radial-gradient(circle_at_80%_10%,#ffffff_0%,transparent_45%),linear-gradient(135deg,#ffe9e1,#ffd9cc)]",
+  amber: "bg-[radial-gradient(circle_at_20%_90%,#ffffff_0%,transparent_45%),linear-gradient(135deg,#fff2dd,#ffe4b8)]",
+  mint: "bg-[radial-gradient(circle_at_80%_90%,#ffffff_0%,transparent_45%),linear-gradient(135deg,#e3f6ec,#cdeedd)]",
+} as const;
+
+/** Contenitore dei mockup: decorativo per gli screen reader (il testo accanto spiega la funzione). */
+function Panel({ tone, children, className = "" }: { tone: keyof typeof panelTones; children: ReactNode; className?: string }) {
+  return (
+    <div aria-hidden="true" className={`relative rounded-[36px] p-3 sm:p-5 ${panelTones[tone]} ${className}`}>
+      {children}
     </div>
   );
 }
 
-function ScreenshotPlaceholder({ label, caption, className = "" }: { label: string; caption?: string; className?: string }) {
+function BentoCard({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <figure className={`mag-shot ${className}`}>
-      <div className="mag-shot-frame" role="img" aria-label={label}>
-        <div className="mag-placeholder-copy"><span>{label}</span><small>Spazio riservato allo screenshot reale Totalone</small></div>
+    <StaggerItem className={className}>
+      <div className="flex h-full flex-col overflow-hidden rounded-[32px] bg-white p-6 shadow-[0_24px_60px_rgba(16,39,68,.06)] ring-1 ring-[#e4eef8] sm:p-8">{children}</div>
+    </StaggerItem>
+  );
+}
+
+function CardTitle({ eyebrow, title, children }: { eyebrow: string; title: string; children?: ReactNode }) {
+  return (
+    <div>
+      <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#a33a22]">{eyebrow}</p>
+      <h3 className="mt-3 text-2xl font-bold leading-[1.02] tracking-[-0.055em] text-[#102744] sm:text-[2rem]">{title}</h3>
+      {children && <div className="mt-3 space-y-3 text-sm leading-6 text-[#557090]">{children}</div>}
+    </div>
+  );
+}
+
+/** Frammento d'interfaccia ingrandito (scale) dentro una card della bento. */
+function MiniWindow({ children, className = "h-[200px]", zoom = 1.3 }: { children: ReactNode; className?: string; zoom?: number }) {
+  return (
+    <div aria-hidden="true" className={`relative mt-auto overflow-hidden rounded-[20px] bg-[#F7F8FA] ring-1 ring-[#EEF0F3] ${className}`} style={uiFont}>
+      <div className="@container absolute left-0 top-0 p-3" style={{ width: `${100 / zoom}%`, height: `${100 / zoom}%`, transform: `scale(${zoom})`, transformOrigin: "top left" }}>
+        {children}
       </div>
-      {caption && <figcaption>{caption}</figcaption>}
-    </figure>
-  );
-}
-
-function TagList({ items, className = "" }: { items: string[]; className?: string }) {
-  return <div className={`mag-tags ${className}`}>{items.map((item) => <span key={item}>{item}</span>)}</div>;
-}
-
-function FlowStrip({ items, className = "" }: { items: string[]; className?: string }) {
-  return (
-    <div className={`mag-flow ${className}`} aria-label="Flusso della logistica">
-      {items.map((item, index) => <span className="mag-flow-item" key={item}><b>{String(index + 1).padStart(2, "0")}</b>{item}{index < items.length - 1 && <i aria-hidden="true">→</i>}</span>)}
     </div>
   );
 }
 
-function ConnectedFlow() {
-  const items = ["ORDINE", "ARRIVO PREVISTO", "RICEZIONE", "MAGAZZINO", "MONTAGGIO"];
-  return <div className="mag-connected-flow" aria-label="Dal ordine al montaggio">{items.map((item, index) => <div className="mag-connected-node" key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong>{index < items.length - 1 && <i aria-hidden="true">→</i>}</div>)}</div>;
+function FloatingNote({ children, className, delay, float }: { children: ReactNode; className: string; delay: number; float: number }) {
+  return (
+    <motion.div
+      aria-hidden="true"
+      initial={{ opacity: 0, scale: 0.9, y: 20 }}
+      animate={{ opacity: 1, scale: 1, y: [0, float, 0] }}
+      transition={{ opacity: { delay, duration: 0.6 }, scale: { delay, duration: 0.6, ease: tpEase }, y: { delay, duration: 6, repeat: Infinity, ease: "easeInOut" } }}
+      className={`absolute z-20 items-center gap-3 rounded-[18px] bg-white/95 py-3 pl-3 pr-5 shadow-[0_18px_44px_rgba(4,30,80,.28)] ring-1 ring-white backdrop-blur ${className}`}
+      style={uiFont}
+    >
+      {children}
+    </motion.div>
+  );
 }
+
+/* ------------------------------------------------------------------ */
+/* 1. HERO — vista Magazzino logistico                                  */
+/* ------------------------------------------------------------------ */
+
+function HeroProduct() {
+  const ref = useRef<HTMLDivElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "center center"] });
+  const rotateX = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [18, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], reduce ? [1, 1] : [0.9, 1]);
+
+  return (
+    <div ref={ref} className="relative mx-auto mt-14 max-w-[1080px] [perspective:1600px] sm:mt-20">
+      <motion.div aria-hidden="true" style={{ rotateX, scale, transformOrigin: "center top" }} className="relative">
+        <AppWindow active="magazzino.magazzino" title="Magazzino" className="h-[400px] sm:h-[480px]">
+          <RicercaScreen />
+        </AppWindow>
+        <FloatingNote className="-left-8 top-28 hidden lg:flex" delay={1.1} float={10}>
+          <span className="grid h-8 w-8 place-items-center rounded-full bg-[#D1FAE5] text-[#059669]"><PackageCheck className="h-4 w-4" /></span>
+          <span><b className="block text-[12px] text-[#102744]">Arrivato</b><span className="text-[11px] text-[#557090]">Cucina · 14 colli</span></span>
+        </FloatingNote>
+        <FloatingNote className="-right-8 bottom-24 hidden lg:flex" delay={1.5} float={-12}>
+          <span className="grid h-8 w-8 place-items-center rounded-full bg-[#dcecff] text-[#1769d5]"><MapPin className="h-4 w-4" /></span>
+          <span><b className="block text-[12px] text-[#102744]">Magazzino Italia</b><span className="text-[11px] text-[#557090]">Casa Bianchi · Corsia B</span></span>
+        </FloatingNote>
+      </motion.div>
+      <div className="pointer-events-none absolute inset-x-[10%] -bottom-10 h-24 rounded-[100%] bg-[#04214f]/40 blur-3xl" />
+      <p className="relative mt-8 text-center text-xs font-semibold text-[#cfe6ff]">Schermate dimostrative, dati di esempio.</p>
+    </div>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="relative overflow-hidden bg-[linear-gradient(116deg,#082c68,#0d56bf_54%,#1387ee)] pb-28 pt-28 text-white sm:pb-36 sm:pt-36">
+      <div className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-[#9fe0ff]/20 blur-3xl" />
+      <div className="pointer-events-none absolute -left-32 bottom-0 h-[420px] w-[420px] rounded-full bg-[#1387ee]/40 blur-3xl" />
+      <div className="relative mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-10">
+        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-semibold text-[#cfe6ff]">
+          <a href={routes.home} className={`hover:text-white ${focusRing}`}>Home</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page" className="text-white">Magazzino e logistica</span>
+        </nav>
+        <div className="mx-auto mt-10 max-w-4xl text-center">
+          <Reveal y={10}><span className="inline-flex rounded-full bg-white/12 px-3 py-1.5 text-xs font-bold text-[#9fe0ff] ring-1 ring-white/20">MAGAZZINO E LOGISTICA</span></Reveal>
+          <h1 className="mt-6 text-5xl font-bold leading-[.95] tracking-[-0.065em] sm:text-7xl lg:text-[5.4rem]">
+            <WordReveal text="Ogni arrivo, ogni collo." />
+            <br />
+            <WordReveal text="Al suo posto." className="text-[#9fe0ff]" delay={0.2} />
+          </h1>
+          <Reveal delay={0.15}>
+            <p className="mx-auto mt-7 max-w-2xl text-base leading-7 text-[#d7ebff] sm:text-lg sm:leading-8">
+              Arrivi previsti, colli, ubicazione e documenti di magazzino (DDT e distinte) per showroom e negozi di arredamento. Ogni prodotto resta legato al cliente e alla sua Schedina.
+            </p>
+          </Reveal>
+          <Reveal delay={0.25}>
+            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <DemoButton light />
+              <a href="#logistica" className="inline-flex items-center gap-2 rounded-full border border-white/35 px-6 py-3.5 text-[14px] font-bold text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+                Scopri come funziona <ArrowDown className="h-4 w-4" />
+              </a>
+            </div>
+          </Reveal>
+        </div>
+        <HeroProduct />
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 2. INTRO — perché il magazzino dell'arredamento è diverso            */
+/* ------------------------------------------------------------------ */
+
+const columns = ["Cliente", "Sede / ubicazione", "Brand", "Prodotto", "Quantità", "Stato", "Colli", "Prezzo"];
+
+function LogisticaIntro() {
+  return (
+    <section id="logistica" className="scroll-mt-24 bg-[#fffaf7] py-24 sm:py-32">
+      <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-10">
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-end lg:gap-20">
+          <div>
+            <Tag tone="coral">Il magazzino dell’arredamento</Tag>
+            <h2 className={`mt-6 ${h2Class}`}>
+              <WordReveal text="Una cucina non arriva in un giorno solo." />
+            </h2>
+          </div>
+          <Reveal delay={0.1}>
+            <div className="space-y-4 text-base leading-7 text-[#557090]">
+              <p>
+                La commessa di Casa Bianchi sono quattro prodotti di quattro brand diversi: cucina, top in quarzo, elettrodomestici e lampade. In tutto 23 colli, che arrivano in date diverse.
+              </p>
+              <p className="font-semibold text-[#102744]">
+                Nel Magazzino logistico di Totalone ogni riga è un prodotto con il suo cliente: cerchi “Casa Bianchi” e vedi subito cosa è arrivato, quanti colli sono e in quale corsia si trovano.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+        <div className="mt-14 rounded-[32px] bg-white p-6 shadow-[0_24px_60px_rgba(16,39,68,.06)] ring-1 ring-[#f3e2da] sm:p-10">
+          <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#a33a22]">Cosa vedi in ogni riga</p>
+          <Stagger className="mt-5 flex flex-wrap gap-2" gap={0.05}>
+            {columns.map((c) => (
+              <StaggerItem key={c}>
+                <span className="inline-flex rounded-full border border-[#cfe1f4] bg-white px-3.5 py-2 text-xs font-bold text-[#245b96]">{c}</span>
+              </StaggerItem>
+            ))}
+          </Stagger>
+          <p className="mt-6 flex items-start gap-2 text-sm leading-6 text-[#557090]">
+            <Search className="mt-1 h-4 w-4 shrink-0 text-[#1769d5]" aria-hidden="true" />
+            Ricerca per cliente, brand o prodotto, filtro per stato e filtri sul magazzino selezionato.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 3. ARRIVI PREVISTI                                                   */
+/* ------------------------------------------------------------------ */
+
+function Arrivi() {
+  return (
+    <section className="bg-[#fbfdff] py-24 sm:py-32">
+      <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-10">
+        <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <Tag tone="amber">Arrivi previsti</Tag>
+            <h2 className={`mt-6 max-w-3xl ${h2Class}`}>
+              <WordReveal text="Guarda cosa sta arrivando, prima che arrivi." />
+            </h2>
+          </div>
+          <Reveal delay={0.1}>
+            <div className="max-w-sm space-y-3 text-sm leading-6 text-[#557090]">
+              <p>Il calendario “Arrivi previsti merce” mostra, giorno per giorno, quali prodotti sono attesi e per quale cliente.</p>
+              <p>Si vede subito quando più commesse convergono sugli stessi giorni, e si organizzano ricezione e spazio in magazzino di conseguenza.</p>
+            </div>
+          </Reveal>
+        </div>
+        <Reveal y={40} delay={0.05}>
+          <Panel tone="amber" className="mt-14">
+            <AppWindow active="magazzino.arrivi" title="Arrivi previsti" className="h-[400px] sm:h-[420px]">
+              <ArriviScreen />
+            </AppWindow>
+          </Panel>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 4. COLLI                                                             */
+/* ------------------------------------------------------------------ */
+
+function Colli() {
+  return (
+    <section className="bg-[#eaf4ff] py-24 sm:py-32">
+      <div className="mx-auto grid max-w-[1240px] items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1fr_1.05fr] lg:gap-20 lg:px-10">
+        <div>
+          <Tag>Colli</Tag>
+          <h2 className={`mt-6 ${h2Class}`}>
+            <WordReveal text="Un prodotto può essere uno." />{" "}
+            <WordReveal text="I colli molti di più." className="text-[#0b55c6]" delay={0.2} />
+          </h2>
+          <Reveal delay={0.1}>
+            <div className="mt-6 space-y-4 text-base leading-7 text-[#557090]">
+              <p>Sapere che “la cucina è arrivata” non basta: la cucina di Casa Bianchi sono 14 colli, e il montaggio parte solo quando ci sono tutti.</p>
+              <p>Nella Schedina cliente ogni prodotto riporta il numero di colli e lo stato dell’ordine (Da ordinare, Ordinato, Arrivato). In alto, il totale: 4 prodotti, 23 colli.</p>
+            </div>
+            <p className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-[#245b96] ring-1 ring-[#cfe1f4]">
+              <Boxes className="h-4 w-4 text-[#1769d5]" aria-hidden="true" /> Al ricevimento sai quanti colli devono esserci.
+            </p>
+          </Reveal>
+        </div>
+        <Reveal y={40} delay={0.08}>
+          <Panel tone="mint">
+            <AppWindow active="schedine" title="Schedina" className="h-[400px] sm:h-[440px]">
+              <ColliScreen />
+            </AppWindow>
+          </Panel>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 5. UBICAZIONE — sedi, corsie, viste logistica/contabile, movimenti   */
+/* ------------------------------------------------------------------ */
+
+function Ubicazione() {
+  return (
+    <section className="bg-[#eff7ff] py-24 sm:py-32">
+      <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-3xl text-center">
+          <Tag>Ubicazione</Tag>
+          <h2 className={`mt-6 ${h2Class}`}>
+            <WordReveal text="Sai anche dove si trova." />
+          </h2>
+          <Reveal delay={0.1}>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-[#557090]">
+              Ogni prodotto ha la sua sede e la sua posizione, che sia una corsia, uno scaffale o “sotto al portico”. Con più magazzini scegli quello su cui lavorare e la tabella si adegua.
+            </p>
+          </Reveal>
+        </div>
+        <Stagger className="mt-14 grid gap-5 lg:grid-cols-6" gap={0.08}>
+          <BentoCard className="lg:col-span-3">
+            <CardTitle eyebrow="Più magazzini" title="Magazzino selezionato e posizione del prodotto.">
+              <p>Il selettore in alto (per esempio “Magazzino Italia”) restringe la vista alla sede scelta; la colonna Sede dice dove si trova ogni prodotto.</p>
+            </CardTitle>
+            <MiniWindow className="mt-6 h-[170px]" zoom={1.35}>
+              <SedeScreen />
+            </MiniWindow>
+          </BentoCard>
+
+          <BentoCard className="lg:col-span-3">
+            <CardTitle eyebrow="Logistico e contabile" title="Due viste dello stesso magazzino.">
+              <p>Totalone distingue il Magazzino logistico, per chi riceve e sistema la merce, dal Magazzino contabile: due schede della stessa pagina, ognuna con la sua lettura.</p>
+            </CardTitle>
+            <MiniWindow className="mt-6 h-[170px]" zoom={1.35}>
+              <MagazzinoTabsScreen />
+            </MiniWindow>
+          </BentoCard>
+
+          <BentoCard className="lg:col-span-6">
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-[16px] bg-[#dcecff] text-[#1769d5]" aria-hidden="true"><Repeat className="h-5 w-5" /></span>
+              <CardTitle eyebrow="Transazioni" title="Accanto alla situazione attuale, i movimenti registrati.">
+                <p>La scheda Transazioni affianca alla vista del magazzino la lettura dei movimenti registrati.</p>
+              </CardTitle>
+            </div>
+          </BentoCard>
+        </Stagger>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 6. DOCUMENTI — DDT, distinte, archivio, stampa                       */
+/* ------------------------------------------------------------------ */
+
+function Documenti() {
+  const items: { icon: typeof FileText; title: string; body: string }[] = [
+    { icon: FileText, title: "Storico DDT", body: "I documenti di trasporto, da ritrovare quando serve verificare una consegna." },
+    { icon: FileText, title: "Storico distinte", body: "Le distinte del magazzino, consultabili nel tempo." },
+    { icon: Archive, title: "Archivio", body: "Lo storico operativo del magazzino resta accessibile dalla stessa barra." },
+  ];
+  return (
+    <section className="bg-[#fbfdff] py-24 sm:py-32">
+      <div className="mx-auto grid max-w-[1240px] items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1fr_1fr] lg:gap-20 lg:px-10">
+        <div>
+          <Tag tone="coral">Documenti di magazzino</Tag>
+          <h2 className={`mt-6 ${h2Class}`}>
+            <WordReveal text="DDT e distinte, a un clic dalla tabella." />
+          </h2>
+          <Reveal delay={0.1}>
+            <p className="mt-6 text-base leading-7 text-[#557090]">Dalla barra del Magazzino logistico stampi la vista corrente e apri archivio e storici, senza cercare nelle cartelle condivise.</p>
+          </Reveal>
+          <Stagger className="mt-8 grid gap-3" gap={0.08}>
+            {items.map((it) => (
+              <StaggerItem key={it.title}>
+                <div className="flex items-start gap-4 rounded-[22px] bg-white p-5 ring-1 ring-[#e4eef8]">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[12px] bg-[#f4f9ff] text-[#1769d5]" aria-hidden="true"><it.icon className="h-4 w-4" /></span>
+                  <div>
+                    <h3 className="text-base font-bold text-[#102744]">{it.title}</h3>
+                    <p className="mt-1 text-sm leading-6 text-[#557090]">{it.body}</p>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+        <Reveal y={40} delay={0.08}>
+          <Panel tone="blue">
+            <MiniWindow className="h-[260px] sm:h-[320px]" zoom={1.6}>
+              <DocumentiScreen />
+            </MiniWindow>
+          </Panel>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 7. PRIMA E DOPO — da dove arrivano i prodotti, dove vanno            */
+/* ------------------------------------------------------------------ */
+
+function PassoSuccessivo() {
+  return (
+    <section className="bg-[#f4f9ff] py-24 sm:py-32">
+      <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-10">
+        <Stagger className="grid gap-5 lg:grid-cols-2" gap={0.1}>
+          <StaggerItem>
+            <div className="flex h-full flex-col rounded-[36px] bg-white p-7 shadow-[0_24px_60px_rgba(16,39,68,.06)] ring-1 ring-[#e4eef8] sm:p-10">
+              <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#a33a22]">Da dove arriva</p>
+              <h2 className="mt-3 text-3xl font-bold leading-[1] tracking-[-0.055em] text-[#102744] sm:text-5xl">I prodotti sono quelli della Schedina cliente.</h2>
+              <p className="mt-5 text-base leading-7 text-[#557090]">Cliente, brand, quantità e colli sono gli stessi della vendita: in magazzino non si ricopia niente da un altro foglio.</p>
+              <div className="mt-auto pt-8">
+                <TextLink href={routes.commesse}>Vedi la Schedina in Gestione commesse</TextLink>
+              </div>
+            </div>
+          </StaggerItem>
+          <StaggerItem>
+            <div className="relative flex h-full flex-col overflow-hidden rounded-[36px] bg-[linear-gradient(135deg,#0b3f8f,#1769d5)] p-7 text-white shadow-[0_24px_60px_rgba(11,85,198,.25)] sm:p-10">
+              <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#9fe0ff]/25 blur-3xl" />
+              <p className="relative text-xs font-bold uppercase tracking-[0.12em] text-[#9fe0ff]">Passo successivo</p>
+              <h2 className="relative mt-3 text-3xl font-bold leading-[1] tracking-[-0.055em] sm:text-5xl">Quando i colli ci sono tutti, si programma il montaggio.</h2>
+              <p className="relative mt-5 text-base leading-7 text-[#d7ebff]">Il montaggio di Casa Bianchi entra nel calendario della squadra con lo stesso cliente e la stessa commessa.</p>
+              <div className="relative mt-auto flex flex-col items-start gap-5 pt-8">
+                <a href={routes.montaggi} className="group inline-flex items-center gap-1.5 text-sm font-bold text-white hover:text-[#9fe0ff] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+                  Vai a Montaggi <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+                <DemoButton light>Vedi una tua commessa in demo</DemoButton>
+              </div>
+            </div>
+          </StaggerItem>
+        </Stagger>
+        <p className="mt-8 flex items-center justify-center gap-2 text-center text-xs font-semibold text-[#557090]">
+          <CalendarDays className="h-3.5 w-3.5" aria-hidden="true" /> Arrivi, colli e ubicazione restano consultabili anche dopo la consegna.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* PAGINA                                                               */
+/* ------------------------------------------------------------------ */
 
 export function MagazzinoProductPage() {
-  useEffect(() => {
-    document.title = SEO_TITLE;
-    let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.name = "description";
-      document.head.appendChild(meta);
-    }
-    meta.content = META_DESCRIPTION;
-  }, []);
+  useSeo({
+    title: "Magazzino per negozi di arredamento e mobilifici",
+    description: "Arrivi previsti, colli, ubicazione e documenti di magazzino (DDT e distinte) per negozi di mobili, mobilifici e showroom di arredamento, collegati alla Schedina cliente.",
+    path: routes.magazzino,
+  });
 
   return (
-    <MarketingShell active="Magazzino e logistica">
-      <main className="mag-page" id="top">
-        <section className="mag-hero">
-          <div className="mag-orb one" aria-hidden="true" />
-          <div className="mag-orb two" aria-hidden="true" />
-          <div className="mag-wrap">
-            <div className="mag-breadcrumb"><a href="/">Home</a><span>/</span><span>Magazzino e logistica</span></div>
-            <div className="mag-hero-grid">
-              <div className="mag-hero-copy">
-                <Eyebrow>MAGAZZINO E LOGISTICA</Eyebrow>
-                <h1>Sai cosa arriva.<br /><span>Sai dove si trova.</span></h1>
-                <p>Segui prodotti, arrivi e colli dal momento dell’ordine fino al magazzino, mantenendo ogni elemento collegato al cliente e alla relativa commessa.</p>
-                <div className="mag-actions"><DemoTrigger>Prenota una demo</DemoTrigger><a className="mag-button outline" href="#logistica">Scopri come funziona <ArrowDown size={15} /></a></div>
-                <p className="mag-micro">Pensato per la logistica di showroom e negozi di arredamento.</p>
-              </div>
-              <ScreenshotPlaceholder label="[SCREENSHOT — MAGAZZINO LOGISTICO]" className="mag-hero-shot" />
-            </div>
-          </div>
-        </section>
-
-        <section className="mag-section warm" id="logistica">
-          <div className="mag-wrap">
-            <div className="mag-intro-grid"><SectionHeading eyebrow="UNA LOGISTICA PIÙ LEGGIBILE" title="Ogni prodotto ha una destinazione. E una storia." /><div className="mag-copy"><p>In una commessa di arredamento, i prodotti raramente arrivano tutti insieme.</p><p>Brand diversi, ordini diversi, date diverse e decine di colli possono rendere difficile capire cosa è realmente disponibile.</p><p>Totalone mantiene la logistica collegata alla vendita, così ogni prodotto conserva il proprio contesto.</p></div></div>
-            <FlowStrip items={["CLIENTE", "COMMESSA", "PRODOTTO", "ARRIVO", "MAGAZZINO"]} className="mag-flow-box" />
-            <p className="mag-quote">“Non gestisci semplicemente merce. Gestisci prodotti che appartengono a clienti e commesse precise.”</p>
-          </div>
-        </section>
-
-        <section className="mag-section" id="magazzino">
-          <div className="mag-wrap">
-            <SectionHeading eyebrow="TUTTO IL MAGAZZINO" title="Tutto quello che passa dal magazzino, in una sola vista." body={<><p>Consulta i prodotti gestiti dalla logistica e trova rapidamente ciò che stai cercando.</p><p>Totalone mantiene visibili le informazioni necessarie per riconoscere ogni elemento e capire a quale cliente appartiene e a che punto si trova.</p></>} />
-            <TagList items={["Cliente", "Sede / Magazzino", "Brand", "Prodotto", "Quantità", "Stato", "Colli", "Prezzo"]} />
-            <ScreenshotPlaceholder label="[SCREENSHOT — TABELLA MAGAZZINO]" caption="Dal cliente al singolo prodotto, senza perdere il contesto della commessa." className="mag-wide-shot" />
-          </div>
-        </section>
-
-        <section className="mag-section sky">
-          <div className="mag-wrap mag-text-feature">
-            <div><SectionHeading eyebrow="TROVA SUBITO QUELLO CHE CERCHI" title="Cerca per cliente, brand o prodotto." body={<><p>Quando il numero di commesse cresce, trovare rapidamente un elemento diventa fondamentale.</p><p>Totalone permette di cercare tra i prodotti e restringere la vista in base alle informazioni disponibili nel magazzino.</p></>} /><TagList items={["Ricerca cliente", "Brand", "Prodotto", "Stato", "Filtri", "Magazzino selezionato"]} className="blue" /></div>
-          </div>
-        </section>
-
-        <section className="mag-section warm">
-          <div className="mag-wrap">
-            <SectionHeading eyebrow="STATO DEI PRODOTTI" title="Ogni prodotto può essere in una fase diversa." body={<><p>Una stessa commessa può contenere prodotti ordinati, altri già arrivati e altri ancora in lavorazione.</p><p>Totalone rende lo stato del singolo elemento immediatamente visibile, così il team può capire cosa sta succedendo senza ricostruire la situazione manualmente.</p></>} />
-            <TagList items={["CONFERMATO", "ORDINATO", "ARRIVATO", "PROGRAMMATO", "IN CORSO", "ASSISTENZA"]} className="status" />
-            <p className="mag-quote">“Lo stato appartiene al prodotto, non soltanto alla commessa.”</p>
-          </div>
-        </section>
-
-        <section className="mag-section sky">
-          <div className="mag-wrap">
-            <SectionHeading eyebrow="ARRIVI PREVISTI" title="Guarda cosa sta arrivando, prima che arrivi." body={<><p>La vista calendario permette di leggere gli arrivi previsti nel tempo e capire quali prodotti sono attesi nei diversi giorni.</p><p>Invece di ricostruire le consegne tra email, conferme d’ordine e appunti, il team ha una visione temporale condivisa degli arrivi.</p></>} />
-            <ScreenshotPlaceholder label="[SCREENSHOT — CALENDARIO ARRIVI PREVISTI]" caption="Il magazzino non vede soltanto cosa c’è. Vede anche cosa sta arrivando." className="mag-calendar-shot" />
-          </div>
-        </section>
-
-        <section className="mag-section">
-          <div className="mag-wrap mag-split">
-            <div><SectionHeading eyebrow="PIANIFICAZIONE" title="Dalla settimana al singolo prodotto." body={<p>La vista degli arrivi aiuta a distribuire nel tempo ciò che deve essere ricevuto e rende più semplice capire quando più prodotti o commesse convergono sugli stessi giorni.</p>} /></div>
-            <FlowStrip items={["OGGI", "PROSSIMI ARRIVI", "RICEZIONE", "MAGAZZINO"]} className="mag-flow-box" />
-          </div>
-        </section>
-
-        <section className="mag-section connected">
-          <div className="mag-wrap mag-split">
-            <div><SectionHeading eyebrow="COLLI" title="Un prodotto può essere uno. I colli molti di più." body={<><p>Nel settore dell’arredamento sapere che un prodotto è arrivato non è sempre sufficiente.</p><p>Totalone mantiene visibile anche il numero di colli associati agli elementi della commessa, aiutando il team a verificare con maggiore chiarezza ciò che viene movimentato.</p></>} /></div>
-            <div className="mag-colli"><span>PRODOTTO</span><b>↓</b><div><i>1</i><i>2</i><i>3</i><i>4</i><small>… COLLI</small></div><p>Più controllo su ciò che entra fisicamente in magazzino.</p></div>
-          </div>
-        </section>
-
-        <section className="mag-section">
-          <div className="mag-wrap mag-text-feature">
-            <div><SectionHeading eyebrow="PIÙ MAGAZZINI" title="Sai anche dove si trova." body={<><p>Quando l’azienda lavora con più sedi o magazzini, la posizione diventa parte dell’informazione.</p><p>Totalone permette di lavorare sulla vista del magazzino selezionato e mantenere chiaro dove sono gestiti i diversi prodotti.</p></>} /><TagList items={["Magazzino selezionato", "Prodotti collegati", "Vista della sede"]} /></div>
-          </div>
-        </section>
-
-        <section className="mag-section sky">
-          <div className="mag-wrap mag-text-feature">
-            <div><SectionHeading eyebrow="MOVIMENTI" title="Segui i movimenti, non soltanto la situazione attuale." body={<><p>La sezione Transazioni permette di affiancare alla vista del magazzino una lettura dei movimenti registrati.</p><p>Questo aiuta a mantenere maggiore continuità tra ciò che entra, ciò che viene gestito e la situazione corrente del magazzino.</p></>} /></div>
-          </div>
-        </section>
-
-        <section className="mag-section warm">
-          <div className="mag-wrap mag-concise"><SectionHeading eyebrow="DUE PROSPETTIVE" title="La logistica e il controllo possono richiedere viste diverse." body={<p>Totalone distingue la vista del Magazzino logistico dalla vista del Magazzino contabile, mantenendo le diverse esigenze di lettura all’interno dello stesso ambiente.</p>} /><div className="mag-two-views"><span>MAGAZZINO LOGISTICO</span><b>↔</b><span>MAGAZZINO CONTABILE</span></div></div>
-        </section>
-
-        <section className="mag-section">
-          <div className="mag-wrap mag-text-feature">
-            <div><SectionHeading eyebrow="DOCUMENTI LOGISTICI" title="Anche lo storico rimane accessibile." body={<p>Totalone mantiene accesso alle informazioni e ai documenti collegati alle attività di magazzino, evitando che lo storico operativo venga disperso.</p>} /><TagList items={["Archivio", "Storico DDT", "Storico distinte"]} /></div>
-          </div>
-        </section>
-
-        <section className="mag-section connected">
-          <div className="mag-wrap mag-split">
-            <div><SectionHeading eyebrow="DAL VENDUTO AL FISICO" title="Il magazzino non parte da zero." body={<><p>I prodotti gestiti dalla logistica arrivano da ciò che è già stato venduto e organizzato nella commessa.</p><p>Questo permette di mantenere continuità tra cliente, prodotto e operatività, senza ricreare manualmente le stesse informazioni in un software separato.</p></>} /><FlowStrip items={["COMMESSA", "PRODOTTI", "ORDINI", "ARRIVI", "MAGAZZINO"]} className="mag-flow-box" /><a className="mag-text-link" href="/__mockup/preview/totalone-commesse/CommesseProductPage">Scopri la Gestione Commesse <ArrowRight size={15} /></a></div><div className="mag-context-card"><span>CONTINUITÀ</span><strong>Ciò che hai venduto continua a essere lo stesso prodotto anche quando entra in magazzino.</strong></div>
-          </div>
-        </section>
-
-        <section className="mag-section">
-          <div className="mag-wrap mag-split reverse">
-            <div><SectionHeading eyebrow="IL PASSAGGIO SUCCESSIVO" title="Quando tutto è pronto, il lavoro passa al montaggio." body={<p>L’arrivo in magazzino non è la fine del processo. Totalone mantiene la logistica nello stesso ecosistema della gestione operativa, permettendo al team di proseguire verso la fase di montaggio senza perdere il contesto della commessa.</p>} /><FlowStrip items={["PRODOTTI", "MAGAZZINO", "MONTAGGIO"]} className="mag-flow-box" /><a className="mag-text-link" href="/gestione-montaggi-arredamento/">Scopri la gestione Montaggi <ArrowRight size={15} /></a></div><div className="mag-next-step"><span>IL PASSO SUCCESSIVO</span><strong>Prodotti pronti.<br />Contesto intatto.</strong></div>
-          </div>
-        </section>
-
-        <section className="mag-section sky">
-          <div className="mag-wrap"><div className="mag-centered"><SectionHeading eyebrow="UN UNICO FLUSSO" title="Dall’ordine all’installazione." body={<p>Ogni fase mantiene il collegamento con il prodotto, il cliente e la commessa a cui appartiene.</p>} /></div><ConnectedFlow /></div>
-        </section>
-
-        <section className="mag-section warm">
-          <div className="mag-wrap"><SectionHeading eyebrow="MENO INFORMAZIONI SPARSE" title="Il magazzino non dovrebbe dipendere da fogli, email e memoria." /><div className="mag-comparison"><div><span>INFORMAZIONI SPARSE</span><ul>{["Fogli Excel", "Email dei fornitori", "Liste separate", "Appunti", "Telefonate", "Date da ricordare"].map((item) => <li key={item}>{item}</li>)}</ul></div><div className="positive"><span>CON TOTALONE</span><ul>{["Prodotti", "Clienti", "Stati", "Arrivi previsti", "Colli", "Magazzini", "Storico"].map((item) => <li key={item}><Check size={15} />{item}</li>)}</ul></div></div><p className="mag-quote">“Un unico posto per capire cosa deve arrivare, cosa è arrivato e dove si trova.”</p></div>
-        </section>
-
-        <section className="mag-section mag-why">
-          <div className="mag-wrap"><SectionHeading eyebrow="PERCHÉ TOTALONE" title="Un magazzino costruito intorno alle commesse di arredamento." tone="dark" body={<><p>La logistica di un negozio di arredamento non funziona come quella di un normale e-commerce.</p><p>Ogni prodotto appartiene a un cliente, a una commessa e a un processo che continua fino alla consegna e al montaggio.</p><p>Totalone mantiene questi collegamenti anche quando la vendita diventa logistica.</p></>} /><div className="mag-pillars"><article><span>01</span><h3>VISIBILE</h3><p>Sai cosa è arrivato e cosa deve ancora arrivare.</p></article><article><span>02</span><h3>COLLEGATO</h3><p>Ogni prodotto mantiene il collegamento con cliente e commessa.</p></article><article><span>03</span><h3>PIANIFICATO</h3><p>Gli arrivi previsti diventano visibili nel tempo.</p></article></div></div>
-        </section>
-
-        <section className="mag-section connected">
-          <div className="mag-wrap"><SectionHeading eyebrow="TOTALONE" title="Il magazzino è una fase del processo, non un software isolato." body={<p>Dal prodotto venduto fino al post-vendita, le informazioni continuano nello stesso ecosistema.</p>} /><div className="mag-ecosystem"><a href="/__mockup/preview/totalone-commesse/CommesseProductPage"><span>01</span><strong>GESTIONE COMMESSE</strong><small>Ciò che è stato venduto.</small><ArrowRight size={15} /></a><div className="active"><span>02</span><strong>MAGAZZINO E LOGISTICA</strong><small>Ciò che deve arrivare e dove si trova.</small><ArrowRight size={15} /></div><a href="/gestione-montaggi-arredamento/"><span>03</span><strong>MONTAGGI</strong><small>Ciò che deve essere installato.</small><ArrowRight size={15} /></a><a href="/post-vendita-arredamento/"><span>04</span><strong>ASSISTENZA</strong><small>Ciò che continua dopo.</small><ArrowRight size={15} /></a></div></div>
-        </section>
-
-        <section className="mag-section sky mag-seo">
-          <div className="mag-wrap"><Eyebrow tone="dark">GESTIONE MAGAZZINO ARREDAMENTO</Eyebrow><h2>Software per la gestione del magazzino nell’arredamento.</h2><div className="mag-seo-copy"><p>Totalone è un gestionale per arredatori e showroom che permette di organizzare prodotti, arrivi, colli e informazioni di magazzino mantenendoli collegati alle relative commesse.</p><p>La vista del magazzino e il calendario degli arrivi previsti aiutano il team a sapere cosa deve arrivare, cosa è già disponibile e dove si trovano i prodotti durante il processo logistico. Una gestione magazzino arredamento pensata per chi cerca un software magazzino arredamento, un gestionale per arredatori e una gestione logistica arredamento più leggibile.</p></div></div>
-        </section>
-
-        <section className="mag-final">
-          <div className="mag-wrap"><Eyebrow>MAGAZZINO TOTALONE</Eyebrow><h2>Dal prossimo arrivo al montaggio, sai sempre dove sei.</h2><p>Scopri come Totalone può aiutarti a collegare prodotti, commesse, arrivi e magazzino in un unico flusso costruito per il settore dell’arredamento.</p><div className="mag-actions"><DemoTrigger variant="light">Prenota una demo</DemoTrigger><a className="mag-button outline" href="/gestionale-arredamento/">Scopri tutte le funzionalità <ChevronRight size={15} /></a></div><p className="mag-final-note">Una demo costruita sul modo in cui lavora il tuo showroom.</p></div>
-        </section>
+    <MarketingShell active="magazzino" overlayHeader>
+      <main id="top" className="overflow-x-clip text-[#102744]" style={{ fontFamily: "'DM Sans', ui-sans-serif, system-ui, sans-serif" }}>
+        <Hero />
+        <LogisticaIntro />
+        <Arrivi />
+        <Colli />
+        <Ubicazione />
+        <Documenti />
+        <PassoSuccessivo />
+        <ProcessoStrip current="magazzino" />
       </main>
     </MarketingShell>
   );
 }
+
+export default MagazzinoProductPage;

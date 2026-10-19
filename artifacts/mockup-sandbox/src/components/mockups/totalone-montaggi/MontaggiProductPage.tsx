@@ -1,272 +1,435 @@
-import { useEffect, type ReactNode } from "react";
-import { ArrowDown, ArrowRight, CalendarDays, Check, ChevronRight, ClipboardCheck, FileText, Paperclip, Search } from "lucide-react";
-import { MarketingShell } from "../totalone-site-architecture/_shared/MarketingShell";
-import "./MontaggiProductPage.css";
+import { useRef, type ReactNode } from "react";
+import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { ArrowDown, ArrowRight, Building2, CalendarDays, Camera, Check, ChevronRight, ClipboardCheck, MapPin, Navigation, Package, Printer, Search, type LucideIcon } from "lucide-react";
+import { MarketingShell, openDemo } from "../totalone-site-architecture/_shared/MarketingShell";
+import { Reveal, Stagger, StaggerItem, WordReveal, tpEase, useLoopSteps } from "@/components/totalone/motion-kit";
+import { AppWindow, uiFont } from "@/components/totalone/app-ui";
+import { AnteprimaRapportinoScreen, FineLavoroCard, MontaggiCalendarioScreen, MontaggiMappaScreen, RapportiniStoricoScreen } from "@/components/totalone/pages/montaggi/MontaggiScreens";
+import { routes } from "@/components/totalone/site/siteRoutes";
+import { useSeo } from "@/components/totalone/site/useSeo";
+import { ProcessoStrip } from "@/components/totalone/site/ProcessoStrip";
 
-const SEO_TITLE = "Gestione Montaggi per Arredatori e Showroom | Totalone";
-const META_DESCRIPTION = "Pianifica i montaggi e raccogli i rapportini di fine lavori con Totalone. Il software per la gestione dei montaggi di showroom e negozi di arredamento.";
+const focusRing = "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1769d5]";
 
-function DemoTrigger({ children, variant = "" }: { children: ReactNode; variant?: string }) {
-  const openDemo = () => document.querySelector<HTMLButtonElement>(".to-header-actions .to-button")?.click();
-  return <button className={`montaggi-button ${variant}`} onClick={openDemo}>{children}<ArrowRight size={15} /></button>;
-}
+/* ------------------------------------------------------------------ */
+/* Primitivi della pagina                                              */
+/* ------------------------------------------------------------------ */
 
-function Eyebrow({ children, tone = "" }: { children: ReactNode; tone?: string }) {
-  return <span className={`montaggi-eyebrow ${tone}`}>{children}</span>;
-}
-
-function SectionHeading({ eyebrow, title, body, tone = "" }: { eyebrow: string; title: string; body?: ReactNode; tone?: string }) {
+function DemoButton({ children, light = false }: { children: ReactNode; light?: boolean }) {
   return (
-    <div className="montaggi-heading">
-      <Eyebrow tone={tone}>{eyebrow}</Eyebrow>
-      <h2>{title}</h2>
-      {body && <div className={`montaggi-lead ${tone === "dark" ? "montaggi-deep-copy" : ""}`}>{body}</div>}
-    </div>
+    <motion.button
+      type="button"
+      onClick={openDemo}
+      whileHover={{ y: -2 }}
+      whileTap={{ scale: 0.97 }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+      className={`group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[14px] font-bold transition-colors duration-200 ${
+        light
+          ? "bg-white text-[#0b4fbd] shadow-[0_10px_28px_rgba(4,43,102,.22)] hover:bg-[#e9f3ff] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          : "bg-[#cf4a2b] text-white shadow-[0_10px_24px_rgba(173,57,35,.22)] hover:bg-[#b93f23] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#cf4a2b]"
+      }`}
+    >
+      {children}
+      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+    </motion.button>
   );
 }
 
-function ScreenshotPlaceholder({ label, caption, className = "" }: { label: string; caption?: string; className?: string }) {
+function Tag({ children, tone = "blue" }: { children: ReactNode; tone?: "blue" | "coral" | "amber" }) {
+  const tones = {
+    blue: "bg-[#dcecff] text-[#0b55c6]",
+    coral: "bg-[#ffdcd2] text-[#a33a22]",
+    amber: "bg-[#fff2dd] text-[#8a4f0f]",
+  };
   return (
-    <figure className={`montaggi-shot ${className}`}>
-      <div className="montaggi-shot-frame" role="img" aria-label={label}>
-        <div className="montaggi-shot-copy">
-          <span>{label}</span>
-          <small>Spazio riservato allo screenshot reale Totalone</small>
-        </div>
-      </div>
-      {caption && <figcaption>{caption}</figcaption>}
-    </figure>
+    <Reveal y={10}>
+      <span className={`inline-flex rounded-full px-3 py-1.5 text-xs font-bold uppercase tracking-[0.06em] ${tones[tone]}`}>{children}</span>
+    </Reveal>
   );
 }
 
-function Flow({ items, className = "" }: { items: string[]; className?: string }) {
+function SectionTitle({ children, className = "" }: { children: string; className?: string }) {
   return (
-    <div className={`montaggi-flow ${className}`} aria-label="Flusso operativo del montaggio">
-      {items.map((item, index) => (
-        <div className="montaggi-flow-item" key={item}>
-          <span>{String(index + 1).padStart(2, "0")}</span>
-          <strong>{item}</strong>
-          {index < items.length - 1 && <i aria-hidden="true">→</i>}
-        </div>
+    <h2 className={`mt-6 text-[2.4rem] font-bold leading-[.95] tracking-[-0.065em] sm:text-6xl lg:text-[4rem] ${className}`}>
+      <WordReveal text={children} />
+    </h2>
+  );
+}
+
+function Lead({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return (
+    <Reveal delay={0.1}>
+      <div className={`mt-6 space-y-4 text-base leading-7 text-[#557090] sm:text-[17px] sm:leading-8 ${className}`}>{children}</div>
+    </Reveal>
+  );
+}
+
+function InlineLink({ href, children, className = "mt-7" }: { href: string; children: ReactNode; className?: string }) {
+  return (
+    <a href={href} className={`group inline-flex items-center gap-1.5 rounded-full ${className} ${focusRing}`}>
+      <span className="text-sm font-bold text-[#0b55c6] transition-colors group-hover:text-[#a33a22]">{children}</span>
+      <ChevronRight className="h-4 w-4 text-[#0b55c6] transition-transform group-hover:translate-x-1 group-hover:text-[#a33a22]" />
+    </a>
+  );
+}
+
+function Pills({ items }: { items: string[] }) {
+  return (
+    <Stagger className="mt-7 flex flex-wrap gap-2" gap={0.05}>
+      {items.map((item) => (
+        <StaggerItem key={item}>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-[#cfe1f4] bg-white px-3.5 py-2 text-[13px] font-semibold text-[#245b96]">
+            <Check className="h-3.5 w-3.5 text-[#cf4a2b]" aria-hidden="true" />
+            {item}
+          </span>
+        </StaggerItem>
       ))}
+    </Stagger>
+  );
+}
+
+/** Pannello colorato che ospita un mockup (decorativo per gli screen reader). */
+function Stage({ children, tone = "blue", className = "" }: { children: ReactNode; tone?: "blue" | "coral" | "amber" | "green"; className?: string }) {
+  const tones = {
+    blue: "bg-[radial-gradient(circle_at_20%_10%,#ffffff_0%,transparent_45%),linear-gradient(135deg,#dcecff,#c9e1ff)]",
+    coral: "bg-[radial-gradient(circle_at_80%_10%,#ffffff_0%,transparent_45%),linear-gradient(135deg,#ffe9e1,#ffd9cc)]",
+    amber: "bg-[radial-gradient(circle_at_20%_90%,#ffffff_0%,transparent_45%),linear-gradient(135deg,#fff2dd,#ffe4b8)]",
+    green: "bg-[radial-gradient(circle_at_80%_90%,#ffffff_0%,transparent_45%),linear-gradient(135deg,#e3f6ec,#cdeedd)]",
+  };
+  return (
+    <Reveal y={40} delay={0.08} className={className}>
+      <div aria-hidden="true" className={`relative rounded-[32px] p-3 sm:rounded-[36px] sm:p-5 ${tones[tone]}`}>{children}</div>
+    </Reveal>
+  );
+}
+
+function Wrap({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return <div className={`mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-10 ${className}`}>{children}</div>;
+}
+
+/* ------------------------------------------------------------------ */
+/* 1. HERO                                                             */
+/* ------------------------------------------------------------------ */
+
+function FloatingNote({ children, className, delay, float }: { children: ReactNode; className: string; delay: number; float: number }) {
+  return (
+    <motion.div
+      aria-hidden="true"
+      initial={{ opacity: 0, scale: 0.9, y: 20 }}
+      animate={{ opacity: 1, scale: 1, y: [0, float, 0] }}
+      transition={{ opacity: { delay, duration: 0.6 }, scale: { delay, duration: 0.6, ease: tpEase }, y: { delay, duration: 6, repeat: Infinity, ease: "easeInOut" } }}
+      className={`absolute z-20 items-center gap-3 rounded-[18px] bg-white/95 py-3 pl-3 pr-5 shadow-[0_18px_44px_rgba(4,30,80,.28)] ring-1 ring-white backdrop-blur ${className}`}
+      style={uiFont}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+function HeroProduct() {
+  const ref = useRef<HTMLDivElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "center center"] });
+  const rotateX = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [18, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], reduce ? [1, 1] : [0.9, 1]);
+  const [loopRef, view] = useLoopSteps(2, 9500);
+
+  return (
+    <div ref={ref} className="relative mx-auto mt-14 max-w-[1120px] [perspective:1600px] sm:mt-20">
+      <motion.div ref={loopRef} aria-hidden="true" style={{ rotateX, scale, transformOrigin: "center top" }} className="relative">
+        <AppWindow active="montaggi.montaggi" title="Montaggi" className="relative h-[430px] sm:h-[520px]">
+          <AnimatePresence initial={false}>
+            <motion.div
+              key={view}
+              className="absolute inset-3"
+              initial={{ opacity: 0, scale: 0.985, filter: "blur(4px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, filter: "blur(4px)" }}
+              transition={{ duration: 0.5, ease: tpEase }}
+            >
+              {view === 0 ? <MontaggiMappaScreen /> : <MontaggiCalendarioScreen />}
+            </motion.div>
+          </AnimatePresence>
+        </AppWindow>
+        <FloatingNote className="-left-8 top-28 hidden lg:flex" delay={1.1} float={10}>
+          <span className="grid h-8 w-8 place-items-center rounded-full bg-[#ffe3db] text-[#a33a22]"><CalendarDays className="h-4 w-4" /></span>
+          <span><b className="block text-[12px] text-[#102744]">Montaggio programmato</b><span className="text-[11px] text-[#557090]">Casa Bianchi · 2 giornate · Davide Neri</span></span>
+        </FloatingNote>
+        <FloatingNote className="-right-8 bottom-24 hidden lg:flex" delay={1.5} float={-12}>
+          <span className="grid h-8 w-8 place-items-center rounded-full bg-[#D1FAE5] text-[#059669]"><ClipboardCheck className="h-4 w-4" /></span>
+          <span><b className="block text-[12px] text-[#102744]">Fine lavoro compilato</b><span className="text-[11px] text-[#557090]">Casa Bianchi · 3 foto · firmato</span></span>
+        </FloatingNote>
+      </motion.div>
+      <div className="pointer-events-none absolute inset-x-[10%] -bottom-10 h-24 rounded-[100%] bg-[#04214f]/40 blur-3xl" />
+      <p className="relative mt-8 text-center text-xs font-semibold text-[#c9e2fb]">Schermate dimostrative, dati di esempio.</p>
     </div>
   );
 }
 
-function PillList({ items, tone = "" }: { items: string[]; tone?: string }) {
-  return <div className={`montaggi-pills ${tone}`}>{items.map((item) => <span key={item}>{item}</span>)}</div>;
+function Hero() {
+  return (
+    <section className="relative overflow-hidden bg-[linear-gradient(116deg,#082c68_0%,#0d56bf_54%,#1387ee_100%)] pb-24 pt-28 text-white sm:pb-32 sm:pt-36">
+      <motion.div aria-hidden className="absolute -right-20 top-10 h-[420px] w-[420px] rounded-full bg-[#75d7ff]/30 blur-3xl" animate={{ x: [0, -60, 0], y: [0, 40, 0] }} transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }} />
+      <motion.div aria-hidden className="absolute -left-28 top-[420px] h-[420px] w-[420px] rounded-full bg-[#f36b4d]/20 blur-3xl" animate={{ x: [0, 50, 0], y: [0, -30, 0] }} transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }} />
+      <div aria-hidden className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_top,#000_20%,transparent_70%)]" />
+      <Wrap className="relative">
+        <nav aria-label="Breadcrumb" className="flex gap-2 text-[11px] font-bold text-[#c9e2fb]">
+          <a href={routes.home} className="rounded hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Home</a>
+          <span aria-hidden>/</span>
+          <span aria-current="page">Montaggi</span>
+        </nav>
+        <div className="mt-12 grid items-end gap-10 sm:mt-16 lg:grid-cols-[1.15fr_.85fr] lg:gap-16">
+          <div>
+            <motion.span initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: tpEase }} className="inline-flex items-center gap-2 rounded-full border border-[#8ecbff] bg-[#5abaff]/20 px-3.5 py-2 text-xs font-bold tracking-[0.08em] text-[#eff8ff]">
+              <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#9fe0ff] opacity-75 motion-reduce:animate-none" /><span className="relative inline-flex h-2 w-2 rounded-full bg-[#9fe0ff]" /></span>
+              GESTIONE MONTAGGI
+            </motion.span>
+            <h1 className="mt-7 max-w-3xl text-[clamp(2.7rem,6.6vw,6.2rem)] font-bold leading-[.93] tracking-[-0.075em]">
+              <WordReveal text="Dalla mappa al fine lavoro," />
+              <br />
+              <WordReveal text="ogni montaggio" className="text-[#9fe0ff]" delay={0.25} />
+              <br />
+              <WordReveal text="sotto controllo." delay={0.4} />
+            </h1>
+          </div>
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: tpEase, delay: 0.5 }}>
+            <p className="max-w-xl text-lg leading-8 text-[#e5f3ff]">Programma i montaggi a calendario, guarda la giornata sulla mappa rispetto ai tuoi showroom e chiudi ogni intervento con un rapportino stampabile.</p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <DemoButton light>Prenota una demo</DemoButton>
+              <a href="#mappa" className="group inline-flex items-center gap-2 rounded-full px-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+                <span className="text-sm font-bold text-white group-hover:text-[#d0e8ff]">Scopri come funziona</span>
+                <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+              </a>
+            </div>
+          </motion.div>
+        </div>
+        <HeroProduct />
+      </Wrap>
+    </section>
+  );
 }
+
+/* ------------------------------------------------------------------ */
+/* 2. MAPPA — la funzione distintiva                                   */
+/* ------------------------------------------------------------------ */
+
+function MappaSection() {
+  const items: [LucideIcon, string][] = [
+    [CalendarDays, "Scegli il giorno da pianificare"],
+    [Search, "Cerca un cliente per aggiungerlo alla giornata"],
+    [Building2, "Showroom e montaggi sulla stessa mappa"],
+    [Navigation, "Pulsante “Itinerario del giorno”"],
+  ];
+  return (
+    <section className="scroll-mt-24 overflow-hidden bg-[#fffaf7] py-24 sm:py-32" id="mappa">
+      <Wrap className="grid items-center gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
+        <div>
+          <Tag tone="amber">Mappa</Tag>
+          <SectionTitle className="text-[#102744]">La giornata di montaggio, sulla mappa.</SectionTitle>
+          <Lead>
+            <p>Nella scheda Mappa scegli un giorno e vedi dove si trovano i montaggi rispetto ai tuoi showroom: Milano Centro, Lugano, Como, Bergamo.</p>
+            <p>Cerchi un cliente e lo aggiungi alla giornata; l’elenco a sinistra conta i montaggi del giorno. Dalla stessa schermata apri l’itinerario del giorno.</p>
+          </Lead>
+          <ul className="mt-7 space-y-2.5">
+            {items.map(([Icon, label]) => (
+              <li key={label} className="flex items-center gap-3 text-sm font-semibold text-[#245b96]">
+                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-white text-[#1769d5] ring-1 ring-[#cfe1f4]" aria-hidden="true"><Icon className="h-4 w-4" /></span>
+                {label}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <Stage tone="amber">
+          <AppWindow active="montaggi.montaggi" title="Montaggi" className="h-[420px] sm:h-[480px]">
+            <MontaggiMappaScreen />
+          </AppWindow>
+        </Stage>
+      </Wrap>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 3. CALENDARIO — mese, settimana, giorno; i miei o tutti              */
+/* ------------------------------------------------------------------ */
+
+function CalendarioSection() {
+  return (
+    <section className="bg-[#eff7ff] py-24 sm:py-32" id="calendario">
+      <Wrap>
+        <div className="grid gap-10 lg:grid-cols-[1fr_.85fr] lg:items-end lg:gap-20">
+          <div>
+            <Tag>Calendario</Tag>
+            <SectionTitle className="max-w-3xl text-[#102744]">Chi monta cosa, e in quali giorni.</SectionTitle>
+          </div>
+          <Reveal delay={0.1}>
+            <div className="max-w-md space-y-3 text-base leading-7 text-[#557090]">
+              <p>Il calendario mostra ogni montaggio con il cliente, i giorni occupati e chi è assegnato. Quelli ancora da assegnare si vedono subito.</p>
+              <p>Passi da mese a settimana a giorno, filtri tra “I miei” e “Tutti” e cerchi per cliente o venditore.</p>
+            </div>
+          </Reveal>
+        </div>
+        <Stage className="mx-auto mt-14 max-w-[1080px]">
+          <AppWindow active="montaggi.montaggi" title="Montaggi" className="h-[420px] sm:h-[520px]">
+            <MontaggiCalendarioScreen />
+          </AppWindow>
+        </Stage>
+        <Pills items={["Mese · Settimana · Giorno", "I miei / Tutti", "Cerca cliente o venditore", "Consegna manuale", "Previsti", "Archivio"]} />
+      </Wrap>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 4. CONTESTO — ogni montaggio ha un cliente e dei prodotti            */
+/* ------------------------------------------------------------------ */
+
+function ContestoSection() {
+  return (
+    <section className="bg-[#fbfdff] py-24 sm:py-32">
+      <Wrap>
+        <Reveal>
+          <div className="grid gap-8 rounded-[36px] border border-[#e4eef8] bg-[#f4f9ff] p-7 sm:p-11 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:gap-14">
+            <div>
+              <Tag>Ogni montaggio ha un cliente</Tag>
+              <h2 className="mt-6 text-4xl font-bold leading-[.98] tracking-[-0.06em] text-[#102744] sm:text-5xl">Non pianifichi una data: pianifichi la cucina di Casa Bianchi.</h2>
+              <p className="mt-5 text-base leading-7 text-[#557090]">La pagina Montaggi ha anche la scheda Prodotti: oltre alla programmazione, i prodotti da montare. Quando in magazzino ci sono tutti i colli, il montaggio si può programmare.</p>
+              <InlineLink href={routes.magazzino}>Arrivi e colli in Magazzino e logistica</InlineLink>
+            </div>
+            <ul className="grid gap-3">
+              {(
+                [
+                  [Package, "Prodotti da montare", "La scheda Prodotti, accanto a Calendario e Mappa."],
+                  [MapPin, "Cliente sulla mappa", "Il cliente compare sulla mappa del giorno, con la sua città."],
+                  [CalendarDays, "Giornate e montatore", "Nel calendario, con il nome di chi è assegnato."],
+                ] as [LucideIcon, string, string][]
+              ).map(([Icon, t, b]) => (
+                <li key={t} className="flex items-start gap-4 rounded-[22px] bg-white p-5 ring-1 ring-[#e4eef8]">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[12px] bg-[#dcecff] text-[#1769d5]" aria-hidden="true"><Icon className="h-4 w-4" /></span>
+                  <div>
+                    <p className="text-base font-bold text-[#102744]">{t}</p>
+                    <p className="mt-1 text-sm leading-6 text-[#557090]">{b}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
+      </Wrap>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 5. RAPPORTINO — giornate + fine lavoro + anteprima/stampa            */
+/* ------------------------------------------------------------------ */
+
+function RapportinoSection() {
+  const steps: [LucideIcon, string, string, string][] = [
+    [CalendarDays, "01", "Avanzamento giornaliero", "Ogni giornata di lavoro ha la sua scheda: data, autore, descrizione dei lavori svolti e foto."],
+    [Camera, "02", "Fine lavoro", "A intervento concluso il montatore compila il fine lavoro, con note, foto e firma."],
+    [Printer, "03", "Anteprima e stampa", "Il rapportino si apre come documento con cliente, periodo e documentazione fotografica, ed è pronto da stampare."],
+  ];
+  return (
+    <section className="bg-[#fffaf7] py-24 sm:py-32" id="rapportini">
+      <Wrap>
+        <div className="mx-auto max-w-3xl text-center">
+          <Tag tone="coral">Rapportino di montaggio</Tag>
+          <SectionTitle className="text-[#102744]">Il montaggio finisce. Il rapportino resta.</SectionTitle>
+          <Lead className="mx-auto max-w-2xl">
+            <p>Per Casa Bianchi: due avanzamenti giornalieri registrati da Davide Neri, poi il fine lavoro. Tutto sotto lo stesso cliente.</p>
+          </Lead>
+        </div>
+        <div className="mt-14 grid items-start gap-8 lg:grid-cols-[1.25fr_.75fr] lg:gap-10">
+          <Stage tone="coral">
+            <AppWindow active="montaggi.rapportini" title="Rapportini" className="h-[440px] sm:h-[500px]">
+              <AnteprimaRapportinoScreen />
+            </AppWindow>
+          </Stage>
+          <div className="space-y-4">
+            <Stagger className="grid gap-3" gap={0.08}>
+              {steps.map(([Icon, n, t, b]) => (
+                <StaggerItem key={n}>
+                  <div className="flex items-start gap-4 rounded-[22px] bg-white p-5 ring-1 ring-[#f3e2da]">
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[12px] bg-[#ffdcd2] text-[#a33a22]" aria-hidden="true"><Icon className="h-4 w-4" /></span>
+                    <div>
+                      <p className="font-mono text-[11px] font-bold text-[#557090]">{n}</p>
+                      <h3 className="text-base font-bold text-[#102744]">{t}</h3>
+                      <p className="mt-1 text-sm leading-6 text-[#557090]">{b}</p>
+                    </div>
+                  </div>
+                </StaggerItem>
+              ))}
+            </Stagger>
+            <Reveal delay={0.1}>
+              <div aria-hidden="true" className="rounded-[26px] bg-[radial-gradient(circle_at_80%_10%,#ffffff_0%,transparent_45%),linear-gradient(135deg,#e3f6ec,#cdeedd)] p-4 sm:p-5">
+                <FineLavoroCard />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </Wrap>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 6. STORICO + passo successivo (Assistenza)                           */
+/* ------------------------------------------------------------------ */
+
+function StoricoSection() {
+  return (
+    <section className="bg-[#eaf4ff] py-24 sm:py-32">
+      <Wrap className="grid items-center gap-12 lg:grid-cols-[.9fr_1.1fr] lg:gap-16">
+        <div>
+          <Tag tone="amber">Storico rapportini</Tag>
+          <SectionTitle className="text-[#102744]">I rapportini non spariscono in una chat.</SectionTitle>
+          <Lead>
+            <p>Nella pagina Rapportini di montaggio cerchi per cliente, autore o note e restringi il periodo. Per ogni cliente vedi quante giornate sono state registrate e se il fine lavoro è compilato.</p>
+          </Lead>
+          <Pills items={["Cliente", "Autore", "Note", "Periodo"]} />
+          <div className="mt-10 rounded-[28px] bg-[#082c68] p-7 text-white sm:p-8">
+            <p className="text-[11px] font-bold tracking-[0.12em] text-[#9fe0ff]">PASSO SUCCESSIVO</p>
+            <p className="mt-3 text-2xl font-bold leading-tight tracking-[-0.045em]">Se dopo il montaggio serve un intervento, si apre un’assistenza sullo stesso cliente.</p>
+            <a href={routes.assistenza} className="group mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-white hover:text-[#9fe0ff] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+              Vai ad Assistenza e post-vendita <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
+        </div>
+        <Stage tone="amber">
+          <AppWindow active="montaggi.rapportini" title="Rapportini" className="h-[400px] sm:h-[460px]">
+            <RapportiniStoricoScreen />
+          </AppWindow>
+        </Stage>
+      </Wrap>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* PAGINA                                                              */
+/* ------------------------------------------------------------------ */
 
 export function MontaggiProductPage() {
-  useEffect(() => {
-    document.title = SEO_TITLE;
-    let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.name = "description";
-      document.head.appendChild(meta);
-    }
-    meta.content = META_DESCRIPTION;
-  }, []);
+  useSeo({
+    title: "Gestione montaggi e consegne di mobili",
+    description: "Calendario dei montaggi, mappa della giornata con i tuoi showroom e rapportini di montaggio stampabili, con giornate e fine lavoro. Per negozi di arredamento, mobilifici e showroom.",
+    path: routes.montaggi,
+  });
 
   return (
-    <MarketingShell active="Montaggi">
-      <main className="montaggi-page" id="top">
-        <section className="montaggi-hero">
-          <div className="montaggi-orb one" aria-hidden="true" />
-          <div className="montaggi-orb two" aria-hidden="true" />
-          <div className="montaggi-wrap">
-            <div className="montaggi-breadcrumb"><a href="/">Home</a><span>/</span><span>Gestione montaggi</span></div>
-            <div className="montaggi-hero-grid">
-              <div className="montaggi-hero-copy">
-                <Eyebrow>GESTIONE MONTAGGI</Eyebrow>
-                <h1>Dal calendario al fine lavori,<br /><span>ogni montaggio</span><br />sotto controllo.</h1>
-                <p>Pianifica i montaggi, visualizza gli interventi previsti e raccogli i rapportini di fine lavori in un unico sistema collegato alle attività del tuo showroom.</p>
-                <div className="montaggi-actions">
-                  <DemoTrigger>Prenota una demo</DemoTrigger>
-                  <a className="montaggi-button outline" href="#pianificazione">Scopri come funziona <ArrowDown size={15} /></a>
-                </div>
-                <p className="montaggi-micro">Pensato per showroom, negozi di arredamento e team di installazione.</p>
-              </div>
-              <ScreenshotPlaceholder label="[SCREENSHOT — CALENDARIO MONTAGGI PREVISTI]" className="montaggi-hero-shot" />
-            </div>
-          </div>
-        </section>
-
-        <section className="montaggi-section warm" id="pianificazione">
-          <div className="montaggi-wrap">
-            <div className="montaggi-intro-grid">
-              <SectionHeading eyebrow="DALLA PIANIFICAZIONE AL CANTIERE" title="Il montaggio non dovrebbe iniziare da un foglio Excel e finire in una chat." />
-              <div className="montaggi-copy">
-                <p>La fase di montaggio è uno dei momenti più delicati di una commessa di arredamento.</p>
-                <p>Date, clienti, interventi e informazioni di fine lavori devono rimanere accessibili anche quando il lavoro esce dallo showroom.</p>
-                <p>Totalone riunisce pianificazione e rapportini nello stesso flusso, così il team sa cosa deve essere montato e mantiene traccia di ciò che è successo.</p>
-              </div>
-            </div>
-            <div className="montaggi-benefits">
-              <article><CalendarDays size={20} /><Eyebrow tone="coral">PIANIFICA</Eyebrow><p>Visualizza i montaggi previsti direttamente a calendario.</p></article>
-              <article><ClipboardCheck size={20} /><Eyebrow tone="coral">COORDINA</Eyebrow><p>Sai quali clienti hanno un montaggio programmato e quando.</p></article>
-              <article><FileText size={20} /><Eyebrow tone="coral">DOCUMENTA</Eyebrow><p>A fine lavori, il rapportino mantiene traccia dell’intervento effettuato.</p></article>
-            </div>
-          </div>
-        </section>
-
-        <section className="montaggi-section sky">
-          <div className="montaggi-wrap">
-            <SectionHeading eyebrow="PIANIFICAZIONE" title="Guarda i prossimi montaggi direttamente a calendario." body={<><p>Totalone organizza i montaggi previsti in una vista temporale semplice da leggere.</p><p>In pochi secondi puoi capire quali clienti hanno un intervento programmato, in quale giorno e come sono distribuiti i montaggi nel corso del mese.</p></>} />
-            <ScreenshotPlaceholder label="[SCREENSHOT — MONTAGGI PREVISTI]" caption="Una vista immediata dei montaggi programmati nel tempo." className="montaggi-shot-wide" />
-          </div>
-        </section>
-
-        <section className="montaggi-section">
-          <div className="montaggi-wrap">
-            <SectionHeading eyebrow="UNA VISIONE CHIARA" title="Sai cosa è previsto oggi, questa settimana e nelle prossime." body={<p>La vista calendario rende leggibile la distribuzione dei montaggi e aiuta il team a mantenere una visione condivisa degli interventi programmati.</p>} />
-            <Flow items={["OGGI", "QUESTA SETTIMANA", "PROSSIMI MONTAGGI"]} className="soft" />
-            <p className="montaggi-quote">“Dal calendario generale al singolo cliente, senza ricostruire la pianificazione tra strumenti diversi.”</p>
-          </div>
-        </section>
-
-        <section className="montaggi-section connected">
-          <div className="montaggi-wrap montaggi-split">
-            <div>
-              <SectionHeading eyebrow="OGNI MONTAGGIO HA UN CLIENTE" title="Non pianifichi semplicemente una data." body={<><p>Ogni montaggio appartiene a un cliente e fa parte di un processo iniziato molto prima dell’intervento.</p><p>Totalone mantiene il contesto visibile anche nella fase operativa, evitando che la pianificazione diventi una lista di appuntamenti scollegati dal resto del lavoro.</p></>} />
-              <Flow items={["CLIENTE", "COMMESSA", "MONTAGGIO"]} className="compact" />
-              <p className="montaggi-highlight">“Il montaggio continua la storia della commessa.”</p>
-            </div>
-            <div className="montaggi-context-note"><span>CONTESTO OPERATIVO</span><strong>Una data ha valore quando sai<br />a quale lavoro appartiene.</strong></div>
-          </div>
-        </section>
-
-        <section className="montaggi-section">
-          <div className="montaggi-wrap montaggi-split reverse">
-            <div>
-              <SectionHeading eyebrow="DAL MAGAZZINO AL MONTAGGIO" title="Quando i prodotti sono pronti, il lavoro continua." body={<><p>La logistica e il montaggio fanno parte dello stesso percorso operativo.</p><p>Totalone mantiene questi processi nello stesso ecosistema, riducendo la frammentazione tra ciò che viene gestito in magazzino e ciò che deve essere installato.</p></>} />
-              <Flow items={["PRODOTTI", "MAGAZZINO", "MONTAGGIO"]} className="compact" />
-              <a className="montaggi-inline-link" href="/__mockup/preview/totalone-magazzino/MagazzinoProductPage">Scopri Magazzino e Logistica <ChevronRight size={16} /></a>
-            </div>
-            <div className="montaggi-path-visual"><div><span>01</span><strong>PRODOTTI</strong></div><div><span>02</span><strong>MAGAZZINO</strong></div><div className="active"><span>03</span><strong>MONTAGGIO</strong></div></div>
-          </div>
-        </section>
-
-        <section className="montaggi-section warm montaggi-rapportini">
-          <div className="montaggi-wrap">
-            <SectionHeading eyebrow="FINE LAVORI" title="Il montaggio finisce. Le informazioni rimangono." body={<><p>Al termine dell’intervento puoi creare un rapportino di montaggio e mantenere traccia di ciò che è stato fatto.</p><p>Cliente, data, autore, note e documentazione dell’intervento rimangono raccolti nello stesso ambiente e possono essere consultati successivamente.</p></>} />
-            <ScreenshotPlaceholder label="[SCREENSHOT — RAPPORTINI DI MONTAGGIO]" caption="Ogni intervento lascia una traccia consultabile." className="montaggi-shot-wide strong" />
-          </div>
-        </section>
-
-        <section className="montaggi-section">
-          <div className="montaggi-wrap montaggi-split">
-            <div>
-              <SectionHeading eyebrow="DOCUMENTAZIONE" title="Scrivi cosa è successo. E ritrovalo quando serve." body={<p>Il rapportino permette di raccogliere le informazioni di fine lavori direttamente dopo l’intervento.</p>} />
-              <PillList items={["Cliente", "Data", "Autore", "Note dell’intervento", "Foto, quando presenti"]} />
-            </div>
-            <div className="montaggi-equation" aria-label="Composizione del rapportino">
-              <div><ClipboardCheck size={19} /><strong>INTERVENTO</strong></div><b>+</b><div><FileText size={19} /><strong>NOTE</strong></div><b>+</b><div><Paperclip size={19} /><strong>FOTO</strong></div><b>=</b><div className="result"><strong>STORICO DEL<br />MONTAGGIO</strong></div>
-            </div>
-          </div>
-        </section>
-
-        <section className="montaggi-section sky">
-          <div className="montaggi-wrap montaggi-split reverse">
-            <div>
-              <SectionHeading eyebrow="QUELLO CHE È SUCCESSO, DOCUMENTATO" title="Una nota oggi può evitare una ricerca domani." body={<><p>A fine lavori puoi descrivere ciò che è stato eseguito e allegare fotografie quando necessario.</p><p>Questo conserva il contesto dell’intervento e rende più semplice recuperare le informazioni anche a distanza di tempo.</p></>} />
-              <PillList items={["Montaggio completato", "Lavorazioni eseguite", "Eventuali osservazioni", "Informazioni utili per attività successive"]} tone="blue" />
-            </div>
-            <div className="montaggi-notes-visual"><div className="montaggi-note-line"><span>NOTE DELL’INTERVENTO</span><i /></div><div className="montaggi-note-line short"><span>DOCUMENTAZIONE</span><i /></div><div className="montaggi-note-footer"><Paperclip size={16} /> Foto, quando presenti</div></div>
-          </div>
-        </section>
-
-        <section className="montaggi-section">
-          <div className="montaggi-wrap montaggi-text-feature">
-            <div>
-              <SectionHeading eyebrow="STORICO" title="I rapportini non spariscono in una cartella." body={<p>Consulta i rapportini già creati e recupera rapidamente le informazioni relative agli interventi precedenti.</p>} />
-              <p className="montaggi-copy montaggi-search-copy">La ricerca permette di trovare un rapportino utilizzando informazioni come cliente, autore o note, mentre il filtro temporale aiuta a restringere il periodo da analizzare.</p>
-              <PillList items={["Ricerca", "Cliente", "Autore", "Note", "Periodo"]} />
-            </div>
-          </div>
-        </section>
-
-        <section className="montaggi-section connected">
-          <div className="montaggi-wrap montaggi-split reverse">
-            <div>
-              <SectionHeading eyebrow="IL PROCESSO CONTINUA" title="Se dopo il montaggio serve intervenire, il contesto è già lì." body={<><p>Il fine lavori non significa necessariamente la fine della relazione con il cliente.</p><p>Mantenere uno storico dell’intervento aiuta il team a conservare informazioni utili anche nelle fasi successive della commessa.</p></>} />
-              <Flow items={["MONTAGGIO", "RAPPORTINO", "ASSISTENZA"]} className="compact" />
-              <a className="montaggi-inline-link" href="/post-vendita-arredamento/">Scopri la gestione Assistenze <ChevronRight size={16} /></a>
-            </div>
-            <div className="montaggi-after-note"><span>DOPO IL FINE LAVORI</span><strong>Il contesto resta<br />nello stesso posto.</strong></div>
-          </div>
-        </section>
-
-        <section className="montaggi-section dark">
-          <div className="montaggi-wrap">
-            <SectionHeading eyebrow="UN UNICO FLUSSO" title="Prima pianifichi. Poi monti. Infine documenti." tone="dark" body={<p>Le informazioni accompagnano il lavoro dalla programmazione dell’intervento fino alla documentazione di ciò che è stato eseguito.</p>} />
-            <Flow items={["MONTAGGIO PREVISTO", "PIANIFICAZIONE", "INTERVENTO", "RAPPORTINO", "STORICO"]} className="dark-flow" />
-          </div>
-        </section>
-
-        <section className="montaggi-section warm">
-          <div className="montaggi-wrap">
-            <SectionHeading eyebrow="MENO PASSAGGI" title="Meno informazioni disperse tra ufficio e montaggio." />
-            <div className="montaggi-comparison">
-              <div><span>PRIMA DI TOTALONE</span><ul>{["Calendari separati", "Fogli Excel", "Messaggi", "Foto nelle chat", "Note sparse", "Rapportini difficili da recuperare"].map((item) => <li key={item}>{item}</li>)}</ul></div>
-              <div className="positive"><span>CON TOTALONE</span><ul>{["Montaggi previsti", "Calendario", "Clienti", "Rapportini", "Note", "Foto", "Storico"].map((item) => <li key={item}><Check size={15} />{item}</li>)}</ul></div>
-            </div>
-            <p className="montaggi-quote">“Pianificazione e fine lavori rimangono nello stesso sistema.”</p>
-          </div>
-        </section>
-
-        <section className="montaggi-section">
-          <div className="montaggi-wrap">
-            <SectionHeading eyebrow="PERCHÉ TOTALONE" title="Il montaggio fa parte della commessa." body={<><p>Per un negozio di arredamento il lavoro non termina quando il prodotto viene venduto.</p><p>La consegna e il montaggio sono parte dell’esperienza del cliente e devono rimanere collegati al resto del processo.</p><p>Totalone porta anche questa fase nello stesso ecosistema utilizzato dal team.</p></>} />
-            <div className="montaggi-pillars">
-              <article><Eyebrow tone="coral">PIANIFICATO</Eyebrow><h3>Vedi il prossimo passo.</h3><p>I prossimi montaggi sono visibili nel calendario.</p></article>
-              <article><Eyebrow tone="coral">DOCUMENTATO</Eyebrow><h3>Conserva ciò che è successo.</h3><p>Note e fotografie mantengono traccia dell’intervento.</p></article>
-              <article><Eyebrow tone="coral">COLLEGATO</Eyebrow><h3>Continua la storia.</h3><p>Il montaggio continua il processo iniziato con cliente e commessa.</p></article>
-            </div>
-          </div>
-        </section>
-
-        <section className="montaggi-section connected">
-          <div className="montaggi-wrap">
-            <SectionHeading eyebrow="TOTALONE" title="Dal primo contatto al fine lavori." body={<p>Ogni fase continua nello stesso ecosistema, senza trasformarsi ogni volta in un nuovo file o in uno strumento separato.</p>} />
-            <div className="montaggi-ecosystem">
-              {[
-                ["CRM", "Gestisci clienti e contatti.", "/__mockup/preview/totalone-crm/CrmProductPage"],
-                ["TRATTATIVA", "Segui le opportunità commerciali.", "/gestione-trattative-arredamento/"],
-                ["PREVENTIVO", "Costruisci le offerte.", "/__mockup/preview/totalone-preventivi/PreventiviProductPage"],
-                ["COMMESSA", "Segui ciò che è stato venduto.", "/__mockup/preview/totalone-commesse/CommesseProductPage"],
-                ["MAGAZZINO", "Segui prodotti e arrivi.", "/__mockup/preview/totalone-magazzino/MagazzinoProductPage"],
-                ["MONTAGGIO", "Pianifica e documenta.", "#top"],
-                ["ASSISTENZA", "Continua a seguire il cliente.", "/post-vendita-arredamento/"],
-              ].map(([title, body, href], index) => <a className={`montaggi-ecosystem-item ${title === "MONTAGGIO" ? "active" : ""}`} href={href} key={title}><span>0{index + 1}</span><strong>{title}</strong><small>{body}</small><ArrowRight size={15} /></a>)}
-            </div>
-          </div>
-        </section>
-
-        <section className="montaggi-section sky montaggi-seo">
-          <div className="montaggi-wrap">
-            <Eyebrow tone="dark">GESTIONE MONTAGGI ARREDAMENTO</Eyebrow>
-            <h2>Software per la gestione dei montaggi nell’arredamento.</h2>
-            <div className="montaggi-seo-copy">
-              <p>Totalone è un gestionale per arredatori e showroom che permette di pianificare i montaggi e raccogliere i rapportini di fine lavori nello stesso ambiente utilizzato per gestire il resto della commessa.</p>
-              <p>La vista calendario rende immediatamente visibili gli interventi programmati, mentre i rapportini permettono di mantenere uno storico delle attività svolte, delle note e della documentazione disponibile: gestione montaggi arredamento, software montaggi arredamento, pianificazione montaggi mobili e rapportini montaggio nello stesso software showroom arredamento.</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="montaggi-final">
-          <div className="montaggi-wrap montaggi-final-grid">
-            <div>
-              <Eyebrow>MONTAGGI TOTALONE</Eyebrow>
-              <h2>Dal prossimo montaggio al fine lavori, tutto nello stesso posto.</h2>
-              <p>Scopri come Totalone può aiutarti a pianificare gli interventi e mantenere uno storico chiaro del lavoro svolto.</p>
-              <div className="montaggi-actions"><DemoTrigger variant="light">Prenota una demo</DemoTrigger><a className="montaggi-button outline" href="/gestionale-arredamento/">Scopri tutte le funzionalità <ChevronRight size={15} /></a></div>
-              <p className="montaggi-final-note">Una demo costruita sul modo in cui lavora il tuo showroom.</p>
-            </div>
-          </div>
-        </section>
+    <MarketingShell active="montaggi" overlayHeader>
+      <main id="top" className="overflow-x-clip bg-[#fbfdff] text-[#102744]" style={{ fontFamily: "'DM Sans', ui-sans-serif, system-ui, sans-serif" }}>
+        <Hero />
+        <MappaSection />
+        <CalendarioSection />
+        <ContestoSection />
+        <RapportinoSection />
+        <StoricoSection />
+        <ProcessoStrip current="montaggi" />
       </main>
     </MarketingShell>
   );
 }
+
+export default MontaggiProductPage;

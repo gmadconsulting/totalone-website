@@ -183,3 +183,17 @@
     pointer-events: none;
   }
 }
+
+/* Totalone motion — nastro infinito e barra di avanzamento tab */
+@keyframes tp-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+@keyframes tp-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
